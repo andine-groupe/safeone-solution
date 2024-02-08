@@ -694,9 +694,10 @@
       <column comment="" key="false" length="250" name="ALERTE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_NB_PALETTE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_POIDS_VOLUME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
@@ -756,6 +757,7 @@
         <mapperTableEntries expression="Relational.ISNULL(row1.RUBRIQUE_ICPE) || row1.RUBRIQUE_ICPE.trim().isEmpty() ? &quot;Alerte ICPE&quot; : &quot;Pas d'alerte ICPE&quot; " name="ALERTE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? &quot;Alerte Nb Palette&quot; : &quot;Pas d'alerte Nb Palette&quot; " name="ALERTE_NB_PALETTE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="((Relational.ISNULL(row1.POIDS_UNITAIRE) &amp;&amp; row5.UNITE == &quot;t&quot;) || (Relational.ISNULL(row1.VOLUME_UNITAIRE) &amp;&amp; row5.UNITE == &quot;m3&quot;)) ? &quot;Alerte Poids/Volume&quot; : &quot;Pas d'alerte Poids/Volume&quot; " name="ALERTE_POIDS_VOLUME" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Relational.NOT(Relational.ISNULL(row1.RUBRIQUE_ICPE)) &amp;&amp; Relational.ISNULL(row5.RUBRIQUE_ICPE) ? &quot;Rubrique ICPE non identifiée&quot; : &quot;Pas de rubrique ICPE non identifiée&quot; " name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.SITE) || row1.SITE.trim().isEmpty() ? &quot;Alerte Site&quot; : &quot;Pas d'alerte Site&quot; " name="ALERTE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_UNITE) || String.valueOf(row1.NB_UNITE).trim().isEmpty() ? &quot;Alerte Unité&quot; : &quot;Pas d'alerte Unité&quot; " name="ALERTE_UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.NOT(Relational.ISNULL(row1.RUBRIQUE_ICPE)) &amp;&amp; Relational.ISNULL(row5.RUBRIQUE_ICPE) ? 1 : 0 " name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" type="id_Integer"/>
@@ -1314,6 +1316,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ALERTE_SITE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -1493,9 +1500,10 @@
       <column comment="" key="false" length="250" name="ALERTE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_NB_PALETTE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_POIDS_VOLUME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
@@ -1640,9 +1648,10 @@
       <column comment="" key="false" length="250" name="ALERTE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_NB_PALETTE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_POIDS_VOLUME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
@@ -1708,6 +1717,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="RUBRIQUE_ICPE_NON_IDENTIFIEE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1790,13 +1802,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5ff237b6-c8d0-4bc4-a796-c57947ec0287"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uk1+Jd1GvF9REPuXmJnZ7ZRVVICE1W3/MabhBnm8Tzfoe9LVU9w/xyFcCHT0Z488yWPJFn7NzZEo&#13;
-KQv+PvcPBw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0ffc250e-9875-427d-bebc-340a01c74a81"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>e6pXJmz/bCatdIHz+n16XNIvkh05s7i4X09cEKXSzRe2YgeP3ewh3TS8SvbS8TrC0r7rfg/n6WQO&#13;
-1ZVB1Tijvw==</DigestValue></Reference></SignedInfo><SignatureValue>pgTtFqi2CRoUaM2H83DEh0jjXhptjMMRZH1mh/SR01k4+2H6M5WUBek0G+nR8X8OaaW9OYGd9fnj&#13;
-l7DgyM69TzamBkmoPx9OUNODQSGiMbWpXDZ1zgr7SNtUhTSy7uNiwJR+60ouVXRvNJsJk+NIRoJy&#13;
-f27ndGgm5FytSOKrxOQKesjAMaQ1vwlboZQCQKbhSu7nsLz+rx4iBY/9G6TGSVw2jLoxNDsSllKT&#13;
-MCPkYsrCagg+uiOu7D5Gx4JO5GqJ2FKJ7d4iQCTAOhQfQkMuIHHbMEMuwVsFDwXK1ImR4m0RICeN&#13;
-q4ouJYW+emT7V2SPxnm4Dn4iCM3KQwb5ws41Mw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5505b5ef-0819-431c-a5c1-81d132699199"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mQOaiyzUgYgwhCksy6WUMPLnplgOfHP2dm8WSJupDs58Sv9BcVg6OV0MMtibqHqs+RjPDuPnkiii&#13;
+/FRYRkQLxg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c4c04bcb-b12e-4fd5-888f-b66692602845"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>A2hWKHYNX2EWUsikeQA5oE2Mv/q3gbOhtWBAuuis9+o7OuGgPRNPdaJoyRUEZb6JQNTcC8G8DBaT&#13;
+YfwE3R7puw==</DigestValue></Reference></SignedInfo><SignatureValue>bSIKEY+v3ds4yV5LE+LU4M6+K00SjlYxVZsItsP9WVwiNluNSK4/FRzLz9inNkCGZFbWrmKHDHNM&#13;
+RxG0HEglke8690djOjkUsHbDCahhbYfSZpqAD7qjcnmjP9a18KBOtpfk1QV539j5ip176qIFRD19&#13;
+2bLVGCF0TdmBx48PsHo5vJNYZu9nieuudpyItVrjPVbl5DiW2Y0VOKpTspaGG7xvi2fwFzluFfBp&#13;
+rui9ZJra2kQjtPT81aEt4s4yl7k96Bv2kPZ50os1e9KetO73NK91io0DBqQJVquD/hCFarnNulbb&#13;
+DnV7/e6g4ci8r9Ncu+Wxkrxskkuad6RKaIKBAA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1818,4 +1830,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0ffc250e-9875-427d-bebc-340a01c74a81" Target="#_5ff237b6-c8d0-4bc4-a796-c57947ec0287"><Timestamp>2024-02-08 14:00:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c4c04bcb-b12e-4fd5-888f-b66692602845" Target="#_5505b5ef-0819-431c-a5c1-81d132699199"><Timestamp>2024-02-08 14:02:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
