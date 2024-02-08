@@ -701,7 +701,7 @@
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -765,7 +765,7 @@
         <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) ? 0 : row1.VOLUME_TOTAL &gt; 0 ? row1.VOLUME_TOTAL / 1000 : 0 " name="STOCK" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? 0 : row1.NB_PALETTE * row1.POIDS_UNITAIRE " name="TOTAL_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? 0 : row1.NB_PALETTE * row1.VOLUME_UNITAIRE " name="TOTAL_VOL" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="row5.UNITE == &quot;m3&quot; ? row1.VOLUME_UNITAIRE : &quot;&quot; " name="VOLUME_FINAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.UNITE == &quot;m3&quot; ? row1.VOLUME_UNITAIRE : &quot;&quot; " name="VOLUME_FINAL" nullable="true" type="id_Float"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
@@ -1514,7 +1514,7 @@
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="250" name="SITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1663,7 +1663,7 @@
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1814,13 +1814,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4d5cf24d-41c1-4865-8528-8ef9c2f78a16"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HWgfJNkACKzVhg7sFNS9FjLRBms0INTiHEpA+bqsuwA9i11t67pqzqUeacfO/ClY8HEQ2qocso87&#13;
-wUf1kNcaUA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d4c6f173-b249-4103-8f0a-457c048e1728"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QoNMmZv2i+xg4U0BCnxfR74BfghnOWIPoPYs6SljKgpHciU5k2DfXHsgKun8q9DHS1o26Qgv8hqf&#13;
-KPQ/n3NPQw==</DigestValue></Reference></SignedInfo><SignatureValue>aDUoQFPkmJtL9ZB4zELq55vVlAQ14nJdWdJxibHq0lxBAEEVD1MRN//RLS2H0F8GBaqDRGO3gopH&#13;
-geEEmzMl/vP06MKEjPHth/5tLy1qZG6YfBk546OqfD7WZVTPh2cWjWCXpl4i/w5IhMmuohHsOpdz&#13;
-w2awNUynY1h/CBnxX+yarTNapJN51AH97gnbJ+0nJT3q6OAA6J6oHS+kAYnwy8d32ueA7vcS5snH&#13;
-/PZtcFLYHjPkOpbaC0vMJlPp18+MdPaGNmA6q16y1ketXvMik7+ZICIKEe0rludfb11/E0R6Lk9R&#13;
-MVGMIqlz3bOVMoCZitN1uU5d3Ywr7lNOTnwqxA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_03081389-f282-43cf-bc68-77dc21b83788"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/4d1M6EeJ142eQyP5NC3ljrijRrNpO5EfkIdVUAhX4UugDq5HymAVzQrrkVzbRN1U1xAJQRILUaP&#13;
+xNSkaDFWKw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c4024b90-1c27-4742-a49e-a7e056f89630"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>t6gSHgvICfY4QBRqxa1QjtPPPJnxcxn9v6g839H652ti2pWMh0U2p187ymLNADHOzo1GO4fcobu4&#13;
+qSDIQDKjog==</DigestValue></Reference></SignedInfo><SignatureValue>hrtqRqdUhvsQ63a7tBIXJaa1n8Acesanv7yJ+B5mfUbH95E+qSm4ba+DqwFMVg7QA437q3SjYowM&#13;
+FhovkMAukbsTe/Op7fIj3xPQfOpvoph8IbmCruc/sD+KGNf+OHTvcIWriBbQ5cgnI39OqTW7wL4y&#13;
+Q+CyXPreoXgFOBGdsQ2DWp7Xvl2y2ZiHFAj6LUIy9cDDmFKu/LcxpOZOlC01qaw+/fyjAPnDWjs3&#13;
+uu1SnjxasrvH2NPKZ0ZeK28YvULrEJs/H4qKDHyPs8iVh+fBAaJAWnKWwyQzOh1qxEJ+dN+fEXaN&#13;
+KCix8nepohH9vvjRp6QC8t2ZT5c6DQiqqwIMSA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1842,4 +1842,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d4c6f173-b249-4103-8f0a-457c048e1728" Target="#_4d5cf24d-41c1-4865-8528-8ef9c2f78a16"><Timestamp>2024-02-08 14:06:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c4024b90-1c27-4742-a49e-a7e056f89630" Target="#_03081389-f282-43cf-bc68-77dc21b83788"><Timestamp>2024-02-08 14:07:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
