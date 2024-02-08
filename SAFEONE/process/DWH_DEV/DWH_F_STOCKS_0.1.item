@@ -783,6 +783,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="ALERTE_CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_DESIGNATION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -833,6 +836,7 @@
         <mapperTableEntries expression="row5.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row6.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CELLULE== null || row1.CELLULE.trim().isEmpty() ? &quot;Alerte Cellule&quot; : &quot;Pas d'alerte Cellule&quot;;" name="ALERTE_CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Relational.isNull(row1.DESIGNATION) ? &quot;Alerte Désignation&quot; : &quot;Pas d'alerte Désignation&quot; " name="ALERTE_DESIGNATION" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="my_row_id" type="id_String"/>
@@ -1163,6 +1167,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ALERTE_DESIGNATION"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -1306,6 +1315,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="ALERTE_CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_DESIGNATION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="250" name="SITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1441,6 +1453,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="ALERTE_CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_DESIGNATION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1833,6 +1848,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="ALERTE_CELLULE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ALERTE_DESIGNATION"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -1913,13 +1931,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0c05f445-d63a-4a67-b9aa-0b222f311fe1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jnVrW6Kq+yTvorhV0kZeHxsxbnNGGFm/bcBF3Fv7G57XP4AJ/w2tptaCTqSgRcY152A38EnSQUQ7&#13;
-hgVsbwkHwA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a0693d81-39dd-4d27-80f5-155d604827e9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2BzLUbgZpHBQFL+i2PLG2fLKMzQqa1i9+9hHhppvN07+Tpfif+QJtNlOWvT4965xL4Y3Qv3B1VLS&#13;
-iK4z9ZxeRA==</DigestValue></Reference></SignedInfo><SignatureValue>U7QTaJD+FjJL12TUVVhBi0Oc2X2EtKx8or05JHDb3ol8w024q1qXL2uk1VKPmyTBj1BotN9NnEzK&#13;
-TBO4/yxGbN9VSCIM4bEu1iHOPXX8/FwcMGK3YMNqbzEnia+UDOahs43EIKQbNedhs6JEntS1LH09&#13;
-8N9nIuvaxNVh0gjtGSDP3tfAr+C1f5HNySnOkyabN4EUZD6T3EBAMrsdNGHVB9Z9a7B5pTdtH1XV&#13;
-1VOhjR/2jPa4PK82IX3M2aijfOGbwcDldVXFy9tSYUtx66zB5gL176kYAi3uKulWUB4Ngv40apgU&#13;
-LTxNCPfxbjgODeioTxQZV5oclkqZGMcvJ5opgg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6bddd977-382d-4932-b415-5a75310dd724"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JypLPInC1n2fz/VNMb5Uv/JuerwoQLiXbs/CU0d5rWUDQ5mGmRCeY7Lnj9tAyMonKCJaYoZlKlc/&#13;
+8sAqEaZnQA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_95895069-9974-4681-82da-57b66b95efba"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zD+oMX9TeB0tlcbgO8XNDAacLBC40ypzcIQLd5LOF7XUFTY0me1TCbnSfY6gvfHm32RvZ7HU3lEt&#13;
+lW9H2hDgRA==</DigestValue></Reference></SignedInfo><SignatureValue>a7mp4KBMmI/bUGRJus6ITgCsWYHkz62vpuMMqlytCobXT7NYbFss0x1clnHydDaLS42dG1kqsV7a&#13;
+iABbCkbR5Qq7l5+l7SLhNa3+H2TOfN3DpoQve9OaYO372L4wNKiTj/LNmeyGSfRAxDD8HkJrsUey&#13;
+crmbcbtE4wezNJ1CWPl7XgWGExwN3j4J9tS5TlQqATdp3pQvCXMNFVfLUV1bbcp5vTFKyURyzA3w&#13;
+ejdg1fYIoAgObsYnPXL+AiczaEoNA9Rlspf1pPVvHRYy9LbAcbQ9ZD3GBK8MwFrpQX2F2VqMXIUT&#13;
+yYwUC2a90M7W/0AAiWTkBJtVG0235+pJWU38Vw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1941,4 +1959,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a0693d81-39dd-4d27-80f5-155d604827e9" Target="#_0c05f445-d63a-4a67-b9aa-0b222f311fe1"><Timestamp>2024-02-06 13:40:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_95895069-9974-4681-82da-57b66b95efba" Target="#_6bddd977-382d-4932-b415-5a75310dd724"><Timestamp>2024-02-08 09:45:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
