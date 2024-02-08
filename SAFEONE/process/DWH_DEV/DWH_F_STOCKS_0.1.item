@@ -702,6 +702,7 @@
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -766,6 +767,7 @@
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? 0 : row1.NB_PALETTE * row1.POIDS_UNITAIRE " name="TOTAL_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? 0 : row1.NB_PALETTE * row1.VOLUME_UNITAIRE " name="TOTAL_VOL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="row5.UNITE == &quot;m3&quot; ? String.valueOf(row1.VOLUME_UNITAIRE) : &quot;&quot; " name="VOLUME_FINAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.UNITE == &quot;t&quot; ? String.valueOf(row1.POIDS_UNITAIRE) : &quot;&quot; " name="POIDS_FINAL" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
@@ -1358,6 +1360,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="POIDS_FINAL"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -1515,6 +1522,7 @@
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="250" name="SITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1664,6 +1672,7 @@
       <column comment="" key="false" length="250" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1732,6 +1741,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="VOLUME_FINAL"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="POIDS_FINAL"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1814,13 +1826,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_236dbc56-3a08-44e4-b113-a58500285d77"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2XSc6mlIzB0mmTJ3lC7Yrp7SOWjvyk2wGoMWkA62g/eFFOCm+ptPCv+49HXNwYLv9pN4nTGoPJhI&#13;
-83zFprPhAQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8b90523f-14fb-45be-88dc-711680b17219"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>NQCoEQp6pSDm7gs9yYrTds07Xz6m4v98bxM6Jj3VOFHXRBdw01MYNtznf5v1bMYixPWH1NsrNjo4&#13;
-CsRTU229JA==</DigestValue></Reference></SignedInfo><SignatureValue>c3l5k4bRGIdLtgwGYZLVeEsan/+IpiDWKREXGAlehlWbaqih+hZ8QmHChM51Py1Ynce4U9zBHavT&#13;
-DiFpsnXSr5dWBm3mBAZEEB98/8rBUos4U3R9ebDias1xdy1qaHJpdMls4BENkcC6bi3nLArEhSc4&#13;
-stKL5qJVqA6rKE2BJF9I5RDw6L9dHBD1ulLUfnfEwfOba3qjvqU992gaRe7J3k9GaMmpZsvEGTnS&#13;
-vs/TA2KmSagvSw1AHjQivChTmdXwQ99H2gcPM1Ot5+bLUK1LCncpI7VHcPqhK2qinzzcNH8Kgmq7&#13;
-b9hwj1+B6U4rdvP8BY2I9LL5l8A2BtQ02FOkdA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d59686ba-2650-4825-9c85-48ded52291fc"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SnkKlw3gt27LTDoPYZFI/iXaRk5jlAgMNauvcjdqSd42h66oHCCZerTVC8a2lpeSWPcfi96Wdsog&#13;
+6g3HbfVBKg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1c17b514-1569-438c-97ac-bcf551e89cfe"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9Zgp1W8AqcCE7Nl6HyqAbxDyA9CYX7nq7XePfGlE9Plgk4CZQmn79dNTR2z7VdQr5GLuQQ4DqWAa&#13;
+dJHopCl1jw==</DigestValue></Reference></SignedInfo><SignatureValue>KO6nHqRibAaKV5dWijZcSDENyJx2mjFcFlgqhXtc5yeMuF9oRn6bnTD7DexNBCMSkjUuvPXdlhB1&#13;
+wg12HdBvplx6qpNaKrs8fWil2G0VlbLfXYCI0LDpxsVCFOCjHYQYOIyoDlr1Y+PJKFeamEYhUn8N&#13;
+1GMDvRepvfK3lIAESlwcuxX2mBACs/gUt6xtLY15BzgiXZe8asmzA1dVS33Ayfy7faEldBY0VgHT&#13;
+dduLT9hYIRM4T93k8Nt4PqtZenKxkYN4k4b7G+IUbA/t4tKowwX1ajcJx3fc5aPW46J2fopsSz+i&#13;
+KNaMKx2lOnEumtsUCf7Rd+dhEIV1qrnglJibCw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1842,4 +1854,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8b90523f-14fb-45be-88dc-711680b17219" Target="#_236dbc56-3a08-44e4-b113-a58500285d77"><Timestamp>2024-02-08 14:08:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1c17b514-1569-438c-97ac-bcf551e89cfe" Target="#_d59686ba-2650-4825-9c85-48ded52291fc"><Timestamp>2024-02-08 14:09:27</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
