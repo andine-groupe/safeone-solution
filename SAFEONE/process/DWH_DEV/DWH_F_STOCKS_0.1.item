@@ -496,12 +496,12 @@
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="DESIGNATION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="DEGRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CONTENANCE_M3_UNITAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NB_UNITE_ALCOOL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -757,21 +757,21 @@
         <mapperTableEntries expression="row1.POIDS_UNITAIRE " name="ALERTE_POIDS_VOLUME" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.SITE) || row1.SITE.trim().isEmpty() ? &quot;Alerte Site&quot; : &quot;Pas d'alerte Site&quot; " name="ALERTE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_UNITE) || row1.NB_UNITE.trim().isEmpty() ? &quot;Alerte Unité&quot; : &quot;Pas d'alerte Unité&quot; " name="ALERTE_UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="toFloat(row1.VOLUME_TOTAL) &gt; 0 ? toFloat(row1.VOLUME_TOTAL) * (toFloat(row1.NB_UNITE)+toFloat(row1.NB_PALETTE)) / 1000 : &quot;0&quot; " name="STOCK" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="toFloat(row1.NB_PALETTE) * toFloat(row1.POIDS_UNITAIRE) " name="TOTAL_POIDS" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="toFloat(row1.NB_PALETTE) * toFloat(row1.VOLUME_UNITAIRE) " name="TOTAL_VOL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.VOLUME_TOTAL &gt; 0 ? row1.VOLUME_TOTAL * (row1.NB_UNITE+row1.NB_PALETTE) / 1000 : &quot;0&quot; " name="STOCK" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.NB_PALETTE * row1.POIDS_UNITAIRE " name="TOTAL_POIDS" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.NB_PALETTE * row1.VOLUME_UNITAIRE " name="TOTAL_VOL" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DESIGNATION" nullable="true" type="id_String"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="POIDS_UNITAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="VOLUME_UNITAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="NB_UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="NB_PALETTE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_String"/>
-        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_String"/>
+        <mapperTableEntries name="POIDS_UNITAIRE" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="VOLUME_UNITAIRE" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="NB_UNITE" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="NB_PALETTE" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="DEGRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CONTENANCE_M3_UNITAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="NB_UNITE_ALCOOL" nullable="true" type="id_String"/>
@@ -1778,13 +1778,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5500e5a0-dd63-4f93-b1d8-75f849f5a97e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IArKgtl8ma7LgpU8Ol8L4eyFj3pQni6meJ/2xpjS6Z68BNnSrKBFFEQ7BLEL9AAohh7n6kfH1CwV&#13;
-ZG50GMbNLQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_75fe7369-3fcb-4f2e-9e28-19c182f4677e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tzKGLvXfzWDv7YehLc7eStRuNDCp2WcdvJdXEu6Nb3ZU8RQ3JxPoPrEjY79jo28ybjwztoBefHad&#13;
-MMlIqv2r5Q==</DigestValue></Reference></SignedInfo><SignatureValue>nU7gecjasTXeccCde7eP1j94Hb7jIH7+ZQHtW86gwhYf1wd/7L2DAxSPuz83IH1anHOrYysEbQ+S&#13;
-MG2JUH4WWa8rpvbjGIyVCu9hPY4H16/cy9ELWL3qxG2+6QSdsWHmjmSGHw0t8HhMzdeqTJGe+ecs&#13;
-EgmIjyYcVpnvJh7b4RTSg+tYthxOahQENB+6dasF/dRfdoaeC4mUV4JMT/LfwoYaFb8wID0q6Dm7&#13;
-XuFYinMi4Hg3/ppKNBlanjDOqu6RDXyjU6owmiRRQRu0CP6RRhD+bUk52DHqvtzjgShgQuB0tBJ5&#13;
-BbRHXwdQg4b4PmfKsWvhU2YPB8wejewvf++jXA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ef74baa2-96a1-404b-a5b7-e5e7652cdf2c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>r7JLwv8I4Wwi0AgK7zrroS6yaWwh1kqNoobWLa4TBI7CtAh7W3nXXplk+6GeXTIFj5+1jbPRsTaN&#13;
+AuX9Lxtykg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0766a037-2f36-4ab4-a0ae-a3f0f6b7abf1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jEZt0KtxPFxyjAneru63xnBLXqx0HBZs7hOjYeJjt9AZRtREAaNAy+oG0XQ3jkoILkzGh/BfqkAK&#13;
+6E1IKtYzzg==</DigestValue></Reference></SignedInfo><SignatureValue>fXP2fqd9r8Zh/PWMVvK1Awk3TG/fvsMxZM6lYRAmPV63rqT/YlJ+dlgH5DleyxGDYir6DsNS66Cp&#13;
+mIwK9RuGNieVYFg+QtJba4mkvzzbHJmggB8aixIvM5u63jr/xCcEHXBL3ghldrPNozrlvHWrpbHY&#13;
+3Qu8rdXEL0aOh2Ime8gFIrVHuMkU2xCDTnuSrZyRUF7BLX/+86xukrnmjVzbhrz1v2/sD2rd/zdf&#13;
+VfFFEU8arnYTbp21eXn1+qJx323yfw4IBRrr0tay5YjfaYqSwAcZasr4jI6ZrE7Rk7rJE0YgNLr/&#13;
+//D8Zgc30P6K1vz3UsFjc1InyeWX8cKmXdRN0A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1806,4 +1806,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_75fe7369-3fcb-4f2e-9e28-19c182f4677e" Target="#_5500e5a0-dd63-4f93-b1d8-75f849f5a97e"><Timestamp>2024-02-08 11:45:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0766a037-2f36-4ab4-a0ae-a3f0f6b7abf1" Target="#_ef74baa2-96a1-404b-a5b7-e5e7652cdf2c"><Timestamp>2024-02-08 11:48:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
