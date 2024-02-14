@@ -23,7 +23,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="64"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="32"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -567,10 +567,10 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
@@ -579,10 +579,10 @@
       <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="DEGRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -716,12 +716,12 @@
         <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.DESIGNATION " name="DESIGNATION" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.POIDS_UNITAIRE " name="POIDS_UNITAIRE" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row1.VOLUME_UNITAIRE " name="VOLUME_UNITAIRE" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="row1.POIDS_UNITAIRE " name="POIDS_UNITAIRE" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.VOLUME_UNITAIRE " name="VOLUME_UNITAIRE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="row1.NB_UNITE " name="NB_UNITE" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.NB_PALETTE " name="NB_PALETTE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row1.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="row1.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="row1.DEGRE " name="DEGRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CONTENANCE_M3_UNITAIRE " name="CONTENANCE_M3_UNITAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.NB_UNITE_ALCOOL " name="NB_UNITE_ALCOOL" nullable="true" type="id_Integer"/>
@@ -1363,10 +1363,10 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -1375,10 +1375,10 @@
       <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="DEGRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1517,10 +1517,10 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -1529,10 +1529,10 @@
       <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+      <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="DEGRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1822,13 +1822,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8165a778-6281-4b74-ba0e-b2ee927c65e3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EpYohBZmBhPmUCRYlD6AqbUXLmxVxG5DTYffjta/uoXqA3MeYnQw0VdXX6bN2S/j4xOnjCQPSrYW&#13;
-dwBFjuDKDw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bbec6b08-63cf-4a55-ba61-5e63bb0cd3c6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3YQg+g/Xu5WBDb9ZAcAYHEEW4ykmc/HMpRPjkCBEl86NyqOcg/mssKVHlgtuGjLtaWNuBqOKoEaR&#13;
-v9F+6/m5/g==</DigestValue></Reference></SignedInfo><SignatureValue>Pu/HtrTp2hhlig6t75B72e0geInCsGei4joTPP6fc+Xc78nYMCXyYTltNy9HEnKMB/iYJp6zUdwu&#13;
-9HQWCbIm8heOztZwqRgaaEis+EaGc8+7FTidYqN/PbqD1aLF3fPkKWDoA5L1uWfxsrwb4S6uzNnX&#13;
-yiBVb0GVkHArOnagFKggOfImFfa2JJAqMCZ+jfNBgPVSsm4O8PXWEZw6BAOU3ziDIWUzF3BRU6Lz&#13;
-5MQPhFjZMoA5/YiDFNVTBDHhs0hsjNWzGtq8KATOmLSViId7jKp4zccZBEajF4ZXZsb+DgfySZ0t&#13;
-4ZMWRtmar2yIz4sBLEAUfI3jm36eyqcymZJRgg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6144b288-2071-49a1-bbad-1e6c835b8775"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MuExtmJOsJ/PxvFCPy+x4AFxQUzNAKWEeEH+7ylHaWEUGUNsutubVuUA4OBq8SSYNX4gKpK62hwT&#13;
+ImzGUCNQBg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e1ca1e05-e9af-40af-af37-3fc68ffec3f8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OnBi/ROcOVwn5ufoMSTG34iefD/vwy0VFpGkGfODLTY37rosaQChmjJ5r8Cj+DbRxBry76BmbcFY&#13;
+DtaK9ZAFYA==</DigestValue></Reference></SignedInfo><SignatureValue>bfdcEr982nyajQ1NOd9BeSXPUu4gpzR/Nif0suVYxFVrsi2dvZWBN1M5BAAPeYbneoGiemRuWCGf&#13;
+jaPh9Xhnd5MtNxVgNcaqSbzqEVxIM1DIKDWDGVT2g9xLBO75te10129/8vhdeQx3iHqdxtFoBGBI&#13;
+FonlT1GK4UJRs6o5WN2Gtd+orAoDzn8Ma/neqsVOnQp6vMj5eSFiUivOV6OJOP8tJtzU3wHemUUd&#13;
+TLlhpBDln5HHwntZK5q7lVmNiWWeMsEbdiO7GPG5Rz9MQJIOBRvFhH5DxfU6b5Ui2/5jbf02LkQ7&#13;
+ETD3lO0C2obbdl+m5PfIp7Oz2JM1ZAdcuV3Cog==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1850,4 +1850,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bbec6b08-63cf-4a55-ba61-5e63bb0cd3c6" Target="#_8165a778-6281-4b74-ba0e-b2ee927c65e3"><Timestamp>2024-02-14 13:36:04</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e1ca1e05-e9af-40af-af37-3fc68ffec3f8" Target="#_6144b288-2071-49a1-bbad-1e6c835b8775"><Timestamp>2024-02-14 16:44:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
