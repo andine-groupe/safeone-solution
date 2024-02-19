@@ -1362,7 +1362,11 @@
     <elementParameter field="TEXT" name="NB_RANDOM" show="false" value="10"/>
     <elementParameter field="CHECK" name="TRIMALL" value="false"/>
     <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="TYP_EMPLAC"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ALLEE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_ART"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LIBEL_ART"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -1390,7 +1394,11 @@
     <elementParameter field="CHECK" name="SPLITRECORD" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
     <elementParameter field="TABLE" name="DECODE_COLS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="TYP_EMPLAC"/>
+      <elementValue elementRef="DECODE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ALLEE"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_ART"/>
       <elementValue elementRef="DECODE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LIBEL_ART"/>
       <elementValue elementRef="DECODE" value="false"/>
@@ -1416,7 +1424,9 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tFileInputDelimited_1">
+      <column comment="" key="false" length="500" name="TYP_EMPLAC" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_ART" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="LIBEL_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
@@ -1428,7 +1438,9 @@
       <column comment="" key="false" length="31" name="DANGER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="500" name="TYP_EMPLAC" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_ART" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="LIBEL_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
@@ -1486,7 +1498,9 @@
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_2_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="TYP_EMPLAC" nullable="true" type="id_String"/>
         <mapperTableEntries name="ALLEE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CODE_ART" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIBEL_ART" nullable="true" type="id_String"/>
         <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="TOTAL_POID" nullable="true" type="id_Float"/>
@@ -1696,7 +1710,11 @@
     <elementParameter field="TEXT" name="NB_RANDOM" show="false" value="10"/>
     <elementParameter field="CHECK" name="TRIMALL" value="false"/>
     <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="TYP_EMPLAC"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ALLEE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_ART"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LIBEL_ART"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -1724,7 +1742,11 @@
     <elementParameter field="CHECK" name="SPLITRECORD" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
     <elementParameter field="TABLE" name="DECODE_COLS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="TYP_EMPLAC"/>
+      <elementValue elementRef="DECODE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ALLEE"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_ART"/>
       <elementValue elementRef="DECODE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LIBEL_ART"/>
       <elementValue elementRef="DECODE" value="false"/>
@@ -1750,7 +1772,9 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tFileInputDelimited_2">
+      <column comment="" key="false" length="500" name="TYP_EMPLAC" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_ART" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="LIBEL_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
@@ -1762,7 +1786,9 @@
       <column comment="" key="false" length="31" name="DANGER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="500" name="TYP_EMPLAC" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_ART" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="LIBEL_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
@@ -1822,7 +1848,9 @@
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_3_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="TYP_EMPLAC" nullable="true" type="id_String"/>
         <mapperTableEntries name="ALLEE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CODE_ART" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIBEL_ART" nullable="true" type="id_String"/>
         <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="TOTAL_POID" nullable="true" type="id_Float"/>
@@ -2244,13 +2272,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_356c2b10-5ccb-4655-aff8-500ae2347299"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FVR/yiGAHKHqKtcwYenhUwnN5/ya37beulMBdXHl04LsEWLInGOQojW6iAjEaeEIR79VWQ6/JhZ+&#13;
-LqFAuGOz1w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ea04a71b-e3dc-410c-a430-13862111c6a9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hg4cSDgBW75W2mAxghfm7PyZXAtdWxGBMfjyGe/UfkpYD8p5zaKNQ/aLplar/MyQsZJOV+UoEDYD&#13;
-dRwgFkKIpA==</DigestValue></Reference></SignedInfo><SignatureValue>jW47de5hFPrbkpms6K8qotQiD8oJa+pybjmVkq3y0ORR4AMDmH+oLzGPu1U0jLGbzs5193Sm8hcn&#13;
-vNFcd2DAOKaUOLo6SR2ZZv2uaFwEDexARsHh3DI9Y7xS5FtT63By27qcFwvQTBH6TrImJjWfz4wI&#13;
-sBa8OoT03bBOlnHfTeY8oQ0t+Lyyul4skXZeGtmFrL6jQkZHJ2NDi1h4kCLu+q0KIuDx73LJB3KF&#13;
-WsLO7B/brRX7lIdi7mySiikaUimQwMpAkOK8DsVNs85A6Rdq+NZTBq4wHdIGqq0YJxQmJO0geMVR&#13;
-5SUTiBPGaRCnyrNxPoPncyY+ydJY7tWteNrY0g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3fe5a414-ed67-413b-bf12-96d61422fdfb"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MAhoUuxP0b07XsVedqfxaZg6W226Md7L3urWfJhYTHF7kCAdg7vnA/ctSUu5pe+ZHeqLDn0gN6Lh&#13;
+bDMJGd3VpA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_71c5b5e2-47e2-4c4d-af61-6fb8872b0509"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>n2aJoRsKZ+qZW6QDsPkgpSICw/Jsqh1xIiBVUyOl57QnVpo/uXckmlyWx33/ujGAILD260walez4&#13;
+uZnMY7C2jg==</DigestValue></Reference></SignedInfo><SignatureValue>Nx8t7X/tCNQJqj+jWR47UA9gqbkYzaJtZkwqy0VQZt43cah5hjv0qyG0IhIzSRGl7W91i1IhqWku&#13;
+/yCvroY73wobT7peOvu7IBFjusVl4nYn4cA2Nsc3EWP6VGrsvz1Qw0DCq07+mGXNOPuB4Vlm2fjz&#13;
+pYb9+ua3ocMWstx2kQQGyV35HxKNsCr6yvRLqQP80zAaQW0CzZQDYuZ85sDk1XP1mvZtQ9uNe6qe&#13;
+zqF41vQLmUV9kYkcOf1ibOialVRFyqWgYJOSYVck0REZpvbWgKfLGaXF0RCc3I7Q1Ypc9BZmvYs0&#13;
+POIVC9oy5/4QLon2uCO4OZDcWrJ2uhYW0mh0dA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2272,4 +2300,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ea04a71b-e3dc-410c-a430-13862111c6a9" Target="#_356c2b10-5ccb-4655-aff8-500ae2347299"><Timestamp>2024-02-19 15:03:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_71c5b5e2-47e2-4c4d-af61-6fb8872b0509" Target="#_3fe5a414-ed67-413b-bf12-96d61422fdfb"><Timestamp>2024-02-19 15:09:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
