@@ -389,7 +389,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;ADRESSE_SITE,&#13;&#10;&#9;CODE_POSTAL,&#13;&#10;&#9;NOM_CLIENT,&#13;&#10;&#9;NUMERO_AFFAIRE,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_couverture&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;ADRESSE_SITE,&#13;&#10;&#9;CODE_POSTAL,&#13;&#10;&#9;NOM_CLIENT,&#13;&#10;&#9;NUMERO_AFFAIRE,&#13;&#10;&#9;SITE&#13;&#10;from ods_fiche_descriptive_couverture&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -408,7 +408,7 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="NUMERO_AFFAIRE"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="ODS_FICHE_DESCRIPTIVE_COUVERTURE"/>
@@ -418,7 +418,7 @@
       <column comment="" key="false" length="250" name="CODE_POSTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NOM_CLIENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NUMERO_AFFAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_COUVERTURE"/>
     </metadata>
   </node>
@@ -450,7 +450,7 @@
       <column comment="" key="false" length="250" name="NUMERO_AFFAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NOMSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="LIEN_METEO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -468,7 +468,7 @@
         <mapperTableEntries expression="row1.CODE_POSTAL " name="CODE_POSTAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.NOM_CLIENT " name="NOM_CLIENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.NUMERO_AFFAIRE " name="NUMERO_AFFAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SITE " name="NOMSITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.LIEN_METEO " name="LIEN_METEO" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.LIEN_SHAREPOINT " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
@@ -477,13 +477,13 @@
         <mapperTableEntries name="CODE_POSTAL" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_CLIENT" nullable="true" type="id_String"/>
         <mapperTableEntries name="NUMERO_AFFAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
       </inputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="ALL_MATCHES" name="row4" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LIEN_METEO" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="row1.SITE " name="SITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="ALL_MATCHES" name="row5" sizeState="INTERMEDIATE">
         <mapperTableEntries name="QUALITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ENTITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ADRESSE" nullable="true" type="id_String"/>
@@ -491,7 +491,7 @@
         <mapperTableEntries name="ADRESSE_MAIL" nullable="true" type="id_String"/>
         <mapperTableEntries name="TELEPHONE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="row1.SITE " name="SITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -511,7 +511,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;LIEN_METEO,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_localisation&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;LIEN_METEO,&#13;&#10;&#9;SITE&#13;&#10;from ods_fiche_descriptive_localisation&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -524,14 +524,14 @@
     <elementParameter field="TABLE" name="TRIM_COLUMN">
       <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_METEO"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="ODS_FICHE_DESCRIPTIVE_LOCALISATION"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
       <column comment="" key="false" length="250" name="LIEN_METEO" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LOCALISATION"/>
     </metadata>
   </node>
@@ -587,7 +587,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NOMSITE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -624,7 +624,7 @@
       <column comment="" key="false" length="250" name="NUMERO_AFFAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NOMSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="LIEN_METEO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -647,7 +647,7 @@
       <column comment="" key="false" length="250" name="NUMERO_AFFAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NOMSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="LIEN_METEO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -677,7 +677,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;QUALITE,&#13;&#10;&#9;ENTITE,&#13;&#10;&#9;ADRESSE,&#13;&#10;&#9;CONTACT,&#13;&#10;&#9;ADRESSE_MAIL,&#13;&#10;&#9;TELEPHONE,&#13;&#10;&#9;LIEN_SHAREPOINT,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_sommaire&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;QUALITE,&#13;&#10;&#9;ENTITE,&#13;&#10;&#9;ADRESSE,&#13;&#10;&#9;CONTACT,&#13;&#10;&#9;ADRESSE_MAIL,&#13;&#10;&#9;TELEPHONE,&#13;&#10;&#9;LIEN_SHAREPOINT,&#13;&#10;&#9;SITE&#13;&#10;from ods_fiche_descriptive_sommaire&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -702,7 +702,7 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_SHAREPOINT"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="ODS_FICHE_DESCRIPTIVE_SOMMAIRE"/>
@@ -715,7 +715,7 @@
       <column comment="" key="false" length="250" name="ADRESSE_MAIL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TELEPHONE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_SOMMAIRE"/>
     </metadata>
   </node>
@@ -828,13 +828,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_52eac2ea-bcf4-41be-b426-823a48e9f457"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lzNLD2i3HOWxJDPglzJWTgzin6sdx2lUXrLehJ2oeMrjSC9CKT3wbUxEwe4DJ4JqqLObPkfCJwtW&#13;
-ggASN9tR8w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_39e49c7c-919a-4910-a8dc-d911f04ff518"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8QEiZuHrTUo0n0VLeXwDtA8i17PRKWWgYSNQXAIbnlhbaE9s7/8tFYlEWFXwWz39dmdBPLmgZwQm&#13;
-I1eIPZ36xg==</DigestValue></Reference></SignedInfo><SignatureValue>k4bv4AtCtkNHzbVbDDO4KJanoUw72b6ZTt5JZyq56CHZC4tBumMmlhhtz4pXPKPS4fV/5vaalhlU&#13;
-dwCpANUNW+CHZMgJXopnRJNL6jaTqca84rlDhSwmHSXo+Mk8WSfDEuU90MInB4BKEk/ByF77jUYP&#13;
-jPzYX1tSb9I/Iwse/XroOjPvzSs0Y5KP/IMQ0OBkTLisxKYkW49dSV9mc9RTUZjE/WduNI3GCU0p&#13;
-d+M9y4Hjo3wYYEFu9OhSoXsHCb3C6QPNIlysQLprJcmJdQ9yBs2TijnN35e6n5tuTvbikqX06lXB&#13;
-0/0e4ok1yVbvOClZ+d+2Mfg8r1mWNrowCuSecw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c483127c-e91f-49e2-b630-39df22bda897"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3NxM7Dsy2OxfCCr9r1g1sILapPUlQ9df+zd/f/YXuNan8PdNXSceJRORviCc872qCPeHOVhEW6Xs&#13;
+BdyVWOlN8Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0f9c1699-e0d2-4e72-b464-1ee2f187a83f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yfKT2BDPxfWrV5KAc6IdPIMhq8hD7aVysNlMaKsU52hHjTUp/sHNRbbnWILAqbpf/frYVLmuM2ey&#13;
+v2Gu8UruGw==</DigestValue></Reference></SignedInfo><SignatureValue>k+XmqmX5v35MOEeoFRRCeYL+YT5phWO8i0hkQdN4W0omU5/ZWxAaHMpUnPHj7x/4eVykza4IiOys&#13;
+kbdnz68Ne0+RjOrLyquqcE1AiimsyyQFWjfFxMbEFC8uDAhHTNsH08ERYX2BBRbl2dIElhZ7F2OE&#13;
+1uE0wrydHHcaxvWxYqY7wurpap2wy6ZKVex72Guv9qMX3I0vvgIAKl6r7d3Vnk3jALNMYit1Q72P&#13;
+GJOCqTArUC+93FVb4YWz/yd6jOX797xKBxQ5N1CukS9HJFEr1Smuupqyj9D6CDo0iKrowRry+41+&#13;
+LWmcXLjjGT53aW9lPSfsZo9RGpYosjLwvoPmYQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -856,4 +856,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_39e49c7c-919a-4910-a8dc-d911f04ff518" Target="#_52eac2ea-bcf4-41be-b426-823a48e9f457"><Timestamp>2024-02-14 13:36:06</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0f9c1699-e0d2-4e72-b464-1ee2f187a83f" Target="#_c483127c-e91f-49e2-b630-39df22bda897"><Timestamp>2024-02-19 16:12:36</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
