@@ -23,7 +23,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="32"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="64"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -759,12 +759,12 @@
         <mapperTableEntries expression="row5.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row6.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CELLULE== null || row1.CELLULE.trim().isEmpty() ? &quot;Alerte Cellule&quot; : &quot;Pas d'alerte Cellule&quot;; " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="(Relational.ISNULL(row1.CONTENANCE_M3_UNITAIRE) || row1.CONTENANCE_M3_UNITAIRE.trim().isEmpty()) &amp;&amp; row1.RUBRIQUE_ICPE == &quot;4755&quot; ? &quot;Alerte Contenance en m3&quot; : &quot;Pas d'alerte Contenance en m3&quot; " name="ALERTE_CONTENANCE_M3" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="(Relational.ISNULL(row1.DEGRE) || row1.DEGRE.trim().isEmpty()) &amp;&amp; row1.RUBRIQUE_ICPE == &quot;4755&quot; ? &quot;Degré&quot; : &quot;Pas d'alerte Degré&quot; " name="ALERTE_DEGRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="(Relational.ISNULL(row1.CONTENANCE_M3_UNITAIRE) || row1.CONTENANCE_M3_UNITAIRE.trim().isEmpty()) &amp;&amp; &quot;4755&quot;.equals(row1.RUBRIQUE_ICPE) ? &quot;Alerte Contenance en m3&quot; : &quot;Pas d'alerte Contenance en m3&quot; " name="ALERTE_CONTENANCE_M3" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="(Relational.ISNULL(row1.DEGRE) || row1.DEGRE.trim().isEmpty()) &amp;&amp; &quot;4755&quot;.equals(row1.RUBRIQUE_ICPE) ? &quot;Degré&quot; : &quot;Pas d'alerte Degré&quot; " name="ALERTE_DEGRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.DESIGNATION) || row1.DESIGNATION.trim().isEmpty() ? &quot;Alerte Désignation&quot; : &quot;Pas d'alerte Désignation&quot; " name="ALERTE_DESIGNATION" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.RUBRIQUE_ICPE) || row1.RUBRIQUE_ICPE.trim().isEmpty() ? &quot;Alerte ICPE&quot; : &quot;Pas d'alerte ICPE&quot; " name="ALERTE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? &quot;Alerte Nb Palette&quot; : &quot;Pas d'alerte Nb Palette&quot; " name="ALERTE_NB_PALETTE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="((Relational.ISNULL(row1.POIDS_UNITAIRE) &amp;&amp; row5.UNITE == &quot;t&quot;) || (Relational.ISNULL(row1.VOLUME_UNITAIRE) &amp;&amp; row5.UNITE == &quot;m3&quot;)) ? &quot;Alerte Poids/Volume&quot; : &quot;Pas d'alerte Poids/Volume&quot; " name="ALERTE_POIDS_VOLUME" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="((Relational.ISNULL(row1.POIDS_UNITAIRE) &amp;&amp; &quot;t&quot;.equals(row5.UNITE)) || (Relational.ISNULL(row1.VOLUME_UNITAIRE) &amp;&amp; &quot;m3&quot;.equals(row5.UNITE))) ? &quot;Alerte Poids/Volume&quot; : &quot;Pas d'alerte Poids/Volume&quot; " name="ALERTE_POIDS_VOLUME" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.NOT(Relational.ISNULL(row1.RUBRIQUE_ICPE)) &amp;&amp; Relational.ISNULL(row5.RUBRIQUE_ICPE) ? &quot;Rubrique ICPE non identifiée&quot; : &quot;Pas de rubrique ICPE non identifiée&quot; " name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.SITE) || row1.SITE.trim().isEmpty() ? &quot;Alerte Site&quot; : &quot;Pas d'alerte Site&quot; " name="ALERTE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_UNITE) || String.valueOf(row1.NB_UNITE).trim().isEmpty() ? &quot;Alerte Unité&quot; : &quot;Pas d'alerte Unité&quot; " name="ALERTE_UNITE" nullable="true" type="id_String"/>
@@ -773,8 +773,8 @@
         <mapperTableEntries expression="Relational.ISNULL(row1.RUBRIQUE_ICPE) || row1.RUBRIQUE_ICPE.trim().isEmpty() ? 1 : 0" name="ICPE_MANQUANT" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? 0 : row1.NB_PALETTE * row1.POIDS_UNITAIRE " name="TOTAL_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) ? 0 : row1.NB_PALETTE * row1.VOLUME_UNITAIRE " name="TOTAL_VOL" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="row5.UNITE == &quot;m3&quot; ? String.valueOf(row1.VOLUME_UNITAIRE) : &quot;&quot; " name="VOLUME_FINAL" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row5.UNITE == &quot;t&quot; ? String.valueOf(row1.POIDS_UNITAIRE) : &quot;&quot; " name="POIDS_FINAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;m3&quot;.equals(row5.UNITE) ? String.valueOf(row1.VOLUME_UNITAIRE) : &quot;&quot; " name="VOLUME_FINAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;t&quot;.equals(row5.UNITE) ? String.valueOf(row1.POIDS_UNITAIRE) : &quot;&quot; " name="POIDS_FINAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression=" " name="DATE_MAJ_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries name="JOUR" nullable="true" type="id_String"/>
         <mapperTableEntries expression="" name="MOIS" nullable="true" type="id_String"/>
@@ -1846,13 +1846,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d0e50243-e757-4d1d-b481-7ecc31608e2f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>i6n5SDIPAd/RqyLGho9PVtSnh0ZGAq9fHZZ9IpC5kMpmGPEVLFbFJqN19iY7VWTjIi80PIY9DAgG&#13;
-MsTv5AAfgw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b2b00ebe-3ffb-4264-82c6-99daa29e0466"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>N6DqXHDJ89VHHvyRLAwlzYTtgNh8jtVRju/UH9545pMFsfkUoxPIl5vQkC8j41ZXI7LjuUpynF7h&#13;
-8NtnI+4m2g==</DigestValue></Reference></SignedInfo><SignatureValue>kJsFr1JJpkDuoggaK94vXsqiv11VP2xtK9mQ92DsHuwaUsUKWHOuqeezdWeEwuqp/yY647ZLYgxO&#13;
-2M1205L1JiFQAN7vjalayZQTghQIGrvCvKVGfJbbvQLnv9fBfCYNA1rgQQQ6qifCNL46fGjWQs7K&#13;
-zpzZo42f3VFVP7n4kN5Mx6m6NMMX5fF06KrRlCRTF//Udh6uBER1gBPeIiEZRQBJgaRpM5UXne0C&#13;
-KyZqZOGKeFk+tR96b8cz9OXp7cr9NbDzL0j9nyd5VHKX4u5RMWTuNAjht8IcGUCbkkdzVcpyhrOj&#13;
-HjyjKjSbWkgpsP08qcKkqgFpw2CYFKNptOanGw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_70368178-0a02-4a67-b3c4-e10e41987954"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GJReiPGZxz7zoBdz3nCLZMZK9ZfFNQ0RhBikJ6Lx4paUlLPKP3emaoL+ffVYkzKX/GV+jTZrjUmr&#13;
+eu6I1oqTqQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bea9c091-310f-4f24-b6b0-a7990405e35f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TDAWGz+sGHu+FY3Rc/OosPc/DpLXWwAinp4R5kttGFIh3uLNftgsSzG4nBUdsss7mFIkz/Z6se2y&#13;
+25X8Edo7mg==</DigestValue></Reference></SignedInfo><SignatureValue>RgotMsxRWDiTInvGgu94VexqKSEBZFpr5SohbjiioJZCwvmXaj26HPq9VktU0T/nJa/XiHKJzIot&#13;
+SiqRZoY7Y9LtlDZ3EOnjnsbTwhkqw3FfBBueF6M8GAKWShTHtD/NpM7+u+KOnhXhVh24O605obMp&#13;
+pOC/3fWOGrEziGmfi7B8whg/mHI9u31/Pd6y98A6xpgeyTrBs+0+6a9mK+om7dsGOcyYJ2O6birO&#13;
+rukqE7sFYjGLojfNJGeNLeW1B9C5RMuDvJkuTkkCo+FLTzbwSeIKBG8HMwsnIksqs2M56bNeXIQ2&#13;
+ip0SGLfzhuNYvJQ3cLrQmvfNRNmgng6f8wurGw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1874,4 +1874,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b2b00ebe-3ffb-4264-82c6-99daa29e0466" Target="#_d0e50243-e757-4d1d-b481-7ecc31608e2f"><Timestamp>2024-02-16 15:44:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bea9c091-310f-4f24-b6b0-a7990405e35f" Target="#_70368178-0a02-4a67-b3c4-e10e41987954"><Timestamp>2024-02-19 10:51:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
