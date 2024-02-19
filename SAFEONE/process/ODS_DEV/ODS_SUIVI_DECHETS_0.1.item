@@ -411,9 +411,9 @@
   </node>
   <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;C:/ANDINE/Autre/&quot;"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;C:/ANDINE/09/&quot;"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
-    <elementParameter field="CHECK" name="INCLUDSUBDIR" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDSUBDIR" value="true"/>
     <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
     <elementParameter field="CHECK" name="ERROR" value="false"/>
     <elementParameter field="CHECK" name="GLOBEXPRESSIONS" value="true"/>
@@ -434,7 +434,7 @@
   <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/ANDINE/Autre/&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
+    <elementParameter field="FILE" name="FILENAME" value="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)+&quot;/&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:H03L1q/X2NdTdGmZkqeKJfMxOTi/Ntd+XYuUUAKx"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="true"/>
     <elementParameter field="TABLE" name="SHEETLIST" show="false">
@@ -676,7 +676,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="288">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -705,9 +705,10 @@
       <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" expressionFilter="!Relational.ISNULL(row1.Locataire)&#13;&#10;&amp;&amp;!&quot;&quot;.equals(row1.Locataire)" name="out_test" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.Locataire " name="LOCATAIRE" nullable="true" type="id_String"/>
@@ -723,6 +724,7 @@
         <mapperTableEntries expression="row1.Adresse1 " name="ADRESSE_DESTINATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Codes_du_traitement_dechet___Annexe_I_et_II__ci_dessous " name="CODE_TRAITEMENT_DECHET" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Retour_BSDI_signe____Date " name="DATE_RETOUR_BSDI" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Locataire" nullable="true" type="id_String"/>
@@ -753,6 +755,75 @@
         <mapperTableEntries name="Column25" nullable="true" type="id_String"/>
         <mapperTableEntries name="Column26" nullable="true" type="id_String"/>
         <mapperTableEntries name="Column27" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_M7fN0MDtEe67GN6DA98bkw-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="out_test" name="ajout_site">
+      <column comment="" key="false" length="500" name="LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DESIGNATION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_NOMENCLATURE_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="QTE_DECHET_SORTANT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="ADRESSE_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NR_RECEPISSE_DECLARATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="ajout_site" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="out_test.LOCATAIRE" name="LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.DATE_EXPEDITION_DECHET" name="DATE_EXPEDITION_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.DESIGNATION_DECHET" name="DESIGNATION_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.CODE_NOMENCLATURE_DECHET" name="CODE_NOMENCLATURE_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.QTE_DECHET_SORTANT" name="QTE_DECHET_SORTANT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.BSDI" name="BSDI" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.NOM_TRANSPORTEUR" name="NOM_TRANSPORTEUR" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.ADRESSE_TRANSPORTEUR" name="ADRESSE_TRANSPORTEUR" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.NR_RECEPISSE_DECLARATION" name="NR_RECEPISSE_DECLARATION" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.NOM_DESTINATAIRE" name="NOM_DESTINATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.ADRESSE_DESTINATAIRE" name="ADRESSE_DESTINATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.CODE_TRAITEMENT_DECHET" name="CODE_TRAITEMENT_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.DATE_RETOUR_BSDI" name="DATE_RETOUR_BSDI" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out_test.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out_test" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DATE_EXPEDITION_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DESIGNATION_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CODE_NOMENCLATURE_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QTE_DECHET_SORTANT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="BSDI" nullable="true" type="id_String"/>
+        <mapperTableEntries name="NOM_TRANSPORTEUR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ADRESSE_TRANSPORTEUR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="NR_RECEPISSE_DECLARATION" nullable="true" type="id_String"/>
+        <mapperTableEntries name="NOM_DESTINATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ADRESSE_DESTINATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CODE_TRAITEMENT_DECHET" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DATE_RETOUR_BSDI" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -855,6 +926,16 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_SHAREPOINT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -878,6 +959,8 @@
       <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="out_test" name="REJECT">
       <column comment="" key="false" length="500" name="LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -893,6 +976,8 @@
       <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -931,7 +1016,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="out_test" lineStyle="0" metaname="out_test" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_1">
+  <connection connectorName="FLOW" label="out_test" lineStyle="0" metaname="out_test" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="NOM_DESTINATAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -972,9 +1057,21 @@
       <elementValue elementRef="TRACE_COLUMN" value="my_row_id"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_SHAREPOINT"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out_test"/>
+  </connection>
+  <connection connectorName="FLOW" label="ajout_site" lineStyle="0" metaname="ajout_site" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="SITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ajout_site"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="-3" offsetLabelY="12" source="tDBOutput_1" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
@@ -1037,13 +1134,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ab4902f9-7ba1-4531-bf37-cbd4fc24023d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EB8y7RBvwS9Gtm+7/mb+3U/vztyCf+zWMLJ7ug0GHVBTQHrL/vL1v5AwbOxz+DlTzo6XIz/SaHTm&#13;
-N/30ZfDYXw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_07f8e40a-d2fc-49fa-b519-ddc83642b95c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HIhvGPzZgxrNR53irxRyxZVKZtSmpsdAfb4/4yT/dDbJZ4BmKIYDEY4bSUzP5yfWWfsJXaRYfUo4&#13;
-XG8KyMHnYQ==</DigestValue></Reference></SignedInfo><SignatureValue>HOsjPkStdLMl30eHZvm7ya4JrBgzFfdEjvksBkHZv9lrTDWuGH8PQWywpYHHsNuYGlBuWOn1XCKw&#13;
-9XB7VWQV9AcycDx3EZuXoXcc6K0QmQSFfBjFCee8nXjL5AMWC9mfhHXPTmRDa3ZwXs0NJx+DsXYf&#13;
-TUUmT42LARTcDaat7eUOmc4AxUJblorlc6FuHya03Z7d4BjHGCdaDLfiWuXP+rp4kynx3+Qg2f1r&#13;
-uz9rvf8BnQ5NzpeH/TblILM35EvGaLuDoOb1e7AwsLO9xZjTnVWcWX8uX2YJFIymrC6Zh7pHPG1i&#13;
-C34ano1XOi73b1SC4QD+zh7bAb7hTZZS/BERDw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c1f1d0d0-1c71-4579-baa7-c198d94736ad"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Tfg4FUmkRYHxApsrf/RHDXQ2CiOME9TEBATqY/NJDSJEOVCz2UQFqxGh2JYffrw1n94e0rXTtvWk&#13;
+j0YB6ONrQw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_253e2131-0623-4129-89b2-7020acfe6048"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7odg1yNwDPkCF5NByfCILHdtTLJKlEPRMLgvF30XgCe6Ik1zDSEpHaGBEZjqwyEdzOJLi4buo834&#13;
+Hf2aGFhLDg==</DigestValue></Reference></SignedInfo><SignatureValue>CYierOq8Il/oIuEIkbdS29MFkPjgy2BBPa9cgGrkH0+M33vs7fhk+VA+PLBfUCFEGDC0Z1Vbjp0t&#13;
+nu7F1nyr8j8tkUPT1MTI4uMWL0DaGNR4h10ZatzW+azZnGgA0FCu0bjSHq0wvEHr1PG0CYu1SmBm&#13;
+FnlktuAhFcP0zbpflV5HEoi7DfjGUQQio8mHLpKVe+mJ6+PWMTF/w+qUw64BkRK3NaCuJYSfhnEW&#13;
+Zcgu/VSHFVFE/OrUdR1nWeRjJVtqTTrpRMKZ8qIf7mhVS56kK7Fl3AHYZKq51zNxGRbdFn36k4Iq&#13;
+JZxz+iLzXSlehwyyqsXK/gYd78ymszf33ZrAFw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1065,4 +1162,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_07f8e40a-d2fc-49fa-b519-ddc83642b95c" Target="#_ab4902f9-7ba1-4531-bf37-cbd4fc24023d"><Timestamp>2024-02-16 14:32:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_253e2131-0623-4129-89b2-7020acfe6048" Target="#_c1f1d0d0-1c71-4579-baa7-c198d94736ad"><Timestamp>2024-02-19 14:14:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
