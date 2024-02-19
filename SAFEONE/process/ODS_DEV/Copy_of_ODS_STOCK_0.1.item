@@ -325,7 +325,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="160">
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -333,7 +333,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_1"/>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="928" posY="160">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement fichier Nomeclature&quot;"/>
@@ -371,7 +371,7 @@
     <elementParameter field="CHECK" name="FORMAT_FILEPATH_TO_SLASH" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="160">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="2" offsetLabelY="9" posX="320" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)+&quot;/&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
@@ -691,7 +691,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="160">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="448" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -835,7 +835,152 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="160">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_PgcqQMp3Ee6Ycrs1AU-KOQ-tMap_4-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="ajout_site">
+      <column comment="" key="false" length="255" name="SITE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CELLULE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POIDS_UNITAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="VOLUME_UNITAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="NB_UNITE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="DEGRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CONTENANCE_M3_UNITAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="NB_UNITE_ALCOOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="NB_PALETTE_ALCOOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CONTENANCE_M3_TOTALE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="RACK" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="EMPLACEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="ETAT_MATIERE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POINT_ECLAIR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="FUMEES_DECOMPOSITION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CLASSE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="GROUPE_EMBALLAGE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CONSTITUANT_1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CONSTITUANT_2" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="DISPOSITIONS_SPECIALES_ADR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="QUANTITES_EXCEPTEES_ADR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="QUANTITES_LIMITEES_ADR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CODE_RESTRICTION_TUNNEL_ADR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POLLUANT_MARIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="DISPOSITIONS_SPECIALES_IMDG" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="QUANTITES_EXCEPTEES_IMDG" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="QUANTITES_LIMITEES_IMDG" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="DISPOSITIONS_SPECIALES_IATA" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="QUANTITES_EXCEPTEES_IATA" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="QUANTITES_LIMITEES_IATA" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="ajout_site" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.CELLULE" name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.DESIGNATION" name="DESIGNATION" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.POIDS_UNITAIRE" name="POIDS_UNITAIRE" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="out1.VOLUME_UNITAIRE" name="VOLUME_UNITAIRE" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="out1.NB_UNITE" name="NB_UNITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.NB_PALETTE" name="NB_PALETTE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.POIDS_TOTAL" name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="out1.VOLUME_TOTAL" name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="out1.DEGRE" name="DEGRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.CONTENANCE_M3_UNITAIRE" name="CONTENANCE_M3_UNITAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.NB_UNITE_ALCOOL" name="NB_UNITE_ALCOOL" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.NB_PALETTE_ALCOOL" name="NB_PALETTE_ALCOOL" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.CONTENANCE_M3_TOTALE" name="CONTENANCE_M3_TOTALE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ALLEE" name="ALLEE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.RACK" name="RACK" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.EMPLACEMENT" name="EMPLACEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.TYPE_CONDITIONNEMENT" name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ETAT_MATIERE" name="ETAT_MATIERE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.TYPOLOGIE_PRODUIT" name="TYPOLOGIE_PRODUIT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.POINT_ECLAIR" name="POINT_ECLAIR" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.FUMEES_DECOMPOSITION" name="FUMEES_DECOMPOSITION" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.NUMERO_ONU" name="NUMERO_ONU" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.CLASSE" name="CLASSE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.GROUPE_EMBALLAGE" name="GROUPE_EMBALLAGE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.CONSTITUANT_1" name="CONSTITUANT_1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.CONSTITUANT_2" name="CONSTITUANT_2" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.DISPOSITIONS_SPECIALES_ADR" name="DISPOSITIONS_SPECIALES_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.QUANTITES_EXCEPTEES_ADR" name="QUANTITES_EXCEPTEES_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.QUANTITES_LIMITEES_ADR" name="QUANTITES_LIMITEES_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.CODE_RESTRICTION_TUNNEL_ADR" name="CODE_RESTRICTION_TUNNEL_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.POLLUANT_MARIN" name="POLLUANT_MARIN" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.DISPOSITIONS_SPECIALES_IMDG" name="DISPOSITIONS_SPECIALES_IMDG" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.QUANTITES_EXCEPTEES_IMDG" name="QUANTITES_EXCEPTEES_IMDG" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.QUANTITES_LIMITEES_IMDG" name="QUANTITES_LIMITEES_IMDG" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.DISPOSITIONS_SPECIALES_IATA" name="DISPOSITIONS_SPECIALES_IATA" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.QUANTITES_EXCEPTEES_IATA" name="QUANTITES_EXCEPTEES_IATA" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.QUANTITES_LIMITEES_IATA" name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DESIGNATION" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="POIDS_UNITAIRE" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="VOLUME_UNITAIRE" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="NB_UNITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="NB_PALETTE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="DEGRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CONTENANCE_M3_UNITAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="NB_UNITE_ALCOOL" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="NB_PALETTE_ALCOOL" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="CONTENANCE_M3_TOTALE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ALLEE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RACK" nullable="true" type="id_String"/>
+        <mapperTableEntries name="EMPLACEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ETAT_MATIERE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="TYPOLOGIE_PRODUIT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="POINT_ECLAIR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="FUMEES_DECOMPOSITION" nullable="true" type="id_String"/>
+        <mapperTableEntries name="NUMERO_ONU" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CLASSE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="GROUPE_EMBALLAGE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CONSTITUANT_1" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CONSTITUANT_2" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DISPOSITIONS_SPECIALES_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QUANTITES_EXCEPTEES_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QUANTITES_LIMITEES_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CODE_RESTRICTION_TUNNEL_ADR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="POLLUANT_MARIN" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DISPOSITIONS_SPECIALES_IMDG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QUANTITES_EXCEPTEES_IMDG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QUANTITES_LIMITEES_IMDG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DISPOSITIONS_SPECIALES_IATA" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QUANTITES_EXCEPTEES_IATA" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
@@ -1322,7 +1467,6 @@
       <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="31" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
@@ -1339,7 +1483,6 @@
         <mapperTableEntries expression="row4.ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.DANGER " name="TYPOLOGIE_PRODUIT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;1&quot; " name="CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;MAR01&quot; " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_2_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
@@ -1440,11 +1583,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_SHAREPOINT"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -1470,7 +1608,6 @@
       <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="31" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
@@ -1484,7 +1621,6 @@
       <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="31" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1883,7 +2019,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_1">
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_4">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="LIEN_SHAREPOINT"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -1891,6 +2027,10 @@
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+  </connection>
+  <connection connectorName="FLOW" label="ajout_site" lineStyle="0" metaname="ajout_site" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tDBOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ajout_site"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
@@ -2104,13 +2244,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c0c2d8a8-2a07-4693-8b23-ca3916adb408"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Dj5krKYWiXbrNBarIae5/795egzLLwdoWaSEpdmtz8JzU1jZo2mGey70efd79mYeg4wRXecScM8r&#13;
-ndjadpcE5A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b1e6f50c-9763-4799-b4ab-156c51bb5137"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MSo+LyMF9S50aUlVckE+4RsM4Duu/0eZLF434MpGhHynupg5UtBJfP6dJTT04oR67YwiC7MuVMsj&#13;
-0RYfW069Hw==</DigestValue></Reference></SignedInfo><SignatureValue>bhTqvug6MoF/X1FRbkPpB+HDS3it3qKoIWaIIz23f5NCGjJsV/wcq+O75Uj6coyusbtL7Q64LVyZ&#13;
-0P54XFKTlQhb+GON/r38jiqL3n5AEAIEoC9bhtSncoDcvA8j3zLJsxdP8MNNQqU77CQg3shz8M7E&#13;
-gtL/f5xCzvyE3a8Q5n+pgOQ0Yb3bwn3SnZaKO+4/9tsN92dFjZrZcJL0pmdGUCwOuJo+RvMoaC66&#13;
-Qt1+C0a0VkHkKrW9mvoqr3fE+zOj4ZXb9HpQrDrD9gyNdHoK20HzEscnldM2RZEZwG91SkpHahOk&#13;
-KeiHfjbuyDDHEgxUn0pyigaOJFErWigpYYWBzg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_356c2b10-5ccb-4655-aff8-500ae2347299"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FVR/yiGAHKHqKtcwYenhUwnN5/ya37beulMBdXHl04LsEWLInGOQojW6iAjEaeEIR79VWQ6/JhZ+&#13;
+LqFAuGOz1w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ea04a71b-e3dc-410c-a430-13862111c6a9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hg4cSDgBW75W2mAxghfm7PyZXAtdWxGBMfjyGe/UfkpYD8p5zaKNQ/aLplar/MyQsZJOV+UoEDYD&#13;
+dRwgFkKIpA==</DigestValue></Reference></SignedInfo><SignatureValue>jW47de5hFPrbkpms6K8qotQiD8oJa+pybjmVkq3y0ORR4AMDmH+oLzGPu1U0jLGbzs5193Sm8hcn&#13;
+vNFcd2DAOKaUOLo6SR2ZZv2uaFwEDexARsHh3DI9Y7xS5FtT63By27qcFwvQTBH6TrImJjWfz4wI&#13;
+sBa8OoT03bBOlnHfTeY8oQ0t+Lyyul4skXZeGtmFrL6jQkZHJ2NDi1h4kCLu+q0KIuDx73LJB3KF&#13;
+WsLO7B/brRX7lIdi7mySiikaUimQwMpAkOK8DsVNs85A6Rdq+NZTBq4wHdIGqq0YJxQmJO0geMVR&#13;
+5SUTiBPGaRCnyrNxPoPncyY+ydJY7tWteNrY0g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2132,4 +2272,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b1e6f50c-9763-4799-b4ab-156c51bb5137" Target="#_c0c2d8a8-2a07-4693-8b23-ca3916adb408"><Timestamp>2024-02-19 14:59:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ea04a71b-e3dc-410c-a430-13862111c6a9" Target="#_356c2b10-5ccb-4655-aff8-500ae2347299"><Timestamp>2024-02-19 15:03:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
