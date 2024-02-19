@@ -748,7 +748,7 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.Site " name="SITE" nullable="true" type="id_String"/>
@@ -892,7 +892,7 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
@@ -1396,6 +1396,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DANGER"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="URL_QUICK"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false"/>
     <elementParameter field="CHECK" name="CHECK_DATE" value="false"/>
@@ -1438,48 +1440,52 @@
       <elementValue elementRef="DECODE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DANGER"/>
       <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="URL_QUICK"/>
+      <elementValue elementRef="DECODE" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="DESTINATION" show="false" value=""/>
     <elementParameter field="CHECK" name="USE_HEADER_AS_IS" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tFileInputDelimited_1">
-      <column comment="" key="false" length="500" name="TYP_EMPLAC" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="TYP_EMPLAC" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_ART" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="CODE_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="LIBEL_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NB_PAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="TOTAL_REGL" nullable="true" pattern="" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CLP" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="PMD" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NB_PAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="TOTAL_REGL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="CLP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="PMD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="CONDITIONN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="MAX_AUTORI" nullable="true" pattern="" precision="-1" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SEUIL" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="22" name="MAX_AUTORI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="SEUIL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="UNITE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="CODE_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="17" name="ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="31" name="DANGER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="122" name="URL_QUICK" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="metadata" name="REJECT">
-      <column comment="" key="false" length="500" name="TYP_EMPLAC" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="TYP_EMPLAC" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_ART" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="CODE_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="LIBEL_ART" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NB_PAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="TOTAL_REGL" nullable="true" pattern="" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CLP" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="PMD" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_POID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NB_PAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="TOTAL_REGL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="CLP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="PMD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="CONDITIONN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="MAX_AUTORI" nullable="true" pattern="" precision="-1" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SEUIL" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="22" name="MAX_AUTORI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="SEUIL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="UNITE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="CODE_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="17" name="ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="31" name="DANGER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="122" name="URL_QUICK" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1501,8 +1507,8 @@
     <metadata connector="FLOW" name="out2">
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -1517,8 +1523,8 @@
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row4.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.LIBEL_ART " name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.TOTAL_VOL " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="row4.TOTAL_POID " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row4.TOTAL_VOL " name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row4.TOTAL_POID " name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row4.NB_PAL " name="NB_PALETTE" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row4.CONDITIONN " name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.CODE_ONU " name="NUMERO_ONU" nullable="true" type="id_String"/>
@@ -1532,19 +1538,20 @@
         <mapperTableEntries name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_ART" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIBEL_ART" nullable="true" type="id_String"/>
-        <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_Float"/>
-        <mapperTableEntries name="TOTAL_POID" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="TOTAL_POID" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="NB_PAL" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="TOTAL_REGL" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="TOTAL_REGL" nullable="true" type="id_String"/>
         <mapperTableEntries name="CLP" nullable="true" type="id_String"/>
         <mapperTableEntries name="PMD" nullable="true" type="id_String"/>
         <mapperTableEntries name="CONDITIONN" nullable="true" type="id_String"/>
-        <mapperTableEntries name="MAX_AUTORI" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="MAX_AUTORI" nullable="true" type="id_String"/>
         <mapperTableEntries name="SEUIL" nullable="true" type="id_String"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_ONU" nullable="true" type="id_String"/>
         <mapperTableEntries name="ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DANGER" nullable="true" type="id_String"/>
+        <mapperTableEntries name="URL_QUICK" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -1647,30 +1654,30 @@
     <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_2">
-      <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="31" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="31" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="31" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="31" name="TYPOLOGIE_PRODUIT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1877,7 +1884,7 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
@@ -2312,13 +2319,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_14cf6cb5-1312-406d-95a6-5f4fe3a5bbf4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UmXT9xA1mthWLQjdg8kFib1EhfEsGyhG7nTWq+M6L1vLXVzveFIAAs3V98A5aIjfHn7cFXm+YmQb&#13;
-RsneNSA58g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3693095a-bd37-40da-9257-92218a20ee63"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cvJcILuMAosIfjFdxO9c154+fbBmfJfSHsgcGZxCzqO7Ttcuytka/qrC1AYRu0pcsLBXvPS/wQU7&#13;
-Uf8BsUS2kA==</DigestValue></Reference></SignedInfo><SignatureValue>UMj7dzViFJFaeEMrVonffMkt5yjWtBIpeNlf8dhnE/XjeEWRLC0TNk3U7FB8pcjyEWDu8peVKFWT&#13;
-8uJZEfToeNdN60Pyiux1LSWaBCsijeLKjZjk5TAr9PRPC3aZoJd33SaZqjLQjJ6hvm6NCM8TOeiV&#13;
-FKiuyokmYFPf5eVj1IEo2qs27HcVz232scit7p1bHOxfPJZEJaMX7PMS8X/8q5RUf46e7AjlGnwu&#13;
-CQxajHTPbJrYQxlvId1fVgJbXBnzLsFmXOEI4t7m8nXy8Jb/pKsPhBl16O9lk17X0dg4tdkMjPeO&#13;
-0erovO4taogD0tdiQ1ACs4QT9cJHrnTq7TbyYA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c170c20c-58c1-4a3f-a7c7-59e2bbafe1ff"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qIMisfzyDJ+arxUBo6tgGb9K3XBVanTbj3hRQj5S2WpXbjvAFqSGGDKz4ZSkl1ZV5Bc4vH2GToe7&#13;
+gZfnS/NmsQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e64aaea1-e34b-4461-afb8-36df8d722a32"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>w8AFlxt/xvchvuzVz8P81CrEE2KHNoZFVcTHZC25m1i5QYP9mQIj+wu+Y5vjp+NGp9W7Zzwhyttr&#13;
+OsU3p9fpDw==</DigestValue></Reference></SignedInfo><SignatureValue>io1IBwpizZhQoC/qvuY0qaCLZR7fOJOyTVQrBNAyglkHD/MXApTZZMnNozchPk2ZFlCDOBmry3c1&#13;
+jYEfkCiQmMyCIDWPJmTS6pDV8maQE9p/mMCZrdV2BuUBVgCgo+SLrGLg10w/EqlVyZXKVelGyNHK&#13;
+5rk8DHdZlGn8NkB1V1bjYvMr6K7K+WfDxucZVVVitlL1URB/x6Q3AV+Bigm3sKGDKDmG3SwsczoE&#13;
+J4088ExdGnxbRai4n0nNfOzSC7AaXblU4lTDtmPWbTbT6+qye+VP995of1ZZyz1HlDr5L6Z/3bVY&#13;
+jwNwRKLB68t1+krCN59gSTayAYu169DSOlGM/w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2340,4 +2347,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3693095a-bd37-40da-9257-92218a20ee63" Target="#_14cf6cb5-1312-406d-95a6-5f4fe3a5bbf4"><Timestamp>2024-02-19 17:00:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e64aaea1-e34b-4461-afb8-36df8d722a32" Target="#_c170c20c-58c1-4a3f-a7c7-59e2bbafe1ff"><Timestamp>2024-02-19 17:10:37</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
