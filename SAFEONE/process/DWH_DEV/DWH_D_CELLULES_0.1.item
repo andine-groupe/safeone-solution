@@ -89,7 +89,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="68"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="64"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -569,7 +569,7 @@
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="LOCAL_BATIMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.BATIMENT " name="LOCAL_BATIMENT" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="" name="IDCELLULE" nullable="true" type="id_String"/>
@@ -577,9 +577,9 @@
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="POIDS_VOLUME_TOTAL" sizeState="INTERMEDIATE">
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="" name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.LOCAL_BATIMENT " name="CELLULE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries expression="row5.IDCELLULE " name="IDCELLULE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="" name="IDCELLULE" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -649,7 +649,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;LOCAL_BATIMENT,&#13;&#10;&#9;DUREE_INCENDIE,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;CELLULE&#13;&#10;from ods_fiche_descriptive_flux_thermiques&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;LOCAL_BATIMENT,&#13;&#10;&#9;DUREE_INCENDIE,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;IDCELLULE&#13;&#10;from ods_fiche_descriptive_flux_thermiques&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -1277,13 +1277,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f2316454-fa35-4e51-baa2-e2ff46edb6b2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lzZv3QaUYXBGl5W+1yj0zBIZEtcm+zbvP7eUH9u6l0yA+Z0FfA95RZBHtd8Ulc6Qq+H860oMA0ol&#13;
-djiRPWhxQQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cd23a841-7c96-4146-abd6-87ad4d9a1e45"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MuOIKpQb0o1xoYokmPNxC7DuBc6/39tr7uFPfBLr7m02A9VxVyEasmvv75NwEinotpRcRKEliRJs&#13;
-20kt2HKgFQ==</DigestValue></Reference></SignedInfo><SignatureValue>Me7KISmrGFlakvWP6GxFHke1YiTvprIfya7cQqnfK44/HI/CRsyULwNwsV5sygfqJCyZccFdBwgn&#13;
-9pA3iMPf2IoLMnJCg67Yae54PVLQ10K5EuA9/Ndiq0aChnEn4f4Wp2XkIiDC2kN9AZlXV881Voeo&#13;
-VPtJv158F1xWtoWok/YUaNrb7owy9k3eYC7j6zIIHP0Z+GiaEqVDFCRf22FQnC3mT0iwi5eBIdHz&#13;
-Hs9DU55Q4VVvmnTNHtO51iZ1Oqy7VCSqeoH+IQjpB40x8nh93XElZj8HTpkrofB/OOeg0vf9xxqP&#13;
-3sCuDGvxBFd0bFjtoWH3QqIxATmJhHcd0UCT9w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d72d92fc-650d-4c58-b119-c1f129a221ee"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Mv+I5ZeoQzD9DD0wFxyvoNsE8FdSM0mBIti44uBxfG9Eusmcl1Qbl7D0as9o0LmCS+3DvrfQ6pua&#13;
+H4orHwFzpw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8456fcfb-5658-432e-a4b5-7b650b632d95"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YvTj7fFv0J1jAQBwE1wTYN1j4K5r0oymqeXUODFNVcDIwHJ69VMlWfJulOTCeQRWAxPJksaVBG9Y&#13;
+eybE26ysdQ==</DigestValue></Reference></SignedInfo><SignatureValue>b2y5a88TVpm716OsFMze0D28ulXoiFmW7VrXd4nUGbxL+AYqEAq6vfLntjEtDuNeJudAYi0OAMq5&#13;
+Rjft+kPe1ISL2prGyJgLofNjBI5ZZSEE6FCkSXTZZWjJT7ruFXE/twEOmjcaiJIj4skX+lAma0SM&#13;
+c2JBEjPrX5UQvoAyjO6P1X+CwbzY8Bcjmj+5CK+YB+syVXrYQ131BN2vbQYESaVcB4cs/NGqZTr5&#13;
+EUtfWCTPCWbrxc+RMpFCWkQydK3QQynyeAErb6bqYqN+Rurvy7jfa08X7CdzTXMjQz5CoL7ez2tU&#13;
+N0n8fyB3SrXhKjqQ0vZjrgNJyZcJAQzo6j2quw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1305,4 +1305,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cd23a841-7c96-4146-abd6-87ad4d9a1e45" Target="#_f2316454-fa35-4e51-baa2-e2ff46edb6b2"><Timestamp>2024-02-20 15:49:55</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8456fcfb-5658-432e-a4b5-7b650b632d95" Target="#_d72d92fc-650d-4c58-b119-c1f129a221ee"><Timestamp>2024-02-20 15:52:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
