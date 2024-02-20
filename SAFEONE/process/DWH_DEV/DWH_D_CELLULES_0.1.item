@@ -534,47 +534,46 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row4.BATIMENT " name="CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.LONGITUDE " name="LONGITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row4.UNITE " name="UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row5.DUREE_INCENDIE " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;t&quot;.equals(row4.UNITE) || &quot;T&quot;.equals(row4.UNITE) ? row4.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="&quot;m3&quot;.equals(row4.UNITE) ? row4.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="Relational.ISNULL(POIDS_VOLUME_TOTAL.POIDS_TOTAL) ? null : &quot;t&quot;.equals(row4.UNITE) || &quot;T&quot;.equals(row4.UNITE) ? POIDS_VOLUME_TOTAL.POIDS_TOTAL / row4.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="Relational.ISNULL(POIDS_VOLUME_TOTAL.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(row4.UNITE) ? POIDS_VOLUME_TOTAL.VOLUME_TOTAL / row4.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="Relational.ISNULL(POIDS_VOLUME_TOTAL.POIDS_TOTAL) ? null : &quot;t&quot;.equals(row4.UNITE) ? POIDS_VOLUME_TOTAL.POIDS_TOTAL : &quot;m3&quot;.equals(row4.UNITE) ? POIDS_VOLUME_TOTAL.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="limites_stock.BATIMENT " name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="description_site.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="description_site.LONGITUDE " name="LONGITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="limites_stock.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="limites_stock.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="limites_stock.UNITE " name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="description_site.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="flux_thermiques.DUREE_INCENDIE " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;t&quot;.equals(limites_stock.UNITE) || &quot;T&quot;.equals(limites_stock.UNITE) ? limites_stock.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="&quot;m3&quot;.equals(limites_stock.UNITE) ? limites_stock.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="Relational.ISNULL(stocks.POIDS_TOTAL) ? null : &quot;t&quot;.equals(limites_stock.UNITE) || &quot;T&quot;.equals(limites_stock.UNITE) ? stocks.POIDS_TOTAL / limites_stock.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="Relational.ISNULL(stocks.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(limites_stock.UNITE) ? stocks.VOLUME_TOTAL / limites_stock.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="Relational.ISNULL(stocks.POIDS_TOTAL) ? null : &quot;t&quot;.equals(limites_stock.UNITE) ? stocks.POIDS_TOTAL : &quot;m3&quot;.equals(limites_stock.UNITE) ? stocks.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_Float"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="description_site" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LOCAL" nullable="true" type="id_String"/>
         <mapperTableEntries name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.LOCAL " name="BATIMENT" nullable="true" operator="=" type="id_String"/>
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="limites_stock" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="description_site.LOCAL " name="BATIMENT" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="description_site.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.LOCAL " name="LOCAL_BATIMENT" nullable="true" operator="=" type="id_String"/>
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="flux_thermiques" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="description_site.LOCAL " name="LOCAL_BATIMENT" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="description_site.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="" name="IDCELLULE" nullable="true" type="id_String"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="POIDS_VOLUME_TOTAL" sizeState="INTERMEDIATE">
+      <inputTables activateCondensedTool="true" innerJoin="true" lookupMode="LOAD_ONCE" matchingMode="ALL_MATCHES" name="stocks" sizeState="INTERMEDIATE">
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.LOCAL " name="CELLULE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="CELLULE1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="description_site.LOCAL " name="CELLULE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="description_site.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -674,7 +673,7 @@
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_FLUX_THERMIQUES"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="416">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -712,8 +711,6 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE1"/>
-      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="ODS_STOCKS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -723,7 +720,6 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE1" nullable="true" originalDbColumnName="CELLULE" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
@@ -1108,9 +1104,9 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="-9" source="tPostjob_1" target="tDBClose_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
+  <connection connectorName="FLOW" label="description_site" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="description_site"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -1142,22 +1138,22 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
+  <connection connectorName="FLOW" label="limites_stock" lineStyle="8" metaname="tDBInput_1" offsetLabelX="-50" offsetLabelY="12" source="tDBInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="limites_stock"/>
   </connection>
-  <connection connectorName="FLOW" label="row5" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_1">
+  <connection connectorName="FLOW" label="flux_thermiques" lineStyle="8" metaname="tDBInput_3" offsetLabelX="-23" offsetLabelY="50" source="tDBInput_3" target="tMap_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="IDSITE_1"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="flux_thermiques"/>
   </connection>
-  <connection connectorName="FLOW" label="POIDS_VOLUME_TOTAL" lineStyle="8" metaname="tDBInput_4" offsetLabelX="42" offsetLabelY="50" source="tDBInput_4" target="tMap_1">
+  <connection connectorName="FLOW" label="stocks" lineStyle="8" metaname="tDBInput_4" offsetLabelX="36" offsetLabelY="50" source="tDBInput_4" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="POIDS_VOLUME_TOTAL"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stocks"/>
   </connection>
   <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tMap_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -1250,13 +1246,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_000f1b19-d500-4db4-9313-174c4735575b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Lo3BZGV0hnrGxQaghr4M5WYEdIV4DO6+C7Cy4bHkfxKjzaI75mB5yvFNHRqPCWt56F6tOEtTkII9&#13;
-qICJjbwFZA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_87d846bd-b566-46ac-99fe-814f6ba5a39d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>kpJjPDThd+/bUnbSn1j74x1WL5ZBSGNlkgTu6lcvRoYFwevDixlKf+C+7qwWEK88TwU6pB8G9w0k&#13;
-2g7BgTkdNA==</DigestValue></Reference></SignedInfo><SignatureValue>ZLRyBgf7bi+72r2fXeBlIyCDuNxffm2wgvbOLBj+ZFbj26JMxQ1lVb1XlC6My9ytjlvWEKFAv2PY&#13;
-9mxZ4ATn2VxLtVg89Zl4V7Cw3+9w0zAovUk20So2hbIj7doTS93vymugLRdcPbYjgXznKBZaPypI&#13;
-u84Svhxo+MQZWk+oe71c34ROaFmViuXzP571y+Lz1rW6emqSx1fdgO05usPc4R0l8MZDumtg+oNT&#13;
-Almqj6QU0Uups3fE9cGJrr8Kfd2wPFZOYlqBKH7BLS+PFNKKm1RNF64/lUOlpQDkTLEMQTBrUgLu&#13;
-s7me7WmlUeWesZOOA9VkQn4Nto3QfFn8laqn2A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_07388d8b-1989-42ad-bc0b-aadf00b92de0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>f4ovE5QCt+62h624leazlCh5LwlYVJUW62H4hUHeV9elB1EFusW8RxNOJMUsyBRtTHImuQ1FeuVf&#13;
++97V5reADA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_224a0b3f-c72a-430f-ab25-2bb29722f3b7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/T6MqjDnfCdKazkAEUChkYlnfCCorPOQf+y0QpJ0qpypKQcnsCPVTqGUYBkIwdds3TpP2tTyUX7G&#13;
+JWsTKEQLEg==</DigestValue></Reference></SignedInfo><SignatureValue>aPBlgOXc9C9dqChGjqfPnTIX6JSPhn4Yr/a2nMVRxgP3/qSfYJ872fYnAHtaKgZ63KN0jhOLjqR2&#13;
+Z9EQ2aDz3ezTx4P9h+G+3MYtfqyweFjUIETizCM/xhL4tE6nT+aoKCDWGoUrlBbm6/ZgKbnbm3n5&#13;
+Qc/UPnyb2/9Y/Pe7liL5nmHH2iFpM2lMSyHjt2CGnegNSJEXCJ8VfrRMfU4JVR38zy/aERm5XoFU&#13;
+xuMb/ylgjlcXqo2t8JGuwdJzBjQlunAoAhT5HK+vIYEhxeyfXpYlZRRDgWdgurx8o/8CI3HPhdyN&#13;
+wbYURjwBex+tz9ruva2rlMJcXRX0U2RfxwRw3A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1278,4 +1274,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_87d846bd-b566-46ac-99fe-814f6ba5a39d" Target="#_000f1b19-d500-4db4-9313-174c4735575b"><Timestamp>2024-02-20 17:45:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_224a0b3f-c72a-430f-ab25-2bb29722f3b7" Target="#_07388d8b-1989-42ad-bc0b-aadf00b92de0"><Timestamp>2024-02-20 17:49:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
