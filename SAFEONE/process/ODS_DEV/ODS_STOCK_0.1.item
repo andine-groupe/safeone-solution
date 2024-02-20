@@ -1575,13 +1575,13 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row4.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.LIBEL_ART " name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Float.parseFloat(row4.TOTAL_VOL.replaceAll(&quot;,&quot;, &quot;.&quot;)) " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="Float.parseFloat(row4.TOTAL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;)) " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row5.TOTAL_VOL.isEmpty() || Relational.ISNULL(row5.TOTAL_VOL) ? 0 : Float.parseFloat(row4.TOTAL_VOL.replaceAll(&quot;,&quot;, &quot;.&quot;)) " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row5.TOTAL_POID.isEmpty() || Relational.ISNULL(row5.TOTAL_POID) ? 0 : Float.parseFloat(row4.TOTAL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;)) " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="row4.NB_PAL " name="NB_PALETTE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.CONDITIONN " name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.CODE_ONU " name="NUMERO_ONU" nullable="true" type="id_String"/>
@@ -2068,7 +2068,7 @@
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -2085,7 +2085,7 @@
         <mapperTableEntries expression="copyOfout2.ALLEE" name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout2.DESIGNATION" name="DESIGNATION" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout2.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="copyOfout2.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout2.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="copyOfout2.TYPE_CONDITIONNEMENT" name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout2.NUMERO_ONU" name="NUMERO_ONU" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout2.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
@@ -2217,7 +2217,7 @@
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -2231,7 +2231,7 @@
       <column comment="" key="false" length="12" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="NUMERO_ONU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="17" name="RUBRIQUE_ICPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -2541,13 +2541,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7b94d7ae-d13b-4c9f-a6f7-0dda607b9d2a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yzHhLx3iE9Q15aL2LB9S5FztJ0Xwkzsir6qMZiuhfBx6So8GgOpBsG/FefEUxYKKnJ203Za7NrUz&#13;
-ZsAMDQQiCA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_df9c05ef-e879-4274-a25c-72ebb9acc463"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>NC9qPXerWj3d4twzewXK3DIjz95regTuPiE6NI87WnegLB/qGFhnXcHoyFDNEZRB5gx7H024PBc7&#13;
-U/Gs3GuIPA==</DigestValue></Reference></SignedInfo><SignatureValue>Wo7vc1mzgJ5h7BaEAe9iww00vHcAUF3FvKLdL1Y1Idz3Y0oN9awrtYXlLyrhJHLOrvhVPL2kDILe&#13;
-yRWoT6mJ2eIxct1ywxRJneAG99YEUM3SLdjEdWn+ZPmMTojl6ZD3gbDnvOzTppn9DM/aETl5Pw2O&#13;
-gkRFvxaaYpFVSybcMisp1z0RXq06MGf0OtZln/X5C8CUaq3VAwNKn9wfW4U9mU6t4V7uipoOVgbd&#13;
-sCyqGpXVzL7A418dA7bPHyqVM1HiCFWnxUIWDCxYcow3Grp/zLUCkEMlnRLggLZhMJAqd5P+I08X&#13;
-QJeCHhgt6gsvQqvro2EqONUrn7WZJHxw/3AY5Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1d63f0bf-93f1-41f7-a67a-dda6b1eb9157"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lUtQwxLNqDArSnE5FwISau+D1YyIKtVnXXdrkGmU0d838k8J6ykLRE07f2AMxlQvAUmWXpVNtpkN&#13;
+YDozJE8Fuw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5c462ee6-7ed6-4d86-88ed-63398122dfc8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Gb8YGML+8DpIJ+mVZq/C9JfmyZ2NBFM2ZewowtQRYb0XTutxDnLHMFLQTeGK+9lxEE2A8TS6RDuM&#13;
+yn7MwKTRpg==</DigestValue></Reference></SignedInfo><SignatureValue>RLi3fX6InSzl01oYtpDo4/MFWXu++o2ZlU9iH+q6N+SliXNWsTp1+dpE/Jkl1g5lCzZ2vRR2paHt&#13;
+EM7XCyllAP/ilXC5IM7xZCnG6/F/60sEG90G8qv63Qq9z33bQ/obM89JBAz9dDWrvMB1pualjMGN&#13;
+n1Om2NnTVghI4RRm6KH4vsY88Iczt7LLps8xivV0ZKbkrampthNO7UYnRIUO4e2OwL1/sysYghk6&#13;
+n8LS374g9wyBxqruYDWF6Z6Oe92KVj3l51feajegUoRVc+kgxJ1xeDe7MPX6nYgZfLNIJmd7DRwo&#13;
+sGAz9eEtZdZhSTLWaLdZy6e1cfv9jKH5xFETaQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2569,4 +2569,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_df9c05ef-e879-4274-a25c-72ebb9acc463" Target="#_7b94d7ae-d13b-4c9f-a6f7-0dda607b9d2a"><Timestamp>2024-02-20 20:37:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5c462ee6-7ed6-4d86-88ed-63398122dfc8" Target="#_1d63f0bf-93f1-41f7-a67a-dda6b1eb9157"><Timestamp>2024-02-20 20:39:13</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
