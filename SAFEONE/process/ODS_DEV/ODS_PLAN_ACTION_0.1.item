@@ -619,6 +619,7 @@
       <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -633,6 +634,7 @@
         <mapperTableEntries expression="out_test.CODE_CONFORMITE" name="CODE_CONFORMITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out_test.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out_test.LIEN_SHAREPOINT.indexOf(&quot;\\Ext&quot;)) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Ext&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out_test" sizeState="INTERMEDIATE">
         <mapperTableEntries name="CONTEXTE_DATE" nullable="true" type="id_String"/>
@@ -725,6 +727,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -735,26 +742,28 @@
     <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out_test" name="tDBOutput_1">
-      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="out_test" name="REJECT">
-      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -994,6 +1003,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="SITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ajout_site"/>
@@ -1070,13 +1082,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5bd4f90f-6095-4c82-b031-3d4b2849bdb2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SDQcWNJU8nOL3wNOk/J0E9rSxisRevkCWSvtRGMC05ijvK8BLyDmBb5i/+szpFhcxpnA26Yqmsbw&#13;
-WrCifh0bgA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_93c3dd21-af63-4d10-84da-01bc5f7e2847"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>e8Py1NUcfasxg82R/N7SUdMcxW+N1t3nP5xytb+hQalTy/wFNurmT7UOVN9DJcQtx+dcaYtFVxoQ&#13;
-cSGoFZtjQA==</DigestValue></Reference></SignedInfo><SignatureValue>CjwqNt0OBEcScXl+K/8ABejgRTWlaY+FSpVsbogwxV+AoWj4Oeza9alkendtcYjgV+6nWKKB2Nt/&#13;
-Ky98eL9+GIg1iz2G37/mIXQvHxayHHAO+Yk67ptz9WxH2GbI8c3spErawAXKpBm/4tYDtNc8+at8&#13;
-tu+auk8w+06Nk14XEu5qAX61fRhWjkgsZggTsEY7vjCzPY2frJ647724gCDpYFP497bPdzLb7SUm&#13;
-pSKlysspmY5IfqRBPl7NsK21PIJD1yTc7LaGl7wnYgzf9yNnPDvPsFX2IWWNjw23zrPkq1aRK5eN&#13;
-oq4E/0hQ8Y2vLfJTRLZq6YsceS0RuDxbJ7DW/Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e640b332-e926-4d08-8ff8-323443c30ea4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>K9/CuoNehuRYqgPLLKdKNgX2Yj4e04gLMvjUogqLcxZWQSbFuiJk37F1hx9Gb7qs+4VxBmJfXCOx&#13;
+3voZ/c9P/A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7d206865-c10c-4447-9080-41e512bb9867"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>w742Sc75TmAJ4Ttto6bNyosNH9tXMCH6Vl2pPX3C3hyv9xWETUJssNR0autXOrcp8UWj27oraZPT&#13;
+g4coTSCpgw==</DigestValue></Reference></SignedInfo><SignatureValue>bG7CtnmxURUjy3YPG7+zXmXjLILauMbpjsdwbyVuUaoIpOaBGx3z38lp1ghpduoNjwSY0yoZEtGy&#13;
+//avSO2ECgtFkKqfF+9qvsc0z0buYv1CiFWdk0UyxgobGgSBFhWVpiax24ba8nTXCpT5N4JUPokG&#13;
+eyhZylksF+fj77rRWf4r0dDlCGfMGeYH9WtEGiELGMxwlfLpn1NXOr5IdRYi/Ec2dwbDMmv4S2yi&#13;
+N71nqdJZfe3lQ6NRuaPG+qhFwFR9pS0tRPteNbV/fWRrDDeYRIUEzAkclJObs4A3NOXQ7bwob//4&#13;
+QlkJJiA7inn8inBZAmQJjEM+UfHC+8+rB/Sy9w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1098,4 +1110,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_93c3dd21-af63-4d10-84da-01bc5f7e2847" Target="#_5bd4f90f-6095-4c82-b031-3d4b2849bdb2"><Timestamp>2024-02-20 14:35:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7d206865-c10c-4447-9080-41e512bb9867" Target="#_e640b332-e926-4d08-8ff8-323443c30ea4"><Timestamp>2024-02-20 14:36:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
