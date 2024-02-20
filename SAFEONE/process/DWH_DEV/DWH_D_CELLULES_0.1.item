@@ -571,9 +571,10 @@
       <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="POIDS_VOLUME_TOTAL" sizeState="INTERMEDIATE">
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row4.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="row5.LOCAL_BATIMENT " name="CELLULE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries expression="" name="IDCELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CELLULE1" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -690,7 +691,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#10;&#9;POIDS_TOTAL,&#13;&#10;&#9;VOLUME_TOTAL,&#13;&#10;&#9;CELLULE,&#10;&#9;IDSITE,&#13;&#10;&#9;CELLULE&#10;FROM ods_stocks&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#10;&#9;POIDS_TOTAL,&#13;&#10;&#9;VOLUME_TOTAL,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;CELLULE,&#10;&#9;IDSITE,&#13;&#10;&#9;CELLULE&#10;FROM ods_stocks&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -705,11 +706,13 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="VOLUME_TOTAL"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE_ICPE"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDCELLULE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE1"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="ODS_STOCKS"/>
@@ -717,9 +720,10 @@
     <metadata connector="FLOW" name="tDBInput_4">
       <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="CELLULE1" nullable="true" originalDbColumnName="CELLULE" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
@@ -1246,13 +1250,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a376d6ac-d654-42c4-bdf1-3b3526e40b4f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pP3je0DCmeK8NMnXPtMv3sXXvvVR5F34CB5wx+q3MpUZJcmkD+S0FIN8eGxtJdwKa8A0wL+N5tVf&#13;
-/oxST+UghQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_da6e8aa1-8cda-4141-ab5d-43a64b144a24"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>b1xkX764UUtRVLPmL6Jr0dT9uJfakjVU1KDWUvBanFtUwKbISmeLrgOTL7jnEiuB5V35Kru43x0B&#13;
-3JvfNvVtfQ==</DigestValue></Reference></SignedInfo><SignatureValue>NydlsheysbX9aLHrxR4Ba9eznt9Eil8Iz8EMIrJs+suomSUA82gQt0EwHdF+db7e9M+gjBdW9PI5&#13;
-BEN3uwukzsWpGVCSRBNDVz8m8s08mgoOngX03WQHIJgnU+svegok3h5Bs8r+8WfUseBUtdPdFgW3&#13;
-gFNMxC+zKvuZOq5rQ+JM2kh3kTN3QHKQZFEcw9R0qLiA312AI0rcJBada7084rfRnEq7eT5DmEA8&#13;
-wt3Jir8fV/6hY/zLgsipMq71NDo/YsCz98ZPokMj+pKDFMp4RDp1RFIBoVgkUETKYDyfhY2ancfO&#13;
-jSpAKh4gjkKnmvxO4E3fGiMvYDACjRVQh7J9og==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6fef99b3-819e-4ce0-8f9e-f542698e31d5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8YYq6vcBqiXtMg4cRv7WlL2HoKQ08gEvRIrk+a+J7lymzbDVeU8VYFV+6Pu30ARruikWISJnGBOi&#13;
+y7GMex0ORg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6269a18b-a239-4e47-92ae-a72637a21e60"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ti7Hm2IsJ2eFMWBri0NkbWsmFWtmUszbDJwtPOUF9MTvfuLQlq2mlZrgmaRHowfjcNBN97eXZZj+&#13;
+DtevqisoKQ==</DigestValue></Reference></SignedInfo><SignatureValue>h67lKlglkYWo2owCEASA2zdceyPfCoRiYRZLI3WERsV8VjtVgJvKKISjKzngvkhNg1Y1OPW2sK61&#13;
+xxO79uW1sOw9SoxWBA/JEr23eooYSCTiMn5i76WRGyojULRxRjOJ+BXJwCz2jRKg4a4rIJWcyWx8&#13;
+WmMZs+V4wcvBIM0+1MTKKYXRUISo63SUYd2oG20qO43udYItzfkaabvoL90OHnlYOQdObx19X1ul&#13;
+Mcq9REObDsnUcS8BvA59zU8IXve7/2iK7DkubsLWiWYqEmXIwOgQjvnVTrAVWEkb4yBsUAWnA71y&#13;
+jvuU7q1+bzYOL0oZh9mcRd8uRqk3FUex3MHH4w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1274,4 +1278,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_da6e8aa1-8cda-4141-ab5d-43a64b144a24" Target="#_a376d6ac-d654-42c4-bdf1-3b3526e40b4f"><Timestamp>2024-02-20 16:16:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6269a18b-a239-4e47-92ae-a72637a21e60" Target="#_6fef99b3-819e-4ce0-8f9e-f542698e31d5"><Timestamp>2024-02-20 17:42:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
