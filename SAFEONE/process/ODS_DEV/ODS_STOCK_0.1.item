@@ -2022,8 +2022,8 @@
       <outputTables name="copyOfout2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.LIBEL_ART " name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Relational.ISNULL(row5.TOTAL_VOL_POID) || row5.TOTAL_VOL_POID == &quot;&quot; ? &quot;0&quot; : row5.TOTAL_VOL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;) " name="VOLUME_TOTAL" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Relational.ISNULL(row5.TOTAL_VOL_POID) || row5.TOTAL_VOL_POID == &quot;&quot; ? &quot;0&quot; : row5.TOTAL_VOL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;) " name="POIDS_TOTAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.TOTAL_VOL_POID == &quot;&quot; ? null : row5.TOTAL_VOL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;) " name="VOLUME_TOTAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.TOTAL_VOL_POID == &quot;&quot; ? null : row5.TOTAL_VOL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;) " name="POIDS_TOTAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.CONDITIONN " name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.CODE_ONU " name="NUMERO_ONU" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
@@ -2084,8 +2084,8 @@
       <outputTables name="ajout_site3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="copyOfout2.ALLEE" name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout2.DESIGNATION" name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;m3&quot;.equals(copyOfout2.UNITE) ? Float.parseFloat(copyOfout2.VOLUME_TOTAL) : 0 " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="&quot;T&quot;.equals(copyOfout2.UNITE) ? Float.parseFloat(copyOfout2.VOLUME_TOTAL) : 0 " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="Relational.ISNULL(copyOfout2.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(copyOfout2.UNITE) ? Float.parseFloat(copyOfout2.VOLUME_TOTAL) : null " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="Relational.ISNULL(copyOfout2.VOLUME_TOTAL) ? null : &quot;T&quot;.equals(copyOfout2.UNITE) ? Float.parseFloat(copyOfout2.VOLUME_TOTAL) : null " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="copyOfout2.TYPE_CONDITIONNEMENT" name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout2.NUMERO_ONU" name="NUMERO_ONU" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout2.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
@@ -2541,13 +2541,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7fe3f3a4-e140-457a-809a-b7395fe2329b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WhUMlbODwHLKvnTN6JDIVJSOB+F1zA86pchsBBb5toCAKo9lQf3VvWhgeO9z7fCcPw3sJ9VeXK3d&#13;
-i48PbZsbMw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a7a4d01e-bf32-4159-bc35-ba4599ebe55f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5gL+7G0i5f2Ld/R5bs1Wde+qw+ScgmNP69bIeg25/ppuyNk9ySQ/YBePqyhe55XqO0Q9K0geusN6&#13;
-7a0AcOhESQ==</DigestValue></Reference></SignedInfo><SignatureValue>ZWwKtuTsihYZIHjDzLvavNulKhNxXK4QXCqi+Sdd+zAvv/vR7QTd3R0fBnCsMzt9h4s9Dm+y3UGk&#13;
-rw60jAufIIqsi1cpqzsnfdLAwVuUr91U6g7O5Z1/sBTT3dJmHuInZg0kicwEtPnkK86+qQqutVy1&#13;
-QDcxPyONEWxfUFVij2LF5BHj3k2wn3xUoYWr9AJHgiksZA2JvypByL0fNjWLc9fs+Gza7SpTS2xq&#13;
-beCiuQY1fehuRw+QqeBqiSPPpIGBU1tq85o9VTeAXVU5F4Z+w0takHMJr1ztvNGveBEtj3GEekPS&#13;
-3disfxmvJSnWGSfBJBJe5UxKIEygDNpd5MM8tw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e7620497-2ae0-4ade-a30d-cf1c427fb992"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QwpfexUKDjRJKDKZAv9ppqcNImyCezNQsHuSwyDFAp/pKrTiWyvCyobJt1GGhWqe9c4xG+++xj8Y&#13;
+PUjAiSoEJA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3bb01b38-b384-4e66-baa5-238061a372ec"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>txU43GNVa1uicdtv8WwhnL9Rt5zzaGf3gITw9gGag7dob1xZuxiC2a0PWBVPNDgZaPtiulQyLsAc&#13;
+wHRvTi5vOQ==</DigestValue></Reference></SignedInfo><SignatureValue>j/cP+g5e5bgITsVwoZra+ZNW4mGGglCqB3wCtz7wVoVxsV8KyBdQfKeztpyNgsRiQ0D+bBjiE1SJ&#13;
+gHopXBNoKYDSoBAau098TcDomrdrBZ+lB/ItX5V4nh0uFVyjz9RioQDELdT6Nnmnwm50XKBFXr1Z&#13;
+L56AW03Bq575SZQ50RIYUoafuAxdW2pbhjvcCCwKUnQ6B7MZHxKIs1xQXZSIJIR7FKxHX0zg0fAj&#13;
+n6KIPxAVscqC5B/zU35VZWrY0cHdaCpfmez0+3IJCqcdPnyr4c9r3+9UrPjOYeOeb41///Cl4xr2&#13;
+PDV55djqseXYlaIjipmLOttqY/6C383tU2joDQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2569,4 +2569,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a7a4d01e-bf32-4159-bc35-ba4599ebe55f" Target="#_7fe3f3a4-e140-457a-809a-b7395fe2329b"><Timestamp>2024-02-20 15:21:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3bb01b38-b384-4e66-baa5-238061a372ec" Target="#_e7620497-2ae0-4ade-a30d-cf1c427fb992"><Timestamp>2024-02-20 15:25:27</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
