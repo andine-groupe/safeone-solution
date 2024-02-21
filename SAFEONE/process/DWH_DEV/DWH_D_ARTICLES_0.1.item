@@ -534,7 +534,7 @@
       <column comment="" key="false" length="-1" name="DATE_ENTREE_ARTICLE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" type="id_String"/>
@@ -555,15 +555,15 @@
         <mapperTableEntries name="IDARTICLE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
       </inputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.IDARTICLE " name="IDARTICLE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DESIGNATION" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="DATE_ENTREE_ARTICLE" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="IDCELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -861,13 +861,13 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
@@ -887,13 +887,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9953ea15-7dd8-4cc0-96da-fdfa564d9afb"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ERReH8DW9JA3GrJ8mg2CZWcWeQjS5381gy2nN0S4ObtdqEVREad8bH2zkljCsU11EkZY9wmtC4qj&#13;
-xuHFfBTPWg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_575de769-9853-4337-abcc-963f0a4010b7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hjls38/P/5NWHFa49kS70QyxAUSR5bm2+VoUWBsh6Y6tQFuq+KrUIIZamEGpzLvHc1rGmjW8apZG&#13;
-BdJsmaOa0Q==</DigestValue></Reference></SignedInfo><SignatureValue>LU58l1DHu9a/jS3LpAWZYBfixutpupq5CX4y3AEIsyhRPdGI+TezU0u0+uR64n698xbvl9vYO/BW&#13;
-CwsrbE2hwrCNJCEooGnQR5eXrYtFdQ5W6WYjciifT90KNf3+9Wir420PDVESMd3nyuiZgkV3291e&#13;
-yD21EJI8Y7ivG1/LZdfK1fK8VmOQ8ZLNw1WGsxf/VUySq1DRhiAj5xRsPszELxVE8+YnK3pZklfp&#13;
-T82tJko3AKJ71t7NDuvinWHoZdLJ5V3tXMa88wGq2ttoz5uRahwk9TGWBBZ3ajIcQ67tA5FQoa29&#13;
-xPJkF6XK314wJNP87VCqnPUK46IIfs0EY9H9IA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_59afac0c-9734-4e07-b999-9cd67d808f76"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QQqM4aJG1/7exQo0SnooWa1w9x8692kPUSgyaWSBm00LFoy5OZT6MYH1WS3R7EG36HumccGp/WdI&#13;
+XeyKwY0d3A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f9f9ad3d-352e-4fbb-8d49-9d0bf63bd8f7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XjcJwemDUefrV9zaCeoXwaw+bA+LuRgi/hRQqS+RmIccyX3n6ZF/T8n4le+/+gP3x/jL8k9kMbEV&#13;
+sRI+9zTg4g==</DigestValue></Reference></SignedInfo><SignatureValue>Xi3Tk+RJM6puVXmsneFg4+r016XbcGnsbYjFxlSPjhkkD/3qkmzevtyMqCI4YWnCripeyS4LAZ7M&#13;
+7MmpwXhCxto5PNNLevSyhLhvFz0awZUnSKWXR2rHGVuhXt271b56Ng9NJLdeXPZKvRnVddsNwnf5&#13;
+WooRxT+tucodz6AzKlActztITXL8VJtTnAyRfl/nfB7rlypyTh/Dj9SU9rXtWhBGgIdsATBD61wS&#13;
+WF44MFqsbJjSihD/7dH9HJvBYqLS0o/Q2q2QwznO/KYwc9APqNg9DiB5HybJXYav7ruNoEjXKSBV&#13;
+f6hQ8rDRgS2/aOInFa2hyT8d+NsEaQldDTdYCA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -915,4 +915,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_575de769-9853-4337-abcc-963f0a4010b7" Target="#_9953ea15-7dd8-4cc0-96da-fdfa564d9afb"><Timestamp>2024-02-20 15:10:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f9f9ad3d-352e-4fbb-8d49-9d0bf63bd8f7" Target="#_59afac0c-9734-4e07-b999-9cd67d808f76"><Timestamp>2024-02-21 09:31:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
