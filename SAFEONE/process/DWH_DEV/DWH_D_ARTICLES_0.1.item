@@ -548,14 +548,12 @@
         <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
       </inputTables>
       <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="" name="IDARTICLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="row1.DESIGNATION " name="DESIGNATION" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DATE_ENTREE_ARTICLE" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries expression="" name="IDCELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DATE_ENTREE_ARTICLE" nullable="true" type="id_Date"/>
       </inputTables>
     </nodeData>
   </node>
@@ -719,34 +717,28 @@
     <elementParameter field="CHECK" name="ENABLE_STREAM" value="true"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDARTICLE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DESIGNATION"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CODE_FDS"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_ENTREE_ARTICLE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDCELLULE"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_ENTREE_ARTICLE"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="DWH_D_ARTICLES"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
-      <column comment="" key="false" length="500" name="IDARTICLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="DESIGNATION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_FDS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="DATE_ENTREE_ARTICLE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="DATE_ENTREE_ARTICLE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
@@ -879,13 +871,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3c1c17aa-a547-47bf-b93c-37bc8a7e3a1f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>q+vd9Z2YL/1lgUYCCY8O8bj4askTlVBglhsMwvcUIBO+iu/7YN1AqlLi1BL912/qPFYcOmXBjtwq&#13;
-FGO2klnaEQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_815d1d7e-d19a-463b-93ac-bb6b0c0196ce"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tJz0GsCjTk8QfaTlfy2IKObSQ5wfYQktibihDTPQ48e+dXP6QPhvKZ1kWNCnncklQ1OTpXQsjE/q&#13;
-cZgNY88qCA==</DigestValue></Reference></SignedInfo><SignatureValue>IWELHjwBpsWmCepPI9XJxUkq/RmWgr75cq8Dr6Uf33KBtny0CUHNtsmP+AN0m0bNvXRlYufktDjO&#13;
-ElWnDKV/JkTeXdobEKyUlrTTbxlhDrjxXikIh9xxgO/9AekSzqvC4fgqfmbNe7dNFU6csHBTpit3&#13;
-KusrgTWayGNGWmVp6nkMzIMEjPlj6LUpfMgDjAJsmQhTtI+KCaDM65BkxMZo6Av9UknyW4ur7iqr&#13;
-UEMYMbpHXNLp7EMj6e2wBP1OsPGJrvQvmiGzOxjvp8BBnG6WDSelFGYPM2iZ6eFlqczIzukLM3vP&#13;
-dellL24ORYez6S/qZakT8sIw0GjCSRM7/UaLcQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_41169063-df61-4e46-9f3c-5084e6ccfa85"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UBsEy3B1D72veijyigcdeXY3CL4NHzcevX3DDjS5Qn3sY1+r4F1vpjGX6+XPcRP+6FJPRDtNUwb0&#13;
+X5kLEDve2g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e0c778b7-9e87-4947-9459-812a43ac931e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8P1lB7nO8fgiW5lgWO6Sro5rUI9CD/kMH8w3XvlMDaKVhTYQC6HZ3Qo5mCKl+2ZvLCLO1dzIPqsP&#13;
+MP1/iMKUBQ==</DigestValue></Reference></SignedInfo><SignatureValue>X9m41foX5n8xDHM3OeJ3CNLafngI8+ffdQcyLLmAMBeG8JUZzubcMO8EnEsUi/51A8Wy+YhCfbQo&#13;
+ZpwY1FNcxvAz548fOwD4ejd3XLUZaSvauwdzoChciV+Bj5r2f6N4ZebR2ftld3s17H/kyOe6xPvn&#13;
+j8o2HfE65g5fPUfErLwGoBNdFwXfG0iAMvCLpRmvW8vwvQ+B4Bg4fE5P2Ow+FZ4rJlW0/PelSsX7&#13;
+vZsxEVvcetRoMFHZOl7RyDotTjQqvnBeB0E6WsvzuSdXDuhYuOW9zcBiMzjl1+yoodOWbWwmVjUt&#13;
+01RBE6xuMMbM5oLdF9xEYStH3cpoEZB6WWh50Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -907,4 +899,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_815d1d7e-d19a-463b-93ac-bb6b0c0196ce" Target="#_3c1c17aa-a547-47bf-b93c-37bc8a7e3a1f"><Timestamp>2024-02-27 11:15:04</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e0c778b7-9e87-4947-9459-812a43ac931e" Target="#_41169063-df61-4e46-9f3c-5084e6ccfa85"><Timestamp>2024-02-27 11:15:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
