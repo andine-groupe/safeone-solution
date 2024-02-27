@@ -744,7 +744,7 @@
       <column comment="" key="false" length="19" name="DATE_CREATION_FICHIER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -816,7 +816,7 @@
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression="" name="DATE_CREATION_FICHIER" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="row5.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="row6.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.CELLULE) || row1.CELLULE.trim().isEmpty() ? &quot;Alerte Cellule&quot; : &quot;Pas d'alerte Cellule&quot;; " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(Relational.ISNULL(row1.CONTENANCE_M3_UNITAIRE) || row1.CONTENANCE_M3_UNITAIRE.trim().isEmpty()) &amp;&amp; &quot;4755&quot;.equals(row1.RUBRIQUE_ICPE) ? &quot;Alerte Contenance en m3&quot; : &quot;Pas d'alerte Contenance en m3&quot; " name="ALERTE_CONTENANCE_M3" nullable="true" type="id_String"/>
@@ -892,7 +892,7 @@
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.CELLULE " name="BATIMENT" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
@@ -994,7 +994,7 @@
     <metadata connector="FLOW" name="tDBInput_3">
       <column comment="" key="false" length="250" name="BATIMENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="QUANTITE_LIMITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
@@ -1532,7 +1532,7 @@
       <column comment="" key="false" length="19" name="DATE_CREATION_FICHIER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1685,7 +1685,7 @@
       <column comment="" key="false" length="19" name="DATE_CREATION_FICHIER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1881,13 +1881,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ba1f9994-4ee0-478b-b5e2-a9039cf14c53"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>M4flTFR7fp6II0emgabHmAn2prsx643pHhsEGXkFq/U4kjwP8+Yh209Rs7iSV0er8o3xn683oiMz&#13;
-8okahXDt5A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0d11cc59-61fb-46b9-91d3-0751fa27fd5a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IyMefMEDi6vegf0os6BHRtdfgiFNH8Yi1UJsUK8hSQUiG+IR8ucHGBBahdrJ14Xo2OMW6azJX1p9&#13;
-O7lLzsy1rA==</DigestValue></Reference></SignedInfo><SignatureValue>Xedj5I4P30T3c23rNG+5b8bXOZbfhAGibDEkF0dyRbUjeBuTojSgqktLd5RuK8p98+bWNXmhUD84&#13;
-EWUbeyc/1XDLGzBItOVbeCqqg4ctoWwZAusLhZBAJs5bdOZ/cc1kIeusTx8iSii2NIFIWsZP6UtA&#13;
-1/KxhrVGrDPzDGkH2EYd7TVQ3Ap3M55AYy/xcOrOCbhcgz/sj5R01RP6IFHxFQx16eCFiWtmBsC4&#13;
-LyNVE3kkNyu79lSc6PvG1LOOQJw+8uSEX3iy6ipxNqMxEueDnx3TV7AIy+7ZuvP/yrwTuRcsZkab&#13;
-gOGGnf4PpYfg6x3pRHou9xnpAXIYJ32qTtcV1w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_932b91c0-322e-459a-9719-54f52e6e48fc"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZtqWHBvpjhUnyTug1jvUGmqesoe+kD2ro9p6Tgoioj+bRFYyX33+x2kNvrn2jYFzhr5uIxbBkI+2&#13;
+t+vLBCNYqw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ab844c31-14a1-4775-a167-18725de52ce6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>G7+0h/maYnj0LHIu+SNq2JmnwOjbS1ocDaip76lZ5UKzXPvTxOVkS7t2gWYnEcXtmxY3/I85Kicd&#13;
+4xl+TKlI7g==</DigestValue></Reference></SignedInfo><SignatureValue>I6jJWLi5pd1XY64E18Psm7Qg6een8l6Gw+lbH6ipAu/QJcV+rLK9WG3Z8XYMk3sYVQ5hW50XUa/r&#13;
+UFMaXGLgeDHXyHVR9ydA4KUNHyC0HjEDpbrR+aFFQXpm3CA34cj5Nlimv/XjnGN1c5wP4ap8IVjw&#13;
+h4hZRZQ6k4t4wi7GEwmJKJsX1VH72YDgEvzArfHk0ZgMNE/fbzhcX/LIdWIuQVps4JLkHXggTuo0&#13;
+ere8umz939w4kyUji0QXzTc6ezBDtM6pHN0/9vQS+kGy4+hrjTNKIBDYyjkSVjsCokZptoNLnYEd&#13;
+d1zvhd9jpoD1knHZd/oY+o9hF5ZxZNGMYPvHQQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1909,4 +1909,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0d11cc59-61fb-46b9-91d3-0751fa27fd5a" Target="#_ba1f9994-4ee0-478b-b5e2-a9039cf14c53"><Timestamp>2024-02-27 15:11:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ab844c31-14a1-4775-a167-18725de52ce6" Target="#_932b91c0-322e-459a-9719-54f52e6e48fc"><Timestamp>2024-02-27 15:17:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
