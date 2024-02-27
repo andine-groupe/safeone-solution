@@ -542,7 +542,7 @@
     <metadata connector="FLOW" name="tDBInput_1">
       <column comment="" key="false" length="250" name="BATIMENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="QUANTITE_LIMITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="QUANTITE_LIMITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
@@ -627,7 +627,7 @@
       </column>
       <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -636,8 +636,8 @@
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
@@ -653,11 +653,11 @@
         <mapperTableEntries expression="stocks.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="description_site.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="description_site.LONGITUDE " name="LONGITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="limites_stock.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="limites_stock.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="limites_stock.UNITE " name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="flux_thermiques.DUREE_INCENDIE " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;t&quot;.equals(limites_stock.UNITE) ? limites_stock.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="&quot;m3&quot;.equals(limites_stock.UNITE) ? limites_stock.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="&quot;t&quot;.equals(limites_stock.UNITE) ? limites_stock.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="&quot;m3&quot;.equals(limites_stock.UNITE) ? limites_stock.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="Relational.ISNULL(stocks.POIDS_TOTAL) ? null : &quot;t&quot;.equals(limites_stock.UNITE) ? stocks.POIDS_TOTAL / limites_stock.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="Relational.ISNULL(stocks.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(limites_stock.UNITE) ? stocks.VOLUME_TOTAL / limites_stock.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="Relational.ISNULL(stocks.POIDS_TOTAL) ? null : &quot;t&quot;.equals(limites_stock.UNITE) ? stocks.POIDS_TOTAL : &quot;m3&quot;.equals(limites_stock.UNITE) ? stocks.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_Float"/>
@@ -673,7 +673,7 @@
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="limites_stock" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="stocks.CELLULE " name="BATIMENT" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="stocks.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="stocks.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
@@ -759,7 +759,7 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -771,8 +771,8 @@
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
@@ -780,7 +780,7 @@
       <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
@@ -789,12 +789,12 @@
         <mapperTableEntries expression="out1.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LONGITUDE" name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out1.UNITE" name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.IDSITE" name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.QUANTITE_LIMITE_POIDS" name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="out1.QUANTITE_LIMITE_VOLUME" name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.QUANTITE_LIMITE_POIDS" name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="out1.QUANTITE_LIMITE_VOLUME" name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out1.POURCENTAGE_LIMITE_POIDS" name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out1.POURCENTAGE_LIMITE_VOLUME" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out1.STOCK" name="STOCK" nullable="true" type="id_Float"/>
@@ -809,11 +809,11 @@
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries name="STOCK" nullable="true" type="id_Float"/>
@@ -845,7 +845,7 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -857,8 +857,8 @@
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
@@ -868,7 +868,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out2.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
@@ -877,12 +877,12 @@
         <mapperTableEntries expression="out2.LATITUDE " name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.LONGITUDE " name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out2.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.UNITE " name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.DUREE_INCENDIE " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.QUANTITE_LIMITE_POIDS " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="out2.QUANTITE_LIMITE_VOLUME " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out2.QUANTITE_LIMITE_POIDS " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="out2.QUANTITE_LIMITE_VOLUME " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.POURCENTAGE_LIMITE_POIDS " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.POURCENTAGE_LIMITE_VOLUME " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.STOCK " name="STOCK" nullable="true" type="id_Float"/>
@@ -898,12 +898,12 @@
         <mapperTableEntries name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
         <mapperTableEntries name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
         <mapperTableEntries name="STOCK" nullable="true" type="id_Float"/>
@@ -1059,7 +1059,7 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1071,9 +1071,9 @@
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -1092,7 +1092,7 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1104,9 +1104,9 @@
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -1311,13 +1311,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ae54e2f6-0f39-485a-aae0-47134b195913"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PK8DR0j4EJsBdo2W/UlLacVVqtnLozmAm6R56LRqLioNkyM7+Y3U8ChVonjUfm4dhijovBbfIFxW&#13;
-1nJDn07O2Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_69d22117-a404-4b75-b01d-69338d47c921"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Q4v9XJzTj0HoTdb16DTTXxvVORoELx4lZ3nxH9DINKF7j2kgiPkPi5RRupxczY4czo4kVfcSBARR&#13;
-A5bPwBI2yw==</DigestValue></Reference></SignedInfo><SignatureValue>eV8Krct3of1FHSXaNmp7UH5da1QhhrByJut1S3pewviEv+4WLi2MOA3dHpL0Z0ry8fqHFU8tR7De&#13;
-dTtMiqxNRydIR4Cj0eIVLvJ5OmmGm4A7egFYQnhub13bFdBHac/zgSUXaMpFS+7rlt1TcWEqX1C0&#13;
-JSdS217Um6zkR8iTYvDaT2oSpOuKEOJMhIvfQaQ9ejyc1vbcz9US8Xa2fMtXjRK8/u08OUtjCKP1&#13;
-79cWJLUyQm4p4Bhw5ikP0ZMJRrg+OTyxgk095uepl7DALHZCt5oTdINhlr59efRD6c/ujwa/SNiY&#13;
-IgaH1AmG81PNi11JrI/m0/qZWGTGy2cUdf97OQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_256b431e-b371-46cf-92c7-8b35a2ba340f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OMVnN3m/+LyKgk37MnVAlGnAWpx0SBcoNkOUWDZelcq4A4Qb1qAkY80ezRhK8WtJfy9e8R+jCCZx&#13;
+RSmeIs4fzA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c5baeda1-d989-40e4-ad5b-f18b6ec79bb7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QCKTN5WRd5AR0oldCgLocflb1vRR6hbOqeGfaLBrD1FT9ZRTJa2KCjLhyd5UTSkm0koJr8OcbbPi&#13;
+Ecuqy8p9JQ==</DigestValue></Reference></SignedInfo><SignatureValue>J8P4JgFUeOb7aRTmkk5+4Y9NRn3W2tcAnG6yYxTjPimabNLCS0XPTMtVs9Ua9k2pfNc5AJa+m2dH&#13;
+8wnhB/1O8oUBKW/hJ69kfBWbluDkYLLb3zo5oBj867oArCffqclr0M4ieRCopAtz4HGTb6QwbjWY&#13;
+ZoMhrtNaL2tNNp4bQrYNITmRrQpVcwzrK6SNcZcOGGK0V6FSeiIpU+J4rfITC5hij42IGHtxPc5P&#13;
+ovGHospp8DlKC9Iy/+OQ3qMa0IbUlzUUxv0wwBArprSo/6xIMq/Z/MvJAr1r+gH1Vxz7eJMD9W44&#13;
+eVFLZLOvNX55i5F9IlYbdCRohWDLfjUKT15Vnw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1339,4 +1339,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_69d22117-a404-4b75-b01d-69338d47c921" Target="#_ae54e2f6-0f39-485a-aae0-47134b195913"><Timestamp>2024-02-27 15:26:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c5baeda1-d989-40e4-ad5b-f18b6ec79bb7" Target="#_256b431e-b371-46cf-92c7-8b35a2ba340f"><Timestamp>2024-02-27 15:32:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
