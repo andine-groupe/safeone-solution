@@ -455,7 +455,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;CELLULE,&#13;&#10;&#9;DESIGNATION,&#13;&#10;&#9;CODE_FDS,&#13;&#10;&#9;IDCELLULE,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;IDARTICLE,&#13;&#10;&#9;IDLOCATAIRE&#13;&#10;from ods_stocks&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;CELLULE,&#13;&#10;&#9;DESIGNATION,&#13;&#10;&#9;CODE_FDS,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;IDLOCATAIRE&#13;&#10;from ods_stocks&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -472,11 +472,7 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CODE_FDS"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDCELLULE"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDARTICLE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -487,9 +483,7 @@
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="DESIGNATION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="IDARTICLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
@@ -519,13 +513,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="100" name="IDARTICLE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="100" name="IDLOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="IDCELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -540,9 +528,7 @@
         <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.DESIGNATION " name="DESIGNATION" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDARTICLE " name="IDARTICLE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDLOCATAIRE " name="IDLOCATAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDCELLULE " name="IDCELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row4.DATE_ENTREE_ARTICLE) ?TalendDate.getCurrentDate() : row4.DATE_ENTREE_ARTICLE " name="DATE_ENTREE_ARTICLE" nullable="true" type="id_Date"/>
       </outputTables>
@@ -550,20 +536,16 @@
         <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DESIGNATION" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDCELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDARTICLE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
       </inputTables>
       <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.IDARTICLE " name="IDARTICLE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DATE_ENTREE_ARTICLE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="IDCELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.DESIGNATION " name="DESIGNATION" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DATE_ENTREE_ARTICLE" nullable="true" type="id_Date"/>
       </inputTables>
     </nodeData>
   </node>
@@ -614,17 +596,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDARTICLE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDCELLULE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -658,13 +630,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="100" name="IDARTICLE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="100" name="IDLOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="IDCELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -682,13 +648,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="100" name="IDARTICLE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="100" name="IDLOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="IDCELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -716,7 +676,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;*&#13;&#10;from dwh_d_articles&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;CELLULE,&#13;&#10;&#9;DESIGNATION,&#13;&#10;&#9;CODE_FDS,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;IDLOCATAIRE,&#13;&#10;&#9;DATE_ENTREE_ARTICLE&#13;&#10;from dwh_d_articles&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -727,34 +687,28 @@
     <elementParameter field="CHECK" name="ENABLE_STREAM" value="true"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDARTICLE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DESIGNATION"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CODE_FDS"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_ENTREE_ARTICLE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDCELLULE"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_ENTREE_ARTICLE"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="DWH_D_ARTICLES"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
-      <column comment="" key="false" length="500" name="IDARTICLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="DESIGNATION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_FDS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="DATE_ENTREE_ARTICLE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="DATE_ENTREE_ARTICLE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
@@ -887,13 +841,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_59afac0c-9734-4e07-b999-9cd67d808f76"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QQqM4aJG1/7exQo0SnooWa1w9x8692kPUSgyaWSBm00LFoy5OZT6MYH1WS3R7EG36HumccGp/WdI&#13;
-XeyKwY0d3A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f9f9ad3d-352e-4fbb-8d49-9d0bf63bd8f7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XjcJwemDUefrV9zaCeoXwaw+bA+LuRgi/hRQqS+RmIccyX3n6ZF/T8n4le+/+gP3x/jL8k9kMbEV&#13;
-sRI+9zTg4g==</DigestValue></Reference></SignedInfo><SignatureValue>Xi3Tk+RJM6puVXmsneFg4+r016XbcGnsbYjFxlSPjhkkD/3qkmzevtyMqCI4YWnCripeyS4LAZ7M&#13;
-7MmpwXhCxto5PNNLevSyhLhvFz0awZUnSKWXR2rHGVuhXt271b56Ng9NJLdeXPZKvRnVddsNwnf5&#13;
-WooRxT+tucodz6AzKlActztITXL8VJtTnAyRfl/nfB7rlypyTh/Dj9SU9rXtWhBGgIdsATBD61wS&#13;
-WF44MFqsbJjSihD/7dH9HJvBYqLS0o/Q2q2QwznO/KYwc9APqNg9DiB5HybJXYav7ruNoEjXKSBV&#13;
-f6hQ8rDRgS2/aOInFa2hyT8d+NsEaQldDTdYCA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a1f0a203-2be8-48dd-bc54-87bc97de53e1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uCH4De+cWOeqDdlacgfDvYLVMVxXb4ZEz44sszO50uzxTgc2xd/eVcY1FCTecwcaEcLxgcl7lY1x&#13;
+Z5xtd2WkLg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8992acc2-5f85-4bfa-bcdc-34d7d8c95308"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jvp9+JW9sRZp7wOzzsWyZKetUxkR4eXhGvfKy8LEXRWk0fDDvdHLdWBjUYedlb74fDDjP7EerHE5&#13;
+4+jHFn4nBg==</DigestValue></Reference></SignedInfo><SignatureValue>GdCpsG3zpcKoJBuhzpk7/aFziQVpz7OI+OPgLfPokybkDZRE3CvImPq0eoZ3gdnAPBg8/vh117oO&#13;
+4Dm/8CUwAzbcb57LoXkcjzvp4HUzUzsP9OfcfGIQZBS3iX2uipN3xPV0Sx2Y2PUextnbohKXfqvA&#13;
+3W6LgHDLmJdFwpMtWVR4R5632lqg+1hvzjCusR6iiKE4Vd2L9aqS/VIkT6utc2C16V5+YJTokD+r&#13;
+hJEkVh/8nu1IvsEJRXxxtnhKExbDBwE/xwrPyYUq/pyqMBz/YFSy3YfzsssMw1ZnHvkv06CHjrYj&#13;
+X0/bLKp7aZmbNh+Wq99XwVX1WlXxiJn2q8C8iw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -915,4 +869,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f9f9ad3d-352e-4fbb-8d49-9d0bf63bd8f7" Target="#_59afac0c-9734-4e07-b999-9cd67d808f76"><Timestamp>2024-02-21 09:31:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8992acc2-5f85-4bfa-bcdc-34d7d8c95308" Target="#_a1f0a203-2be8-48dd-bc54-87bc97de53e1"><Timestamp>2024-02-27 11:16:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
