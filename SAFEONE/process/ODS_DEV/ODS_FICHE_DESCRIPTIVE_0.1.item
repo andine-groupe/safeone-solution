@@ -2373,14 +2373,16 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="out6">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" expressionFilter="!Relational.ISNULL(row10.Local)&#13;&#10;&amp;&amp;!&quot;&quot;.equals(row10.Local)&#13;&#10;&amp;&amp;!&quot;0&quot;.equals(row10.Local)" name="out6" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row10.Local " name="LOCAL_BATIMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row10.Locataire " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row10.Duree_incendie_cellule_unitaire " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
@@ -2410,16 +2412,18 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="ajout_site7">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site7" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out6.LOCAL_BATIMENT" name="LOCAL_BATIMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out6.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
@@ -2427,6 +2431,7 @@
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out6" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LOCAL_BATIMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </inputTables>
@@ -2471,6 +2476,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LOCATAIRE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DUREE_INCENDIE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -2502,6 +2512,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_7">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -2509,6 +2520,7 @@
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -3208,7 +3220,7 @@
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.A " name="ADRESSE_SITE" nullable="true" type="id_String"/>
@@ -3248,7 +3260,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.ADRESSE_SITE" name="ADRESSE_SITE" nullable="true" type="id_String"/>
@@ -3289,7 +3301,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="jointure" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="ajout_site.ADRESSE_SITE" name="ADRESSE_SITE" nullable="true" type="id_String"/>
@@ -3487,7 +3499,7 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out10" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row12.N_AFFAIRE " name="N_AFFAIRE" nullable="true" type="id_String"/>
@@ -3518,7 +3530,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out11" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out10.N_AFFAIRE " name="N_AFFAIRE" nullable="true" type="id_String"/>
@@ -3862,6 +3874,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="LIEN_SHAREPOINT"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out6"/>
@@ -3872,6 +3887,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LOCATAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -4205,13 +4223,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f797acdd-1447-4260-8343-b0564568ad2c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dB8Zck8qAR01DBqQq4YCwGJct8lFpwCor7V6s6RYSZITFnJi+GHc4GMhvb4RFAG4fwdQ66bOylbP&#13;
-DN2Hn7PIsw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5ace020e-e11d-4912-847c-f08121daa5fb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>J54PjKwbCn1DDbBcBxdNmMSEgN7muGnhQp9MlnY8sE77c7jzW1VX+F5GL3ay1Eue1HLbNoJlGlLb&#13;
-iy3p6jjyRg==</DigestValue></Reference></SignedInfo><SignatureValue>KfyvvJDRr5wyTAZ1f/eOcho2xRErB3X2/4ZwJCJ4KR/7swsy5ZNgm8mra2LGH2pklIXlirUPXj9v&#13;
-a+oK4+S8NNd5cV2Yus8P5bIeeB/ui6Mp+Z9cSe+uoQjJpqZ4TFlpzV4roZ1Ul9L6JXKh0A3AEmeL&#13;
-euNF+WhJOj16uhNxI+4ZU17Q/ra9QuIiXAh/aKo1RxdrmN0nF9gTWPGNtm83lBvc1ZhkUXYmMfM+&#13;
-HOd4cpy5S6lx1Mza956xoQj0m8EPb0sdDxb1F99w41/ru2VmUHD05yRmFriqO4Hfb7789Y4nw0RQ&#13;
-IANiVhDuIEO3Pihp3kEtGLAgJkOGlBH31NoN1A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b3691e15-99d0-4fd0-b2f0-77886ccaac03"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>//NdrJOrdH2meXSiz78DCSlWyTK2rPEnRNObkpMh3T3rlF4Y/pbCBRrtqJdgCNYRIQ+p0XoTSKGL&#13;
+Qpp9isUqgw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3d615e21-ad86-4fcd-8f0a-a13650d5fb18"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fSBlI+HDydOTbcegALRZMPr8DbcuY9sV0eoKr+A2w39ZFWlS2BrgIKib+CDzOz1jIbCkByMEy4kU&#13;
++67HenPaMQ==</DigestValue></Reference></SignedInfo><SignatureValue>RHca32lskTqKQ/CvfPu4RnG2dWcDK9Gq8T4FTHPSeb+MgOPJzXh+50P+xURk5fq28Xy0cbcWjy9y&#13;
+1OYoedybSBZTsfiQdsccXzlFwSml/VtK6iM1IcyEHy0wPwKzdD1udSjMlsAY/C8uVfh8QQxEev1b&#13;
+SUYT+Iz4fAB4w1Xc/m31+ixaJN8EVZATSGdjcKr/VgexvzNQhODAvvNrEm6G0npA2coCiad2yvm5&#13;
+Q2FMLpvuzlMqMCj1ptrZXZxZ2RwCfzIQnes/LL4zsgk4pYotOr3SWsn/J/gmMzNSGlyq+LB0FLHT&#13;
+6/cK17PUvmg+alTd+HMn6MHXAXfjK6LnQccDpA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -4233,4 +4251,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5ace020e-e11d-4912-847c-f08121daa5fb" Target="#_f797acdd-1447-4260-8343-b0564568ad2c"><Timestamp>2024-03-04 14:37:31</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3d615e21-ad86-4fcd-8f0a-a13650d5fb18" Target="#_b3691e15-99d0-4fd0-b2f0-77886ccaac03"><Timestamp>2024-03-04 15:46:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
