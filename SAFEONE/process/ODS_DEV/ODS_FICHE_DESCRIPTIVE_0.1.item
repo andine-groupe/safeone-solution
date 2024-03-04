@@ -2005,16 +2005,16 @@
     <metadata connector="FLOW" name="out4">
       <column comment="" key="false" length="29" name="DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="222" name="TYPE_ACTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TITRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DESCRIPTIF" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateColumnNameFilter="true" activateExpressionFilter="true" columnNameFilter="" expressionFilter="!Relational.ISNULL(row8.Type_d_acte)&#13;&#10;&amp;&amp;!&quot;&quot;.equals(row8.Type_d_acte)" name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row8.Date" name="DATE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row8.Type_d_acte" name="TYPE_ACTE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression=" " name="TITRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.Descriptif " name="DESCRIPTIF" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row8" sizeState="INTERMEDIATE">
@@ -2044,18 +2044,18 @@
     <metadata connector="FLOW" name="ajout_site5">
       <column comment="" key="false" length="29" name="DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="222" name="TYPE_ACTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TITRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DESCRIPTIF" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site5" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out4.DATE" name="DATE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.TYPE_ACTE" name="TYPE_ACTE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out4.TITRE" name="TITRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out4.DESCRIPTIF " name="DESCRIPTIF" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.LEFT(out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
@@ -2063,7 +2063,7 @@
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries name="DATE" nullable="true" type="id_String"/>
         <mapperTableEntries name="TYPE_ACTE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="TITRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DESCRIPTIF" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
@@ -2112,7 +2112,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TITRE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DESCRIPTIF"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -2142,20 +2142,20 @@
     <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_5">
-      <column comment="" key="false" length="29" name="DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="222" name="TYPE_ACTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TITRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="29" name="DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="222" name="TYPE_ACTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DESCRIPTIF" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="29" name="DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="222" name="TYPE_ACTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TITRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="29" name="DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="222" name="TYPE_ACTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DESCRIPTIF" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -2791,7 +2791,7 @@
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out7" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="StringHandling.LEFT(row11.Batiment,9) " name="BATIMENT" nullable="true" type="id_String"/>
@@ -3515,6 +3515,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="LIEN_SHAREPOINT"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DESCRIPTIF"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
@@ -3525,6 +3528,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DESCRIPTIF"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3863,13 +3869,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_72096d72-9774-489d-9889-0f115b214b65"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yIJL2wmjYJKVl27gKBYaoOk1bGPHr4/iULWT9jvnI2zfVZ1/Goq1WopGvD9a5YG9Bo5NqDWAZ0Y6&#13;
-ApF9XHrNFQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5672d15a-22c1-46b8-a82c-d861bdb34e74"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>p3KlgAEYnQbmw2e8DUaYOgbLQ+hhmW2Mr7cKmqmyp8rM1gWm+CppejTRBgCtWJJySHPbl+xQyWsR&#13;
-eN4I32s3dQ==</DigestValue></Reference></SignedInfo><SignatureValue>jZZLRt8CWIGMQPOGPxKuH2rgJKAWhbuLzLKXVcBISidjLHde6B13awmrG1HgrZV2IL3lXJet+yZb&#13;
-9yzzxM+GlUWLzMBpQ2D0cQZl51eaV7yvWCIfxZ4mEj+m6YiSzfmd0D4eglKN13Aq3svcHCu+gG2s&#13;
-tPbf2hFH8GticMJKn1VLUV6zGcVo9PzTZA8NNpx4dJ0WcAbabeylbAyTnveasawXAIYQQ//z2Ocv&#13;
-saZxDW1c49qk6XXAE0EyOK82D0igtLvBNmeMHrUcGGqurEaXrbRcz/D3qiYtPIgVCtv44sHMT5ga&#13;
-8f+gfggHupTAeKzZQB01rGDg7A7/wWfo1bB8ww==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f3747b0b-8a75-4cd6-bdb8-c0afcb5cefc6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>E3oUdCmrJQguPxYnFUEdAw4Ex+o7Xn9d7kc7wbX0eqYiT6XfuNGn3+sv6X5eG44Yd0jq1ET9F4w6&#13;
+16UQ22j8Rg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c8089b00-da1c-4ad1-9139-9b632cacc1f3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PU3rIy4PGxcAm1fKXBVr6KPGOAUQrDvgOTlYM/01UOZ0Zg7P43+gQa7pnPutUiic73pWufyLsUrS&#13;
+v+KUZZw6Dg==</DigestValue></Reference></SignedInfo><SignatureValue>dpW9jxN1wXp8NunZbl/GvuqKHnnhntPEsls0tTJ8NOzmIcQhIDQ6oyJ5uSZiOEEnfNhqIXeX7ebV&#13;
+iuVtqgZFVhwBH1KDAG0iapOqDAMRBNszXORo9UL7oerMHwGEangy2sVONoDjNtx9CWhWpf88jfKD&#13;
+EersG34UkcTrovkcChBZFsaygEt4XphyxJjB0FKEiKQJQ+U5ODGxeVZTjTC3YXIPyfJAYToiHZWQ&#13;
+/Lnk/PjI7XvQ5JcUsscSdX2SPPONMdMJG6RxKkx6qWCdmBZRMH5/K/pVmkfZ7RnvwfGVPbYtCJBZ&#13;
+sx7LUlAoHsOhhHevU8+qg5Y30RxDzEPUpF+jAg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3891,4 +3897,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5672d15a-22c1-46b8-a82c-d861bdb34e74" Target="#_72096d72-9774-489d-9889-0f115b214b65"><Timestamp>2024-03-04 09:31:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c8089b00-da1c-4ad1-9139-9b632cacc1f3" Target="#_f3747b0b-8a75-4cd6-bdb8-c0afcb5cefc6"><Timestamp>2024-03-04 09:53:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
