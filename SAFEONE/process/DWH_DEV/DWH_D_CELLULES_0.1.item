@@ -89,7 +89,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="160"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="224"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -241,7 +241,7 @@
     <elementParameter field="TEXT" name="LABEL" value="Connexion MySQL DWH"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tStatCatcher" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="64">
+  <node componentName="tStatCatcher" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStatCatcher_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tStatCatcher_1">
@@ -261,7 +261,7 @@
       <column defaultValue="" key="false" length="8" name="duration" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="64">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1280" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -324,7 +324,7 @@
       <column defaultValue="" key="false" length="8" name="duration" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="160">
+  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
     <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true"/>
     <elementParameter field="CHECK" name="CATCH_TDIE" value="true"/>
@@ -346,7 +346,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="160">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1280" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -403,7 +403,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="224">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement&quot;"/>
@@ -428,14 +428,14 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="224">
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
     <elementParameter field="CHECK" name="CLOSE" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_1"/>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="64">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Début traitement&quot;"/>
@@ -445,7 +445,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_1"/>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="288">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -495,7 +495,7 @@
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="192" posY="288">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="96" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -523,6 +523,8 @@
       </column>
       <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -543,6 +545,8 @@
         <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="description_site.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="description_site.LONGITUDE " name="LONGITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="stocks.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="stocks.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="limites_stock.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="limites_stock.UNITE " name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="flux_thermiques.DUREE_INCENDIE " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
@@ -575,7 +579,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="32" posY="512">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -625,7 +629,7 @@
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="384">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -675,7 +679,7 @@
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_DESCRIPTION_SITE"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="512">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -716,6 +720,59 @@
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_FLUX_THERMIQUES"/>
+    </metadata>
+  </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="INPUT_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="CELLULE"/>
+      <elementValue elementRef="INPUT_COLUMN" value="CELLULE"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="LOCATAIRE"/>
+      <elementValue elementRef="INPUT_COLUMN" value="LOCATAIRE"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="RUBRIQUE_ICPE"/>
+      <elementValue elementRef="INPUT_COLUMN" value="RUBRIQUE_ICPE"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="POIDS_TOTAL"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="POIDS_TOTAL"/>
+      <elementValue elementRef="IGNORE_NULL" value="false"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="VOLUME_TOTAL"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="VOLUME_TOTAL"/>
+      <elementValue elementRef="IGNORE_NULL" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAggregateRow_1">
+      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="224">
@@ -764,38 +821,33 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out4" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="out1.IDSITE" name="IDSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.CELLULE" name="CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.LOCATAIRE" name="LOCATAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.LONGITUDE" name="LONGITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="out1.UNITE" name="UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;t&quot;.equals(out1.UNITE) ? out1.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="&quot;m3&quot;.equals(out1.UNITE) ? out1.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="Relational.ISNULL(out1.POIDS_TOTAL) ? null : &quot;t&quot;.equals(out1.UNITE) ? out1.POIDS_TOTAL / out1.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="Relational.ISNULL(out1.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(out1.UNITE) ? out1.VOLUME_TOTAL / out1.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="Relational.ISNULL(out1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(out1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(out1.UNITE) ? out1.POIDS_TOTAL : &quot;m3&quot;.equals(out1.UNITE) ? out1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.IDSITE" name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CELLULE" name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.LOCATAIRE" name="LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.LONGITUDE" name="LONGITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.UNITE" name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;t&quot;.equals(row1.UNITE) ? row1.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="&quot;m3&quot;.equals(row1.UNITE) ? row1.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) ? null : &quot;t&quot;.equals(row1.UNITE) ? row1.POIDS_TOTAL / row1.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(row1.UNITE) ? row1.VOLUME_TOTAL / row1.QUANTITE_LIMITE : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(row1.UNITE) ? row1.POIDS_TOTAL : &quot;m3&quot;.equals(row1.UNITE) ? row1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_Float"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out1" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-      </inputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
-        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
-        <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -844,7 +896,7 @@
       <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out4.CELLULE " name="CELLULE" nullable="true" type="id_String"/>
@@ -882,7 +934,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="224">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="608" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -929,7 +981,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out2.CELLULE " name="CELLULE" nullable="true" type="id_String"/>
@@ -971,7 +1023,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="224">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -1169,23 +1221,6 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
-    <elementParameter field="TABLE" name="GROUPBYS"/>
-    <elementParameter field="TABLE" name="OPERATIONS"/>
-    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
-    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
-    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAggregateRow_1">
-      <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
@@ -1206,9 +1241,21 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" source="tWarn_1" target="tDBInput_4">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
-  <connection connectorName="FLOW" label="stocks" lineStyle="0" metaname="tDBInput_4" offsetLabelX="-8" offsetLabelY="-22" source="tDBInput_4" target="tMap_1">
+  <connection connectorName="FLOW" label="stocks" lineStyle="0" metaname="tDBInput_4" offsetLabelX="-16" offsetLabelY="4" source="tDBInput_4" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stocks"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="8" offsetLabelY="0" source="tMap_1" target="tAggregateRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="POIDS_TOTAL"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VOLUME_TOTAL"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <connection connectorName="FLOW" label="limites_stock" lineStyle="8" metaname="tDBInput_1" offsetLabelX="-50" offsetLabelY="50" source="tDBInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -1244,11 +1291,15 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="flux_thermiques"/>
   </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
   <connection connectorName="FLOW" label="out4" lineStyle="0" metaname="out4" offsetLabelX="1" offsetLabelY="2" source="tMap_4" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
   </connection>
-  <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tMap_3">
+  <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="2" source="tMap_2" target="tMap_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -1289,9 +1340,6 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
-  </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="8" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
@@ -1351,18 +1399,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5065d15a-a06c-44e3-97f5-9b9a82258d6c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HOp7g/n41pzeUq5RVZZUxmOPd+hSp29s3+9ZMf9kpsJJWQymyODjIjaTpGLzOb1hMkntO4ecVCY0&#13;
-7HM7e2nz0w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_24e76be4-db5b-47df-841d-629977804c95"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9oaFqqq6222mI85szJMG9OlTTfyQ+9HFnbz0cRDRc951ZPVCx1lJbe+JgO5b869lni5JDo4b5BlJ&#13;
-dWKyyerkqQ==</DigestValue></Reference></SignedInfo><SignatureValue>FrfWuRQ9KEOMV/l1ZH0xVbnBIdZ5Xm78FBwrkejnZeyqagbXi3lxfJj8tDXetUMsIEO0FQ0udUq1&#13;
-kF6m/y4xu2jFHaOKgjHUt+b3I9l1XRl+Z5tIlOsn1jsHgh42X/lijaNdXkGDhLDUoVI1kxPxywFF&#13;
-O54bA1pcZgBQ7w8ZQESstEd8FsZCHmqUW5zxuB9tafUV7o1XqLyllhnFHzlsE7xgISz37h1rck0c&#13;
-dmGrhmZ73nC400s65u9A+7RTd7PF84MNwRNOeYQu3G5LOMG4jcF0IK9RiE6bNZVynBQzPKxBvmF6&#13;
-os8hu81NxmHwXFbsD0EjTGTCbLCnlH6dLPdaww==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_807d30cf-e1e4-48ef-ba69-04b562845600"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KoBJ3L+jNaN1FE6fX9eNOVrZynhpnmau4EF5JOHSWkZSwgJIJFBGl+43MUE+eFARH3VDPDrWCRXz&#13;
+n/vXGr6yQw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a77e7d2d-9270-4cdd-b982-86878eb6c52e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>kPkMEagJIrFD0NWXFV2PYvJ/QAfbYdF/F1fGNLuDR7jeYvJawKWn1uKaU8wM6J9mkJaDy3Ekna5x&#13;
+gkBsR45Y8g==</DigestValue></Reference></SignedInfo><SignatureValue>MwbwCCrA6+C4ZuvFdpgPGxGxR2kLYbvIcZKqXKTCQkey1mZKjj3l1gJRg/qXIz85N/UbTmCaRKz8&#13;
+46y8lQrW8A+3sxzmaEsPwMPlaCQZap0s3LWQUwp22pjhNNKo4GEkCfRhl/rFJ9wtVXFusnt6SCUL&#13;
+AkhdsxUMgImyeWzYWwBe09w6tSIIBDnry6ShFdQJjhBaYWIbVh1voI6Dy8JKuG8nLezHm2el5qvo&#13;
+0EsOyo7TpV3rm3CYKtFOCi2JBxYTyxP28EfwAfklBGanv5BN7PU5wQU9E3IG7nmi0a3eu+l5jSY5&#13;
+Al7RKSq6PnhBml1z9q88AhCq4WAxEZR5RNhFnA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1384,4 +1427,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_24e76be4-db5b-47df-841d-629977804c95" Target="#_5065d15a-a06c-44e3-97f5-9b9a82258d6c"><Timestamp>2024-03-05 14:33:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a77e7d2d-9270-4cdd-b982-86878eb6c52e" Target="#_807d30cf-e1e4-48ef-ba69-04b562845600"><Timestamp>2024-03-05 14:40:13</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
