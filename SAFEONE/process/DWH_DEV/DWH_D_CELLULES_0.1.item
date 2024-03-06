@@ -651,15 +651,6 @@
       <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="100" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="100" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="224">
@@ -704,6 +695,10 @@
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
+    <metadata connector="FLOW" label="test_logrow" name="test_logrow">
+      <column comment="" defaultValue="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
@@ -723,6 +718,10 @@
         <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) || Relational.ISNULL(row5.QUANTITE_LIMITE) || row5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? null : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL.divide(row5.QUANTITE_LIMITE,java.math.MathContext.DECIMAL128) : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_BigDecimal"/>
       </outputTables>
+      <outputTables name="test_logrow" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+      </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
@@ -732,9 +731,6 @@
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
-        <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
       </inputTables>
       <inputTables activateCondensedTool="true" activateExpressionFilter="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.CELLULE " name="LOCAL_BATIMENT" nullable="true" operator="=" type="id_String"/>
@@ -1352,6 +1348,33 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_4"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="POIDS_TOTAL"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VOLUME_TOTAL"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="test_logrow" name="tLogRow_4">
+      <column comment="" defaultValue="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
@@ -1413,9 +1436,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="out4" lineStyle="0" metaname="out4" offsetLabelX="1" offsetLabelY="2" source="tMap_4" target="tMap_2">
+  <connection connectorName="FLOW" label="out4" lineStyle="0" metaname="out4" offsetLabelX="1" offsetLabelY="2" outputId="1" source="tMap_4" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
+  </connection>
+  <connection connectorName="FLOW" label="test_logrow" lineStyle="0" metaname="test_logrow" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_4" target="tLogRow_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="test_logrow"/>
   </connection>
   <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="2" source="tMap_2" target="tMap_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -1529,13 +1556,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2870964f-c8ed-4a39-8913-2557cf98cf78"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ix74baJbbOTfoSlySop0TQ4GqzGqcxFvpmqOKTzzpWnuEMobrcTRIVvoGsiLU2mOs/NEl8zi35gg&#13;
-glWUq2/12Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_981ce25a-7612-4a84-b4f9-e7202e4d54eb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>arkRza1dNOJQCVtwkvTd1vXR6ncFdf1aqhTjSRavi/etL3a9soWCwn1uyK7o16+VA8Iu1DY6XTm8&#13;
-MMfHIYKdLw==</DigestValue></Reference></SignedInfo><SignatureValue>BhSaAER42mkOwfQl1xAjUYyw1f+fz4qydNVQg3IAsatgiEtFHjjOAGIezTmohf2WIecsfypUpMg+&#13;
-xnVe0SHTdLHcmXERMzYdboN7WeehGwVsU8m8EjWEh8aTBoTZm1sRMDg510UqWn423FcXT5PEtedT&#13;
-Pcr42ew3b82aq9gaW64k6oubjkHH73JSwkLTyBcqARiCmb9UCEKUXh4qetfttbPzvwWVDDeAl8pF&#13;
-qoJj4/i0/o1CwwI/8DbHEyFLXeTy5n5p5Z/RYmkb2N8zReiTRwQt0iqz9DWbERhzhEy8gQeSqiUO&#13;
-mTlffFqgtuM4C2u0kOp44Dc3khjJjVp0HCel3A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_95afe313-d537-4cea-87d0-d30b295bf02a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+C1/sf/IKIQcPp+OuB/zma8KLoCVr0bubsKKaZI/DaK0UN+16M/rY04O0/nEnn50ECCV3x2uQtXj&#13;
+VrD43njbBg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c36730ba-9425-4970-9fc5-bba6783a2fc6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hIU7wE+k7wb5al8uWamSpsuw2VQJoBEEUW6Ur+2Q/Yxqtw1q1v1W6nGNWW9JPbIsUxLqgdv+4lui&#13;
+tErmNGRIlA==</DigestValue></Reference></SignedInfo><SignatureValue>ojaUwbiQDgBBDMNBNYa9yvni2hNOnZSQgZ6F+MNGnvA0RJlaweZNJWqQAqSCDzzbQJOKPs1vBktK&#13;
+jPFgV4YUSVI/Ypt3gHZEEYCHuyxSyUC1wlfyfriFGlGEPoGNtAwXb04HUleHHM6t4ttlSR4TjjzZ&#13;
+S8XBVb1jNuBO7li0cfk+jZqyhx3tWwx5ZCbQGco10VfcnozJy9IkDDQ7XCBMqwJ2uErzwEIOk/Ku&#13;
+8wDE9rK6nIak4u+KcpW4TQVDEf5q1F5uwnj300i1STN5YHXRiYFEACw14s2Q6DL16gfOoW2B3+2z&#13;
+ijxqR4MRQXXcvUKfYJAQJWPCwMk4+OuZd6JgQw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1557,4 +1584,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_981ce25a-7612-4a84-b4f9-e7202e4d54eb" Target="#_2870964f-c8ed-4a39-8913-2557cf98cf78"><Timestamp>2024-03-06 21:56:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c36730ba-9425-4970-9fc5-bba6783a2fc6" Target="#_95afe313-d537-4cea-87d0-d30b295bf02a"><Timestamp>2024-03-06 22:02:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
