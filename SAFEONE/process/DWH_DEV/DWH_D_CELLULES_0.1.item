@@ -651,10 +651,10 @@
       <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="100" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="100" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -719,8 +719,8 @@
         <mapperTableEntries expression="row4.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;t&quot;.equals(row5.UNITE) ? row5.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="&quot;m3&quot;.equals(row5.UNITE) ? row5.QUANTITE_LIMITE : null " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL.divide(row5.QUANTITE_LIMITE, MathContext.DECIMAL128) : null " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL.divide(row5.QUANTITE_LIMITE, MathContext.DECIMAL128) : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL.divide(row5.QUANTITE_LIMITE) : null " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL.divide(row5.QUANTITE_LIMITE) : null " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
@@ -1529,13 +1529,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_706a4433-7d16-4aa0-96e9-831f26ad7571"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DrP9zPq217eZYMmj6TGNE+X4YeABLq6dUqoWkjDEFs7VWXA5SYWM7RXb3SRfsBRMw5PE1HAKMnpb&#13;
-hs3T4Kkv4w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1347f6c8-c483-491d-8baa-74101005fb2a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Pw+HrvlNiFO2m4pZG7ausvg/p7CsgokljwbphvospPEISIkwouw82vwDi7frzlVBttVycHmjBlrU&#13;
-JBntD79PiQ==</DigestValue></Reference></SignedInfo><SignatureValue>ZNFgPTV8i97oyk2Z0LnCDVuRPFUmKiSn23/lxhW9fsurABSglQM48hmDoc87g14tPNja/8jVRO2z&#13;
-MiB64oQaK1BQQbc3LTffJ899zyExOniYuGx6Ite1mqB0L4386D1JInuGfkjsbb2FI1YCOu0cnotO&#13;
-dZEQGvNDQdVjBl5qo82SVNeb93DU3lp86LZdoQGxASkcmuXhUVj1hLklcKgNk4JKGL7UUXb9Foq9&#13;
-Q6GJd1Ae67BMgdDXGscbPQGvnBZsb/jqyODCYaqpFKcwoGz0OcLe6x7HVgAAQDQnvamSrwZHvmgT&#13;
-UxaoQJCUf25Y/NhOKD0blps5zZK12Az/KToIeQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_48ad09a0-5f3a-4058-8c5a-552e44f85518"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rQm6YlHUrQ0qYINB5lAgpJZybQgivfbyHbecgb730QfhEqyfYQRX8/ZBGbts3vuWMn5Bt3b69Cn/&#13;
+Sk9rT1/XLA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2da5d505-f436-4800-b051-344c9bbf1628"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+g2KfW2Gp0U63QsDV44znnaYTuIFvD4VvgJKP50xQ4fYYvZzsXVs8vJ5XZox6oiBvWAxdVY7jn/m&#13;
+S6+H+mEifA==</DigestValue></Reference></SignedInfo><SignatureValue>DDlMheWLWDH0zq+5zrYV2MkFmiMHLYi2hpSj4FsxFMDPwd2KtnTPiEyYM33xSCNi5Hkc0uYCXIIW&#13;
+fOCahMyyXiSRL18Jyf2Db2n+wghAJAVtG7J2mg3DpMdiROmTI30+Y27zjvRqEtV4UJt9KO+/lR5c&#13;
+MmEEBvSglGWrM9i3llxlrapecSUlBdDbHV5h/NvSu9EECGtLYQDAfhzDzNPlScqI7K9z4oi7SZ25&#13;
+MGxr1rT3f6vInwr1szMBhE03SXxRs//9/cs4lsHrrcPYnYb4lTA/0jHpwfQT8eMLZLZx33lIUj2U&#13;
+4YCrUtgyvNR0udL9njwdjjV1DX59xdP/mb9rdw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1557,4 +1557,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1347f6c8-c483-491d-8baa-74101005fb2a" Target="#_706a4433-7d16-4aa0-96e9-831f26ad7571"><Timestamp>2024-03-06 21:48:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2da5d505-f436-4800-b051-344c9bbf1628" Target="#_48ad09a0-5f3a-4058-8c5a-552e44f85518"><Timestamp>2024-03-06 21:49:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
