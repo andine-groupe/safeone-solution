@@ -65,7 +65,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="32"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="64"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -1731,7 +1731,7 @@
     <metadata connector="FLOW" name="out2">
       <column comment="" key="false" length="-1" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
@@ -1748,7 +1748,7 @@
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row4.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.LIBEL_ART " name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.TOTAL_VOL.isEmpty() || Relational.ISNULL(row4.TOTAL_VOL) ? null : Float.parseFloat(row4.TOTAL_VOL.replaceAll(&quot;,&quot;, &quot;.&quot;)) " name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row4.TOTAL_VOL.isEmpty() || Relational.ISNULL(row4.TOTAL_VOL) ? null : BigDecimal.valueOf(row4.TOTAL_VOL.replaceAll(&quot;,&quot;, &quot;.&quot;)) " name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row4.TOTAL_POID.isEmpty() || Relational.ISNULL(row4.TOTAL_POID) ? null : Float.parseFloat(row4.TOTAL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;)) " name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="row4.NB_PAL " name="NB_PALETTE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.CONDITIONN " name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
@@ -1798,7 +1798,7 @@
     <metadata connector="FLOW" name="ajout_site2">
       <column comment="" key="false" length="-1" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
@@ -1813,12 +1813,12 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out2.ALLEE" name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.DESIGNATION" name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.VOLUME_TOTAL" name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="out2.VOLUME_TOTAL" name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.POIDS_TOTAL" name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.NB_PALETTE" name="NB_PALETTE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.TYPE_CONDITIONNEMENT" name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
@@ -1835,7 +1835,7 @@
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="ALLEE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DESIGNATION" nullable="true" type="id_String"/>
-        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_Float"/>
         <mapperTableEntries name="NB_PALETTE" nullable="true" type="id_String"/>
         <mapperTableEntries name="TYPE_CONDITIONNEMENT" nullable="true" type="id_String"/>
@@ -1969,7 +1969,7 @@
     <metadata connector="FLOW" name="tDBOutput_2">
       <column comment="" key="false" length="-1" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1986,7 +1986,7 @@
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="-1" name="ALLEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DESIGNATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NB_PALETTE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TYPE_CONDITIONNEMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -2775,13 +2775,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_adfeb54e-c439-4030-aa20-1201de315494"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oFcWjoRxTUSgYsq+tTuH5l07wHuo9yXuLnLa+Fm8//P5NldQwUckqV9eznGLMhgOT7HxRu7OIpbl&#13;
-D7cDP7BEUQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_904ddef0-50c8-47d8-aad4-4235252ef3e2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+V7AcRJu8Xgeu7F6JSP6zEoDrbwkGPGPGlSf1x4r3FkBQ6kmEOSPpCtbba9x+m84s51/7i/ZFbXz&#13;
-qykmOIiLkg==</DigestValue></Reference></SignedInfo><SignatureValue>UUBNuZCZyYBtFGweDEyMwBkJIPSlKR+KhbYqmDJikzz7N01oCi62Jbm3bTrQl4f3JWl0y/cS/FLV&#13;
-xgNpXGZJ2kErV3euQtTfQVka2RinnkQwuBOZlYc3LBMyRXRfPG4Z//viYYET2mkoGFNVEetd4Tku&#13;
-RvWhwqe5mx0PrYOZDWZD26sIqyM9/B65DGgMjW2dPjpxMsYq8o8NsH85z524jAGy2tzH8K37D9Rf&#13;
-r/7JzmN10NyEVDkPzFNdPSBQIptMMstPeX1AoTOPMgV+wOR/NkgqJU3HpTPuMQFA9S6dkgm6sEC4&#13;
-6RNtYtIQ/QqdFhkA16prjHjgGWraqUnUXXfipw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d0b8f7f5-e49d-4e9b-b140-8fdbcdb4ec7b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>t/+H5Ejq/1+sWZh+s6NuhfjcAbYh0ZA2OUDZZsuvTOz0RuQWTlV2/TrvhcC2voQF0x8NRfDcFfob&#13;
+qh7xR3xRrA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6c11649c-bbaf-49cb-8fa3-f44c8fe65829"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7blhoY5dUI6XBrdqlPkMOEzGAv453be6S2sgN8+j0ryffV4UIjJSefqbgW8mK+tjbKrZQWy65bK4&#13;
+0vf5M3cOAQ==</DigestValue></Reference></SignedInfo><SignatureValue>j9JHARgHe28PKHoCCllF3pyxPJnyazS5l78qp/+xbhBQOFaZU8Fqm8bHp95F8v11YZrm9OXra2/U&#13;
+BZmzuL9LByCWNhkQGdDLN4wMA+h0tF7qDNsQ8JW1VhLTEji4z6Bwm/04qPWzCCQGF5LZAZl+4sQ3&#13;
+k8sVYvfq752un8PK0e8GtUb8FWs0vwx77VN5yWMSoD0UmgXjVxU70FLSdiwKn89et4LyCvmfMzpJ&#13;
+qdGmnhgG84Bg5LE0UTnuRTZj24oUrqRUfIpeitIYR3BJQaDNuHlpjma200RubsOQh8DLRpGSc3fl&#13;
+MSi10Vy6aKaZ/t75RPeJoRIzUzQtG+ZIZ6FLQw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2803,4 +2803,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_904ddef0-50c8-47d8-aad4-4235252ef3e2" Target="#_adfeb54e-c439-4030-aa20-1201de315494"><Timestamp>2024-03-05 15:44:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6c11649c-bbaf-49cb-8fa3-f44c8fe65829" Target="#_d0b8f7f5-e49d-4e9b-b140-8fdbcdb4ec7b"><Timestamp>2024-03-06 22:18:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
