@@ -695,17 +695,6 @@
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
-    <metadata connector="FLOW" label="test_logrow" name="test_logrow">
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
-    </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
@@ -724,13 +713,6 @@
         <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) || Relational.ISNULL(row5.QUANTITE_LIMITE) || row5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL.divide(row5.QUANTITE_LIMITE, java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) || Relational.ISNULL(row5.QUANTITE_LIMITE) || row5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL.divide(row5.QUANTITE_LIMITE,java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_BigDecimal"/>
-      </outputTables>
-      <outputTables name="test_logrow" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
@@ -885,38 +867,6 @@
       <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
-    <metadata connector="FLOW" label="test" name="test">
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
@@ -937,28 +887,8 @@
         <mapperTableEntries expression="out2.STOCK " name="STOCK" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE " name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="out2.POURCENTAGE_REMPLISSAGE " name="POURCENTAGE_REMPLISSAGE" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Relational.ISNULL(out2.POURCENTAGE_REMPLISSAGE) ? null : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(1)) &gt; 1 || out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE == 1 ? &quot;KO&quot; : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(0.80)) &gt; 0.80 ? &quot;WARNING&quot; : &quot;OK&quot; " name="ETAT_REMPLISSAGE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Relational.ISNULL(out2.POURCENTAGE_REMPLISSAGE) || Relational.ISNULL(out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE) ? null : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(1)) &gt; 1 || out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE == 1 ? &quot;KO&quot; : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(0.80)) &gt; 0.80 ? &quot;WARNING&quot; : &quot;OK&quot; " name="ETAT_REMPLISSAGE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.CELLULE + &quot; &quot; + out2.RUBRIQUE_ICPE " name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
-      </outputTables>
-      <outputTables name="test" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="out2.CELLULE  " name="CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.LOCATAIRE  " name="LOCATAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.LATITUDE  " name="LATITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.LONGITUDE  " name="LONGITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.RUBRIQUE_ICPE  " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.QUANTITE_LIMITE  " name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="out2.UNITE  " name="UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.IDSITE  " name="IDSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.DUREE_INCENDIE  " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.QUANTITE_LIMITE_POIDS  " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="out2.QUANTITE_LIMITE_VOLUME  " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="out2.POURCENTAGE_LIMITE_POIDS  " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="out2.POURCENTAGE_LIMITE_VOLUME  " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="out2.STOCK  " name="STOCK" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE  " name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="out2.POURCENTAGE_REMPLISSAGE  " name="POURCENTAGE_REMPLISSAGE" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Relational.ISNULL(out2.POURCENTAGE_REMPLISSAGE) ? null : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(1)) &gt; 1 || out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE == 1 ? &quot;KO&quot; : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(0.80)) &gt; 0.80 ? &quot;WARNING&quot; : &quot;OK&quot;  " name="ETAT_REMPLISSAGE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.CELLULE + &quot; &quot; + out2.RUBRIQUE_ICPE  " name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
@@ -1271,133 +1201,6 @@
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_3"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOCATAIRE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LATITUDE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LONGITUDE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE_ICPE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="QUANTITE_LIMITE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UNITE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DUREE_INCENDIE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="QUANTITE_LIMITE_POIDS"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="QUANTITE_LIMITE_VOLUME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="POURCENTAGE_LIMITE_POIDS"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="POURCENTAGE_LIMITE_VOLUME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STOCK"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="POURCENTAGE_REMPLISSAGE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ETAT_REMPLISSAGE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CONCAT_CELLULE_ICPE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="test" name="tLogRow_3">
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="128">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_4"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOCATAIRE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE_ICPE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="POIDS_TOTAL"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VOLUME_TOTAL"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="test_logrow" name="tLogRow_4">
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
-    </metadata>
-  </node>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
@@ -1459,24 +1262,9 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="out4" lineStyle="0" metaname="out4" offsetLabelX="1" offsetLabelY="2" outputId="1" source="tMap_4" target="tMap_2">
+  <connection connectorName="FLOW" label="out4" lineStyle="0" metaname="out4" offsetLabelX="1" offsetLabelY="2" source="tMap_4" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
-  </connection>
-  <connection connectorName="FLOW" label="test_logrow" lineStyle="0" metaname="test_logrow" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_4" target="tLogRow_4">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="RUBRIQUE_ICPE"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="LOCATAIRE"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="CELLULE"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="test_logrow"/>
   </connection>
   <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="2" source="tMap_2" target="tMap_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -1499,7 +1287,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
-  <connection connectorName="FLOW" label="out3" lineStyle="0" metaname="out3" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_3" target="tDBOutput_1">
+  <connection connectorName="FLOW" label="out3" lineStyle="0" metaname="out3" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tDBOutput_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="ETAT_REMPLISSAGE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -1516,10 +1304,6 @@
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out3"/>
-  </connection>
-  <connection connectorName="FLOW" label="test" lineStyle="0" metaname="test" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_3" target="tLogRow_3">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="test"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
@@ -1590,13 +1374,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b655ef5d-7993-4dad-8a80-c9a3bc355f6e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PV1X/i2PbknYoXoW8oCKpcAAjJR9q9kGBFRJHsU5YvaU9g0VGCRlzmIVdcbgalVDIgpgCsSf8x9I&#13;
-IiS0PcuCnA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_66924a00-c1c3-4f64-b809-2f2749370bd1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>m0Thag7ilDwPULMmdJRpPVE9rc80qzrXAfDQj3H7R/2CcMwtAl1tmCeCMCFqaM0Gf1iCoCgs6bgL&#13;
-to7cKZKhug==</DigestValue></Reference></SignedInfo><SignatureValue>Vf5ncpqddKU3zTa3HA9yTpmpvFXJu5MC5Vin1Dc6pSt0yjl6H84o1xC/Y9wNNpU7IKB94RJ3h99b&#13;
-kCc9jCoEDrqggkontYRRmlT2Ovq/+LtZsHe38IMdrdw3hu7+OS9hIWhkXiyGfdlCKti57v/o3zHo&#13;
-5Qt+FAFT3N51JaMX4ozUDzgOqujqLfnS5WcF8KAfA/K//5CGura/P40PUUq55QTb83zFDSdPXTgb&#13;
-urFtBmXVZtOYRVvsrIFhB1pYAjn2caWrU/Vj+ALkaZh72ySvm7DvuurMtlqo4k7LtNzQ5wZCO/wC&#13;
-woXK72axirKLYDgZmfXX+rHDhIsZr9LKo14/SQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_27942163-6742-4592-b92e-365a4deab7a9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jO/AQJvqGcbyoRUdPqCJZvaNfDjmr42RdcIjLbAv36MAhzA2Ild1JBJFXdV3eRRw823b4TbR/tQX&#13;
+fivkfbriQg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_81fb8049-a1c6-475f-905c-23e5399c46f5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qpqKO1klsxpVZblrJUyigNioB7I45GfbF1LndgPKY10gtPWWC9gNhBlcTi1YPCfJkIJSa2i4gnlP&#13;
+cUQIhn3YGQ==</DigestValue></Reference></SignedInfo><SignatureValue>RcDNIGEu/3q63qTx1I04YZ4GsYRLZsSvOWykjAcRnF665W2xhRTJiK614x43VuS/1/qXJ8mc8c29&#13;
+cOtZtzf4Yz7etUwpvLPN8yvYBP6mvLs5rRn9gGnffU7FB4RAWsOPIFTtH3TyRNlHC3lXD4bgVQ8d&#13;
+d7ffnqXkHPHz82pa60cx1m1Wop5k9sf417JNXLzVl6s4w0a1ufdUhD5iLSMGznh64wMVAAgH4U8h&#13;
+GPUktfhIG8gVl128CJmfiYZdCclEkHsugiBDw6d95tWekEcCBLUTjSD7/SeaZlZJbgMXS7Bu8NV1&#13;
+PoIpAWOpZfBN84DABkJEQCC8VjbWa9yvsKAJUw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1618,4 +1402,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_66924a00-c1c3-4f64-b809-2f2749370bd1" Target="#_b655ef5d-7993-4dad-8a80-c9a3bc355f6e"><Timestamp>2024-03-07 09:38:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_81fb8049-a1c6-475f-905c-23e5399c46f5" Target="#_27942163-6742-4592-b92e-365a4deab7a9"><Timestamp>2024-03-07 09:41:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
