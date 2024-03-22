@@ -455,7 +455,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;QUALITE,&#13;&#10;&#9;ENTITE,&#13;&#10;&#9;ADRESSE,&#13;&#10;&#9;CONTACT,&#13;&#10;&#9;ADRESSE_MAIL,&#13;&#10;&#9;TELEPHONE,&#13;&#10;&#9;SITE,&#13;&#10;&#9;URL_SHAREPOINT,&#13;&#10;&#9;LIEN_SHAREPOINT,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_sommaire&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;QUALITE,&#13;&#10;&#9;ENTITE,&#13;&#10;&#9;ADRESSE,&#13;&#10;&#9;CONTACT,&#13;&#10;&#9;ADRESSE_MAIL,&#13;&#10;&#9;TELEPHONE,&#13;&#10;&#9;URL_SHAREPOINT,&#13;&#10;&#9;LIEN_SHAREPOINT,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_sommaire&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -478,8 +478,6 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="TELEPHONE"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="URL_SHAREPOINT"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_SHAREPOINT"/>
@@ -496,8 +494,7 @@
       <column comment="" key="false" length="250" name="CONTACT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ADRESSE_MAIL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="TELEPHONE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="500" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="250" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_SOMMAIRE"/>
@@ -519,6 +516,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="out1">
+      <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUALITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -537,25 +535,20 @@
       <column comment="" key="false" length="250" name="TELEPHONE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="IDCLIENTSITE.IDCLIENTSITE " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
         <mapperTableEntries expression="row1.QUALITE " name="QUALITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ENTITE " name="ENTITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ADRESSE " name="ADRESSE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CONTACT " name="CONTACT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ADRESSE_MAIL " name="ADRESSE_MAIL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.TELEPHONE " name="TELEPHONE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.SITE " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.URL_SHAREPOINT " name="URL_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="QUALITE" nullable="true" type="id_String"/>
@@ -564,10 +557,13 @@
         <mapperTableEntries name="CONTACT" nullable="true" type="id_String"/>
         <mapperTableEntries name="ADRESSE_MAIL" nullable="true" type="id_String"/>
         <mapperTableEntries name="TELEPHONE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="URL_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
+      </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="IDCLIENTSITE" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="IDCLIENTSITE" nullable="true" type="id_Long"/>
       </inputTables>
     </nodeData>
   </node>
@@ -603,6 +599,11 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDCLIENTSITE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="QUALITE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -633,17 +634,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="URL_SHAREPOINT"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -658,6 +649,7 @@
     <elementParameter field="TEXT" name="LABEL" value="DWH_D_ICPE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
+      <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUALITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -676,13 +668,10 @@
       <column comment="" key="false" length="250" name="TELEPHONE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
+      <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUALITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -701,13 +690,50 @@
       <column comment="" key="false" length="250" name="TELEPHONE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="-4" offsetLabelY="0" posX="448" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;3306&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MySQL"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:oUs/t57otDU2hqp/NneUffsxlSgG5v6tlXJeM/MJ"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;IDCLIENTSITE&#13;&#10;FROM dwh_d_site&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ENABLE_STREAM" value="true"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDCLIENTSITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="DWH_D_SITES"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="500" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
+      <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
   <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="192">
@@ -812,12 +838,19 @@
       <elementValue elementRef="TRACE_COLUMN" value="URL_SHAREPOINT"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IDCLIENTSITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
+  </connection>
+  <connection connectorName="FLOW" label="IDCLIENTSITE" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="IDCLIENTSITE"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBCommit_1" offsetLabelX="0" offsetLabelY="0" source="tDBCommit_1" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
@@ -880,13 +913,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5e39ef82-745f-4d13-9a06-87f715cd2f58"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CKlcK30jH5r9AK5fW4YjWuu9eApMp6psDVOH+Z0Q3jSrgYR7rM+jzBXK6UFkAUsn25uFjvRoJko2&#13;
-FWuFXTcg/g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a14f7b09-5a41-49b9-acbc-b08687b14ca0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UX2pe9fKks26SEN5ESC3hmzxwjRIT/S+Ry4b+flJQRiOr3XxTfTgt7SizMMjlnrFbd4VJFpXl3wV&#13;
-rWL34KG7KQ==</DigestValue></Reference></SignedInfo><SignatureValue>d45CuZXFjlYdMCWQpoZmSDm4GKBuKkqcgrElT9h2PDZ4rr9uoJVLO3aYb9ol45fhxlaUkP9XD2GP&#13;
-1mSxvKv/QDv5RME4ev4vCwUJU3X0b7vbDRrNfpMQtKobHSwojsFNOm4jVKa5GloLgsnar4Qlm85t&#13;
-h/CEVwCSss523yKdbyCfCvnjlWwTCUpwuRrMXOwJVYgq4tVweP6fmLvxFWS96gfMqfYXS50Z2k+8&#13;
-BvRqPt8kCUsB3PUwtcxNDDbPq3jacwwZn6xdz4nv5+1vaSh1bjTXrMzBqQMYkT65h9GIsH72HdV6&#13;
-7IIgmLRu88Gny/Ki0yv4e4a2J9FuDOGQ3ZicuA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e3a7659b-97ff-49f1-a9cb-c710dcefbbd9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zugIFNp4CB8IMzGxWUdlGudJUo/Z84WwT+fC2gYjaEjJtpjPLCPMWNME0F5ObiyvLl8z+U4o18o0&#13;
+jNPoDGdj9w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bdccc19e-99e0-4fbd-8c0d-4e89db974878"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xoiO741i6UIZP7H1WuArCc1Dj6clwiLooHzqJN/6jguF9l9pJoDOTyJM8oDad+SK8ruzYgiMRtv2&#13;
+a9dO3gCkmg==</DigestValue></Reference></SignedInfo><SignatureValue>Ipq4Nn5QQzbWNOdMPgjzShjUGyts3GRlhHqv4KE/nPlNOO+Hb9RV1ApRTUCJ5chWOa1jGHjlnaNK&#13;
+f+flO+pmfUVmTt0aF2+Y0/4z89Kbidxv/+2exGnI28kQAgM559nrjZl0bj+BxNXYMq5FzQqBw3EH&#13;
+3my691il9r5Pb8oLB9LepJA15RZKQaVNLiweq/0hWiG8H3pSPOgdEJqrFgq2W5NovFdVAn4twvjg&#13;
+psjyWy0fS+qbmO1ZHE9oxYEWnJYyqjZh2xExSUY+X9eZ6EQ5etZYWnxqJ8uvZOK1IxjejPKmMJeW&#13;
+VuPgJnPHJ2rMUYbUIfQEktZQsAE7kIif89tXdg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -908,4 +941,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a14f7b09-5a41-49b9-acbc-b08687b14ca0" Target="#_5e39ef82-745f-4d13-9a06-87f715cd2f58"><Timestamp>2024-03-04 11:02:31</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bdccc19e-99e0-4fbd-8c0d-4e89db974878" Target="#_e3a7659b-97ff-49f1-a9cb-c710dcefbbd9"><Timestamp>2024-03-19 21:55:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

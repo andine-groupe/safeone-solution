@@ -610,7 +610,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select &#13;&#10;&#9;SITE,&#13;&#10;&#9;CELLULE,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;POIDS_TOTAL,&#13;&#10;&#9;VOLUME_TOTAL,&#13;&#10;&#9;STOCK,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;IDLOCATAIRE,&#13;&#10;&#9;DATE_FICHIER&#13;&#10; from dwh_f_stocks&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select &#13;&#10;&#9;IDCLIENTSITE,&#13;&#10;&#9;IDLOCATAIRE,&#13;&#10;&#9;IDCELLULE,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;POIDS_TOTAL,&#13;&#10;&#9;VOLUME_TOTAL,&#13;&#10;&#9;STOCK,&#13;&#10;&#9;DATE_FICHIER&#13;&#10; from dwh_f_stocks&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -621,9 +621,11 @@
     <elementParameter field="CHECK" name="ENABLE_STREAM" value="false"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDCLIENTSITE"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDCELLULE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE_ICPE"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -633,24 +635,20 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="STOCK"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DATE_FICHIER"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="DWH_F_STOCKS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="192">
@@ -670,14 +668,13 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="out1">
       <column comment="" key="true" length="-1" name="my_row_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="JOUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="MOIS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -685,20 +682,19 @@
       <column comment="" key="false" length="-1" name="DIFF_DATE" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;my_row_id&quot;,1,1) " name="my_row_id" type="id_Integer"/>
       </varTables>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Var.my_row_id " name="my_row_id" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.SITE " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.CELLULE " name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.IDCLIENTSITE " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
+        <mapperTableEntries expression="row1.IDLOCATAIRE " name="IDLOCATAIRE" nullable="true" type="id_Long"/>
+        <mapperTableEntries expression="row1.IDCELLULE" name="IDCELLULE" nullable="true" type="id_Long"/>
         <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.STOCK " name="STOCK" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDLOCATAIRE " name="IDLOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.DATE_FICHIER " name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="StringHandling.RIGHT(StringHandling.LEFT(String.valueOf(row1.DATE_FICHIER),10),2) " name="JOUR" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.RIGHT(StringHandling.LEFT(String.valueOf(row1.DATE_FICHIER),7),2) " name="MOIS" nullable="true" type="id_String"/>
@@ -706,14 +702,13 @@
         <mapperTableEntries expression="TalendDate.diffDate(TalendDate.getCurrentDate(), row1.DATE_FICHIER,&quot;dd&quot;) " name="DIFF_DATE" nullable="true" type="id_Long"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="IDCLIENTSITE" nullable="true" type="id_Long"/>
+        <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_Long"/>
+        <mapperTableEntries name="IDCELLULE" nullable="true" type="id_Long"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_String"/>
         <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_String"/>
         <mapperTableEntries name="STOCK" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="IDLOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DATE_FICHIER" nullable="true" type="id_Date"/>
       </inputTables>
     </nodeData>
@@ -732,14 +727,13 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFilterRow_6">
       <column comment="" key="true" length="-1" name="my_row_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="JOUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="MOIS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -748,14 +742,13 @@
     </metadata>
     <metadata connector="FILTER" name="FILTER">
       <column comment="" key="true" length="-1" name="my_row_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="JOUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="MOIS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -764,14 +757,13 @@
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="-1" name="my_row_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="JOUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="MOIS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -817,12 +809,17 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDCLIENTSITE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDCELLULE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -843,16 +840,6 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="STOCK"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDLOCATAIRE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -893,14 +880,13 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
       <column comment="" key="true" length="-1" name="my_row_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="JOUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="MOIS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -909,14 +895,13 @@
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="-1" name="my_row_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="JOUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="MOIS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -970,6 +955,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IDCLIENTSITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1041,13 +1029,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0b859958-926b-46f7-8c01-87a4a32ba1c8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4TuUQkpFWQ0sBKs/JVDGk7EZ0SWoS4FcPKhg1oMSAtSi9KjehPPvfItZh7h825Q0IgxB1p0uB/Qp&#13;
-3AumxTwECQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9e4243bf-4f7c-47f3-b271-43cd11209e37"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ubRD7QwBmAyKij/MvV+Yk1Oqk9bjJ+giios6Tt8r59fEgMWlcGypFCk1msMDi/W5kMMtgqNl/Rzz&#13;
-sWU6epeJfQ==</DigestValue></Reference></SignedInfo><SignatureValue>RelYKwYv9UvKfKOnxiUH/JXV7ZumfQwP/dWDb+8mVNbOyW8QWpthLjgibBqpNO1Qe8vquiAZT/5E&#13;
-ftasWlEbjqmfXX5ot3JBr4tKnGL6f100bwvdWH5DJeYtHxJbiBO9SBzvc3nqcRTTvqik9BbFo8nY&#13;
-Fmhkb/+j3QVz2AZIABrOsonBky9JMQr6hfLTPn6AiqIR3iMYUF86dXNkDjDt0I6yV/Dbw9bLdoY5&#13;
-AkUwQSEBI0sBumpaEuuV9PJ3XA/YF4fM7P5XSL6FHul8tkk/ih9zs48GSxV8HcAdepuVeC/etaPj&#13;
-nfT8vjMlCaE7n8mvqQBpoHii3hlpol967uGBkg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_efe6cd7d-14c7-4840-9c51-d1322744e05f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>sQvQ/iDWmSTTRpTZmznAr7DxGFice0OeqIoDQiaQ4TtdRwAUz0/gxaPaMiAtHEkNk27o7MRttkKg&#13;
+ORkQxdzb4A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_32ef3354-5656-472b-bf58-51eb0aa534ce"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>r0J+26lnm8vHuNP4teq7y1D4mhsp41MOzXhflXGIEyuCClfhXAGLBSI7cV9n/GyW6Pj8zSuK8xDf&#13;
+AQGEw0AW7A==</DigestValue></Reference></SignedInfo><SignatureValue>jvSdCt03b7rvG6OR7YwAq+WQ1bMKEyRsg0xKIh7UImQdJ1+YPrWEDvxPfNrCzTxeUtRdR/T5Neoy&#13;
+CUrq7s0RKkkTnCdTMoXbaICMcOBQ/0o6TyzMpJ023NVP7gNK3WXNi66Gxo5siV02ae6aNtDvJGBD&#13;
+gqUgPVEKZRLjrxJ/5P4DhLeezFYYaiB9vFOGlMq+Gwj/2LVOoUTWCYMnh8PL8q4umURx/1aSesfy&#13;
+iRmpiqnmBoMfu90B459EvOaHmbvZfj1SQyfoRC5W45nukfc77jH1BAYb7pwVfT/b2fYZ+c5bJ75/&#13;
+Trt1E+T6f3m9OfKrl05ZLc1dMIqxHmuUzzpfig==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1069,4 +1057,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9e4243bf-4f7c-47f3-b271-43cd11209e37" Target="#_0b859958-926b-46f7-8c01-87a4a32ba1c8"><Timestamp>2024-03-05 16:52:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_32ef3354-5656-472b-bf58-51eb0aa534ce" Target="#_efe6cd7d-14c7-4840-9c51-d1322744e05f"><Timestamp>2024-03-20 09:55:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

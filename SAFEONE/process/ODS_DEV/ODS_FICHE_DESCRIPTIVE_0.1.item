@@ -65,7 +65,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="192"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="161"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -297,7 +297,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_1"/>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="1824">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="1984">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -418,7 +418,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="1824">
+  <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="1984">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -577,7 +577,7 @@
   <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;C:/ANDINE/09/allios_marignane/fiche_descriptive/&quot;"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;C:/ANDINE/09/Allios - Marignane&quot;"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
     <elementParameter field="CHECK" name="INCLUDSUBDIR" value="true"/>
     <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
@@ -776,13 +776,13 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out3.LIEN_METEO" name="LIEN_METEO" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out3.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out3.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out3.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out3" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LIEN_METEO" nullable="true" type="id_String"/>
@@ -1254,12 +1254,12 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out8" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out9.URL_SHAREPOINT " name="URL_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out9.LIEN_SHAREPOINT " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out9.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out9.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out9" sizeState="INTERMEDIATE">
         <mapperTableEntries name="URL_SHAREPOINT" nullable="true" type="id_String"/>
@@ -1507,7 +1507,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out2.LOCAL" name="LOCAL" nullable="true" type="id_String"/>
@@ -1516,7 +1516,7 @@
         <mapperTableEntries expression="out2.LONGITUDE " name="LONGITUDE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out2.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out2.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out2.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LOCAL" nullable="true" type="id_String"/>
@@ -1606,22 +1606,22 @@
     <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_4">
-      <column comment="" key="false" length="17" name="LOCAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="17" name="LATITUDE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="15" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="LOCAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="LATITUDE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="15" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="17" name="LOCAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="17" name="LATITUDE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="15" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="LOCAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="17" name="LATITUDE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="15" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1779,7 +1779,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site5" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out4.DATE" name="DATE" nullable="true" type="id_String"/>
@@ -1787,7 +1787,7 @@
         <mapperTableEntries expression="out4.DESCRIPTIF " name="DESCRIPTIF" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries name="DATE" nullable="true" type="id_String"/>
@@ -2092,7 +2092,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site6" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out5.RUBRIQUE" name="RUBRIQUE" nullable="true" type="id_String"/>
@@ -2106,7 +2106,7 @@
         <mapperTableEntries expression="out5.SEVESO " name="SEVESO" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out5.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out5.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out5.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out5.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out5" sizeState="INTERMEDIATE">
         <mapperTableEntries name="RUBRIQUE" nullable="true" type="id_String"/>
@@ -2409,7 +2409,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site7" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out6.LOCAL_BATIMENT" name="LOCAL_BATIMENT" nullable="true" type="id_String"/>
@@ -2417,7 +2417,7 @@
         <mapperTableEntries expression="out6.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out6" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LOCAL_BATIMENT" nullable="true" type="id_String"/>
@@ -2675,7 +2675,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site8" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out7.BATIMENT" name="BATIMENT" nullable="true" type="id_String"/>
@@ -2684,7 +2684,7 @@
         <mapperTableEntries expression="out7.UNITE" name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out7.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out7.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out7.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out7.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out7" sizeState="INTERMEDIATE">
         <mapperTableEntries name="BATIMENT" nullable="true" type="id_String"/>
@@ -2819,6 +2819,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_couverture&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_COUVERTURE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -2857,6 +2858,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_sommaire&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_SOMMAIRE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -2895,6 +2897,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_description_site&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_DESC_SITE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -2933,6 +2936,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_localisation&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_LOCALISATION"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -2971,6 +2975,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_historique&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_HISTORIQUE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -2984,7 +2989,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-6" posX="608" posY="160">
+  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-6" posX="640" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSQLTemplate_6"/>
     <elementParameter field="CLOSED_LIST" name="DBTYPE" value="MYSQL"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_AS400" show="false" value=""/>
@@ -3009,6 +3014,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_icpe&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_ICPE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -3022,7 +3028,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-6" posX="416" posY="160">
+  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-6" posX="448" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSQLTemplate_7"/>
     <elementParameter field="CLOSED_LIST" name="DBTYPE" value="MYSQL"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_AS400" show="false" value=""/>
@@ -3047,6 +3053,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_flux_thermiques&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_FLUX_THERMIQUES"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -3060,7 +3067,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-6" posX="224" posY="160">
+  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-6" posX="192" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSQLTemplate_8"/>
     <elementParameter field="CLOSED_LIST" name="DBTYPE" value="MYSQL"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_AS400" show="false" value=""/>
@@ -3085,6 +3092,7 @@
     <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_limites_stock&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_LIMITES_STOCK"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
@@ -3247,14 +3255,14 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.ADRESSE_SITE" name="ADRESSE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;09\\&quot;)+3,out1.LIEN_SHAREPOINT.indexOf(&quot; -&quot;)) " name="NOM_CLIENT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="ADRESSE_SITE" nullable="true" type="id_String"/>
@@ -3519,12 +3527,12 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out11" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out10.N_AFFAIRE " name="N_AFFAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out10.LIEN_SHAREPOINT " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out10.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out10.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out10" sizeState="INTERMEDIATE">
         <mapperTableEntries name="N_AFFAIRE" nullable="true" type="id_String"/>
@@ -3636,12 +3644,12 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out13" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out12.CODE_POSTAL  " name="CODE_POSTAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out12.LIEN_SHAREPOINT  " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out12.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3)  " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out12.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out12" sizeState="INTERMEDIATE">
         <mapperTableEntries name="CODE_POSTAL" nullable="true" type="id_String"/>
@@ -3658,6 +3666,298 @@
     <elementParameter field="TEXT" name="LABEL" value="Fin traitement"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_2"/>
+  </node>
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="1856">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_12"/>
+    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
+    <elementParameter field="FILE" name="FILENAME" value="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)+&quot;/&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:+5U/PYaslipThV6MX8JCmtGGSmUg80MstOqUYJVY"/>
+    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
+    <elementParameter field="TABLE" name="SHEETLIST">
+      <elementValue elementRef="SHEETNAME" value="&quot;1.2.1-Locataires&quot;"/>
+      <elementValue elementRef="USE_REGEX" value=""/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="HEADER" value="10"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
+    <elementParameter field="TEXT" name="FIRST_COLUMN" value="2"/>
+    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_lujJEOXfEe6KZfRvDtej6g - metadata"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" show="false" value="_yVM90MEPEe67GN6DA98bkw - metadata"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="','"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="'.'"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Nom_locataire"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="D"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="E"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
+    <elementParameter field="TABLE" name="DATESELECT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Nom_locataire"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="D"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="E"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+    </elementParameter>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="READ_REAL_VALUE" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
+    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" show="false" value="false"/>
+    <elementParameter field="CHECK" name="SUPPRESS_WARN" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
+    <elementParameter field="CHECK" name="INCLUDE_PHONETICRUNS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CONFIGURE_INFLATION_RATIO" value="false"/>
+    <elementParameter field="TEXT" name="INFLATION_RATIO" show="false" value=""/>
+    <elementParameter field="TEXT" name="LABEL" value="FICHE_DESCRIPTIVE_LOCATAIRES"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_12">
+      <column comment="" key="false" length="-1" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Nom_locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="D" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="E" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="-1" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Nom_locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="D" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="E" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="1856">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_25"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_OOBqYMEGEe67GN6DA98bkw-tMap_25-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out14">
+      <column comment="" key="false" length="-1" name="NUMERO_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out14" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row14.Locataire " name="NUMERO_LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Nom_locataire " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row14" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="Locataire" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Nom_locataire" nullable="true" type="id_String"/>
+        <mapperTableEntries name="D" nullable="true" type="id_String"/>
+        <mapperTableEntries name="E" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="1856">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_26"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_OOBqYMEGEe67GN6DA98bkw-tMap_26-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out15">
+      <column comment="" key="false" length="-1" name="NUMERO_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables activateExpressionFilter="true" expressionFilter="out14.NOM_LOCATAIRE != null" name="out15" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="out14.NUMERO_LOCATAIRE " name="NUMERO_LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out14.NOM_LOCATAIRE " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out14.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out14.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out14.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out14" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="NUMERO_LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="-12" offsetLabelY="0" posX="608" posY="1856">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_9"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_GgxnwL96Ee67GN6DA98bkw"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_8"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MYSQL"/>
+    <elementParameter field="TEXT" name="HOST" value="context.MySQL_ODS_Server"/>
+    <elementParameter field="TEXT" name="PORT" value="context.MySQL_ODS_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
+    <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:OiSmEUn0Yjfv/j6Nnkmonq5GVmAqKncr70b+MDK0SKwZfQqW1SaqprbrmNs013qnAOQewxaJ"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_fiche_descriptive_locataires&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.MySQL_ODS_AdditionalParams"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" show="false" value="10000"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="NUMERO_LOCATAIRE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NOM_LOCATAIRE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_SHAREPOINT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBOutput_9">
+      <column comment="" key="false" length="-1" name="NUMERO_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="NUMERO_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="1856">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_9"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CHECK" name="CLOSE" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBCommit_9"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="1856">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_10"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement onglet limites stock&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="Fin traitement"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_10"/>
+  </node>
+  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-6" posX="0" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSQLTemplate_9"/>
+    <elementParameter field="CLOSED_LIST" name="DBTYPE" value="MYSQL"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_AS400" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_DB2" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_FIREBIRD" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_GREENPLUM" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_HIVE" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_INGRES" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_INTERBASE" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_MSSQL" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_MYSQL" value="tDBConnection_1"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_DBORACLE" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_PARACCEL" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_POSTGRE" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_SQLITE" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_SYBASE" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_TERADATA" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_VERTICA" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_NETEZZA" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_SNOWFLAKE" show="false" value=""/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_DELTALAKE" show="false" value=""/>
+    <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
+    <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_fiche_descriptive_locataires&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="DELETE_LOCATAIRES"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" show="false" value="Generic"/>
+    <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
+      <elementValue elementRef="SQLPATTERNLIST" value="_WxBK8NF0Ee6CbJpMzOEP3w--DELETE"/>
+      <elementValue elementRef="SQLPATTERNLIST" value="_7BBvIMG3Ee64T6b5AyYjCA--Commit"/>
+    </elementParameter>
+    <metadata connector="TABLE" name="tSQLTemplate_9">
+      <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_MAJ_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
   </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tDBConnection_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
@@ -4019,9 +4319,18 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row11"/>
   </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFileInputExcel_8" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_8" target="tFileInputExcel_12">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk33"/>
+  </connection>
   <connection connectorName="FLOW" label="out7" lineStyle="0" metaname="out7" offsetLabelX="0" offsetLabelY="0" source="tMap_8" target="tMap_16">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="LIEN_SHAREPOINT"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NOM_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_LOCATAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -4036,6 +4345,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NOM_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ajout_site8"/>
@@ -4043,7 +4358,7 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_8" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_8" target="tDBCommit_8">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk11"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSQLTemplate_1" offsetLabelX="0" offsetLabelY="0" source="tSQLTemplate_1" target="tSQLTemplate_2">
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSQLTemplate_1" offsetLabelX="2" offsetLabelY="3" source="tSQLTemplate_1" target="tSQLTemplate_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk24"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSQLTemplate_2" offsetLabelX="0" offsetLabelY="0" source="tSQLTemplate_2" target="tSQLTemplate_3">
@@ -4063,6 +4378,9 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSQLTemplate_7" offsetLabelX="0" offsetLabelY="0" source="tSQLTemplate_7" target="tSQLTemplate_8">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk30"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSQLTemplate_8" offsetLabelX="0" offsetLabelY="0" source="tSQLTemplate_8" target="tSQLTemplate_9">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk35"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputExcel_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -4138,6 +4456,49 @@
   <connection connectorName="FLOW" label="out13" lineStyle="8" metaname="out13" offsetLabelX="0" offsetLabelY="0" source="tMap_24" target="tMap_23">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out13"/>
+  </connection>
+  <connection connectorName="FLOW" label="row14" lineStyle="0" metaname="tFileInputExcel_12" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_12" target="tMap_25">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row14"/>
+  </connection>
+  <connection connectorName="FLOW" label="out14" lineStyle="0" metaname="out14" offsetLabelX="0" offsetLabelY="0" source="tMap_25" target="tMap_26">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_SHAREPOINT"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NOM_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out14"/>
+  </connection>
+  <connection connectorName="FLOW" label="out15" lineStyle="0" metaname="out15" offsetLabelX="0" offsetLabelY="0" source="tMap_26" target="tDBOutput_9">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="SITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NOM_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out15"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_9" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_9" target="tDBCommit_9">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk34"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBCommit_9" offsetLabelX="0" offsetLabelY="0" source="tDBCommit_9" target="tWarn_10">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk15"/>
   </connection>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
@@ -4354,13 +4715,34 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2a7b4ef4-77c9-4375-983f-7fc3dcede2be"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EtCiZ87LzvvX7OGGXty18DTJDpCwLntlzm5e3Bo03h53Va5BiyRPmpH4eHBP27EkA0w6NMX3Izo4&#13;
-hApCxV5lHA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0a0359b6-fcf2-4f35-921c-10af2c9cee20"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>aMDXQylTEU1BM8MSq2iDqFuMcLcTtH3JUCXyXDfAgvC7UoWRZhnHBSeRd2NaOeMPIYaie9QBTDt/&#13;
-zO8KNbEqJg==</DigestValue></Reference></SignedInfo><SignatureValue>fE3fuFHwiEn/mfCZSlj9y7hD8RQ5CPW65TzneE4xdGPM5CBc2wlpFy5gz3KyPKr3NOYJdFuralRg&#13;
-xc8098OSDBLUlejn05TJl9Hu9lAgkHnrSmIwdcnABBhysvI7nQ9LHuyhbcRKHqKpE8outqhmFKNo&#13;
-UPA/NWwi7tetuqDnYsFJ7aGD1I/oESnxzGywQxH0W6rwP4nVGpUrK/bPZkHFzSH6xkzLttqvljpX&#13;
-ahYiF87gjbMTYXTSGcbEB1sEKYI5DAUGiapq35Mw9WdDz7+v7XY4RGUMZ8b1Hw5QBKiSHquqTJ2g&#13;
-iR2+m3272UcmZn4bmImAbnbd44Sfkw0YVGgnrg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_12"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_9"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="COLLAPSED" show="false" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_10"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSQLTemplate_9"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_dfc607dc-09ec-4f30-b1e8-022d30fc5bbd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fwcMzc2aVaJFirOMnHIX9fc0oM9A9PLp89QiSSVAIFfJLxCt3yxoTY8j4UNGNev+fAELoxEtmDHB&#13;
+y+KrAxHsmg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d2153b51-0afa-43b1-8fce-6dbacc0f7cd6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>R6ZQBKIK0/V71zpdXVJpj7VIXEOh9uLtfkqAyRbZ7xGFgRgTA2pLkEhhIPpoB4pn3d8mRIXvV4k6&#13;
+OkbAj2t5Mg==</DigestValue></Reference></SignedInfo><SignatureValue>FM9FyahGlyMIeIDvxlrgzwp4WPFLv1lSDgaErHrgKDlZs4VEYKY8Hxr1AeBsrA0ZKYzaClsJZuo+&#13;
+x+QztH3sDJZPu1aLiammVLLEvHxciY1GwHcU7tS72hkfRD5JzE10t3EiSD3XT2KWia21epvsWDBK&#13;
+gxdvZrYHQ/KBuzPn8XGo4As8U7uvlEjx1Pa8W5tZvS+gJ6Dh2CFasSoCLK6+Vz+iiqEKLciM01/N&#13;
+mOG8q60X1QlgN02a3rTTKGF3vj7mZc8Y9fOmc7sAHwaEF/XAQfevyYP20llTAmIFLZ6foFtUeIao&#13;
+W0NR8+0i0fxCkknvorqF/1eRqHoumJ5+VQ5a7A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -4382,4 +4764,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0a0359b6-fcf2-4f35-921c-10af2c9cee20" Target="#_2a7b4ef4-77c9-4375-983f-7fc3dcede2be"><Timestamp>2024-03-15 08:46:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d2153b51-0afa-43b1-8fce-6dbacc0f7cd6" Target="#_dfc607dc-09ec-4f30-b1e8-022d30fc5bbd"><Timestamp>2024-03-20 16:41:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
