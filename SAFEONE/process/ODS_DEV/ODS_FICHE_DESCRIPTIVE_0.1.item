@@ -785,8 +785,8 @@
       <outputTables name="ajout_site4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out3.LIEN_METEO" name="LIEN_METEO" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out3.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out3.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out3.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out3.LIEN_SHAREPOINT.substring(out3.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out3.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out3" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LIEN_METEO" nullable="true" type="id_String"/>
@@ -1045,8 +1045,8 @@
         <mapperTableEntries expression="copyOfout1.ADRESSE_MAIL" name="ADRESSE_MAIL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout1.TELEPHONE" name="TELEPHONE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="copyOfout1.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout1.LIEN_SHAREPOINT.substring(copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(copyOfout1.LIEN_SHAREPOINT.substring(copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(copyOfout1.LIEN_SHAREPOINT.substring(copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)),3) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout1.LIEN_SHAREPOINT.substring(copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(copyOfout1.LIEN_SHAREPOINT.substring(copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + StringHandling.LEFT(copyOfout1.LIEN_SHAREPOINT.substring(copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, copyOfout1.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1),3) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="copyOfout1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="QUALITE" nullable="true" type="id_String"/>
@@ -1263,7 +1263,7 @@
       <outputTables name="out8" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out9.URL_SHAREPOINT " name="URL_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out9.LIEN_SHAREPOINT " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out9.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out9.LIEN_SHAREPOINT.substring(out9.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out9.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out9" sizeState="INTERMEDIATE">
         <mapperTableEntries name="URL_SHAREPOINT" nullable="true" type="id_String"/>
@@ -1519,8 +1519,8 @@
         <mapperTableEntries expression="out2.LATITUDE" name="LATITUDE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.LONGITUDE " name="LONGITUDE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out2.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out2.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out2.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out2.LIEN_SHAREPOINT.substring(out2.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out2.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LOCAL" nullable="true" type="id_String"/>
@@ -1790,8 +1790,8 @@
         <mapperTableEntries expression="out4.TYPE_ACTE" name="TYPE_ACTE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.DESCRIPTIF " name="DESCRIPTIF" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out4.LIEN_SHAREPOINT.substring(out4.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out4.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries name="DATE" nullable="true" type="id_String"/>
@@ -2109,8 +2109,8 @@
         <mapperTableEntries expression="out5.GRAND_GROUPE_ICPE " name="GRAND_GROUPE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out5.SEVESO " name="SEVESO" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out5.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out5.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out5.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out5.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out5.LIEN_SHAREPOINT.substring(out5.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out5.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out5" sizeState="INTERMEDIATE">
         <mapperTableEntries name="RUBRIQUE" nullable="true" type="id_String"/>
@@ -2420,8 +2420,8 @@
         <mapperTableEntries expression="out6.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out6" sizeState="INTERMEDIATE">
         <mapperTableEntries name="LOCAL_BATIMENT" nullable="true" type="id_String"/>
@@ -2687,8 +2687,8 @@
         <mapperTableEntries expression="out7.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out7.UNITE" name="UNITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out7.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out7.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out7.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out7.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out7.LIEN_SHAREPOINT.substring(out7.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out7.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out7" sizeState="INTERMEDIATE">
         <mapperTableEntries name="BATIMENT" nullable="true" type="id_String"/>
@@ -3264,9 +3264,9 @@
       <outputTables name="ajout_site" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.ADRESSE_SITE" name="ADRESSE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;09\\&quot;)+3,out1.LIEN_SHAREPOINT.indexOf(&quot; -&quot;)) " name="NOM_CLIENT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="ADRESSE_SITE" nullable="true" type="id_String"/>
@@ -3536,7 +3536,7 @@
       <outputTables name="out11" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out10.N_AFFAIRE " name="N_AFFAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out10.LIEN_SHAREPOINT " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out10.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out10.LIEN_SHAREPOINT.substring(out10.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out10.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out10" sizeState="INTERMEDIATE">
         <mapperTableEntries name="N_AFFAIRE" nullable="true" type="id_String"/>
@@ -3653,7 +3653,7 @@
       <outputTables name="out13" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out12.CODE_POSTAL  " name="CODE_POSTAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out12.LIEN_SHAREPOINT  " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out12.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out12.LIEN_SHAREPOINT.substring(out12.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out12.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out12" sizeState="INTERMEDIATE">
         <mapperTableEntries name="CODE_POSTAL" nullable="true" type="id_String"/>
@@ -3811,8 +3811,8 @@
         <mapperTableEntries expression="out14.NUMERO_LOCATAIRE " name="NUMERO_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out14.NOM_LOCATAIRE " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out14.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out14.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.LEFT(out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;9\\&quot;)+2, out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out14.LIEN_SHAREPOINT.indexOf(&quot;\\Dev&quot;)) " name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out14.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.LEFT(out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out14.LIEN_SHAREPOINT.substring(out14.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out14.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out14" sizeState="INTERMEDIATE">
         <mapperTableEntries name="NUMERO_LOCATAIRE" nullable="true" type="id_String"/>
@@ -4740,13 +4740,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d0feaf16-9824-48d4-b035-35ae8bf68ced"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PmFieGTBwGL1Vb8vx9jWz+69xxTAH9GDRrxoZKiw3LC63TtFcViekz7jfRVeywTRxERYyCn+ag01&#13;
-gLJarPKuZg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_69db0732-f809-43d7-b315-311491237bac"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Zt2tvzdS6Ahst/+9BZWP2rgjqKy3ZjfbtYBUoqWlAQ2CpQc37UF6hOYml57mFnYisn6fTr9A+Sja&#13;
-04JE6KVNFA==</DigestValue></Reference></SignedInfo><SignatureValue>XW4342MeZiVJlDplwbjRtEfGvcSqMQMi4PMz3WWOvUzGQasojm0Ft83+bYh0Onpo6Oyocz4ByJyD&#13;
-54plemBWnf0CZZP4mRVqwNsQnokP39oIrETvyr0SdNivrkiALzUd6pHkbkWD7Kfz8qKqaHH8xhRd&#13;
-ix1WbH2kktChSY5b+QVc9VyYWEsMT1C57Oj7JHn4VbByb+AqnwJ1CpE4DqLCK6NZeCMg2/6Afzen&#13;
-XwmTPBsSzkbnOw3kAHfnOlxSslcZc7j3WevlXXM33kVsh2yZHExu5gDDUbesyXiO5R2HHy+6T9Q+&#13;
-zg8zlwiu5kygI4k3jnlVDUQcVVWuS24uvQBeIw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_35ba66a6-7432-4855-aa40-3ff02290509a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nR3zzxyIS27lI8vKWkUgTir/E6TbxPkAq91OYhMNR5BReBwXlkb2sf7ubvIO/sjd2ZpeNgcVTvXK&#13;
+59csetHktA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f7bffdd7-a45d-445c-97b3-1cc93358a53c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CAmnRMtRySDeMP4hrcygF42b9wP65ubbC9q6fdcU/PMnRxNEZTq7EoabVQK3QEyaIzIBrMfdmlTV&#13;
+mm0hmT2SLw==</DigestValue></Reference></SignedInfo><SignatureValue>FAEXzNaX3uG5Ebf1cQ1dMWzveVOdj22oXbLKbXKIkWMYDOfzR2So5asQbNNWJiyvolVI60wV3oGY&#13;
+yir6OR0dcIb8aVJSuak9/OoSOqCGkHxH3B5cmie/jRN7z1+LOjaRH1oJfbbOviLQrWh9SeFMkefD&#13;
+Nq6IwsM4SHkWzxyjKE0zN/gqzXavEPMvDnLj2o8tbdUCVsAYlpJ82bPFFH7n1B+p6zML+bPKj+Dw&#13;
+uAS1Kxa/b9LoOTx1fJGx/PKocH7neUvBcUz88hqToe7LwnCLjPxYMSlYhCvvUq33OWk5IWTZqD87&#13;
+W2Hp3NswejMxycI7Rj8IHZJ6e7MKgwdYWjhx7g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -4768,4 +4768,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_69db0732-f809-43d7-b315-311491237bac" Target="#_d0feaf16-9824-48d4-b035-35ae8bf68ced"><Timestamp>2024-04-02 19:32:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f7bffdd7-a45d-445c-97b3-1cc93358a53c" Target="#_35ba66a6-7432-4855-aa40-3ff02290509a"><Timestamp>2024-04-05 15:22:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
