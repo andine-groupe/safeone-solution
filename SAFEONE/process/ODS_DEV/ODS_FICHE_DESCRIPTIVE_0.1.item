@@ -69,7 +69,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="161"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="192"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -3259,13 +3259,13 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.ADRESSE_SITE" name="ADRESSE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="SITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;09\\&quot;)+3,out1.LIEN_SHAREPOINT.indexOf(&quot; -&quot;)) " name="NOM_CLIENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;09&quot;)+3,out1.LIEN_SHAREPOINT.indexOf(&quot; -&quot;)) " name="NOM_CLIENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.LEFT(out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " name="IDSITE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="out1" sizeState="INTERMEDIATE">
@@ -3427,7 +3427,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="704">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_10"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)+&quot;/&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
@@ -3503,10 +3503,10 @@
       <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out10" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row12.N_AFFAIRE " name="N_AFFAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="N_AFFAIRE.N_AFFAIRE " name="N_AFFAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)" name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row12" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="N_AFFAIRE" sizeState="INTERMEDIATE">
         <mapperTableEntries name="N_AFFAIRE" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
@@ -3544,7 +3544,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="544">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_11"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)+&quot;/&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
@@ -3620,10 +3620,10 @@
       <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out12" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row13.CODE_POSTAL  " name="CODE_POSTAL" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CODE_POSTAL.CODE_POSTAL  " name="CODE_POSTAL" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row13" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="CODE_POSTAL" sizeState="INTERMEDIATE">
         <mapperTableEntries name="CODE_POSTAL" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
@@ -4432,14 +4432,14 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
   </connection>
-  <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tFileInputExcel_10" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_10" target="tMap_20">
+  <connection connectorName="FLOW" label="N_AFFAIRE" lineStyle="0" metaname="tFileInputExcel_10" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_10" target="tMap_20">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="N_AFFAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row12"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="N_AFFAIRE"/>
   </connection>
   <connection connectorName="FLOW" label="out10" lineStyle="0" metaname="out10" offsetLabelX="0" offsetLabelY="0" source="tMap_20" target="tMap_22">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -4449,9 +4449,9 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out11"/>
   </connection>
-  <connection connectorName="FLOW" label="row13" lineStyle="0" metaname="tFileInputExcel_11" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_11" target="tMap_21">
+  <connection connectorName="FLOW" label="CODE_POSTAL" lineStyle="0" metaname="tFileInputExcel_11" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_11" target="tMap_21">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row13"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="CODE_POSTAL"/>
   </connection>
   <connection connectorName="FLOW" label="out12" lineStyle="0" metaname="out12" offsetLabelX="0" offsetLabelY="0" source="tMap_21" target="tMap_24">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -4740,13 +4740,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_35ba66a6-7432-4855-aa40-3ff02290509a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nR3zzxyIS27lI8vKWkUgTir/E6TbxPkAq91OYhMNR5BReBwXlkb2sf7ubvIO/sjd2ZpeNgcVTvXK&#13;
-59csetHktA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f7bffdd7-a45d-445c-97b3-1cc93358a53c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CAmnRMtRySDeMP4hrcygF42b9wP65ubbC9q6fdcU/PMnRxNEZTq7EoabVQK3QEyaIzIBrMfdmlTV&#13;
-mm0hmT2SLw==</DigestValue></Reference></SignedInfo><SignatureValue>FAEXzNaX3uG5Ebf1cQ1dMWzveVOdj22oXbLKbXKIkWMYDOfzR2So5asQbNNWJiyvolVI60wV3oGY&#13;
-yir6OR0dcIb8aVJSuak9/OoSOqCGkHxH3B5cmie/jRN7z1+LOjaRH1oJfbbOviLQrWh9SeFMkefD&#13;
-Nq6IwsM4SHkWzxyjKE0zN/gqzXavEPMvDnLj2o8tbdUCVsAYlpJ82bPFFH7n1B+p6zML+bPKj+Dw&#13;
-uAS1Kxa/b9LoOTx1fJGx/PKocH7neUvBcUz88hqToe7LwnCLjPxYMSlYhCvvUq33OWk5IWTZqD87&#13;
-W2Hp3NswejMxycI7Rj8IHZJ6e7MKgwdYWjhx7g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_14aeab29-2d79-49cb-adaf-b570bebfa3b1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>z9+xaA3aKsOHvrC+ct6LdIiXiZccjqKLspFF89UA69HQnfqY70xBlSmMAJ3Vz1gQUVyysoFfxJN/&#13;
+Jy0KU1YYFg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f1537e03-7b19-4636-91f2-8dd75a2d7c4d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dtjJ08Db/jZfx18sOU69jZFGcz4U29hJPPbK8ler0PcWaUShMlCw2IIshipdrA84kybBPPc4SQjV&#13;
+UwK6CHuKnw==</DigestValue></Reference></SignedInfo><SignatureValue>ler2oRDRRrOe3UxAyNNGpgkJS2yVXENoIH+N7eSj9GWiylmkKOvoTKn6QjB8h3Gvf1B+GZ1V5HUN&#13;
+M6d5/2sjOvoTiHterNt6twWYpz+pfOJGbZbKJQ8E+6G44Xz0xnNcbnxIDd98PFvhpkPbOIAD6Vuo&#13;
+gvmCm3ClMFgySoWhKnHtlsFKmKwgUlesqIDHeQe28WnzMI6KfbWP1VdTE38dv4BLybJ6QK7nzvTJ&#13;
+tip0nvtq25BM1GdszI8m9u4f6V1G2RwrBybHC/lt5Ikd7t3It3XIy46fFDsyb2qN+qup+2TR2ieG&#13;
+Hr+fJGOj4QutWVbHVJLqaHQBVs0WWrdVbPyPaA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -4768,4 +4768,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f7bffdd7-a45d-445c-97b3-1cc93358a53c" Target="#_35ba66a6-7432-4855-aa40-3ff02290509a"><Timestamp>2024-04-05 15:22:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f1537e03-7b19-4636-91f2-8dd75a2d7c4d" Target="#_14aeab29-2d79-49cb-adaf-b570bebfa3b1"><Timestamp>2024-04-08 15:41:55</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
