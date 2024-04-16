@@ -463,7 +463,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#10;&#9;POIDS_TOTAL,&#13;&#10;&#9;VOLUME_TOTAL,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;CELLULE,&#10;&#9;IDSITE&#10;FROM ods_stocks&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#10;&#9;POIDS_TOTAL,&#13;&#10;&#9;VOLUME_TOTAL,&#13;&#10;&#9;DECHETS_LIQUIDES_INFLAMMABLES_HP3,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;CELLULE,&#10;&#9;IDSITE&#10;FROM ods_stocks&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -478,6 +478,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="VOLUME_TOTAL"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE_ICPE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE"/>
@@ -490,6 +492,7 @@
     <metadata connector="FLOW" name="tDBInput_4">
       <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -526,6 +529,7 @@
       <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
@@ -539,10 +543,12 @@
         <mapperTableEntries expression="description_site.LONGITUDE " name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="stocks.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="stocks.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="stocks.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="stocks" sizeState="INTERMEDIATE">
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
@@ -631,6 +637,10 @@
       <elementValue elementRef="FUNCTION" value="sum"/>
       <elementValue elementRef="INPUT_COLUMN" value="VOLUME_TOTAL"/>
       <elementValue elementRef="IGNORE_NULL" value="false"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="IGNORE_NULL" value="true"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
     <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
@@ -650,8 +660,9 @@
       </column>
       <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="320">
@@ -687,6 +698,7 @@
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -695,6 +707,7 @@
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
@@ -708,12 +721,14 @@
         <mapperTableEntries expression="row1.LONGITUDE" name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row5.UNITE" name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.MENTION_DANGER " name="MENTION_DANGER" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;t&quot;.equals(row5.UNITE) ? row5.QUANTITE_LIMITE : BigDecimal.valueOf(0) " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="&quot;m3&quot;.equals(row5.UNITE) ? row5.QUANTITE_LIMITE : BigDecimal.valueOf(0) " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) || Relational.ISNULL(row5.QUANTITE_LIMITE) || row5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL.divide(row5.QUANTITE_LIMITE, java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) || Relational.ISNULL(row5.QUANTITE_LIMITE) || row5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL.divide(row5.QUANTITE_LIMITE,java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 == BigDecimal.valueOf(0.0) ? null : row1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
@@ -724,6 +739,7 @@
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
       </inputTables>
       <inputTables activateCondensedTool="true" activateExpressionFilter="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.CELLULE " name="LOCAL_BATIMENT" nullable="true" operator="=" type="id_String"/>
@@ -735,6 +751,7 @@
         <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="" name="MENTION_DANGER" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
       </inputTables>
     </nodeData>
@@ -769,6 +786,7 @@
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -780,6 +798,7 @@
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NOM_LOCATAIRE" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -795,6 +814,7 @@
         <mapperTableEntries expression="&quot;2663&quot;.equals(out4.RUBRIQUE_ICPE) ? &quot;2663-2&quot; : &quot;2714&quot;.equals(out4.RUBRIQUE_ICPE) ? &quot;2714.2&quot; : &quot;4718&quot;.equals(out4.RUBRIQUE_ICPE) ? &quot;4718.1&quot; : &quot;1185&quot;.equals(out4.RUBRIQUE_ICPE) ? &quot;1185-3&quot; : out4.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out4.UNITE" name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out4.MENTION_DANGER " name="MENTION_DANGER" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.IDSITE" name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.QUANTITE_LIMITE_POIDS" name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
@@ -802,6 +822,7 @@
         <mapperTableEntries expression="out4.POURCENTAGE_LIMITE_POIDS" name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out4.POURCENTAGE_LIMITE_VOLUME" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out4.STOCK" name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out4.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(out4.STOCK) ? null : out4.STOCK.compareTo(out4.QUANTITE_LIMITE) &gt; 0 ? 1 : 0 " name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="&quot;t&quot;.equals(out4.UNITE) ? out4.POURCENTAGE_LIMITE_POIDS : out4.POURCENTAGE_LIMITE_VOLUME " name="POURCENTAGE_REMPLISSAGE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="locataire.NOM_LOCATAIRE " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
@@ -815,12 +836,14 @@
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="MENTION_DANGER" nullable="true" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
       </inputTables>
       <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="locataire" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out4.CELLULE " name="CELLULE" nullable="true" operator="=" type="id_String"/>
@@ -866,6 +889,7 @@
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -874,6 +898,7 @@
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -897,12 +922,14 @@
         <mapperTableEntries expression="out2.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.UNITE " name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out2.MENTION_DANGER " name="MENTION_DANGER" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.DUREE_INCENDIE " name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.QUANTITE_LIMITE_POIDS " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.QUANTITE_LIMITE_VOLUME " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.POURCENTAGE_LIMITE_POIDS " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.POURCENTAGE_LIMITE_VOLUME " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.STOCK " name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out2.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE " name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="out2.POURCENTAGE_REMPLISSAGE " name="POURCENTAGE_REMPLISSAGE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Relational.ISNULL(out2.POURCENTAGE_REMPLISSAGE) || Relational.ISNULL(out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE) ? null : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(1)) &gt; 1 || out2.REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE == 1 ? &quot;KO&quot; : out2.POURCENTAGE_REMPLISSAGE.compareTo(BigDecimal.valueOf(0.80)) &gt; 0.80 ? &quot;WARNING&quot; : &quot;OK&quot; " name="ETAT_REMPLISSAGE" nullable="true" type="id_String"/>
@@ -916,6 +943,7 @@
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="MENTION_DANGER" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
         <mapperTableEntries name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
@@ -923,6 +951,7 @@
         <mapperTableEntries name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="POURCENTAGE_REMPLISSAGE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
@@ -1027,6 +1056,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MENTION_DANGER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DUREE_INCENDIE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -1053,6 +1087,11 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="STOCK"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -1087,76 +1126,80 @@
     <elementParameter field="TEXT" name="LABEL" value="DWH_D_CELLULES"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
-      <column comment="" key="true" length="-1" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="IDRUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIBELLE_RUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDRUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIBELLE_RUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NOM_LOCATAIRE" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="true" length="-1" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="IDRUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIBELLE_RUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDRUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIBELLE_RUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NOM_LOCATAIRE" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUANTITE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="POURCENTAGE_LIMITE_POIDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DOUBLE" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="POURCENTAGE_LIMITE_VOLUME" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="REMPLISSAGE_MAX_DU_BATIMENT_PAR_CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="POURCENTAGE_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ETAT_REMPLISSAGE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1221,7 +1264,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;BATIMENT,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;QUANTITE_LIMITE,&#13;&#10;&#9;UNITE,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_limites_stock&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;BATIMENT,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;QUANTITE_LIMITE,&#13;&#10;&#9;UNITE,&#13;&#10;&#9;MENTION_DANGER,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_limites_stock&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -1240,6 +1283,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="UNITE"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MENTION_DANGER"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
@@ -1250,6 +1295,7 @@
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="QUANTITE_LIMITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
     </metadata>
@@ -1383,6 +1429,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="IDLOCATAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stocks"/>
@@ -1396,6 +1445,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="IDLOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1437,6 +1489,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="IDLOCATAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="MENTION_DANGER"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
@@ -1459,6 +1517,12 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="NOM_LOCATAIRE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="MENTION_DANGER"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1492,6 +1556,12 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="LIBELLE_RUBRIQUE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="MENTION_DANGER"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1580,13 +1650,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b201bab7-4aa4-4885-bfd6-b9239ff54c1c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+vr4s+U8SkzvqAdKzpnzS7/6RKO6ygUzB6MCzMHlPmu2FEN5T7XDdEIKFgAPqM6R5IsqWp7cxfEP&#13;
-4YfrnT17PA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_dde2c500-eff6-4834-ad19-5b40db671459"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7Gyf0VVZgQsuFzBaIbJyZm7YqirypdgiFC5jcgqha1xTnVsQlEYCIDIGZowPrYEbZiO5wanavHke&#13;
-UWseQWqX1w==</DigestValue></Reference></SignedInfo><SignatureValue>HY3xLsG9KCHWX/2P50TSvH/00/wclMhtrXmzOZMKaUpMvd6oF5dhlAQ/nhPL9qZ8WvGD/1UjPl/i&#13;
-AerIFgx1DbAyDoiFV/5UmiecG6KwBupmIgJzpQ7bB099v0f2Ttnqvt8UYf9/qerpw7+cxxS55zph&#13;
-itBl0HLq7Z/SMmI4pN3l4FkuIS5dz5H/CBhW4qZa0t6VCDFXt+W9JwJaAKQJBImMOe72g47FCjaw&#13;
-jdtkDJV75XAFj8dEZXBhLAtTy2UfQeambC6amzROzfYQCJ3jIA9PO+T8RKTTzHI6hSoLXDTBhYmE&#13;
-VWGBVhMpnL80etHoaKGNiFYlOmO7tO0YDmNN+w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b6bb7f2e-0499-41ef-8c25-a19d9842ed94"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oIcpIdF2mZ51kBe+8Pmkw/qwvKEoTxj1OVn7gLYFhE24+h1JOkcrfcMvDxC0/ih8YoV3NSrDTVxr&#13;
+5L+xdm0cmQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_50efedae-1bb8-4430-9eb8-fae24a2d8651"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XUWhySVYUY09mQeolwkr1Ko85X+TLsPcvhmzP5reXX48nWn2ah8oyEPIFXFBJupf3Ss9lUYHjb94&#13;
+oylEy05MUg==</DigestValue></Reference></SignedInfo><SignatureValue>oP3qI+L2mEUsZlMfWwnshvN9AN1xFcQ/HS99G4/YOXDs+UHnFFwhlk9pgrzoB/ATtTUPH477MTFi&#13;
+QqxhkWMScLfQ9O4sRGwYy0LwLVLFGk3o6BA594lkQaxBM/xhOzwP3CrQFDaHjZq+b1LWNH/UnJ9s&#13;
+dF8sghRWFNKfx+SLRtPFnLGACv0f8S6qSdrQbTLZAFMbwRBLT4NI9VE8DOjvsyZWzVw7gLiC5pFh&#13;
+z3KeRPXNh4rn3P7fc4GQEnvKbilL1PmhL3fjpoSAUExHSjTrxJeJfIxoXyzereshaobd14BjlKmj&#13;
+FZ+UjLFXdGphn8oXPnGwVFPi8IRWszko6/C3tQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1608,4 +1678,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_dde2c500-eff6-4834-ad19-5b40db671459" Target="#_b201bab7-4aa4-4885-bfd6-b9239ff54c1c"><Timestamp>2024-04-02 21:01:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_50efedae-1bb8-4430-9eb8-fae24a2d8651" Target="#_b6bb7f2e-0499-41ef-8c25-a19d9842ed94"><Timestamp>2024-04-16 16:31:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

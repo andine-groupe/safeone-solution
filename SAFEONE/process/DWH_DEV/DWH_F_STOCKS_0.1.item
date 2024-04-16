@@ -456,7 +456,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10; &#9;SITE, &#10; &#9;CELLULE, &#10;&#9;DESIGNATION, &#10;  &#9;RUBRIQUE_ICPE, &#10;  &#9;POIDS_UNITAIRE, &#10; &#9;VOLUME_UNITAIRE, &#10;  &#9;NB_UNITE, &#10;  &#9;NB_PALETTE, &#10; &#9;POIDS_TOTAL, &#10; &#9;VOLUME_TOTAL, &#10;  &#9;DEGRE, &#10;  &#9;CONTENANCE_M3_UNITAIRE, &#10;  &#9;NB_UNITE_ALCOOL, &#10;  &#9;NB_PALETTE_ALCOOL, &#10;  &#9;CONTENANCE_M3_TOTALE, &#10;  &#9;ALLEE, &#10;  &#9;RACK, &#10;  &#9;EMPLACEMENT, &#10;  &#9;TYPE_CONDITIONNEMENT, &#10;  &#9;ETAT_MATIERE, &#10;  &#9;TYPOLOGIE_PRODUIT, &#10;  &#9;POINT_ECLAIR, &#10;  &#9;FUMEES_DECOMPOSITION, &#10;  &#9;NUMERO_ONU, &#10;  &#9;CLASSE, &#10;  &#9;GROUPE_EMBALLAGE, &#10;  &#9;CONSTITUANT_1, &#10;  &#9;CONSTITUANT_2, &#10;  &#9;DISPOSITIONS_SPECIALES_ADR, &#10;  &#9;QUANTITES_EXCEPTEES_ADR, &#10;  &#9;QUANTITES_LIMITEES_ADR, &#10; &#9; CODE_RESTRICTION_TUNNEL_ADR, &#10; &#9; POLLUANT_MARIN, &#10; &#9; DISPOSITIONS_SPECIALES_IMDG, &#10;&#9; QUANTITES_EXCEPTEES_IMDG, &#10;&#9; QUANTITES_LIMITEES_IMDG, &#10;  &#9; DISPOSITIONS_SPECIALES_IATA, &#10;  &#9; QUANTITES_EXCEPTEES_IATA, &#10;  &#9; QUANTITES_LIMITEES_IATA, &#10;  &#9; CODE_FDS, &#10;  &#9; IDSITE,&#10;  &#9; NOM_LOCATAIRE,&#13;&#10;&#9; NOM_FICHIER&#10;FROM `ods_stocks`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10; &#9;SITE, &#10; &#9;CELLULE, &#10;&#9;DESIGNATION, &#10;  &#9;RUBRIQUE_ICPE, &#10;  &#9;POIDS_UNITAIRE, &#10; &#9;VOLUME_UNITAIRE, &#10;  &#9;NB_UNITE, &#10;  &#9;NB_PALETTE, &#10; &#9;POIDS_TOTAL, &#10; &#9;VOLUME_TOTAL, &#10;  &#9;DEGRE, &#10;  &#9;CONTENANCE_M3_UNITAIRE, &#10;  &#9;NB_UNITE_ALCOOL, &#10;  &#9;NB_PALETTE_ALCOOL, &#10;  &#9;CONTENANCE_M3_TOTALE, &#10;  &#9;ALLEE, &#10;  &#9;RACK, &#10;  &#9;EMPLACEMENT, &#10;  &#9;TYPE_CONDITIONNEMENT, &#10;  &#9;ETAT_MATIERE, &#10;  &#9;TYPOLOGIE_PRODUIT, &#10;  &#9;POINT_ECLAIR, &#10;  &#9;FUMEES_DECOMPOSITION, &#10;  &#9;NUMERO_ONU, &#10;  &#9;CLASSE, &#10;  &#9;GROUPE_EMBALLAGE, &#10;  &#9;CONSTITUANT_1, &#10;  &#9;CONSTITUANT_2, &#10;  &#9;DISPOSITIONS_SPECIALES_ADR, &#10;  &#9;QUANTITES_EXCEPTEES_ADR, &#10;  &#9;QUANTITES_LIMITEES_ADR, &#10; &#9; CODE_RESTRICTION_TUNNEL_ADR, &#10; &#9; POLLUANT_MARIN, &#10; &#9; DISPOSITIONS_SPECIALES_IMDG, &#10;&#9; QUANTITES_EXCEPTEES_IMDG, &#10;&#9; QUANTITES_LIMITEES_IMDG, &#10;  &#9; DISPOSITIONS_SPECIALES_IATA, &#10;  &#9; QUANTITES_EXCEPTEES_IATA, &#10;  &#9; QUANTITES_LIMITEES_IATA, &#10;  &#9; CODE_FDS, &#13;&#10;&#9; DECHETS_LIQUIDES_INFLAMMABLES_HP3,&#10;  &#9; IDSITE,&#10;  &#9; NOM_LOCATAIRE,&#13;&#10;&#9; NOM_FICHIER&#10;FROM `ods_stocks`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -547,6 +547,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CODE_FDS"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="NOM_LOCATAIRE"/>
@@ -597,6 +599,7 @@
       <column comment="" key="false" length="250" name="QUANTITES_EXCEPTEES_IATA" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITES_LIMITEES_IATA" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="NOM_LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -743,6 +746,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -769,7 +773,7 @@
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.SITE " name="SITE" nullable="true" type="id_String"/>
@@ -814,6 +818,7 @@
         <mapperTableEntries expression="row1.NOM_LOCATAIRE " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row5.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="row6.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Relational.ISNULL(row1.CELLULE) || row1.CELLULE.trim().isEmpty() ? &quot;Alerte Cellule&quot; : &quot;Pas d'alerte Cellule&quot;; " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -876,6 +881,7 @@
         <mapperTableEntries name="QUANTITES_EXCEPTEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_FICHIER" nullable="true" type="id_String"/>
@@ -1188,6 +1194,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1215,7 +1222,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="IDCLIENTSITE.IDCLIENTSITE " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
@@ -1261,6 +1268,7 @@
         <mapperTableEntries expression="out1.QUANTITES_LIMITEES_IATA " name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.NOM_LOCATAIRE " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out1.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out1.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.ALERTE_CELLULE " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -1326,6 +1334,7 @@
         <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -1496,6 +1505,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1523,7 +1533,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out2.IDCLIENTSITE " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
@@ -1570,6 +1580,7 @@
         <mapperTableEntries expression="out2.QUANTITES_LIMITEES_IATA " name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.NOM_LOCATAIRE " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out2.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out2.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.ALERTE_CELLULE " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -1636,6 +1647,7 @@
         <mapperTableEntries name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -1893,6 +1905,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1923,7 +1936,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out.IDCLIENTSITE" name="IDCLIENTSITE" nullable="true" type="id_Long"/>
@@ -1968,6 +1981,7 @@
         <mapperTableEntries expression="out.QUANTITES_LIMITEES_IATA " name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.NOM_LOCATAIRE " name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.ALERTE_CELLULE " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -2036,6 +2050,7 @@
         <mapperTableEntries name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -2251,6 +2266,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2278,7 +2294,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out3.IDCLIENTSITE " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
@@ -2324,6 +2340,7 @@
         <mapperTableEntries expression="out3.QUANTITES_EXCEPTEES_IATA " name="QUANTITES_EXCEPTEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.QUANTITES_LIMITEES_IATA " name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out3.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out3.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out3.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.ALERTE_CELLULE " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -2389,6 +2406,7 @@
         <mapperTableEntries name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -2644,6 +2662,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2671,7 +2690,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out5" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out4.IDCLIENTSITE " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
@@ -2715,6 +2734,7 @@
         <mapperTableEntries expression="out4.QUANTITES_EXCEPTEES_IATA " name="QUANTITES_EXCEPTEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.QUANTITES_LIMITEES_IATA " name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.CODE_FDS " name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out4.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out4.QUANTITE_LIMITE " name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries expression="out4.LOCATAIRE " name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.ALERTE_CELLULE " name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -2781,6 +2801,7 @@
         <mapperTableEntries name="QUANTITES_EXCEPTEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_Float"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ALERTE_CELLULE" nullable="true" type="id_String"/>
@@ -3042,6 +3063,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="QUANTITE_LIMITE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -3274,6 +3300,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -3418,6 +3445,7 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -3485,6 +3513,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk7"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
@@ -3550,6 +3583,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="NOM_LOCATAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -3577,6 +3613,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
@@ -3601,6 +3640,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
@@ -3619,6 +3661,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="CELLULE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3643,6 +3688,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
@@ -3658,6 +3706,9 @@
   <connection connectorName="FLOW" label="out5" lineStyle="0" metaname="out5" offsetLabelX="0" offsetLabelY="0" source="tMap_6" target="tDBOutput_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="IDRUBRIQUECELLULE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3733,13 +3784,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_26892e01-b9b3-45dd-a653-666339851353"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oclFUQXgmvQETDaoFBu2qr0M30RRyOMt5EYLQbfOZnjgYbimQvOHt7k6YVkOggPNNIIQ0HwMB6OS&#13;
-6IE4l1Jemg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_dcd4b9c8-3e64-4a63-bf7d-29d1f4353d1c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>aNTzwTmANpcsA8296JjQo/TAKXNGVOwyqBBsHpJLT/yFbCk109/+UXHnz2FgjtsozDXIgaTBJhpo&#13;
-AMgF2xXOWA==</DigestValue></Reference></SignedInfo><SignatureValue>TgcNAE1lyiF1Cja3lttokbFv416cl5rLdnZ/tYYwFS9PfHbWX9gxl93iYWQpkz0/n9agAeClFjFO&#13;
-pvXR1gqVuU+hGJcT696twc3O/kbWnY5akL/0js98+iSUeyqjPna+2/ykZK2dGcvfwNKpEIL6DzvQ&#13;
-eMw1NsseuHHpkAXUxFU78ayJxnzdv/kNS6xeFDghhA5j2YifuQIvhNKMZrmmlCH7OR2lsKBpUunI&#13;
-3iuqug13jfY4BcJVnEjHqFa4DyNg84uMXtAYdAz+oPOHI9xJXDM/euJtHOqOr3SprEDA5n6CbEbJ&#13;
-ECLLPfXpaLxaWaeYRbEDlDYOS2jhs03OJP2R+w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_39358f44-87a5-47f2-8cfe-5347801a544d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8F6NWC4XYaj6KMx7pgyAKe3NAWAtd/516L3iovGBl/tOURpibxqHNhNIyiuTRx8mpMXMHQg3xSGs&#13;
+uFdFgwu7Xg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_147f8a4e-9147-4549-8063-599e525b2f82"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Djhbaj6NbEDc4mepkto85eH7laxw5omFHG0o3AGAoZYroUS/OIj/HH2P8j/F3H0RAs8ioP6vOCoo&#13;
+vFvEjx+1zQ==</DigestValue></Reference></SignedInfo><SignatureValue>ApeYyCYYd4hY8TA5LPVNShz8ki9hoQCuvUzbxh9Iopmq1uH0I0xEtUhBs8YUYSUD07IUAH2xDna/&#13;
+6sC3DJX+ozsNssdSJgofArnyGdkWLhnHLNKSGn2grHV69/MitPNvV0cdb7/OqbvhCPCmlLhGThbi&#13;
+sQr/njhioSwBv2CfNKymkd13k9MHVzj3XlyaLDpn+0rZih1dficA204U8mAlhvUgiOqaH1rWk+tN&#13;
+FYKHNUglMbNfVeHUZF6NMqqhShUI4f+MmdFfk8wBOahyqSK5+ANm9Tp1CutJT7UldsA7mo27yi2X&#13;
+fRRnPiwNP+G57zkfosJKLmo78eLJera8s9ad1g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3761,4 +3812,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_dcd4b9c8-3e64-4a63-bf7d-29d1f4353d1c" Target="#_26892e01-b9b3-45dd-a653-666339851353"><Timestamp>2024-04-02 21:09:36</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_147f8a4e-9147-4549-8063-599e525b2f82" Target="#_39358f44-87a5-47f2-8cfe-5347801a544d"><Timestamp>2024-04-16 15:10:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
