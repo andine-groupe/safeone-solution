@@ -105,7 +105,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="32"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="64"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -829,7 +829,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.Cellule " name="CELLULE" nullable="true" type="id_String"/>
@@ -974,7 +974,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;Ext&quot;) - 1) " name="SITE" nullable="true" type="id_String"/>
@@ -1630,7 +1630,7 @@
         <mapperTableEntries expression="row4.CODE_ONU " name="NUMERO_ONU" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.ICPE " name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.DANGER " name="TYPOLOGIE_PRODUIT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;HS&quot;.equals(StringHandling.LEFT(row4.LIBEL_ART,2)) ? new BigDecimal(row4.TOTAL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;)).divide(BigDecimal.valueOf(1000)) : null " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="&quot;HS CT MIX&quot;.equals(StringHandling.LEFT(row4.LIBEL_ART,9)) || &quot;HS SOLVANT&quot;.equals(StringHandling.LEFT(row4.LIBEL_ART,10)) ? new BigDecimal(row4.TOTAL_POID.replaceAll(&quot;,&quot;, &quot;.&quot;)).divide(BigDecimal.valueOf(1000)) : null " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="&quot;ZMATCOL&quot;.equals(row4.ALLEE) || &quot;ZMAT&quot;.equals(row4.ALLEE) || &quot;ZTRANS&quot;.equals(row4.ALLEE) || &quot;QRECEPT&quot;.equals(row4.ALLEE) || &quot;L&quot;.equals(StringHandling.LEFT(row4.ALLEE,1)) ? &quot;Cellule 2&quot; : &quot;QEXPE&quot;.equals(row4.ALLEE) || &quot;M&quot;.equals(StringHandling.LEFT(row4.ALLEE,1)) ? &quot;Cellule 3&quot; : null " name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_2_CURRENT_FILEDIRECTORY&quot;) " name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="(String)globalMap.get(&quot;tFileList_2_CURRENT_FILE&quot;) " name="NOM_FICHIER" nullable="true" type="id_String"/>
@@ -2092,7 +2092,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.ALLEE " name="ALLEE" nullable="true" type="id_String"/>
@@ -2157,7 +2157,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="ajout_site3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="copyOfout2.ALLEE" name="ALLEE" nullable="true" type="id_String"/>
@@ -2895,13 +2895,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_777cae3c-265a-499d-a2f2-6b80c0fa92d2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zbmhSC04vGvGEqV+nn29f2s8/ot0g2ubVtHXMGgP5SzdqwUpdgokQhCA/PZIKTz1sArkZx5dnBK7&#13;
-bI4H2CWuvg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c804773c-fb6c-4611-87a8-edba338a9a6b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jVR3wAkvKisJdbF2IB7xILTye0Qga+OTo2P/V/MlWMgrqTYulWApbVsfmKmFDqiJx5CkADkzEWG5&#13;
-bWySsgifWQ==</DigestValue></Reference></SignedInfo><SignatureValue>cD9DPVxK7lf5Ef66+QSh9YmunIBqqqo2NiNuGPdrD5ALVXlU4KT1al7G4fCcQB6rL7dy0H6SsN0W&#13;
-K15FE2Q2silmlZwyJ7EysG9Gn1SDbtQMg3IC2HwbvN7HEy4FHbrwfOpVCINFNhjzGY0dRYUcOFA9&#13;
-Lr7tUGOOewdUhOveAMqzDjGaEPAZ11QD/do6CN7kRiEMW6zilKQ7voJEVSJJa5f5uK6GRXGkUDji&#13;
-A0Pvw/g4i2kgT4JgEJMnwA2w0LK8NOCtmtrgQHxmjmxUEYvhbTetgyD8to+kgd2OgeLDfZ06IKcL&#13;
-huq5731Fz3IbK2M6XzyOpuysddzWl3XXwxPi9w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3ac4d92c-761e-4eb4-97b5-4bba8b2eb501"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CvkHWo4pE7zH9E3gF+v6kvQHFe5HrhUOHBwuQpwqHumQ9rZRZL664/K/279VqSi40khMCiO/Og/5&#13;
+bUjyWe3FRQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_12e1d02f-ff53-4ebd-9dbd-b656b3aeaf70"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ppcTtfWPK2HcoPaPYbLe9hxYjOmnLtYKwBCtsgSAOISEvKqKTiZ6ozZix2XAd5SS5SRiyvkT0toe&#13;
+MaAC8bS+jQ==</DigestValue></Reference></SignedInfo><SignatureValue>NA6dT2GSUNFS+b0haUMjy453FCH4vWfY3QKqHcttUukRbsIqtiWPTcM755RSA+BLIKNCOTQ9QGEZ&#13;
+CKJrIhOxghtr09ZJto7VzSVZaWbs0JuUY3NPAn9RHhg8UEdw5lVjK7nbaDUrLKVAr2i+22OE+zMT&#13;
+QlW+3+9GD1/55c5DNtj7EtbMbIF9oAuQmeXQnNUHH0WSaVA4BFoQvGy3rIIPqWHHnrrZmAnDsg+z&#13;
+/U1j2Cmk3WWDmqs4yejVjQ8F89VtgSF+zGhirS8DtLWs116ceIl6DvEfSKgpW7LZdCB7pH37+pPH&#13;
+X+C/0M3tjlj8o/hapltCUfn5q4v7LG0/Uif+VQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2923,4 +2923,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c804773c-fb6c-4611-87a8-edba338a9a6b" Target="#_777cae3c-265a-499d-a2f2-6b80c0fa92d2"><Timestamp>2024-04-16 16:45:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_12e1d02f-ff53-4ebd-9dbd-b656b3aeaf70" Target="#_3ac4d92c-761e-4eb4-97b5-4bba8b2eb501"><Timestamp>2024-04-18 09:49:20</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
