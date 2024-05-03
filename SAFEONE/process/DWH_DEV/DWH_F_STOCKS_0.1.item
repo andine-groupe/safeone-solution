@@ -456,7 +456,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10; &#9;SITE, &#10; &#9;CELLULE, &#10;&#9;DESIGNATION, &#10;  &#9;RUBRIQUE_ICPE, &#10;  &#9;POIDS_UNITAIRE, &#10; &#9;VOLUME_UNITAIRE, &#10;  &#9;NB_UNITE, &#10;  &#9;NB_PALETTE, &#10; &#9;POIDS_TOTAL, &#10; &#9;VOLUME_TOTAL, &#10;  &#9;DEGRE, &#10;  &#9;CONTENANCE_M3_UNITAIRE, &#10;  &#9;NB_UNITE_ALCOOL, &#10;  &#9;NB_PALETTE_ALCOOL, &#10;  &#9;CONTENANCE_M3_TOTALE, &#10;  &#9;ALLEE, &#10;  &#9;RACK, &#10;  &#9;EMPLACEMENT, &#10;  &#9;TYPE_CONDITIONNEMENT, &#10;  &#9;ETAT_MATIERE, &#10;  &#9;TYPOLOGIE_PRODUIT, &#10;  &#9;POINT_ECLAIR, &#10;  &#9;FUMEES_DECOMPOSITION, &#10;  &#9;NUMERO_ONU, &#10;  &#9;CLASSE, &#10;  &#9;GROUPE_EMBALLAGE, &#10;  &#9;CONSTITUANT_1, &#10;  &#9;CONSTITUANT_2, &#10;  &#9;DISPOSITIONS_SPECIALES_ADR, &#10;  &#9;QUANTITES_EXCEPTEES_ADR, &#10;  &#9;QUANTITES_LIMITEES_ADR, &#10; &#9; CODE_RESTRICTION_TUNNEL_ADR, &#10; &#9; POLLUANT_MARIN, &#10; &#9; DISPOSITIONS_SPECIALES_IMDG, &#10;&#9; QUANTITES_EXCEPTEES_IMDG, &#10;&#9; QUANTITES_LIMITEES_IMDG, &#10;  &#9; DISPOSITIONS_SPECIALES_IATA, &#10;  &#9; QUANTITES_EXCEPTEES_IATA, &#10;  &#9; QUANTITES_LIMITEES_IATA, &#10;  &#9; CODE_FDS, &#13;&#10;&#9; DECHETS_LIQUIDES_INFLAMMABLES_HP3,&#10;  &#9; IDSITE,&#10;  &#9; NOM_LOCATAIRE,&#13;&#10;&#9; NOM_FICHIER&#10;FROM `ods_stocks`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10; &#9;SITE, &#10; &#9;CELLULE, &#10;&#9;DESIGNATION, &#10;  &#9;RUBRIQUE_ICPE, &#10;  &#9;POIDS_UNITAIRE, &#10; &#9;VOLUME_UNITAIRE, &#10;  &#9;NB_UNITE, &#10;  &#9;NB_PALETTE, &#10; &#9;POIDS_TOTAL, &#10; &#9;VOLUME_TOTAL, &#10;  &#9;DEGRE, &#10;  &#9;CONTENANCE_M3_UNITAIRE, &#10;  &#9;NB_UNITE_ALCOOL, &#10;  &#9;NB_PALETTE_ALCOOL, &#10;  &#9;CONTENANCE_M3_TOTALE, &#10;  &#9;ALLEE, &#10;  &#9;RACK, &#10;  &#9;EMPLACEMENT, &#10;  &#9;TYPE_CONDITIONNEMENT, &#10;  &#9;ETAT_MATIERE, &#10;  &#9;TYPOLOGIE_PRODUIT, &#10;  &#9;POINT_ECLAIR, &#10;  &#9;FUMEES_DECOMPOSITION, &#10;  &#9;NUMERO_ONU, &#10;  &#9;CLASSE, &#10;  &#9;GROUPE_EMBALLAGE, &#10;  &#9;CONSTITUANT_1, &#10;  &#9;CONSTITUANT_2, &#10;  &#9;DISPOSITIONS_SPECIALES_ADR, &#10;  &#9;QUANTITES_EXCEPTEES_ADR, &#10;  &#9;QUANTITES_LIMITEES_ADR, &#10; &#9; CODE_RESTRICTION_TUNNEL_ADR, &#10; &#9; POLLUANT_MARIN, &#10; &#9; DISPOSITIONS_SPECIALES_IMDG, &#10;&#9; QUANTITES_EXCEPTEES_IMDG, &#10;&#9; QUANTITES_LIMITEES_IMDG, &#10;  &#9; DISPOSITIONS_SPECIALES_IATA, &#10;  &#9; QUANTITES_EXCEPTEES_IATA, &#10;  &#9; QUANTITES_LIMITEES_IATA, &#10;  &#9; CODE_FDS, &#13;&#10;&#9; DECHETS_LIQUIDES_INFLAMMABLES_HP3,&#13;&#10;&#9; LIEN_FDS,&#10;  &#9; IDSITE,&#10;  &#9; NOM_LOCATAIRE,&#13;&#10;&#9; NOM_FICHIER&#10;FROM `ods_stocks`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -549,6 +549,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_FDS"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="NOM_LOCATAIRE"/>
@@ -600,6 +602,7 @@
       <column comment="" key="false" length="250" name="QUANTITES_LIMITEES_IATA" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="NOM_LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -770,6 +773,7 @@
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
@@ -838,6 +842,7 @@
         <mapperTableEntries expression="Relational.ISNULL(row1.NB_PALETTE) || Relational.ISNULL(row1.VOLUME_UNITAIRE) ? BigDecimal.valueOf(0) : new BigDecimal(row1.NB_PALETTE).multiply(row1.VOLUME_UNITAIRE) " name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="&quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_UNITAIRE : BigDecimal.valueOf(0) " name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="&quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_UNITAIRE : BigDecimal.valueOf(0) " name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.LIEN_FDS " name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression=" row4.DATE_FICHIER " name="DATE_FICHIER" nullable="true" type="id_Date"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
@@ -882,6 +887,7 @@
         <mapperTableEntries name="QUANTITES_LIMITEES_IATA" nullable="true" type="id_String"/>
         <mapperTableEntries name="CODE_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="NOM_FICHIER" nullable="true" type="id_String"/>
@@ -1218,6 +1224,7 @@
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1288,6 +1295,7 @@
         <mapperTableEntries expression="out1.TOTAL_VOL " name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out1.VOLUME_FINAL " name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out1.POIDS_FINAL " name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.LIEN_FDS " name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.DATE_FICHIER " name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="out1.CELLULE + &quot; &quot; + out1.RUBRIQUE_ICPE " name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </outputTables>
@@ -1354,6 +1362,7 @@
         <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="DATE_FICHIER" nullable="true" type="id_Date"/>
       </inputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="IDCLIENTSITE" sizeState="INTERMEDIATE">
@@ -1529,6 +1538,7 @@
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1600,8 +1610,9 @@
         <mapperTableEntries expression="out2.TOTAL_VOL " name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.VOLUME_FINAL " name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out2.POIDS_FINAL " name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out2.LIEN_FDS " name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.DATE_FICHIER " name="DATE_FICHIER" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="out2.CONCAT_CELLULE_ICPE " name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out2.CONCAT_CELLULE_ICPE" name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="IDCLIENTSITE" nullable="true" type="id_Long"/>
@@ -1667,6 +1678,7 @@
         <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </inputTables>
@@ -1929,6 +1941,7 @@
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -2001,6 +2014,7 @@
         <mapperTableEntries expression="out.TOTAL_VOL " name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out.VOLUME_FINAL " name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out.POIDS_FINAL " name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out.LIEN_FDS " name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.DATE_FICHIER " name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="out.CONCAT_CELLULE_ICPE " name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
@@ -2070,6 +2084,7 @@
         <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </inputTables>
@@ -2290,6 +2305,7 @@
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -2360,6 +2376,7 @@
         <mapperTableEntries expression="out3.TOTAL_VOL " name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out3.VOLUME_FINAL " name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out3.POIDS_FINAL " name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out3.LIEN_FDS " name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.DATE_FICHIER " name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="out3.CONCAT_CELLULE_ICPE " name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </outputTables>
@@ -2426,6 +2443,7 @@
         <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
@@ -2686,6 +2704,7 @@
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -2754,6 +2773,7 @@
         <mapperTableEntries expression="out4.TOTAL_VOL " name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out4.VOLUME_FINAL " name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="out4.POIDS_FINAL " name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out4.LIEN_FDS " name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out4.DATE_FICHIER " name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="out4.CONCAT_CELLULE_ICPE " name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </outputTables>
@@ -2821,6 +2841,7 @@
         <mapperTableEntries name="TOTAL_VOL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="VOLUME_FINAL" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="POIDS_FINAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="LIEN_FDS" nullable="true" type="id_String"/>
         <mapperTableEntries name="DATE_FICHIER" nullable="true" type="id_Date"/>
         <mapperTableEntries name="CONCAT_CELLULE_ICPE" nullable="true" type="id_String"/>
       </inputTables>
@@ -3163,6 +3184,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_FDS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DATE_FICHIER"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -3186,28 +3212,28 @@
       <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="IDRUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDARTICLE" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="DEGRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -3216,10 +3242,10 @@
       <column comment="" key="false" length="250" name="CONTENANCE_M3_UNITAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_UNITE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_UNITE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_PALETTE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_PALETTE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="CONTENANCE_M3_TOTALE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -3300,59 +3326,60 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="ALERTE_CELLULE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_CELLULE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_CONTENANCE_M3" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_DEGRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_DESIGNATION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_NB_PALETTE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="ALERTE_POIDS_VOLUME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_POIDS_VOLUME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ICPE_MANQUANT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ICPE_MANQUANT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="250" name="IDCLIENTSITE" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDLOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDCELLULE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="IDRUBRIQUE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDARTICLE" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="POIDS_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="VOLUME_UNITAIRE" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_UNITE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_PALETTE" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="POIDS_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="VOLUME_TOTAL" nullable="true" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="DEGRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -3361,10 +3388,10 @@
       <column comment="" key="false" length="250" name="CONTENANCE_M3_UNITAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_UNITE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_UNITE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="NB_PALETTE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="250" name="NB_PALETTE_ALCOOL" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="250" name="CONTENANCE_M3_TOTALE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -3445,32 +3472,33 @@
       <column comment="" key="false" length="250" name="CODE_FDS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Float" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LOCATAIRE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="250" name="ALERTE_CELLULE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_CELLULE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_CONTENANCE_M3" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_DEGRE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_DESIGNATION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_NB_PALETTE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="ALERTE_POIDS_VOLUME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_POIDS_VOLUME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ALERTE_RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ICPE_MANQUANT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ICPE_MANQUANT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_POIDS" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VOLUME_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="POIDS_FINAL" nullable="true" originalLength="250" pattern="" precision="-1" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_FDS" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -3515,6 +3543,9 @@
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_FDS"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3586,6 +3617,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_FDS"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -3616,6 +3650,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_FDS"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
@@ -3643,6 +3680,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_FDS"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
@@ -3664,6 +3704,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_FDS"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3691,6 +3734,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_FDS"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
@@ -3709,6 +3755,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="DECHETS_LIQUIDES_INFLAMMABLES_HP3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LIEN_FDS"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3784,13 +3833,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_39358f44-87a5-47f2-8cfe-5347801a544d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8F6NWC4XYaj6KMx7pgyAKe3NAWAtd/516L3iovGBl/tOURpibxqHNhNIyiuTRx8mpMXMHQg3xSGs&#13;
-uFdFgwu7Xg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_147f8a4e-9147-4549-8063-599e525b2f82"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Djhbaj6NbEDc4mepkto85eH7laxw5omFHG0o3AGAoZYroUS/OIj/HH2P8j/F3H0RAs8ioP6vOCoo&#13;
-vFvEjx+1zQ==</DigestValue></Reference></SignedInfo><SignatureValue>ApeYyCYYd4hY8TA5LPVNShz8ki9hoQCuvUzbxh9Iopmq1uH0I0xEtUhBs8YUYSUD07IUAH2xDna/&#13;
-6sC3DJX+ozsNssdSJgofArnyGdkWLhnHLNKSGn2grHV69/MitPNvV0cdb7/OqbvhCPCmlLhGThbi&#13;
-sQr/njhioSwBv2CfNKymkd13k9MHVzj3XlyaLDpn+0rZih1dficA204U8mAlhvUgiOqaH1rWk+tN&#13;
-FYKHNUglMbNfVeHUZF6NMqqhShUI4f+MmdFfk8wBOahyqSK5+ANm9Tp1CutJT7UldsA7mo27yi2X&#13;
-fRRnPiwNP+G57zkfosJKLmo78eLJera8s9ad1g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_16f3374d-15ca-4ae1-9f3f-9a6536b84e20"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AWy2XwrZlGuIzhwULrt5kX1z0sAjbZhKu/i9Kn/idnsayJL2jfKjB5Z07ImR4utBqg7YlLJMYavV&#13;
+wd3PN2+vFA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_38f7fe74-3ada-4a0a-8d71-89284b97980f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>X2Wcli6TmyvzpI/j6fQ9HXXE1lmRwykmrhDQlMram9Yj8hIQwhaNEQfgfpLlvmqNtrN+DiCv8DzC&#13;
+bYuaMjxHaA==</DigestValue></Reference></SignedInfo><SignatureValue>HKWET1nHlxXgwAxEsZPPENVasfzuxwqF7fItNj+ebebhV9gaasClmL/Oo1V06kioNTuPpzZXQ5Ju&#13;
+zd80bD7owJiji48AaKPNMKl54IKVqDRWPOjrsRvKe2iPHgkvx+daMoz6Xm7oh/mamV4HRerc8PNg&#13;
+i/unHKMhurvauDnVJfXW9L+EqOe0tUNztSbs+4E76B55TPJMX/qSbGujE7BhmXKD84l0tDise3G5&#13;
+hIpsxTTHcgjisUBKLgaoH8budz7KSm5z0eX7ptViiepLX2ovLb5RnIbXJTWk/HSPkX4BVnPYDOMU&#13;
+CmiEDOAbWtcOk+KeEwMtr+oqDx/ixGe+cfMYJg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3812,4 +3861,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_147f8a4e-9147-4549-8063-599e525b2f82" Target="#_39358f44-87a5-47f2-8cfe-5347801a544d"><Timestamp>2024-04-16 15:10:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_38f7fe74-3ada-4a0a-8d71-89284b97980f" Target="#_16f3374d-15ca-4ae1-9f3f-9a6536b84e20"><Timestamp>2024-05-03 08:21:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
