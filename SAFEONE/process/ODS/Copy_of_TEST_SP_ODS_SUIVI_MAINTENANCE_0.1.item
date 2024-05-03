@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+  <context confirmationNeeded="false" hide="false" name="Default">
+    <contextParameter comment="" internalId="_4RlAoM88Ee6dQ-TyWsAjBw" name="MySQL_ODS_AdditionalParams" prompt="MySQL_ODS_AdditionalParams?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_4RlAoc88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Database" prompt="MySQL_ODS_Database?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="ods_dev"/>
+    <contextParameter comment="" internalId="_4RlAos88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Login" prompt="MySQL_ODS_Login?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_4RlAo888Ee6dQ-TyWsAjBw" name="MySQL_ODS_Password" prompt="MySQL_ODS_Password?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:ZAKcAiggWtc8z59Ng41vfGD2bn+RWjbUqyxBjthXZ3o2rQWup4S18aIG"/>
+    <contextParameter comment="" internalId="_4RlApM88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Port" prompt="MySQL_ODS_Port?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_4RlApc88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Server" prompt="MySQL_ODS_Server?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_4RlAps88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_AdditionalParams" prompt="MySQL_talend_log_AdditionalParams?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_4RlAp888Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Database" prompt="MySQL_talend_log_Database?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="talend_log_dev"/>
+    <contextParameter comment="" internalId="_4RlAqM88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Login" prompt="MySQL_talend_log_Login?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_4RlAqc88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Password" prompt="MySQL_talend_log_Password?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:pmNPbbfxpJmZUckaC2v2qol2pJVT6Cx7ee7UancsE7pfdA6pKMgwRGgf"/>
+    <contextParameter comment="" internalId="_4RlAqs88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_4RlAq888Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_4RlArM88Ee6dQ-TyWsAjBw" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_4RlArc88Ee6dQ-TyWsAjBw" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/"/>
+    <contextParameter comment="" internalId="_4RlArs88Ee6dQ-TyWsAjBw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_4RlAr888Ee6dQ-TyWsAjBw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_4RlAsM88Ee6dQ-TyWsAjBw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_4RlAsc88Ee6dQ-TyWsAjBw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_4RlAss88Ee6dQ-TyWsAjBw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_4RlAs888Ee6dQ-TyWsAjBw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_4RlAtM88Ee6dQ-TyWsAjBw" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_4RlAtc88Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_4RlAts88Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_4RlAt888Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="PROD">
+    <contextParameter comment="" internalId="_4RlAuM88Ee6dQ-TyWsAjBw" name="MySQL_ODS_AdditionalParams" prompt="MySQL_ODS_AdditionalParams?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_4RlAuc88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Database" prompt="MySQL_ODS_Database?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="ods_dev"/>
+    <contextParameter comment="" internalId="_4RlAus88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Login" prompt="MySQL_ODS_Login?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_4RlAu888Ee6dQ-TyWsAjBw" name="MySQL_ODS_Password" prompt="MySQL_ODS_Password?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:tIhtvh9kasEG/uEAJFfnFZmIhmHideptvmFn/V+H5MAaDpPpCd9V9Jey"/>
+    <contextParameter comment="" internalId="_4RlAvM88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Port" prompt="MySQL_ODS_Port?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_4RlAvc88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Server" prompt="MySQL_ODS_Server?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_4RlAvs88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_AdditionalParams" prompt="MySQL_talend_log_AdditionalParams?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_4RlAv888Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Database" prompt="MySQL_talend_log_Database?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="talend_log_dev"/>
+    <contextParameter comment="" internalId="_4RlAwM88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Login" prompt="MySQL_talend_log_Login?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_4RlAwc88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Password" prompt="MySQL_talend_log_Password?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:+EVMdkAg0aPQviDyTLKh+eagrqh5FXgKtHv+UiSGYDzrABrVBi/JEivj"/>
+    <contextParameter comment="" internalId="_4RlAws88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_4RlAw888Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_4RlAxM88Ee6dQ-TyWsAjBw" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_4RlAxc88Ee6dQ-TyWsAjBw" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/"/>
+    <contextParameter comment="" internalId="_4RlAxs88Ee6dQ-TyWsAjBw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_4RlAx888Ee6dQ-TyWsAjBw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_4RlAyM88Ee6dQ-TyWsAjBw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_4RlAyc88Ee6dQ-TyWsAjBw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_4RlAys88Ee6dQ-TyWsAjBw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_4RlAy888Ee6dQ-TyWsAjBw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_4RlAzM88Ee6dQ-TyWsAjBw" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_4RlAzc88Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files&quot;"/>
+    <contextParameter comment="" internalId="_4RlAzs88Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_4RlAz888Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="DEV">
+    <contextParameter comment="" internalId="_4RlA0M88Ee6dQ-TyWsAjBw" name="MySQL_ODS_AdditionalParams" prompt="MySQL_ODS_AdditionalParams?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_4RlA0c88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Database" prompt="MySQL_ODS_Database?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="ods_dev"/>
+    <contextParameter comment="" internalId="_4RlA0s88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Login" prompt="MySQL_ODS_Login?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_4RlA0888Ee6dQ-TyWsAjBw" name="MySQL_ODS_Password" prompt="MySQL_ODS_Password?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:w5EOyXqqeEk32KfM4yYEMhmv/nIiz2PYQtmaiLW47Qr/r3rw069ed9Br"/>
+    <contextParameter comment="" internalId="_4RlA1M88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Port" prompt="MySQL_ODS_Port?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_4RlA1c88Ee6dQ-TyWsAjBw" name="MySQL_ODS_Server" prompt="MySQL_ODS_Server?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_4RlA1s88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_AdditionalParams" prompt="MySQL_talend_log_AdditionalParams?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_4RlA1888Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Database" prompt="MySQL_talend_log_Database?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="talend_log_dev"/>
+    <contextParameter comment="" internalId="_4RlA2M88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Login" prompt="MySQL_talend_log_Login?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_4RlA2c88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Password" prompt="MySQL_talend_log_Password?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:a9yeWv6MFNhwlbPZl7qT1WZXLY2x36FfjUc9Nl6yza3ZUqltR0WuPhqb"/>
+    <contextParameter comment="" internalId="_4RlA2s88Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_4RlA2888Ee6dQ-TyWsAjBw" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_4RlA3M88Ee6dQ-TyWsAjBw" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_4RlnsM88Ee6dQ-TyWsAjBw" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/"/>
+    <contextParameter comment="" internalId="_4Rlnsc88Ee6dQ-TyWsAjBw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/home/adnadm/data/Andine/09/"/>
+    <contextParameter comment="" internalId="_4Rlnss88Ee6dQ-TyWsAjBw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/home/adnadm/data/Andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_4Rlns888Ee6dQ-TyWsAjBw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_4RlntM88Ee6dQ-TyWsAjBw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_4Rlntc88Ee6dQ-TyWsAjBw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_4Rlnts88Ee6dQ-TyWsAjBw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_4Rlnt888Ee6dQ-TyWsAjBw" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_4RlnuM88Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files&quot;"/>
+    <contextParameter comment="" internalId="_4Rlnuc88Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_4Rlnus88Ee6dQ-TyWsAjBw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="Dev">
+    <contextParameter comment="" internalId="_lF8RgNeoEe6UL9fe7qCfUg" name="MySQL_ODS_AdditionalParams" prompt="MySQL_ODS_AdditionalParams?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_lF8RgdeoEe6UL9fe7qCfUg" name="MySQL_ODS_Database" prompt="MySQL_ODS_Database?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="ods_dev"/>
+    <contextParameter comment="" internalId="_lF8RgteoEe6UL9fe7qCfUg" name="MySQL_ODS_Login" prompt="MySQL_ODS_Login?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_lF8Rg9eoEe6UL9fe7qCfUg" name="MySQL_ODS_Password" prompt="MySQL_ODS_Password?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:ZAKcAiggWtc8z59Ng41vfGD2bn+RWjbUqyxBjthXZ3o2rQWup4S18aIG"/>
+    <contextParameter comment="" internalId="_lF8RhNeoEe6UL9fe7qCfUg" name="MySQL_ODS_Port" prompt="MySQL_ODS_Port?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_lF8RhdeoEe6UL9fe7qCfUg" name="MySQL_ODS_Server" prompt="MySQL_ODS_Server?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_lF8RhteoEe6UL9fe7qCfUg" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_lF8Rh9eoEe6UL9fe7qCfUg" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="/home/adnadm/data/Andine/param/"/>
+    <contextParameter comment="" internalId="_lF8RiNeoEe6UL9fe7qCfUg" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_lF8RideoEe6UL9fe7qCfUg" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_lF8RiteoEe6UL9fe7qCfUg" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_lF8Ri9eoEe6UL9fe7qCfUg" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_lF8RjNeoEe6UL9fe7qCfUg" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_lF8RjdeoEe6UL9fe7qCfUg" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_lF8RjteoEe6UL9fe7qCfUg" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_lF8Rj9eoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_lF8RkNeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_lF8RkdeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+    <contextParameter comment="" internalId="_lF8RkteoEe6UL9fe7qCfUg" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_lF8Rk9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_Login" prompt="MySQL_talend_log_Login?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_lF8RlNeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Password" prompt="MySQL_talend_log_Password?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:VCUvIxF0WJoycD8W32PCqDCaX4/qh4xBRxCG5WSeZlUENriSCrka+R4g"/>
+    <contextParameter comment="" internalId="_lF8RldeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Database" prompt="MySQL_talend_log_Database?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="talend_log_dev"/>
+    <contextParameter comment="" internalId="_lF8RlteoEe6UL9fe7qCfUg" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_lF8Rl9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_AdditionalParams" prompt="MySQL_talend_log_AdditionalParams?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="Int">
+    <contextParameter comment="" internalId="_lF8RmNeoEe6UL9fe7qCfUg" name="MySQL_ODS_AdditionalParams" prompt="MySQL_ODS_AdditionalParams?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_lF8RmdeoEe6UL9fe7qCfUg" name="MySQL_ODS_Database" prompt="MySQL_ODS_Database?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="ods_dev"/>
+    <contextParameter comment="" internalId="_lF8RmteoEe6UL9fe7qCfUg" name="MySQL_ODS_Login" prompt="MySQL_ODS_Login?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_lF8Rm9eoEe6UL9fe7qCfUg" name="MySQL_ODS_Password" prompt="MySQL_ODS_Password?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:ZAKcAiggWtc8z59Ng41vfGD2bn+RWjbUqyxBjthXZ3o2rQWup4S18aIG"/>
+    <contextParameter comment="" internalId="_lF8RnNeoEe6UL9fe7qCfUg" name="MySQL_ODS_Port" prompt="MySQL_ODS_Port?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_lF8RndeoEe6UL9fe7qCfUg" name="MySQL_ODS_Server" prompt="MySQL_ODS_Server?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_lF8RnteoEe6UL9fe7qCfUg" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_lF8Rn9eoEe6UL9fe7qCfUg" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/Int/"/>
+    <contextParameter comment="" internalId="_lF8RoNeoEe6UL9fe7qCfUg" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_lF8RodeoEe6UL9fe7qCfUg" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_lF8RoteoEe6UL9fe7qCfUg" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_lF8Ro9eoEe6UL9fe7qCfUg" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_lF8RpNeoEe6UL9fe7qCfUg" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_lF8RpdeoEe6UL9fe7qCfUg" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_lF8RpteoEe6UL9fe7qCfUg" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_lF8Rp9eoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_lF8RqNeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_lF8RqdeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+    <contextParameter comment="" internalId="_lF8RqteoEe6UL9fe7qCfUg" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_lF8Rq9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_Login" prompt="MySQL_talend_log_Login?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_lF8RrNeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Password" prompt="MySQL_talend_log_Password?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:VCUvIxF0WJoycD8W32PCqDCaX4/qh4xBRxCG5WSeZlUENriSCrka+R4g"/>
+    <contextParameter comment="" internalId="_lF8RrdeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Database" prompt="MySQL_talend_log_Database?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="talend_log_int"/>
+    <contextParameter comment="" internalId="_lF8RrteoEe6UL9fe7qCfUg" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_lF8Rr9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_AdditionalParams" prompt="MySQL_talend_log_AdditionalParams?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="Prod">
+    <contextParameter comment="" internalId="_lF8RsNeoEe6UL9fe7qCfUg" name="MySQL_ODS_AdditionalParams" prompt="MySQL_ODS_AdditionalParams?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_lF8RsdeoEe6UL9fe7qCfUg" name="MySQL_ODS_Database" prompt="MySQL_ODS_Database?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="ods_dev"/>
+    <contextParameter comment="" internalId="_lF8RsteoEe6UL9fe7qCfUg" name="MySQL_ODS_Login" prompt="MySQL_ODS_Login?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_lF8Rs9eoEe6UL9fe7qCfUg" name="MySQL_ODS_Password" prompt="MySQL_ODS_Password?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:ZAKcAiggWtc8z59Ng41vfGD2bn+RWjbUqyxBjthXZ3o2rQWup4S18aIG"/>
+    <contextParameter comment="" internalId="_lF8RtNeoEe6UL9fe7qCfUg" name="MySQL_ODS_Port" prompt="MySQL_ODS_Port?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_lF8RtdeoEe6UL9fe7qCfUg" name="MySQL_ODS_Server" prompt="MySQL_ODS_Server?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_lF8RtteoEe6UL9fe7qCfUg" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_lF8Rt9eoEe6UL9fe7qCfUg" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/"/>
+    <contextParameter comment="" internalId="_lF8RuNeoEe6UL9fe7qCfUg" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_lF8RudeoEe6UL9fe7qCfUg" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_lF8RuteoEe6UL9fe7qCfUg" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_lF8Ru9eoEe6UL9fe7qCfUg" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_lF8RvNeoEe6UL9fe7qCfUg" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_lF8RvdeoEe6UL9fe7qCfUg" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_lF8RvteoEe6UL9fe7qCfUg" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_lF8Rv9eoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_lF8RwNeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_lF8RwdeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+    <contextParameter comment="" internalId="_lF8RwteoEe6UL9fe7qCfUg" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-prod.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_lF8Rw9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_Login" prompt="MySQL_talend_log_Login?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_lF8RxNeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Password" prompt="MySQL_talend_log_Password?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:VCUvIxF0WJoycD8W32PCqDCaX4/qh4xBRxCG5WSeZlUENriSCrka+R4g"/>
+    <contextParameter comment="" internalId="_lF8RxdeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Database" prompt="MySQL_talend_log_Database?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="talend_log_prod"/>
+    <contextParameter comment="" internalId="_lF8RxteoEe6UL9fe7qCfUg" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_lF8Rx9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_AdditionalParams" prompt="MySQL_talend_log_AdditionalParams?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="INT">
+    <contextParameter comment="" internalId="_7k8OINeoEe6UL9fe7qCfUg" name="MySQL_ODS_AdditionalParams" prompt="MySQL_ODS_AdditionalParams?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_7k8OIdeoEe6UL9fe7qCfUg" name="MySQL_ODS_Database" prompt="MySQL_ODS_Database?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="ods_dev"/>
+    <contextParameter comment="" internalId="_7k8OIteoEe6UL9fe7qCfUg" name="MySQL_ODS_Login" prompt="MySQL_ODS_Login?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_7k8OI9eoEe6UL9fe7qCfUg" name="MySQL_ODS_Password" prompt="MySQL_ODS_Password?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:ZAKcAiggWtc8z59Ng41vfGD2bn+RWjbUqyxBjthXZ3o2rQWup4S18aIG"/>
+    <contextParameter comment="" internalId="_7k8OJNeoEe6UL9fe7qCfUg" name="MySQL_ODS_Port" prompt="MySQL_ODS_Port?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_7k8OJdeoEe6UL9fe7qCfUg" name="MySQL_ODS_Server" prompt="MySQL_ODS_Server?" promptNeeded="false" repositoryContextId="_5tzxsMAgEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_7k8OJteoEe6UL9fe7qCfUg" name="MySQL_talend_log_AdditionalParams" prompt="MySQL_talend_log_AdditionalParams?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter comment="" internalId="_7k8OJ9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_Database" prompt="MySQL_talend_log_Database?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="talend_log_dev"/>
+    <contextParameter comment="" internalId="_7k8OKNeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Login" prompt="MySQL_talend_log_Login?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="adnadm"/>
+    <contextParameter comment="" internalId="_7k8OKdeoEe6UL9fe7qCfUg" name="MySQL_talend_log_Password" prompt="MySQL_talend_log_Password?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_Password" value="enc:system.encryption.key.v1:pmNPbbfxpJmZUckaC2v2qol2pJVT6Cx7ee7UancsE7pfdA6pKMgwRGgf"/>
+    <contextParameter comment="" internalId="_7k8OKteoEe6UL9fe7qCfUg" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306"/>
+    <contextParameter comment="" internalId="_7k8OK9eoEe6UL9fe7qCfUg" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com"/>
+    <contextParameter comment="" internalId="_7k8OLNeoEe6UL9fe7qCfUg" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_7k8OLdeoEe6UL9fe7qCfUg" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/"/>
+    <contextParameter comment="" internalId="_7k8OLteoEe6UL9fe7qCfUg" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_7k8OL9eoEe6UL9fe7qCfUg" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_7k8OMNeoEe6UL9fe7qCfUg" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_7k8OMdeoEe6UL9fe7qCfUg" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_7k8OMteoEe6UL9fe7qCfUg" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_7k8OM9eoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+    <contextParameter comment="" internalId="_7k8ONNeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_7k8ONdeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files&quot;"/>
+    <contextParameter comment="" internalId="_7k8ONteoEe6UL9fe7qCfUg" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7k8ON9eoEe6UL9fe7qCfUg" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+  </context>
+  <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="736"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value=""/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="true"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="true"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="context.G_Rep_Param + context.G_File_Properties"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;=&quot;"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:fJxElLFtxFWsCK5Y9FmQ46Zu0xowvd39brR2kwng"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Users/ilaza/Downloads/Talend-Studio-20231027_1100-V8.0.1/workspace/.metadata&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="JDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:K89Syj8nzoK4j7HPdPiZ9ZTPdejz1ZVikD9Tk6CG"/>
+    <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
+    <routinesParameter id="_73waoL95Ee67GN6DA98bkw" name="SQLike"/>
+    <routinesParameter id="_75VvAL95Ee67GN6DA98bkw" name="DataOperation"/>
+    <routinesParameter id="_75guIL95Ee67GN6DA98bkw" name="Mathematical"/>
+    <routinesParameter id="_75rGML95Ee67GN6DA98bkw" name="Numeric"/>
+    <routinesParameter id="_76HyIL95Ee67GN6DA98bkw" name="Relational"/>
+    <routinesParameter id="_76lFIL95Ee67GN6DA98bkw" name="StringHandling"/>
+    <routinesParameter id="_76tA8L95Ee67GN6DA98bkw" name="TalendDataGenerator"/>
+    <routinesParameter id="_7608wL95Ee67GN6DA98bkw" name="TalendDate"/>
+    <routinesParameter id="_77C_ML95Ee67GN6DA98bkw" name="TalendString"/>
+    <routinesParameter id="_77NXQL95Ee67GN6DA98bkw" name="TalendStringUtil"/>
+  </parameters>
+  <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CHECK" name="CLOSE" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBCommit_1"/>
+  </node>
+  <node componentName="tMysqlConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_8"/>
+    <elementParameter field="TEXT" name="HOST" value="context.MySQL_ODS_Server"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MySQL"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.MySQL_ODS_AdditionalParams"/>
+    <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:vbGCnXvNYvLLckde6XoCY7ByESRxiRmFO8uSZKueCD+b64r7pD1+ro8fVTf8tfSSEqaslbnC"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" show="false" value=""/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="Connexion_ODS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tHttpRequest" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-480" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_1"/>
+    <elementParameter field="TEXT" name="URI" value="context.Sharepoint_url_access_token"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD_CHOSED" value="POST"/>
+    <elementParameter field="FILE" name="POST_PARAMS_FROM_FILE" value="context.Sharepoint_post_param_file_access_token"/>
+    <elementParameter field="CHECK" name="OUT_TO_FILE" value="false"/>
+    <elementParameter field="FILE" name="OUT_FILE_NAME" show="false" value=""/>
+    <elementParameter field="CHECK" name="CREATE_DIRS" show="false" value="false"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="HEADER_NAME" value="&quot;Content-Type&quot;"/>
+      <elementValue elementRef="HEADER_VALUE" value="&quot;application/x-www-form-urlencoded&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="NEED_AUTHENTICATION" value="false"/>
+    <elementParameter field="TEXT" name="USR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PWD" show="false" value="enc:system.encryption.key.v1:dR1GvCpeGBlsVRa0ACiVpT94JRp8bEOcQz31coxA"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="TIMEOUT_SETTING" value="false"/>
+    <elementParameter field="TEXT" name="CONNECT_TIMEOUT" show="false" value="30"/>
+    <elementParameter field="TEXT" name="READ_TIMEOUT" show="false" value="0"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHttpRequest_1">
+      <column key="false" length="0" name="ResponseContent" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tExtractJSONFields" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-256" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tExtractJSONFields_1"/>
+    <elementParameter field="CLOSED_LIST" name="READ_BY" value="JSONPATH"/>
+    <elementParameter field="CLOSED_LIST" name="JSON_PATH_VERSION" value="2_1_0"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="JSONFIELD" value="ResponseContent"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" show="false" value="&quot;/bills/bill/line&quot;"/>
+    <elementParameter field="TEXT" name="JSON_LOOP_QUERY" value="&quot;$&quot;"/>
+    <elementParameter field="TABLE" name="MAPPING" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="token"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="ISARRAY" value="false"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="MAPPING_4_JSONPATH">
+      <elementValue elementRef="SCHEMA_COLUMN" value="token"/>
+      <elementValue elementRef="QUERY" value="&quot;access_token&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="CLOSED_LIST" name="JDK_VERSION" show="false" value="JDK_8"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="UTF-8"/>
+    <elementParameter field="CHECK" name="USE_LOOP_AS_ROOT" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT_LIST" show="false" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tExtractJSONFields_1">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorJSONField" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_1"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;token&quot;"/>
+      <elementValue elementRef="VALUE" value="token.token"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSetGlobalVar_1">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tHttpRequest" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-320" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_2"/>
+    <elementParameter field="TEXT" name="URI" value="context.Sharepoint_url_get_items_files"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD_CHOSED" value="GET"/>
+    <elementParameter field="FILE" name="POST_PARAMS_FROM_FILE" show="false" value=""/>
+    <elementParameter field="CHECK" name="OUT_TO_FILE" value="false"/>
+    <elementParameter field="FILE" name="OUT_FILE_NAME" show="false" value=""/>
+    <elementParameter field="CHECK" name="CREATE_DIRS" show="false" value="false"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="HEADER_NAME" value="&quot;Authorization&quot;"/>
+      <elementValue elementRef="HEADER_VALUE" value="&quot;Bearer &quot; + (String) globalMap.get(&quot;token&quot;)"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="NEED_AUTHENTICATION" value="false"/>
+    <elementParameter field="TEXT" name="USR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PWD" show="false" value="enc:system.encryption.key.v1:QNOGxpEWjTSF8qTk6QocBUFwgBfEBdSC0kXORrnz"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="TIMEOUT_SETTING" value="false"/>
+    <elementParameter field="TEXT" name="CONNECT_TIMEOUT" show="false" value="30"/>
+    <elementParameter field="TEXT" name="READ_TIMEOUT" show="false" value="0"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHttpRequest_2">
+      <column comment="" key="false" length="-1" name="chemin" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="titre" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="ResponseContent" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-128" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tExtractXMLField_1"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="ResponseContent"/>
+    <elementParameter field="CHECK" name="USE_ITEMS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY_BASE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/feed/entry&quot;"/>
+    <elementParameter field="TABLE" name="MAPPING">
+      <elementValue elementRef="SCHEMA_COLUMN" value="chemin"/>
+      <elementValue elementRef="QUERY" value="&quot;./link/m:inline/feed/entry/content/m:properties/d:ServerRelativePath/d:DecodedUrl&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="titre"/>
+      <elementValue elementRef="QUERY" value="&quot;./content/m:properties/d:Title&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="USE_XML_FIELD" show="false" value="false"/>
+    <elementParameter field="TEXT" name="XML_TEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="XML_PREFIX" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="CHECK" name="IGNORE_NS" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tExtractXMLField_1">
+      <column comment="" key="false" length="-1" name="chemin" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="titre" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="chemin" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="titre" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorXMLField" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="&#10;output_row.chemin =  input_row.chemin.substring(0,input_row.chemin.lastIndexOf(&quot;/&quot;));&#10;output_row.fichier = input_row.chemin.substring(input_row.chemin.lastIndexOf(&quot;/&quot;)+1);&#10;output_row.job_version = input_row.chemin.substring(input_row.chemin.lastIndexOf(&quot;_&quot;)+1,input_row.chemin.lastIndexOf(&quot;.&quot;));&#10;String répertoire = input_row.chemin.substring(0,input_row.chemin.lastIndexOf(&quot;/&quot;));&#10;output_row.traitementId =  répertoire.substring(répertoire.lastIndexOf(&quot;_&quot;)+1);&#10;&#10;output_row.titre =  input_row.titre;&#13;&#10;&#10;&#10;System.out.println(&quot;fichier : &quot; + input_row.chemin);&#10;System.out.println(&quot;titre : &quot; + input_row.titre);"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_1">
+      <column comment="" key="false" length="-1" name="chemin" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="fichier" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_version" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="traitementId" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="titre" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="160" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_kwl3sNDFEe6RZPsTKGo7qg-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out1">
+      <column comment="" key="false" length="-1" name="FOLDER_PATH" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row5.chemin " name="FOLDER_PATH" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.fichier " name="NOM_FICHIER" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="chemin" nullable="true" type="id_String"/>
+        <mapperTableEntries name="fichier" nullable="true" type="id_String"/>
+        <mapperTableEntries name="job_version" nullable="true" type="id_String"/>
+        <mapperTableEntries name="traitementId" nullable="true" type="id_String"/>
+        <mapperTableEntries name="titre" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_GgxnwL96Ee67GN6DA98bkw"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_8"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MYSQL"/>
+    <elementParameter field="TEXT" name="HOST" value="context.MySQL_ODS_Server"/>
+    <elementParameter field="TEXT" name="PORT" value="context.MySQL_ODS_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
+    <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ut5sgRU4of1iSe8GlufRzGDQerUUrP+OzzUh/KPAq7R5YWNX5V05FX68b2G3591Im+ZEmpyI"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_sharepoint&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.MySQL_ODS_AdditionalParams"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" show="false" value="10000"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="FOLDER_PATH"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NOM_FICHIER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBOutput_1">
+      <column comment="" key="false" length="-1" name="FOLDER_PATH" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="FOLDER_PATH" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
+    <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_TDIE" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_TWARN" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_TACTIONFAILURE" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogCatcher_1">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="priority" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_3"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="moment"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="root_pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="father_pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="project"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="job"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="context"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="priority"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="type"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="message"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_3">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="priority" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tStatCatcher" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="832" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStatCatcher_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tStatCatcher_1">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="8" name="system_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_repository_id" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_version" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message_type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="8" name="duration" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="moment"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="father_pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="root_pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="system_pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="project"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="job"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="job_repository_id"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="job_version"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="context"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="message_type"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="message"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="duration"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_1">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="8" name="system_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_repository_id" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_version" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message_type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="8" name="duration" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="-50" offsetLabelY="-64" posX="-640" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Début traitement&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="Début traitement"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_1"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="Fin traitement"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_2"/>
+  </node>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBCommit_1" offsetLabelX="0" offsetLabelY="0" source="tDBCommit_1" target="tWarn_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+  </connection>
+  <connection connectorName="FLOW" label="Response" lineStyle="0" metaname="tHttpRequest_1" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_1" target="tExtractJSONFields_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Response"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tHttpRequest_1" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_1" target="tHttpRequest_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
+  </connection>
+  <connection connectorName="FLOW" label="token" lineStyle="0" metaname="tExtractJSONFields_1" offsetLabelX="0" offsetLabelY="0" source="tExtractJSONFields_1" target="tSetGlobalVar_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="token"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="token"/>
+  </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHttpRequest_2" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_2" target="tExtractXMLField_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tExtractXMLField_1" offsetLabelX="0" offsetLabelY="0" source="tExtractXMLField_1" target="tJavaRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+  </connection>
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="FOLDER_PATH"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tDBCommit_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
+  </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tLogCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tLogCatcher_1" target="tLogRow_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tDBClose_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tDBConnection_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" source="tWarn_1" target="tHttpRequest_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStatCatcher_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_216d4592-5934-46fe-9d7f-5cac67c69687"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ydy+GibL0kE+tNDHd45TjL1Z0FUMpU8o/vRnweG5Ee49WqfpEcVdzNeoI19gawzatu+AyWcp34xG&#13;
+VWcjTI054g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e5d9dd8d-7f1f-4d06-930a-a2aaed267d5a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JSX6Zjhg9AfVsrEnyvRUdJTE4quV84kx2qMrFqDZPeFTgXbznA7TbQCA5amPGK7L7a+Wo9USOLrJ&#13;
+ueAX8xkRPg==</DigestValue></Reference></SignedInfo><SignatureValue>nTwJAIqmor81VPFQ10BvGRPmsoptAduEfIUUxGAbqzeXAEyACRLpuQ4SFmj7EmqHJswA2BoLRw82&#13;
+yRU48BMAov/JfGAxoT9qcLlvQZSm6v8kvvAlkfOTqRewUjrQAw/CZeQymmh+P3w1C5eFDSeUQXnJ&#13;
+U0pV2ydxWxrhY270pYjRR2kRiijbeH4VKZ8p3klFgJxtPxll7lfKe9IGwfI4QfzZ+igxnJiVSOPE&#13;
+L0EId+JqvrC2LAfdOJ7/Zitz/iw7UyDneWTyQSMYhbEiGlE7NPmLMKS5DrXJhW0yqdQga0oVE2cW&#13;
+oBlq0x19QlwtU0x4X65+DoKPUgB72mRingXD5Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e5d9dd8d-7f1f-4d06-930a-a2aaed267d5a" Target="#_216d4592-5934-46fe-9d7f-5cac67c69687"><Timestamp>2024-05-03 13:46:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
