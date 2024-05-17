@@ -353,7 +353,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_1"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;https://api.open-meteo.com/v1/forecast?latitude=&quot;+row6.LATITUDE+&quot;&amp;longitude=&quot;+row6.LONGITUDE+&quot;&amp;daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_mean,wind_speed_10m_max,weather_code&amp;forecast_days=1&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;https://api.open-meteo.com/v1/forecast?latitude=&quot;+row6.LATITUDE+&quot;&amp;longitude=&quot;+row6.LONGITUDE+&quot;&amp;hourly=relative_humidity_2m,dew_point_2m&amp;daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_mean,wind_speed_10m_max,weather_code&amp;forecast_days=1&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="GET"/>
     <elementParameter field="TABLE" name="HEADERS"/>
     <elementParameter field="MEMO" name="BODY" show="false" value="&quot;&quot;"/>
@@ -408,6 +408,14 @@
       <elementValue elementRef="QUERY" value=""/>
       <elementValue elementRef="NODECHECK" value="false"/>
       <elementValue elementRef="ISARRAY" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="relative_humidity"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="ISARRAY" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="dewpoint"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="ISARRAY" value="false"/>
     </elementParameter>
     <elementParameter field="TABLE" name="MAPPING_4_JSONPATH">
       <elementValue elementRef="SCHEMA_COLUMN" value="latitude"/>
@@ -428,6 +436,10 @@
       <elementValue elementRef="QUERY" value="&quot;daily.wind_speed_10m_max[0]&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="weather_code"/>
       <elementValue elementRef="QUERY" value="&quot;daily.weather_code[0]&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="relative_humidity"/>
+      <elementValue elementRef="QUERY" value="&quot;hourly.relative_humidity_2m[12]&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="dewpoint"/>
+      <elementValue elementRef="QUERY" value="&quot;hourly.dew_point_2m[12]&quot;"/>
     </elementParameter>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -448,6 +460,8 @@
       <column comment="" key="false" length="-1" name="precipitation_probability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="wind_speed_max" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="weather_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="relative_humidity" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dewpoint" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="-1" name="latitude" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -459,6 +473,8 @@
       <column comment="" key="false" length="-1" name="precipitation_probability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="wind_speed_max" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="weather_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="relative_humidity" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dewpoint" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorJSONField" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -490,6 +506,22 @@
       <column comment="" key="false" length="-1" name="precipitation_probability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="wind_speed_max" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="weather_description" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="relative_humidity" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dewpoint" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="FLOW" label="test" name="test">
+      <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="longitude" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="latitude" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="date_api" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="temperature_min" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="temperature_max" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="precipitation_sum" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="precipitation_probability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="wind_speed_max" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="weather_description" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="relative_humidity" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dewpoint" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -501,12 +533,28 @@
         <mapperTableEntries expression="row2.longitude " name="longitude" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.latitude " name="latitude" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.time " name="date_api" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.temperature_min " name="temperature_min" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.temperature_max " name="temperature_max" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.temperature_min + &quot;°&quot; " name="temperature_min" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.temperature_max + &quot;°&quot; " name="temperature_max" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.precipitation_sum " name="precipitation_sum" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.precipitation_probability " name="precipitation_probability" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.wind_speed_max " name="wind_speed_max" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.precipitation_probability + &quot;%&quot; " name="precipitation_probability" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.wind_speed_max + &quot; km/h&quot; " name="wind_speed_max" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.Weather_description " name="weather_description" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.relative_humidity + &quot;%&quot; " name="relative_humidity" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.dewpoint + &quot;°&quot; " name="dewpoint" nullable="true" type="id_String"/>
+      </outputTables>
+      <outputTables name="test" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row4.IDCLIENTSITE  " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
+        <mapperTableEntries expression="row2.longitude  " name="longitude" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.latitude  " name="latitude" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.time  " name="date_api" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.temperature_min + &quot;°&quot;  " name="temperature_min" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.temperature_max + &quot;°&quot;  " name="temperature_max" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.precipitation_sum  " name="precipitation_sum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.precipitation_probability + &quot;%&quot;  " name="precipitation_probability" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.wind_speed_max + &quot; km/h&quot;  " name="wind_speed_max" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.Weather_description  " name="weather_description" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.relative_humidity  " name="relative_humidity" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.dewpoint  " name="dewpoint" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="latitude" nullable="true" type="id_String"/>
@@ -518,6 +566,8 @@
         <mapperTableEntries name="precipitation_probability" nullable="true" type="id_String"/>
         <mapperTableEntries name="wind_speed_max" nullable="true" type="id_String"/>
         <mapperTableEntries name="weather_code" nullable="true" type="id_String"/>
+        <mapperTableEntries name="relative_humidity" nullable="true" type="id_String"/>
+        <mapperTableEntries name="dewpoint" nullable="true" type="id_String"/>
       </inputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.weather_code " name="weather_code" nullable="true" type="id_String"/>
@@ -611,6 +661,16 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="relative_humidity"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="dewpoint"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -631,6 +691,8 @@
       <column comment="" key="false" length="-1" name="precipitation_probability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="wind_speed_max" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="weather_description" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="relative_humidity" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dewpoint" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
@@ -643,6 +705,8 @@
       <column comment="" key="false" length="-1" name="precipitation_probability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="wind_speed_max" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="weather_description" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="relative_humidity" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dewpoint" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -811,12 +875,26 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tExtractJSONFields_2" offsetLabelX="0" offsetLabelY="0" source="tExtractJSONFields_2" target="tMap_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="dewpoint"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="relative_humidity"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="IDCLIENTSITE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dewpoint"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="relative_humidity"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -892,13 +970,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_32aa85d5-d780-4cfa-9689-98e51edfeddd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ue/Xex5jgDT6mF6HUPR5a6ah/6DZ0TKlzprgwCZh2P0gAXH5y6CmVmCCzapMgks3appq7ovi5Gcz&#13;
-wtyYFcRmNg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c5a03265-0214-4ede-8daa-cb6c873b56bb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8/OHmnzBfsMQ8UgkYHU/F0WUeN1RUsKNxvWga3Vv8KrP1pBn38dR0ExkJs50ZC/70xVlHrDJCc5a&#13;
-VKAEo7Epkw==</DigestValue></Reference></SignedInfo><SignatureValue>gJd+9IMs/8iB+eVDfl22l4ISayo43C8mukCH97BoFKWPXQqTkA89yxtxu5Bg1QtT/vI/2CFR38eW&#13;
-XiJJQxealEPXP42Wchrpr2akSZFu1ULCgJPWPL3ADuAab5K97fiC49Ht7C6kSwZuzriDr3HIGLZz&#13;
-pXCHnQpcgfyly8Rd2OWPy+rrSrOgnH7bswBPVC372JuC64l8yhYrCAWwM925CjkGte5FOrWAVHS+&#13;
-0lgeIf9H/vF2i+0LmEXu3fL4y5CWFdO2DUjclYx5Ph0701yZ7Rf88MO29oICo6zrGQB+Jr9CtD4x&#13;
-FVu1uxB4yWtdPlXY6JMCvQK70Mj5DaPIgmXAyw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_545fbbb9-dc62-4645-b296-052a3bdb311e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ozzSuaQW66Oz937p96mIJNvcneeEhTh8kXQ5+1FFhE/y6rECTQiXrUsCa5h/E5TL2Fw6Tx1G7ULH&#13;
+RnpE0BBogA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2a902444-7424-49e1-b7c7-48421829042e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ds3pEsT+tPUp8uOXJswW6uO4PElXVzKcLYKxaUVoN7vKzQ8qucs9rXDvt339sEYxDhav6qZpzguI&#13;
+K8D/UrjMkg==</DigestValue></Reference></SignedInfo><SignatureValue>d9uhdj3hukpYOBGNOJj6QYs3RbH6sMSMSwEN9zVDP3bVnO/282FUNG450RMf7anUT2hwSoODGuNS&#13;
+PrJCHbiBkNAfj5PilCUbDkGoDvmEgk0QpYFeJi90LHZv1q1ElemAQNc/lLOf1a0Axaf+QuDRgoMq&#13;
+DmN9zUlH3LISQzuaJ0GIf4M4mz/vZucYn0q94Rn9yY42f99sJaNLv0KLDk+wqW/nWWMvbuH3YuAa&#13;
+r+pyNu0AiwgyQPOT1p5wolqaCinV/vvqG98pXdRZL674NvViAoQFxlbmw0CykDsq29v3uXEq6U93&#13;
+/hPqb6QyIAOJPygT60bNy5Jb0INKRfpKtYxnzg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -920,4 +998,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c5a03265-0214-4ede-8daa-cb6c873b56bb" Target="#_32aa85d5-d780-4cfa-9689-98e51edfeddd"><Timestamp>2024-05-03 13:47:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2a902444-7424-49e1-b7c7-48421829042e" Target="#_545fbbb9-dc62-4645-b296-052a3bdb311e"><Timestamp>2024-05-17 15:11:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
