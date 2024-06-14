@@ -413,7 +413,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_1"/>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="192">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement&quot;"/>
@@ -427,12 +427,12 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="0" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="448">
+  <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -456,7 +456,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;&#9;TYPE_MISSION,&#13;&#10;&#9;INGENIEUR_ANDINE,&#13;&#10;&#9;CLIENT,&#13;&#10;&#9;ASSET_NAME,&#13;&#10;&#9;GESTIONNAIRE_TECHNIQUE,&#13;&#10;&#9;PROPERTY_NAME,&#13;&#10;&#9;SITE,&#13;&#10;&#9;ADRESSE,&#13;&#10;&#9;SURFACE_SITE,&#13;&#10;&#9;CLIENT_SITE,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;LIEN_SHAREPOINT&#13;&#10;from ods_liste_sites&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;&#9;TYPE_MISSION,&#13;&#10;&#9;INGENIEUR_ANDINE,&#13;&#10;&#9;CLIENT,&#13;&#10;&#9;ASSET_NAME,&#13;&#10;&#9;GESTIONNAIRE_TECHNIQUE,&#13;&#10;&#9;PROPERTY_NAME,&#13;&#10;&#9;SITE,&#13;&#10;&#9;ADRESSE,&#13;&#10;&#9;DEPARTEMENT,&#13;&#10;&#9;SURFACE_SITE,&#13;&#10;&#9;CLIENT_SITE,&#13;&#10;&#9;IDSITE,&#13;&#10;&#9;LIEN_SHAREPOINT&#13;&#10;from ods_liste_sites&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -475,13 +475,15 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ASSET_NAME"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="GESTIONNAIRE_TECHINIQUE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GESTIONNAIRE_TECHNIQUE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="PROPERTY_NAME"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SITE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ADRESSE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DEPARTEMENT"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SURFACE_SITE"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -495,22 +497,23 @@
     <elementParameter field="TEXT" name="LABEL" value="ODS_LISTE_SITES"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_2">
-      <column comment="" key="false" length="250" name="TYPE_MISSION" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="INGENIEUR_ANDINE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CLIENT" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="ASSET_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHINIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="PROPERTY_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="ADRESSE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="TYPE_MISSION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="INGENIEUR_ANDINE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="CLIENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ASSET_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHNIQUE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="PROPERTY_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="ADRESSE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="DEPARTEMENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SURFACE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value="PLAN_ACTION"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="192">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -524,15 +527,16 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata name="out">
+    <metadata connector="FLOW" name="out">
       <column comment="" key="false" length="250" name="TYPE_MISSION" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="INGENIEUR_ANDINE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ASSET_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHINIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHNIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="PROPERTY_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ADRESSE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="REGION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SURFACE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -546,10 +550,11 @@
         <mapperTableEntries expression="row1.INGENIEUR_ANDINE " name="INGENIEUR_ANDINE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CLIENT " name="CLIENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ASSET_NAME " name="ASSET_NAME" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.GESTIONNAIRE_TECHINIQUE " name="GESTIONNAIRE_TECHINIQUE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.GESTIONNAIRE_TECHNIQUE " name="GESTIONNAIRE_TECHNIQUE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.PROPERTY_NAME " name="PROPERTY_NAME" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.SITE " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ADRESSE " name="ADRESSE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="REGION.REGION " name="REGION" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.SURFACE_SITE " name="SURFACE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CLIENT_SITE " name="CLIENT_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" type="id_String"/>
@@ -560,18 +565,23 @@
         <mapperTableEntries name="INGENIEUR_ANDINE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CLIENT" nullable="true" type="id_String"/>
         <mapperTableEntries name="ASSET_NAME" nullable="true" type="id_String"/>
-        <mapperTableEntries name="GESTIONNAIRE_TECHINIQUE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="GESTIONNAIRE_TECHNIQUE" nullable="true" type="id_String"/>
         <mapperTableEntries name="PROPERTY_NAME" nullable="true" type="id_String"/>
         <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ADRESSE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DEPARTEMENT" nullable="true" type="id_String"/>
         <mapperTableEntries name="SURFACE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CLIENT_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" nullable="true" type="id_String"/>
       </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="REGION" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.DEPARTEMENT " name="NUMERO" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="" name="REGION" nullable="true" type="id_String"/>
+      </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="192">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="640" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -591,10 +601,11 @@
       <column comment="" key="false" length="250" name="INGENIEUR_ANDINE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ASSET_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHINIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHNIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="PROPERTY_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ADRESSE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="REGION" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SURFACE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
@@ -608,10 +619,11 @@
         <mapperTableEntries expression="out.INGENIEUR_ANDINE " name="INGENIEUR_ANDINE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.CLIENT " name="CLIENT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.ASSET_NAME " name="ASSET_NAME" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out.GESTIONNAIRE_TECHINIQUE " name="GESTIONNAIRE_TECHINIQUE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out.GESTIONNAIRE_TECHNIQUE " name="GESTIONNAIRE_TECHNIQUE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.PROPERTY_NAME " name="PROPERTY_NAME" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.SITE " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.ADRESSE " name="ADRESSE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out.REGION " name="REGION" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.SURFACE_SITE " name="SURFACE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out.CLIENT_SITE " name="CLIENT_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="IDCLIENTSITE.IDCLIENTSITE " name="IDCLIENTSITE" nullable="true" type="id_Long"/>
@@ -622,10 +634,11 @@
         <mapperTableEntries name="INGENIEUR_ANDINE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CLIENT" nullable="true" type="id_String"/>
         <mapperTableEntries name="ASSET_NAME" nullable="true" type="id_String"/>
-        <mapperTableEntries name="GESTIONNAIRE_TECHINIQUE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="GESTIONNAIRE_TECHNIQUE" nullable="true" type="id_String"/>
         <mapperTableEntries name="PROPERTY_NAME" nullable="true" type="id_String"/>
         <mapperTableEntries name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ADRESSE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="REGION" nullable="true" type="id_String"/>
         <mapperTableEntries name="SURFACE_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CLIENT_SITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
@@ -637,7 +650,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="192">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -689,7 +702,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="GESTIONNAIRE_TECHINIQUE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GESTIONNAIRE_TECHNIQUE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -705,6 +718,11 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ADRESSE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="REGION"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -736,17 +754,18 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="DWH_D_PLAN_ACTION"/>
+    <elementParameter field="TEXT" name="LABEL" value="DWH_D_LISTE_SITES"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
       <column comment="" key="false" length="250" name="TYPE_MISSION" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="INGENIEUR_ANDINE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ASSET_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHINIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHNIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="PROPERTY_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ADRESSE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="REGION" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SURFACE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
@@ -757,10 +776,11 @@
       <column comment="" key="false" length="250" name="INGENIEUR_ANDINE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ASSET_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHINIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="GESTIONNAIRE_TECHNIQUE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="PROPERTY_NAME" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ADRESSE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="REGION" nullable="true" originalLength="250" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="SURFACE_SITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" originalLength="250" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="IDCLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
@@ -769,7 +789,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="-4" offsetLabelY="0" posX="544" posY="320">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="-4" offsetLabelY="0" posX="640" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -810,14 +830,55 @@
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
-  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="192">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="-4" offsetLabelY="0" posX="416" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;3306&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MySQL"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:eRT1ksGhw1Mr8QVLd8FYhV7bI3H+r8esvtYATMki"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10;&#9;NUMERO,&#13;&#10;&#9;REGION&#13;&#10;FROM ods_referentiel_departement&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ENABLE_STREAM" value="true"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="NUMERO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="REGION"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="ODS_REFERENTIEL_DEPARTEMENT"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_3">
+      <column comment="" key="false" length="250" name="NUMERO" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="REGION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="Comment" value="STOCKS"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
     <elementParameter field="CHECK" name="CLOSE" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_1"/>
   </node>
-  <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="448">
+  <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_2"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
@@ -856,7 +917,7 @@
       <elementValue elementRef="TRACE_COLUMN" value="QUI"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="GESTIONNAIRE_TECHINIQUE"/>
+      <elementValue elementRef="TRACE_COLUMN" value="GESTIONNAIRE_TECHNIQUE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="CLIENT_SITE"/>
@@ -878,6 +939,15 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="PROPERTY_NAME"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LONGITUDE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LATITUDE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="REGION"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -946,7 +1016,7 @@
       <elementValue elementRef="TRACE_COLUMN" value="QUI"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="GESTIONNAIRE_TECHINIQUE"/>
+      <elementValue elementRef="TRACE_COLUMN" value="GESTIONNAIRE_TECHNIQUE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="CLIENT_SITE"/>
@@ -970,6 +1040,15 @@
       <elementValue elementRef="TRACE_COLUMN" value="PROPERTY_NAME"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LONGITUDE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="LATITUDE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="REGION"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -980,6 +1059,10 @@
   <connection connectorName="FLOW" label="IDCLIENTSITE" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="IDCLIENTSITE"/>
+  </connection>
+  <connection connectorName="FLOW" label="REGION" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="REGION"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBCommit_1" offsetLabelX="0" offsetLabelY="0" source="tDBCommit_1" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
@@ -1047,13 +1130,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9d8bfb47-fc41-4f86-ba09-c6d60512ff65"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mgDgo1+Fwk9oavbZJXhpN3WkBXt9WLE5jcanaui0dD/EnVBUX7d1Ty++9io4yXJNatDTiHWUI/+8&#13;
-ShTiOLD69A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f3c66309-d082-4cd4-b276-5718c18ba140"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dIRl05Q5vw+q6UiowCuz8GPkZCuy9tmarPb5VOOMd6DmVyPEfcLVSVgkOdv2goRQUqphF6hvA4gd&#13;
-2TX78jrtmQ==</DigestValue></Reference></SignedInfo><SignatureValue>eIifGLpcccsZTr7OV08opatoRX0gdYXnDwFTSSMuP5lZKJkljK3HMi+rN8Khhz2D1x8p04X3UGpr&#13;
-k0IdpURHGj+okuJv1Vvb8AI4n4itlh+BWuP7ZchxKvg71CWuFycyasNFwp6LiWJ3x0VaL99JlXah&#13;
-evYHxKPur18QXEIl0yp8wv1pfoBKAOq6pcinRqe9ctekdVVXltCwGdI8/5ogMyALqTFjDEOOxbSA&#13;
-OojafsIhHZIBq6OC84ie9oXs2V8ZoyiHE5WWewvYjXEHv6VBNJZKz0aWf0hdylykFXElWqwSBUV/&#13;
-VO+/HGz8+FpRFd1y8gZRBPZWa7TkGbjMQa2IDA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f0a0b612-9b29-4dbd-a902-c3361d796f03"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>E+a+MmxpTsklYpKPkTjyEXg/wORjVyvONSne+WXIISEq8fajUcRQouxyNfDRQHDhhjVnNsU8KKzo&#13;
+QfTMHkhzag==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6787dcfd-6374-48db-99a1-e7d3c6858cb9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>M9g8JBfn3UX/BffbKJD8MNZr4MeisMsjG3hidaoWpNy05q9u2w7W4MCjpV+JQvrX6N40atlsJjp6&#13;
+IEu3v06d0Q==</DigestValue></Reference></SignedInfo><SignatureValue>lUPJlrK61ZUPAuLbkAFXh7tFizLHTnoLhUKzhG00vHYKBBYfaE11y1vOJOAv9BAt/ik5JGgBOsxD&#13;
+0ePI1MdrNgc3qKjJust1uZX3Q6JkMy8Dp8kThBiHUZV0bQF8Skf+ZB0T5aPOxnOReVFevQvqzGbi&#13;
+dGnnTdlPAcRB4GF0cZ9o/X5vUbSfCugyiG2A/ZF13UPfP2VcS9hgdnQ4HAbG7e2YIgf9CjPIz3Bz&#13;
+znoZzr8pUU4rAVOecuBLDM4S22bcsRQbjxgJwRdRR0lHZGDqvfcxfqg5uXgdsxFUhi9dK5Fkr8le&#13;
+Ebe5XQcA9C4W2ZPdCHYliuXOvtdt8time1ONAQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1075,4 +1158,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f3c66309-d082-4cd4-b276-5718c18ba140" Target="#_9d8bfb47-fc41-4f86-ba09-c6d60512ff65"><Timestamp>2024-06-10 15:14:01</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6787dcfd-6374-48db-99a1-e7d3c6858cb9" Target="#_f0a0b612-9b29-4dbd-a902-c3361d796f03"><Timestamp>2024-06-11 09:35:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
