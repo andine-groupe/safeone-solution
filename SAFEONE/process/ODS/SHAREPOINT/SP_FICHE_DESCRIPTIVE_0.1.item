@@ -109,8 +109,8 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="736"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="288"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="720"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="280"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -204,16 +204,6 @@
     <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
-    <routinesParameter id="_73waoL95Ee67GN6DA98bkw" name="SQLike"/>
-    <routinesParameter id="_75VvAL95Ee67GN6DA98bkw" name="DataOperation"/>
-    <routinesParameter id="_75guIL95Ee67GN6DA98bkw" name="Mathematical"/>
-    <routinesParameter id="_75rGML95Ee67GN6DA98bkw" name="Numeric"/>
-    <routinesParameter id="_76HyIL95Ee67GN6DA98bkw" name="Relational"/>
-    <routinesParameter id="_76lFIL95Ee67GN6DA98bkw" name="StringHandling"/>
-    <routinesParameter id="_76tA8L95Ee67GN6DA98bkw" name="TalendDataGenerator"/>
-    <routinesParameter id="_7608wL95Ee67GN6DA98bkw" name="TalendDate"/>
-    <routinesParameter id="_77C_ML95Ee67GN6DA98bkw" name="TalendString"/>
-    <routinesParameter id="_77NXQL95Ee67GN6DA98bkw" name="TalendStringUtil"/>
   </parameters>
   <node componentName="tMysqlClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
@@ -377,7 +367,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileFetch_2"/>
     <elementParameter field="CLOSED_LIST" name="PROTO" value="https"/>
     <elementParameter field="CHECK" name="POST" value="false"/>
-    <elementParameter field="TEXT" name="URI" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/GetFileByServerRelativeUrl('&quot;+(String)globalMap.get(&quot;ServerRelativeUrl&quot;)+&quot;')/$value&quot;"/>
+    <elementParameter field="TEXT" name="URI" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/GetFileByServerRelativeUrl('/sites/SOS/09/&quot; + (String) globalMap.get(&quot;CLIENTSITEquote&quot;) + &quot;/Dev/Fiche descriptive.xlsx')/$value&quot;"/>
     <elementParameter field="CHECK" name="USE_CACHE" value="false"/>
     <elementParameter field="TEXT" name="SMB_URI" show="false" value="&quot;smb://host/dir/remoteFileName.txt&quot;"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.Sharepoint_file_path + (String) globalMap.get(&quot;CLIENTSITEespace&quot;) + &quot;/Dev/Fiche Descriptive&quot;"/>
@@ -400,7 +390,7 @@
     <elementParameter field="CHECK" name="SINGLE_COOKIE" show="false" value="false"/>
     <elementParameter field="CHECK" name="ENCODE_URI" value="true"/>
     <elementParameter field="OPENED_LIST" name="COMMON_PARAMS_CHARSET" show="false" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="CHECK" name="PRINT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT" value="true"/>
     <elementParameter field="TEXT" name="TIMEOUT" value="30000"/>
     <elementParameter field="CHECK" name="UPLOAD" show="false" value="false"/>
     <elementParameter field="TABLE" name="FILE_PARAMS" show="false"/>
@@ -492,13 +482,15 @@
     <metadata connector="FLOW" name="out1">
       <column comment="" key="false" length="-1" name="CLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="40" name="CLIENTSITEespace" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CLIENTSITEquote" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row2.CLIENTSITE.replaceAll(&quot; &quot;, &quot;%20&quot;)" name="CLIENTSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.CLIENTSITE " name="CLIENTSITEespace" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="java.net.URLEncoder.encode(row2.CLIENTSITE.replaceAll(&quot; &quot;,&quot;%20&quot;).replaceAll(&quot;'&quot;, &quot;''&quot;), &quot;UTF-8&quot;) " name="CLIENTSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.CLIENTSITE" name="CLIENTSITEespace" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.CLIENTSITE.replaceAll(&quot;'&quot;,&quot;''&quot;)" name="CLIENTSITEquote" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="CLIENTSITE" nullable="true" type="id_String"/>
@@ -521,11 +513,14 @@
       <elementValue elementRef="VALUE" value="(String) globalMap.get(&quot;out1.CLIENTSITE&quot;)"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CLIENTSITEespace"/>
       <elementValue elementRef="VALUE" value="(String) globalMap.get(&quot;out1.CLIENTSITEespace&quot;)"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CLIENTSITEquote"/>
+      <elementValue elementRef="VALUE" value=""/>
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INTABLE" value="true"/>
     <elementParameter field="TABLE" name="INTABLE">
       <elementValue elementRef="CLIENTSITE" value="out1.CLIENTSITE"/>
       <elementValue elementRef="CLIENTSITEespace" value="out1.CLIENTSITEespace"/>
+      <elementValue elementRef="CLIENTSITEquote" value="out1.CLIENTSITEquote"/>
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -535,6 +530,7 @@
     <metadata connector="FLOW" name="tFixedFlowInput_1">
       <column comment="" key="false" length="-1" name="CLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CLIENTSITEespace" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CLIENTSITEquote" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="96">
@@ -544,11 +540,14 @@
       <elementValue elementRef="VALUE" value="row3.CLIENTSITE"/>
       <elementValue elementRef="KEY" value="&quot;CLIENTSITEespace&quot;"/>
       <elementValue elementRef="VALUE" value="row3.CLIENTSITEespace"/>
+      <elementValue elementRef="KEY" value="&quot;CLIENTSITEquote&quot;"/>
+      <elementValue elementRef="VALUE" value="row3.CLIENTSITEquote"/>
     </elementParameter>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tSetGlobalVar_2">
       <column comment="" key="false" length="-1" name="CLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CLIENTSITEespace" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CLIENTSITEquote" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHttpRequest" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-480" posY="224">
@@ -574,6 +573,7 @@
     <metadata connector="FLOW" name="tHttpRequest_4">
       <column comment="" key="false" length="-1" name="CLIENTSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CLIENTSITEespace" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CLIENTSITEquote" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="0" name="ResponseContent" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
@@ -604,23 +604,24 @@
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row11" sizeState="INTERMEDIATE">
         <mapperTableEntries name="CLIENTSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CLIENTSITEespace" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CLIENTSITEquote" nullable="true" type="id_String"/>
         <mapperTableEntries name="ResponseContent" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_7"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
     <elementParameter field="RADIO" name="VERTICAL" value="false"/>
     <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
     <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
     <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="ResponseContent"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -676,14 +677,14 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="224">
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
     <elementParameter field="CHECK" name="DEFAULT_MAP" value="true"/>
     <elementParameter field="TABLE" name="MAP" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFlowToIterate_1"/>
   </node>
-  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="224">
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="440" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_3"/>
     <elementParameter field="TABLE" name="VARIABLES">
       <elementValue elementRef="KEY" value="&quot;uri&quot;"/>
@@ -813,14 +814,14 @@
       <column key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="out_test" name="REJECT">
       <column key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column key="false" length="-1" name="NOM_FICHIER" nullable="true" originalLength="-1" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column key="false" length="-1" name="DATE_FICHIER" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="URL_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -863,6 +864,55 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="DUMMY" show="false" value="true"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="URL"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ServerRelativeUrl"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DateModif"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_1">
+      <column comment="" key="false" length="-1" name="URL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Name" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ServerRelativeUrl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateModif" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="240">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(context.Sharepoint_file_path + (String) globalMap.get(&quot;CLIENTSITEespace&quot;) + &quot;/Dev/Fiche Descriptive&quot;);&#10;System.out.println((String) globalMap.get(&quot;fileName&quot;));&#10;System.out.println(&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/GetFileByServerRelativeUrl('&quot;+(String)globalMap.get(&quot;ServerRelativeUrl&quot;)+&quot;')/$value&quot;);&#10;System.out.println((String) globalMap.get(&quot;ERROR_MESSAGE&quot;));"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_1"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_3"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(context.Sharepoint_file_path + (String) globalMap.get(&quot;CLIENTSITEespace&quot;) + &quot;/Dev/Fiche Descriptive&quot;);&#10;System.out.println((String) globalMap.get(&quot;fileName&quot;));&#10;System.out.println(&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/GetFileByServerRelativeUrl('&quot;+(String)globalMap.get(&quot;ServerRelativeUrl&quot;)+&quot;')/$value&quot;);&#10;System.out.println((String) globalMap.get(&quot;ERROR_MESSAGE&quot;));"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_3"/>
   </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tSQLTemplate_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk6"/>
@@ -909,11 +959,22 @@
     <elementParameter field="MEMO_JAVA" name="CONDITION" value="!((Integer)globalMap.get(&quot;tExtractXMLField_2_NB_LINE&quot;) == 0)"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If1"/>
   </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tFileFetch_2" offsetLabelX="0" offsetLabelY="0" source="tFileFetch_2" target="tJava_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError1"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFileFetch_2" offsetLabelX="0" offsetLabelY="0" source="tFileFetch_2" target="tJava_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk8"/>
+  </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFileInputExcel_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_1" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tFlowToIterate_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CLIENTSITEquote"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -923,6 +984,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate2"/>
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tSetGlobalVar_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CLIENTSITEquote"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
@@ -989,65 +1055,80 @@
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_1"/>
     <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Récupération du token"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileFetch_2"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSQLTemplate_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_161c604e-db60-4718-b67b-a3cec42f2d8b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>woqFuZU81toDHvSUS3cFa2PdgrykNNiUq209xiW6Y42qWlbwGbnTSDWDl2en7WpwxeDzSK00gpit&#13;
-xzA/o547FA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e38d3bb0-c5eb-44c0-8d5d-663110e175a4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MYCpPSmX9iHEBta2dcKuTQag21yZ9dlKfZLf9RW5w0pDF/WBWHghHOMNEquzXlw3jQndjXPqbMMH&#13;
-NreZEMSNDg==</DigestValue></Reference></SignedInfo><SignatureValue>DY2l889YGsFqkZ81pt7Wll7AuVwfBHD11887l1Eb6cI/Fc0YAVyfaw/xMtCeAMzLrPGu/g0asYy0&#13;
-oBTb4e+WDvS8OkWyXGWMpvBQd3GY2a7hQnPNq+lluYumbnsvS3TGQeyoe+nIa4YIoE8TqYDmajyB&#13;
-uLnZeAIwHCtMiiWAhaAvU1Aj/yDl1u/pJtw+6pw2ldBraRHELYMnHzyuwKeclQabl8+NDlim6Abh&#13;
-0mn21KZOQ5vhuo6QtTf8hm23L3liuvn6IuWSqFmJ+l9h0v4W1DlSfJjumNxwOukoHjPoOHCPJVCz&#13;
-VgZShTN65zRET1c9GSbSzcx8U6WQ/OZKXlzK4g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2b3c7ba9-6ee9-45bc-a71a-993ac23b6571"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/ej2+FYnUMLM9WNZFe0Kf6uPHgTMjyKcljrIyrNmirqldl5HDJlzxj5EzbvNuQElIg/8J6pKe9+H&#13;
+fnBbbujlzA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7dcab46d-2c7a-4171-888a-0102b439f154"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>80rvZ9t4Ow9dg17eyC53cxjRrSL6nawT6a5AxUqBBvT6EMoFxxfFQKQuAiQ1sELneGEzawDVhvep&#13;
+n538kny2GQ==</DigestValue></Reference></SignedInfo><SignatureValue>nx1FuBSEzDWOmsIRIsnF34toD8lDBIEWxCnqg1UGhkW+3n4u2HQBbOJekrcIqP/eflUri+b/OC6n&#13;
+IZ/JnKf0wIUq9T2S/P5qfWST5W3hBzsL5XiFivgmEj86QgtsFBl0GfoOo6wJyQEkt/VBZReXBd8g&#13;
+WY3toXtqg+s2Rfw9p+Df07/r5JYYI+3cnXYyCa32Z2J/T1hgHB4abL0J63jf+aaO6QAXPOtyuNTt&#13;
+gLnMIjerwHVf4nKi2wysKVkvc7t9ds/USCgjxOL9SEqr0O52IQOzTfnXIcNz+STldZjWnGYZqeb6&#13;
+qMvMc4UWyynrVMDpckzGAekUauy8dyQzDOAMRw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1069,4 +1150,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e38d3bb0-c5eb-44c0-8d5d-663110e175a4" Target="#_161c604e-db60-4718-b67b-a3cec42f2d8b"><Timestamp>2024-08-12 09:53:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7dcab46d-2c7a-4171-888a-0102b439f154" Target="#_2b3c7ba9-6ee9-45bc-a71a-993ac23b6571"><Timestamp>2024-10-16 09:47:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
