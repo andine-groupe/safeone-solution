@@ -393,7 +393,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="320">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="440">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement dwh_d_cellules&quot;"/>
@@ -419,14 +419,14 @@
     <elementParameter field="TEXT" name="LABEL" value="CLOSE_ODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="320">
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
     <elementParameter field="CHECK" name="CLOSE" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_1"/>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="64">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-160" posY="80">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Début traitement dwh_d_cellules&quot;"/>
@@ -436,7 +436,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_1"/>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="320">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-160" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -489,7 +489,7 @@
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="64" posY="320">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-40" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -552,7 +552,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="448">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-40" posY="440">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -602,7 +602,7 @@
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_DESCRIPTION_SITE"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="320">
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="120" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
     <elementParameter field="TABLE" name="GROUPBYS">
       <elementValue elementRef="OUTPUT_COLUMN" value="IDSITE"/>
@@ -655,7 +655,190 @@
       <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="320">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="280" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_5"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_YH2VgMRDEe6zNvqdIG24ow-tMap_5-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="out4" name="out5">
+      <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="LATITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LONGITUDE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="250" name="UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="12" name="POIDS_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="12" name="VOLUME_TOTAL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="STOCK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out5" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.IDSITE" name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CELLULE" name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.LOCATAIRE" name="LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.LONGITUDE" name="LONGITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.QUANTITE_LIMITE == null ? null : row5.QUANTITE_LIMITE.contains(&quot;&lt;&quot;) &#13;&#10;    ? new java.math.BigDecimal(row5.QUANTITE_LIMITE.split(&quot;&lt;&quot;)[1].trim().replace(&quot;,&quot;, &quot;.&quot;)) &#13;&#10;    : new java.math.BigDecimal(row5.QUANTITE_LIMITE.replace(&quot;,&quot;, &quot;.&quot;)) " name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row5.UNITE" name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.POIDS_TOTAL " name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.VOLUME_TOTAL " name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row5.MENTION_DANGER " name="MENTION_DANGER" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 == BigDecimal.valueOf(0.0) ? null : row1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LATITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
+      </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.CELLULE " name="BATIMENT" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="MENTION_DANGER" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+      </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.CELLULE " name="LOCAL_BATIMENT" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;3306&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MySQL"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:VP6/wRjq2G4d+vx7LOI0BkuPASvOV1QeAqo8penI"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_fiche_descriptive_limites_stock&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;BATIMENT,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;QUANTITE_LIMITE,&#13;&#10;&#9;UNITE,&#13;&#10;&#9;MENTION_DANGER,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_limites_stock&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ENABLE_STREAM" value="true"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="BATIMENT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE_ICPE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="QUANTITE_LIMITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="UNITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MENTION_DANGER"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="250" name="BATIMENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="QUANTITE_LIMITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="360" posY="520">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;3306&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MySQL"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:nmYcaLbCKeyIs2j8vMZKRZp1ZZ0GuIgK+lc8/SuN"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_fiche_descriptive_flux_thermiques&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;LOCAL_BATIMENT,&#13;&#10;&#9;DUREE_INCENDIE,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_flux_thermiques&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ENABLE_STREAM" value="false"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="LOCAL_BATIMENT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DUREE_INCENDIE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="ODS_FICHE_DESCRIPTIVE_FLUX_THERMIQUES"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_3">
+      <column comment="" key="false" length="250" name="LOCAL_BATIMENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_FLUX_THERMIQUES"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="440" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -700,53 +883,45 @@
       <column comment="" key="false" length="-1" name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out4" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.IDSITE" name="IDSITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.CELLULE" name="CELLULE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.LOCATAIRE" name="LOCATAIRE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.LONGITUDE" name="LONGITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row5.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row5.UNITE" name="UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row5.MENTION_DANGER " name="MENTION_DANGER" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;t&quot;.equals(row5.UNITE) ? row5.QUANTITE_LIMITE : BigDecimal.valueOf(0) " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="&quot;m3&quot;.equals(row5.UNITE) ? row5.QUANTITE_LIMITE : BigDecimal.valueOf(0) " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) || Relational.ISNULL(row5.QUANTITE_LIMITE) || row5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL.divide(row5.QUANTITE_LIMITE, java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Relational.ISNULL(row1.VOLUME_TOTAL) || Relational.ISNULL(row5.QUANTITE_LIMITE) || row5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL.divide(row5.QUANTITE_LIMITE,java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Relational.ISNULL(row1.POIDS_TOTAL) &amp;&amp; Relational.ISNULL(row1.VOLUME_TOTAL) ? null : &quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL : &quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL : null " name="STOCK" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 == BigDecimal.valueOf(0.0) ? null : row1.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out5.IDSITE" name="IDSITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.CELLULE" name="CELLULE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.LOCATAIRE" name="LOCATAIRE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.RUBRIQUE_ICPE" name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.LATITUDE" name="LATITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.LONGITUDE" name="LONGITUDE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.QUANTITE_LIMITE" name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out5.UNITE" name="UNITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.MENTION_DANGER " name="MENTION_DANGER" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out5.DUREE_INCENDIE" name="DUREE_INCENDIE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;t&quot;.equals(out5.UNITE) ? out5.QUANTITE_LIMITE : BigDecimal.valueOf(0) " name="QUANTITE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="&quot;m3&quot;.equals(out5.UNITE) ? out5.QUANTITE_LIMITE : BigDecimal.valueOf(0) " name="QUANTITE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="Relational.ISNULL(out5.POIDS_TOTAL) || Relational.ISNULL(out5.QUANTITE_LIMITE) || out5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;t&quot;.equals(out5.UNITE) ? out5.POIDS_TOTAL.divide(out5.QUANTITE_LIMITE, java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_POIDS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="Relational.ISNULL(out5.VOLUME_TOTAL) || Relational.ISNULL(out5.QUANTITE_LIMITE) || out5.QUANTITE_LIMITE.compareTo(BigDecimal.valueOf(0)) == 0 ? BigDecimal.valueOf(0) : &quot;m3&quot;.equals(out5.UNITE) ? out5.VOLUME_TOTAL.divide(out5.QUANTITE_LIMITE,java.math.MathContext.DECIMAL128) : BigDecimal.valueOf(0) " name="POURCENTAGE_LIMITE_VOLUME" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out5.STOCK " name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out5.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out5" sizeState="INTERMEDIATE">
         <mapperTableEntries name="IDSITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CELLULE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LOCATAIRE" nullable="true" type="id_String"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LATITUDE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LONGITUDE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
-      </inputTables>
-      <inputTables activateCondensedTool="true" activateExpressionFilter="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.CELLULE " name="LOCAL_BATIMENT" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
-      </inputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.CELLULE " name="BATIMENT" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries expression="row1.RUBRIQUE_ICPE " name="RUBRIQUE_ICPE" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="QUANTITE_LIMITE" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="UNITE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="" name="MENTION_DANGER" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.IDSITE " name="IDSITE" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="POIDS_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="VOLUME_TOTAL" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="MENTION_DANGER" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DUREE_INCENDIE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STOCK" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" nullable="true" type="id_BigDecimal"/>
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="320">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="560" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -842,7 +1017,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="608" posY="320">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="720" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -954,7 +1129,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="320">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="880" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -1194,103 +1369,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="512">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
-    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="MySQL"/>
-    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:nmYcaLbCKeyIs2j8vMZKRZp1ZZ0GuIgK+lc8/SuN"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_fiche_descriptive_flux_thermiques&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;LOCAL_BATIMENT,&#13;&#10;&#9;DUREE_INCENDIE,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_flux_thermiques&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
-    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ENABLE_STREAM" value="false"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOCAL_BATIMENT"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DUREE_INCENDIE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LABEL" value="ODS_FICHE_DESCRIPTIVE_FLUX_THERMIQUES"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_3">
-      <column comment="" key="false" length="250" name="LOCAL_BATIMENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="DUREE_INCENDIE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_FLUX_THERMIQUES"/>
-    </metadata>
-  </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="480">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
-    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
-    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="MySQL"/>
-    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:VP6/wRjq2G4d+vx7LOI0BkuPASvOV1QeAqo8penI"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_fiche_descriptive_limites_stock&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#13;&#10;&#9;BATIMENT,&#13;&#10;&#9;RUBRIQUE_ICPE,&#13;&#10;&#9;QUANTITE_LIMITE,&#13;&#10;&#9;UNITE,&#13;&#10;&#9;MENTION_DANGER,&#13;&#10;&#9;IDSITE&#13;&#10;from ods_fiche_descriptive_limites_stock&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
-    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ENABLE_STREAM" value="true"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="BATIMENT"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE_ICPE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="QUANTITE_LIMITE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UNITE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MENTION_DANGER"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LABEL" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_1">
-      <column comment="" key="false" length="250" name="BATIMENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="RUBRIQUE_ICPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="12" name="QUANTITE_LIMITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="UNITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="MENTION_DANGER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="IDSITE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_LIMITES_STOCK"/>
-    </metadata>
-  </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="448">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="560" posY="440">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -1334,7 +1413,7 @@
       <additionalProperties key="Comment" value="STOCKS"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="-4" offsetLabelY="0" posX="608" posY="448">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="-4" offsetLabelY="0" posX="720" posY="440">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_6"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
@@ -1465,7 +1544,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="description_site"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_4">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_5">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="IDLOCATAIRE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -1473,6 +1552,26 @@
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="out5" lineStyle="0" metaname="out5" offsetLabelX="0" offsetLabelY="0" source="tMap_5" target="tMap_4">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="POIDS_TOTAL"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VOLUME_TOTAL"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out5"/>
+  </connection>
+  <connection connectorName="FLOW" label="row5" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_5">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_5">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
   <connection connectorName="FLOW" label="out4" lineStyle="0" metaname="out4" offsetLabelX="1" offsetLabelY="2" source="tMap_4" target="tMap_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -1561,14 +1660,6 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
-  </connection>
-  <connection connectorName="FLOW" label="row5" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
-  </connection>
   <connection connectorName="FLOW" label="locataire" lineStyle="8" metaname="tDBInput_5" offsetLabelX="0" offsetLabelY="0" source="tDBInput_5" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="locataire"/>
@@ -1640,13 +1731,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c373e8a2-e858-469f-9233-8f2f5479ea63"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CnBHw+3nkovMEIc95Ywo2AQWHl5OBWwMIeoUZGoSV97MnmHeuavc80yOrHTIMluTYDIsElnonTIe&#13;
-EGrcBrIbDw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_80119e23-59f3-48ff-9a07-49e75c8445f8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PRdkz5nbsukh0TuK7csDvHdtiMwTlCfV9uNRSXb1NIxAohBotGXQainCg/38Hu2EYlcsq1LNq+Uw&#13;
-ZibNrwsA3g==</DigestValue></Reference></SignedInfo><SignatureValue>S19+XxKprs7Y4XjxfBKUTtXABxurM5arxi9lBYFzg14tkN+3Yf98JhtesmyeAruOWNxrv4/azZqk&#13;
-2WM+Z4vIqJocibA7t11zzVYwq+cEOyrHVO/Hmi5Gz3+hhRy7cHiGTNRQBE60SLEp2F7MAcIE3VDx&#13;
-6GLJlURqaXUdd05E0QXSmrMncB6wKf7BbgjZdpIAThelWw0p6A1U1uhRb495/urW2szGzI2cxFlH&#13;
-CyFTethKgolX6/kX32JppCfn9j5qDWl2J/+Uz3hOATWS4DruPFOS9hMQOLk+KbrrWlV5JJaSr9QT&#13;
-ZZC17oxDJkGIBBptV5eocQVURgFdt7Ivrq1pWA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9fc978f5-9436-4a3f-89dc-6d9fddc72024"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5W6EI8Q3tEPGxiTi09Y57CRmYq4nyUVj18iFaZpORgEvs82viAcVvz/5F2sg3fvnWU1IDWpCmfho&#13;
+hKksu4TyfQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b8dd5843-9722-40ae-92d4-49b541c68c9f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rxQDyCnoTwbTBirxKh38hpNhQvJPbfuQY8LymRjnPQ/aNq2AgXeotme3C4l5cj5H3TPv/RGNhy4U&#13;
+FdfRj7eIpg==</DigestValue></Reference></SignedInfo><SignatureValue>M21mXLEInWXUhKOi97uknxElS8oHEgOAEveAxZf/8lY44eX9M1TU7RfNtGmtdDaF083IT8XzbjQ7&#13;
+LRAw0Urk72arKoqDifnAWsNpkg8z+q6T00lhT2Wt1eCRYgrBkRSkU0Xg3nr/2WuCbHVGdkB/2AqB&#13;
+Piatrn03ZM6L1ZpjLXaT1PA5ozyFB+YAy61OS2ubs1msbZfBTV066PSC9mHQZ2AKEMcZIuaO3Kqo&#13;
+67iWjdXVI2rFlcpT4q6TRZSh2J7+1TO1IX6wmH5zMnbgWm9itiAbxziiCtMlTrQ13JB/w5uDc+Gq&#13;
+YDz02hTN8hhW6MQaNHSz2SBYLAIMwjXZFviZew==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1668,4 +1759,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_80119e23-59f3-48ff-9a07-49e75c8445f8" Target="#_c373e8a2-e858-469f-9233-8f2f5479ea63"><Timestamp>2024-09-13 14:43:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b8dd5843-9722-40ae-92d4-49b541c68c9f" Target="#_9fc978f5-9436-4a3f-89dc-6d9fddc72024"><Timestamp>2025-01-27 16:49:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
