@@ -479,6 +479,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Lien_Sharepoint"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Actif"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
     <elementParameter field="TABLE" name="DATESELECT" show="false">
@@ -509,6 +511,9 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Lien_Sharepoint"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Actif"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
     </elementParameter>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
@@ -531,6 +536,7 @@
       <column comment="" key="false" length="32" name="Mot_de_passe" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="7" name="Dossier_cible_Serveur_SFTP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="136" name="Lien_Sharepoint" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Actif" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="metadata" name="REJECT">
       <column comment="" key="false" length="18" name="Site" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -542,6 +548,7 @@
       <column comment="" key="false" length="32" name="Mot_de_passe" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="7" name="Dossier_cible_Serveur_SFTP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="136" name="Lien_Sharepoint" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Actif" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -574,7 +581,7 @@
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables activateExpressionFilter="true" expressionFilter="Relational.NOT(Relational.ISNULL(row14.Site))" name="out1" sizeState="INTERMEDIATE">
+      <outputTables activateExpressionFilter="true" expressionFilter="Relational.NOT(Relational.ISNULL(row14.Site)) &amp;&amp; &quot;X&quot;.equals(row14.Actif)" name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row14.Site " name="SITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;SFTP_User&quot;" name="key" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row14.Identifiant " name="value" nullable="true" type="id_String"/>
@@ -595,6 +602,7 @@
         <mapperTableEntries name="Mot_de_passe" nullable="true" type="id_String"/>
         <mapperTableEntries name="Dossier_cible_Serveur_SFTP" nullable="true" type="id_String"/>
         <mapperTableEntries name="Lien_Sharepoint" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Actif" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -1013,6 +1021,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
   </connection>
   <connection connectorName="FLOW" label="row14" lineStyle="0" metaname="tFileInputExcel_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_1" target="tMap_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="Actif"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row14"/>
   </connection>
@@ -1195,7 +1208,7 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
@@ -1212,13 +1225,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e647cb88-25e4-447e-a669-db8c4b7aad62"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lV5JerWIhB122jTq29ulXvaUjOMHl5VlWWV06+n2KAzjNMwCvUFbGIzYsO6Uo5g4rClBqQJoNonY&#13;
-wR5nUPBnLA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_49373d1b-afe8-4c14-a411-cd24d7e8b8ec"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FkV6SZhn8vqc4UfWMa1fwIXEb9FWJB7p90lTfzNIEuYVzcJCtkgXfNYIFwL/PmWC/rMBn2kI6a0A&#13;
-Z2+Du/Yx4Q==</DigestValue></Reference></SignedInfo><SignatureValue>dQfVm653ATFWLRlynllqCfDyolMAakMO8cFVcjhaoSogs513dJ0ggDWcGl66nqVw1DECA1xOFlHg&#13;
-f36KdfMsjpUC4qZYCQwFJ7QoNS5aix2HYTvXtLBsDwjE7JOVQWkpP0do/Zm6mG/r1sNlpEdkGq4L&#13;
-HEpfUPjXClv8D6ay65jvERsLtXrOFrzON0DkWHWjiP3QWJ0Oq/2qrB8HLQN12CmofRmO/R4fCIUI&#13;
-f3YWt0PDHlEPZf2QDtMEB4k0ivxLkurNwlInLfGlvl3lqAiGISuZ4yyUgKhQHbq6qYDX34LcdA0h&#13;
-ynCqXpXeGkVBcKPUYdX0xUOQ2HZX6tY8qvdwSA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c9724304-442d-41ef-96de-3cc564d1cf89"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZZCbsFz9Wiu/K6IgiHB952awoB892rksDOpNNoP6k4cqjLNBq5eun716g4f78WqnQG49xQ0rgz3V&#13;
+Nzq4rSKQoQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1f6a994b-0ff1-4456-b393-0e59b3ea3e92"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Io0wjat4uD44HbvPbib5V6ZtptbYOwCdD+/GOX1C9JvGCwxlfcjGsc4vz5RmiKxkMl0YkrwzfVIk&#13;
+TjbxdICOgQ==</DigestValue></Reference></SignedInfo><SignatureValue>VJGfVPW7f7qHqwlV7aCcCKohPp2qdFSPH4E6gaeI0iYM2oi6QHhYqZSDs8ZG4QhPcXigIUKw+znE&#13;
+zO7dCUPVQLHnuyEFgmuS9dRTTIm3jwMoEd4Xfe0DSkkT/PZbo3AGoOcW2Wrb31seoGlzyAG5b9YF&#13;
+EUX+E9hkfnnfI8OYemYcmEbafDKYN4r8xdloCkRi+fApvJtvoGfb+yqxn242NtS+0r6dPdXLX4yM&#13;
+reS4nX6q7djr8EN9cKJrshnt+o/C5fNTuJOWsWyGM2v1DXAcfFCIg/+39aiWOrHTJyVzDYpMX3/B&#13;
+Zl+39YhmOSeAMgFHQ431jGsJu/SpslOGph3FBQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1240,4 +1253,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_49373d1b-afe8-4c14-a411-cd24d7e8b8ec" Target="#_e647cb88-25e4-447e-a669-db8c4b7aad62"><Timestamp>2024-11-06 17:28:55</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1f6a994b-0ff1-4456-b393-0e59b3ea3e92" Target="#_c9724304-442d-41ef-96de-3cc564d1cf89"><Timestamp>2025-04-01 14:35:01</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

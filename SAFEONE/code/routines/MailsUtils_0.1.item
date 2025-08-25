@@ -1,0 +1,57 @@
+package routines;
+
+import jakarta.mail.*;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMultipart;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
+public class MailUtils {
+
+    public static class Attachment {
+        public String fileName;
+        public byte[] content;
+        public String mimeType;
+    }
+
+    public static List<Attachment> extractAttachmentsFromRawMail(String rawMail) throws Exception {
+        List<Attachment> attachments = new ArrayList<>();
+
+        // Préparer une session mail sans authentification
+        Properties props = new Properties();
+        Session session = Session.getDefaultInstance(props, null);
+
+        // Créer un MimeMessage à partir du contenu brut
+        InputStream is = new ByteArrayInputStream(rawMail.getBytes("UTF-8"));
+        MimeMessage message = new MimeMessage(session, is);
+
+        Object content = message.getContent();
+
+        if (content instanceof Multipart) {
+            Multipart multipart = (Multipart) content;
+
+            for (int i = 0; i < multipart.getCount(); i++) {
+                BodyPart part = multipart.getBodyPart(i);
+                String disposition = part.getDisposition();
+
+                if (disposition != null && disposition.equalsIgnoreCase(Part.ATTACHMENT)) {
+                    Attachment attach = new Attachment();
+                    attach.fileName = part.getFileName();
+                    attach.mimeType = part.getContentType();
+
+                    InputStream partInputStream = part.getInputStream();
+                    byte[] bytes = partInputStream.readAllBytes();
+                    attach.content = bytes;
+
+                    attachments.add(attach);
+                }
+            }
+        }
+
+        return attachments;
+    }
+}
