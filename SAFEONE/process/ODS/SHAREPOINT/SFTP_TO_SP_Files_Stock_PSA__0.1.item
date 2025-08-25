@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+  <context confirmationNeeded="false" hide="false" name="Prod">
+    <contextParameter comment="" internalId="_ni1ZHPv3Ee6il7qi0ZrgbQ" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)"/>
+    <contextParameter comment="" internalId="_EGgoYBIGEe-K_auEaTqPwg" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/"/>
+    <contextParameter comment="" internalId="_SRkfQBIOEe-K_auEaTqPwg" name="Sharepoint_url_upload_psa_stock" prompt="Sharepoint_url_upload_psa_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/PSA"/>
+    <contextParameter comment="" internalId="_m7zXEB2dEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_allios_stock" prompt="Sharepoint_url_upload_allios_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/Allios"/>
+    <contextParameter comment="" internalId="_sPbAcB3XEe-MKKZD2DQ2Gw" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments"/>
+    <contextParameter comment="" internalId="_sPbAcR3XEe-MKKZD2DQ2Gw" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e"/>
+    <contextParameter comment="" internalId="_sPbAch3XEe-MKKZD2DQ2Gw" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com"/>
+    <contextParameter comment="" internalId="_sPbAcx3XEe-MKKZD2DQ2Gw" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993"/>
+    <contextParameter comment="" internalId="_sPbAdB3XEe-MKKZD2DQ2Gw" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail"/>
+    <contextParameter comment="" internalId="_sPbAdR3XEe-MKKZD2DQ2Gw" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:ZgDRA3QuV7n/BCB7oODvx1VbZ/jAeT8TB6NWi4u52bMMnfhQm5pUvPi1LvxRzootTeXTczoCZ/tKkqlWdXr1aFwnhuE="/>
+    <contextParameter comment="" internalId="_sPbAdh3XEe-MKKZD2DQ2Gw" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f"/>
+    <contextParameter comment="" internalId="_sPbAdx3XEe-MKKZD2DQ2Gw" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com"/>
+    <contextParameter comment="" internalId="_sPbAeB3XEe-MKKZD2DQ2Gw" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_sPbAeR3XEe-MKKZD2DQ2Gw" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/"/>
+    <contextParameter comment="" internalId="_sPbAeh3XEe-MKKZD2DQ2Gw" name="SFTP_File" prompt="SFTP_File?" promptNeeded="false" repositoryContextId="built-in" type="id_List Of Value" value="allios*.csv,*PSA.csv"/>
+    <contextParameter comment="" internalId="_sPbAex3XEe-MKKZD2DQ2Gw" name="SFTP_Folder" prompt="SFTP_Folder?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAfB3XEe-MKKZD2DQ2Gw" name="SFTP_Host" prompt="SFTP_Host?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAfR3XEe-MKKZD2DQ2Gw" name="SFTP_MDP" prompt="SFTP_MDP?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_sPbAfh3XEe-MKKZD2DQ2Gw" name="SFTP_User" prompt="SFTP_User?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAfx3XEe-MKKZD2DQ2Gw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_sPbAgB3XEe-MKKZD2DQ2Gw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_sPbAgR3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_sPbAgh3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_sPbAgx3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_sPbAhB3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_sPbAhR3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_sPbAhh3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_sPbAhx3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_sPbAiB3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="Dev">
+    <contextParameter comment="" internalId="_ni2AIPv3Ee6il7qi0ZrgbQ" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)"/>
+    <contextParameter comment="" internalId="_EGgoYRIGEe-K_auEaTqPwg" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/"/>
+    <contextParameter comment="" internalId="_SRlGUBIOEe-K_auEaTqPwg" name="Sharepoint_url_upload_psa_stock" prompt="Sharepoint_url_upload_psa_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/PSA"/>
+    <contextParameter comment="" internalId="_m7zXER2dEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_allios_stock" prompt="Sharepoint_url_upload_allios_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/Allios"/>
+    <contextParameter comment="" internalId="_sPbAiR3XEe-MKKZD2DQ2Gw" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments"/>
+    <contextParameter comment="" internalId="_sPbAih3XEe-MKKZD2DQ2Gw" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e"/>
+    <contextParameter comment="" internalId="_sPbAix3XEe-MKKZD2DQ2Gw" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com"/>
+    <contextParameter comment="" internalId="_sPbAjB3XEe-MKKZD2DQ2Gw" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993"/>
+    <contextParameter comment="" internalId="_sPbAjR3XEe-MKKZD2DQ2Gw" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail"/>
+    <contextParameter comment="" internalId="_sPbAjh3XEe-MKKZD2DQ2Gw" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:I29FoFPWdqHAL29qTyy1jGurc2oBnZj1wqWs17T8BEWdubTI4VTRRSYZnBUcyEJcM8669JlOvQKIYnhqsI95/s0v5I4="/>
+    <contextParameter comment="" internalId="_sPbAjx3XEe-MKKZD2DQ2Gw" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f"/>
+    <contextParameter comment="" internalId="_sPbAkB3XEe-MKKZD2DQ2Gw" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com"/>
+    <contextParameter comment="" internalId="_sPbAkR3XEe-MKKZD2DQ2Gw" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_sPbAkh3XEe-MKKZD2DQ2Gw" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="/home/adnadm/data/Andine/param/"/>
+    <contextParameter comment="" internalId="_sPbAkx3XEe-MKKZD2DQ2Gw" name="SFTP_File" prompt="SFTP_File?" promptNeeded="false" repositoryContextId="built-in" type="id_List Of Value" value="allios*.csv,*PSA.csv"/>
+    <contextParameter comment="" internalId="_sPbAlB3XEe-MKKZD2DQ2Gw" name="SFTP_Folder" prompt="SFTP_Folder?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAlR3XEe-MKKZD2DQ2Gw" name="SFTP_Host" prompt="SFTP_Host?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAlh3XEe-MKKZD2DQ2Gw" name="SFTP_MDP" prompt="SFTP_MDP?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_sPbAlx3XEe-MKKZD2DQ2Gw" name="SFTP_User" prompt="SFTP_User?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAmB3XEe-MKKZD2DQ2Gw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_sPbAmR3XEe-MKKZD2DQ2Gw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_sPbAmh3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_sPbAmx3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_sPbAnB3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_sPbAnR3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_sPbAnh3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_sPbAnx3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_sPbAoB3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_sPbAoR3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="Default">
+    <contextParameter comment="" internalId="_ni2ALfv3Ee6il7qi0ZrgbQ" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)"/>
+    <contextParameter comment="" internalId="_EGgoYhIGEe-K_auEaTqPwg" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/"/>
+    <contextParameter comment="" internalId="_SRlGURIOEe-K_auEaTqPwg" name="Sharepoint_url_upload_psa_stock" prompt="Sharepoint_url_upload_psa_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/PSA"/>
+    <contextParameter comment="" internalId="_m7zXEh2dEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_allios_stock" prompt="Sharepoint_url_upload_allios_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/Allios"/>
+    <contextParameter comment="" internalId="_sPbAoh3XEe-MKKZD2DQ2Gw" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments"/>
+    <contextParameter comment="" internalId="_sPbAox3XEe-MKKZD2DQ2Gw" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e"/>
+    <contextParameter comment="" internalId="_sPbApB3XEe-MKKZD2DQ2Gw" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com"/>
+    <contextParameter comment="" internalId="_sPbApR3XEe-MKKZD2DQ2Gw" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993"/>
+    <contextParameter comment="" internalId="_sPbAph3XEe-MKKZD2DQ2Gw" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail"/>
+    <contextParameter comment="" internalId="_sPbApx3XEe-MKKZD2DQ2Gw" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:PUgWDX7y0LA5PxJuSvVk32vST5JE1xbC1fqxHIkjIQQPWyafHLuKrs1Mw86C7YZZGZU2BuR9tFRojtsKyZ3iaeQGia0="/>
+    <contextParameter comment="" internalId="_sPbAqB3XEe-MKKZD2DQ2Gw" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f"/>
+    <contextParameter comment="" internalId="_sPbAqR3XEe-MKKZD2DQ2Gw" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com"/>
+    <contextParameter comment="" internalId="_sPbAqh3XEe-MKKZD2DQ2Gw" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_sPbAqx3XEe-MKKZD2DQ2Gw" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/"/>
+    <contextParameter comment="" internalId="_sPbArB3XEe-MKKZD2DQ2Gw" name="SFTP_File" prompt="SFTP_File?" promptNeeded="false" repositoryContextId="built-in" type="id_List Of Value" value="allios*.csv,*PSA.csv"/>
+    <contextParameter comment="" internalId="_sPbArR3XEe-MKKZD2DQ2Gw" name="SFTP_Folder" prompt="SFTP_Folder?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbArh3XEe-MKKZD2DQ2Gw" name="SFTP_Host" prompt="SFTP_Host?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbArx3XEe-MKKZD2DQ2Gw" name="SFTP_MDP" prompt="SFTP_MDP?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_sPbAsB3XEe-MKKZD2DQ2Gw" name="SFTP_User" prompt="SFTP_User?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAsR3XEe-MKKZD2DQ2Gw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_sPbAsh3XEe-MKKZD2DQ2Gw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_sPbAsx3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_sPbAtB3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_sPbAtR3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_sPbAth3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_sPbAtx3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_sPbAuB3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_sPbAuR3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_sPbAuh3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="Int">
+    <contextParameter comment="" internalId="_ni2AOvv3Ee6il7qi0ZrgbQ" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)"/>
+    <contextParameter comment="" internalId="_EGgoYxIGEe-K_auEaTqPwg" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/"/>
+    <contextParameter comment="" internalId="_SRlGUhIOEe-K_auEaTqPwg" name="Sharepoint_url_upload_psa_stock" prompt="Sharepoint_url_upload_psa_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/PSA"/>
+    <contextParameter comment="" internalId="_m7z-IB2dEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_allios_stock" prompt="Sharepoint_url_upload_allios_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="Allios%20-%20Marignane/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/Allios"/>
+    <contextParameter comment="" internalId="_sPbAux3XEe-MKKZD2DQ2Gw" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments"/>
+    <contextParameter comment="" internalId="_sPbAvB3XEe-MKKZD2DQ2Gw" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e"/>
+    <contextParameter comment="" internalId="_sPbAvR3XEe-MKKZD2DQ2Gw" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com"/>
+    <contextParameter comment="" internalId="_sPbAvh3XEe-MKKZD2DQ2Gw" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993"/>
+    <contextParameter comment="" internalId="_sPbAvx3XEe-MKKZD2DQ2Gw" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail"/>
+    <contextParameter comment="" internalId="_sPbAwB3XEe-MKKZD2DQ2Gw" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:hXUzS05lKKXoPCpc2Ay3rkB5lvGfBVOSmPMrCR6+OQbKrtDG5y3NlwBiEuU6Gx+ELnJpAdbEI7J7EL8SAKnDRPP5dVk="/>
+    <contextParameter comment="" internalId="_sPbAwR3XEe-MKKZD2DQ2Gw" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f"/>
+    <contextParameter comment="" internalId="_sPbAwh3XEe-MKKZD2DQ2Gw" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com"/>
+    <contextParameter comment="" internalId="_sPbAwx3XEe-MKKZD2DQ2Gw" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties"/>
+    <contextParameter comment="" internalId="_sPbAxB3XEe-MKKZD2DQ2Gw" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/Int/"/>
+    <contextParameter comment="" internalId="_sPbAxR3XEe-MKKZD2DQ2Gw" name="SFTP_File" prompt="SFTP_File?" promptNeeded="false" repositoryContextId="built-in" type="id_List Of Value" value="allios*.csv,*PSA.csv"/>
+    <contextParameter comment="" internalId="_sPbAxh3XEe-MKKZD2DQ2Gw" name="SFTP_Folder" prompt="SFTP_Folder?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAxx3XEe-MKKZD2DQ2Gw" name="SFTP_Host" prompt="SFTP_Host?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAyB3XEe-MKKZD2DQ2Gw" name="SFTP_MDP" prompt="SFTP_MDP?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_sPbAyR3XEe-MKKZD2DQ2Gw" name="SFTP_User" prompt="SFTP_User?" promptNeeded="false" repositoryContextId="_cs3toB2MEe-MKKZD2DQ2Gw" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_sPbAyh3XEe-MKKZD2DQ2Gw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_sPbAyx3XEe-MKKZD2DQ2Gw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_sPbAzB3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_sPbAzR3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_sPbAzh3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_sPbAzx3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_sPbA0B3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com"/>
+    <contextParameter comment="" internalId="_sPbA0R3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_sPbA0h3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_sPbA0x3XEe-MKKZD2DQ2Gw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value=""/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="true"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="true"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="context.G_Rep_Param + context.G_File_Properties"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;=&quot;"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:fJxElLFtxFWsCK5Y9FmQ46Zu0xowvd39brR2kwng"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Users/ilaza/Downloads/Talend-Studio-20231027_1100-V8.0.1/workspace/.metadata&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="JDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:K89Syj8nzoK4j7HPdPiZ9ZTPdejz1ZVikD9Tk6CG"/>
+    <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
+  </parameters>
+  <node componentName="tHttpRequest" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_1"/>
+    <elementParameter field="TEXT" name="URI" value="context.Sharepoint_url_access_token"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD_CHOSED" value="POST"/>
+    <elementParameter field="FILE" name="POST_PARAMS_FROM_FILE" value="context.Sharepoint_post_param_file_access_token"/>
+    <elementParameter field="CHECK" name="OUT_TO_FILE" value="false"/>
+    <elementParameter field="FILE" name="OUT_FILE_NAME" show="false" value=""/>
+    <elementParameter field="CHECK" name="CREATE_DIRS" show="false" value="false"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="HEADER_NAME" value="&quot;Content-Type&quot;"/>
+      <elementValue elementRef="HEADER_VALUE" value="&quot;application/x-www-form-urlencoded&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="NEED_AUTHENTICATION" value="false"/>
+    <elementParameter field="TEXT" name="USR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PWD" show="false" value="enc:system.encryption.key.v1:c6sStTdpJ2drBphrelCZGmlPomqDB4V5ROD2WJas"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="TIMEOUT_SETTING" value="false"/>
+    <elementParameter field="TEXT" name="CONNECT_TIMEOUT" show="false" value="30"/>
+    <elementParameter field="TEXT" name="READ_TIMEOUT" show="false" value="0"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHttpRequest_1">
+      <column key="false" length="0" name="ResponseContent" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="ResponseContent"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_2">
+      <column key="false" length="0" name="ResponseContent" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tExtractJSONFields" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tExtractJSONFields_1"/>
+    <elementParameter field="CLOSED_LIST" name="READ_BY" value="JSONPATH"/>
+    <elementParameter field="CLOSED_LIST" name="JSON_PATH_VERSION" value="2_1_0"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="JSONFIELD" value="ResponseContent"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" show="false" value="&quot;/bills/bill/line&quot;"/>
+    <elementParameter field="TEXT" name="JSON_LOOP_QUERY" value="&quot;$&quot;"/>
+    <elementParameter field="TABLE" name="MAPPING" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="token"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="ISARRAY" value="false"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="MAPPING_4_JSONPATH">
+      <elementValue elementRef="SCHEMA_COLUMN" value="token"/>
+      <elementValue elementRef="QUERY" value="&quot;access_token&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="CLOSED_LIST" name="JDK_VERSION" show="false" value="JDK_8"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="UTF-8"/>
+    <elementParameter field="CHECK" name="USE_LOOP_AS_ROOT" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT_LIST" show="false" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tExtractJSONFields_1">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorJSONField" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_1"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;token&quot;"/>
+      <elementValue elementRef="VALUE" value="token.token"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSetGlobalVar_1">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tREST" componentVersion="0.102" offsetLabelX="11" offsetLabelY="1" posX="672" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="TEXT" name="URL" value="context.Sharepoint_url_root + context.Sharepoint_url_upload_start + context.Sharepoint_url_upload_to_sp_mid + context.Sharepoint_url_upload_allios_stock + context.Sharepoint_url_upload_mid + ((String)globalMap.get(&quot;nomFichierClean&quot;)) + context.Sharepoint_url_upload_to_sp_end"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="NAME" value="&quot;Authorization&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;Bearer &quot; + (String) globalMap.get(&quot;token&quot;)"/>
+    </elementParameter>
+    <elementParameter field="MEMO" name="BODY" value="(byte[])globalMap.get(&quot;BINARY_FILE_CONTENT&quot;)"/>
+    <elementParameter field="TEXT" name="LABEL" value="Upload_to_sp"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tREST_2">
+      <column key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFTPFileList" componentVersion="0.100" offsetLabelX="0" offsetLabelY="0" posX="384" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPFileList_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tFTPConnection_1"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="context.SFTP_Host"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="22"/>
+    <elementParameter field="TEXT" name="FTPS_PORT" show="false" value="990"/>
+    <elementParameter field="CLOSED_LIST" name="LOGON_TYPE" show="false" value="PASSWORD"/>
+    <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;andinestorage.safeonepsa&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:d6DZGpdct22RCRpyfU+S/0LJR8dp2nAmA3TjQi5LBNwbzWf/M4r1OFZT2/aTkjok88yIKm3tT/JPAJYyaDo="/>
+    <elementParameter field="TEXT" name="ACCOUNT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="SFTP" show="false" value="true"/>
+    <elementParameter field="CHECK" name="FTPS" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="AUTH_METHOD" show="false" value="PASSWORD"/>
+    <elementParameter field="FILE" name="PRIVATEKEY" show="false" value="&quot;/.ssh/id_dsa&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:9K/8ZQiFQZ5zSFNgGdJfbrQkeuYuU+D7bmTyocNvrVpXa0Z5"/>
+    <elementParameter field="FILE" name="KEYSTORE_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:hXEbJVYiT51RS0GhdvxrTDyZdcdLi1vwXu3ZpHr8Vdyqbr66"/>
+    <elementParameter field="TEXT" name="REMOTEDIR" value="&quot;/psa&quot;"/>
+    <elementParameter field="CHECK" name="MOVE_TO_THE_CURRENT_DIRECTORY" show="false" value="true"/>
+    <elementParameter field="CHECK" name="DIR_FULL" value="false"/>
+    <elementParameter field="TABLE" name="FILES">
+      <elementValue elementRef="FILEMASK" value="&quot;*PSA.csv&quot;"/>
+    </elementParameter>
+    <elementParameter field="CLOSED_LIST" name="CONNECT_MODE" show="false" value="PASSIVE"/>
+    <elementParameter field="CLOSED_LIST" name="SECURITY_MODE" show="false" value="IMPLICIT"/>
+    <elementParameter field="CHECK" name="USE_ENCODING" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_PROXY" show="false" value="false"/>
+    <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;127.0.0.1&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="&quot;1080&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:AkBs/TsWWpBKLPK7BqNSrwiesNGqVG6ebuP7TEgz"/>
+    <elementParameter field="CHECK" name="IGNORE_FAILURE_AT_QUIT" show="false" value="false"/>
+    <elementParameter field="OPENED_LIST" name="FTPS_PROT" show="false" value="&quot;P&quot;"/>
+    <elementParameter field="TEXT" name="FTPS_PROTECTION_BUFF_SIZE" show="false" value="0"/>
+    <elementParameter field="CHECK" name="REMOTE_VERIFICATION" show="false" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" show="false" value="0"/>
+    <elementParameter field="CHECK" name="USE_STRICT_REPLY_PARSING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CONFIG_CLIENT" show="false" value="false"/>
+    <elementParameter field="TABLE" name="CLIENT_PARAMETERS" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tFTPGet" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPGet_2"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tFTPConnection_1"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="context.SFTP_Host"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="22"/>
+    <elementParameter field="TEXT" name="FTPS_PORT" show="false" value="990"/>
+    <elementParameter field="CLOSED_LIST" name="LOGON_TYPE" show="false" value="PASSWORD"/>
+    <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;andinestorage.safeonepsa&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:4wKj1YdL5sk1+24JLjnorUlh+qECD6dFuITr+r7E5ye4c/TE1PksJAIZUDJk48fF2txhLHdyVgSvUSGEzWw="/>
+    <elementParameter field="TEXT" name="ACCOUNT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="SFTP" show="false" value="true"/>
+    <elementParameter field="CHECK" name="FTPS" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="AUTH_METHOD" show="false" value="PASSWORD"/>
+    <elementParameter field="FILE" name="PRIVATEKEY" show="false" value="&quot;/.ssh/id_dsa&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:Z/K/WvBYycuubSC+/+nNsZ/LMiCPdNadZpEMntlJfUsGb/+6"/>
+    <elementParameter field="FILE" name="KEYSTORE_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:cr6VEVcxEOhW8Ga19dzVt657GlK7C/YTcK/WMx7mHreH67NA"/>
+    <elementParameter field="DIRECTORY" name="LOCALDIR" value="context.Sharepoint_file_path + &quot;Allios - Marignane/SFTP/PSA&quot;"/>
+    <elementParameter field="TEXT" name="REMOTEDIR" value="&quot;/psa&quot;"/>
+    <elementParameter field="CHECK" name="MOVE_TO_THE_CURRENT_DIRECTORY" show="false" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="MODE" show="false" value="ascii"/>
+    <elementParameter field="CLOSED_LIST" name="OVERWRITE" show="false" value="never"/>
+    <elementParameter field="CHECK" name="APPEND" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="SFTPOVERWRITE" value="overwrite"/>
+    <elementParameter field="CHECK" name="PERL5_REGEX" value="false"/>
+    <elementParameter field="TABLE" name="FILES">
+      <elementValue elementRef="FILEMASK" value="&quot;*PSA.csv&quot;"/>
+    </elementParameter>
+    <elementParameter field="CLOSED_LIST" name="CONNECT_MODE" show="false" value="PASSIVE"/>
+    <elementParameter field="CLOSED_LIST" name="SECURITY_MODE" show="false" value="IMPLICIT"/>
+    <elementParameter field="CHECK" name="USE_ENCODING" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
+    <elementParameter field="CHECK" name="USE_PROXY" show="false" value="false"/>
+    <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;127.0.0.1&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="&quot;1080&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:RBBlYmYnvUZAUqC9OrTJFNAWX/8vXPrZTQma3b75"/>
+    <elementParameter field="CHECK" name="IGNORE_FAILURE_AT_QUIT" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_MESSAGE" value="false"/>
+    <elementParameter field="OPENED_LIST" name="FTPS_PROT" show="false" value="&quot;P&quot;"/>
+    <elementParameter field="TEXT" name="FTPS_PROTECTION_BUFF_SIZE" show="false" value="0"/>
+    <elementParameter field="CHECK" name="REMOTE_VERIFICATION" show="false" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" show="false" value="0"/>
+    <elementParameter field="CHECK" name="USE_STRICT_REPLY_PARSING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CONFIG_CLIENT" show="false" value="false"/>
+    <elementParameter field="TABLE" name="CLIENT_PARAMETERS" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFTPGet_2"/>
+  </node>
+  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.Sharepoint_file_path + &quot;Allios - Marignane/SFTP/Allios&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
+    <elementParameter field="CHECK" name="INCLUDSUBDIR" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
+    <elementParameter field="CHECK" name="ERROR" value="false"/>
+    <elementParameter field="CHECK" name="GLOBEXPRESSIONS" value="true"/>
+    <elementParameter field="TABLE" name="FILES">
+      <elementValue elementRef="FILEMASK" value="&quot;allios*.csv&quot;"/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="ORDER_BY_NOTHING" value="true"/>
+    <elementParameter field="RADIO" name="ORDER_BY_FILENAME" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_BY_FILESIZE" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_BY_MODIFIEDDATE" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_ACTION_ASC" value="true"/>
+    <elementParameter field="RADIO" name="ORDER_ACTION_DESC" value="false"/>
+    <elementParameter field="CHECK" name="IFEXCLUDE" value="false"/>
+    <elementParameter field="TEXT" name="EXCLUDEFILEMASK" show="false" value="&quot;*.txt&quot;"/>
+    <elementParameter field="CHECK" name="FORMAT_FILEPATH_TO_SLASH" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_3"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code généré selon les schémas d'entrée et de sortie&#10;String nomFichier = (String)globalMap.get(&quot;tFTPFileList_1_CURRENT_FILE&quot;);&#10;String nomFichierClean = nomFichier.replaceAll(&quot; &quot;, &quot;&quot;);&#10;globalMap.put(&quot;nomFichierClean&quot;, nomFichierClean);&#10;&#10;File f = new File(((String)globalMap.get(&quot;tFileList_2_CURRENT_FILEPATH&quot;)));&#10;byte[] content = Files.readAllBytes(f.toPath());&#10;globalMap.put(&quot;BINARY_FILE_CONTENT&quot;, content);&#10;globalMap.put(&quot;BINARY_FILE_LENGTH&quot;, content.length);&#10;globalMap.put(&quot;BINARY_FILE_RANGE&quot;, content.length-1);&#10;&#10;//System.out.println(nomFichierClean);&#10;"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="import java.io.File;&#10;import java.nio.file.Files;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_3">
+      <column comment="" key="false" length="-1" name="filename" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="((String)globalMap.get(&quot;tFileList_2_CURRENT_FILEPATH&quot;))"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" show="false" value="&quot;C:/Talend/workspace/delete_folder&quot;"/>
+    <elementParameter field="TEXT" name="PATH" show="false" value="&quot;C:/Talend/workspace/delete_folder or delete_file&quot;"/>
+    <elementParameter field="CHECK" name="FAILON" value="true"/>
+    <elementParameter field="CHECK" name="FOLDER" value="false"/>
+    <elementParameter field="CHECK" name="FOLDER_FILE" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#10;&quot;File (or path) deleted.&quot;&#10;&quot;No file (or path) deleted.&quot;&#10;&quot;File (or path) does not exist or is invalid.&quot;"/>
+    <elementParameter field="TEXT" name="LABEL" value="Delete_files"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileDelete_1">
+      <column defaultValue="" key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.Sharepoint_file_path + &quot;Liste serveur de données.xlsx&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:N23QaFCE9NTspnoxMvse7zMBi1Cx8oUloQ/CbGWV"/>
+    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
+    <elementParameter field="TABLE" name="SHEETLIST">
+      <elementValue elementRef="SHEETNAME" value="&quot;1&quot;"/>
+      <elementValue elementRef="USE_REGEX" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="HEADER" value="9"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
+    <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
+    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Site"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Type_de_connexion"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Serveur"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Port"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Identifiant"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_de_passe"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Dossier_cible_Serveur_SFTP"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Lien_Sharepoint"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
+    <elementParameter field="TABLE" name="DATESELECT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Site"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Type_de_connexion"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Serveur"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Port"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Identifiant"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_de_passe"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Dossier_cible_Serveur_SFTP"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Lien_Sharepoint"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+    </elementParameter>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="READ_REAL_VALUE" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
+    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" show="false" value="false"/>
+    <elementParameter field="CHECK" name="SUPPRESS_WARN" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
+    <elementParameter field="CHECK" name="INCLUDE_PHONETICRUNS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CONFIGURE_INFLATION_RATIO" value="false"/>
+    <elementParameter field="TEXT" name="INFLATION_RATIO" show="false" value=""/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_1">
+      <column comment="" key="false" length="18" name="Site" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="Type_de_connexion" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="35" name="Serveur" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Port" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="26" name="Identifiant" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="32" name="Mot_de_passe" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Dossier_cible_Serveur_SFTP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="136" name="Lien_Sharepoint" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="18" name="Site" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="Type_de_connexion" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="35" name="Serveur" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Port" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="26" name="Identifiant" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="32" name="Mot_de_passe" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Dossier_cible_Serveur_SFTP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="136" name="Lien_Sharepoint" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_FQDzYB3YEe-MKKZD2DQ2Gw-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out1">
+      <column comment="" key="false" length="32" name="Site" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="Type_de_connexion" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="35" name="Serveur" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Port" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="26" name="Identifiant" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="32" name="Mot_de_passe" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Dossier_cible_Serveur_SFTP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="136" name="Lien_Sharepoint" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row14.Site" name="Site" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Locataire " name="Locataire" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Type_de_connexion " name="Type_de_connexion" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Serveur " name="Serveur" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Port " name="Port" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row14.Identifiant " name="Identifiant" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Mot_de_passe " name="Mot_de_passe" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Dossier_cible_Serveur_SFTP " name="Dossier_cible_Serveur_SFTP" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row14.Lien_Sharepoint " name="Lien_Sharepoint" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row14" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="Site" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Locataire" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Type_de_connexion" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Serveur" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Port" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="Identifiant" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Mot_de_passe" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Dossier_cible_Serveur_SFTP" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Lien_Sharepoint" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="DEFAULT_MAP" value="true"/>
+    <elementParameter field="TABLE" name="MAP" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFlowToIterate_1"/>
+  </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="-3" offsetLabelY="1" posX="736" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_-24H8B3QEe-MKKZD2DQ2Gw - metadata"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="2"/>
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
+    <elementParameter field="TABLE" name="VALUES">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Site"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Type_de_connexion"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Serveur"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Port"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Identifiant"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_de_passe"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Dossier_cible_Serveur_SFTP"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Lien_Sharepoint"/>
+      <elementValue elementRef="VALUE" value=""/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
+    <elementParameter field="TABLE" name="INTABLE" show="false"/>
+    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
+    <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFixedFlowInput_1">
+      <column comment="" key="false" length="18" name="Site" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="Type_de_connexion" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="35" name="Serveur" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Port" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="26" name="Identifiant" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="32" name="Mot_de_passe" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Dossier_cible_Serveur_SFTP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="136" name="Lien_Sharepoint" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="928" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;Site&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Site"/>
+      <elementValue elementRef="KEY" value="&quot;Locataire&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Locataire"/>
+      <elementValue elementRef="KEY" value="&quot;Type_de_connexion&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Type_de_connexion"/>
+      <elementValue elementRef="KEY" value="&quot;Serveur&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Serveur"/>
+      <elementValue elementRef="KEY" value="&quot;Port&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Port"/>
+      <elementValue elementRef="KEY" value="&quot;Identifiant&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Identifiant"/>
+      <elementValue elementRef="KEY" value="&quot;Mot_de_passe&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Mot_de_passe"/>
+      <elementValue elementRef="KEY" value="&quot;Dossier_cible_Serveur_SFTP&quot;"/>
+      <elementValue elementRef="VALUE" value="row1.Dossier_cible_Serveur_SFTP"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tSetGlobalVar_2">
+      <column comment="" key="false" length="18" name="Site" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="Type_de_connexion" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="35" name="Serveur" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Port" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="26" name="Identifiant" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="32" name="Mot_de_passe" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Dossier_cible_Serveur_SFTP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="136" name="Lien_Sharepoint" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFTPConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPConnection_1"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;andinestorage.blob.core.windows.net&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="22"/>
+    <elementParameter field="TEXT" name="FTPS_PORT" show="false" value="990"/>
+    <elementParameter field="CLOSED_LIST" name="LOGON_TYPE" show="false" value="PASSWORD"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;andinestorage.safeonepsa&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:RxoosUBbvtkv3RPssC3wg+o0XWT8vhzkFCkOIBfApahHJ5aQStPPoQmYOfZJ4YwxBSNYdm9CLbQ4X0qoo7E="/>
+    <elementParameter field="TEXT" name="ACCOUNT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="SFTP" value="true"/>
+    <elementParameter field="CHECK" name="FTPS" show="false" value="false"/>
+    <elementParameter field="FILE" name="KEYSTORE_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:5RDrsVi5dlCVgtmYBHL0gCPvAGfrco85XS5ubzgMCp1XwmJN"/>
+    <elementParameter field="CLOSED_LIST" name="AUTH_METHOD" value="PASSWORD"/>
+    <elementParameter field="FILE" name="PRIVATEKEY" show="false" value="&quot;/.ssh/id_dsa&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:6h815O6CfUBCjjaqAR6nduQ6ra1NtjSepPidW5oXpIy4pIzV"/>
+    <elementParameter field="CLOSED_LIST" name="CONNECT_MODE" show="false" value="PASSIVE"/>
+    <elementParameter field="CLOSED_LIST" name="SECURITY_MODE" show="false" value="IMPLICIT"/>
+    <elementParameter field="CHECK" name="USE_ENCODING" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_PROXY" value="false"/>
+    <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;127.0.0.1&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="&quot;1080&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:eVVcB97ykPl4jcyMgvUlnlOKhXNiz1sHdze2TVS1"/>
+    <elementParameter field="OPENED_LIST" name="FTPS_PROT" show="false" value="&quot;P&quot;"/>
+    <elementParameter field="TEXT" name="FTPS_PROTECTION_BUFF_SIZE" show="false" value="0"/>
+    <elementParameter field="CHECK" name="REMOTE_VERIFICATION" show="false" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" value="0"/>
+    <elementParameter field="CHECK" name="USE_STRICT_REPLY_PARSING" value="true"/>
+    <elementParameter field="CHECK" name="CONFIG_CLIENT" value="false"/>
+    <elementParameter field="TABLE" name="CLIENT_PARAMETERS" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tFTPClose" componentVersion="2.0" offsetLabelX="0" offsetLabelY="0" posX="800" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPClose_2"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tFTPConnection_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <connection connectorName="FLOW" label="Response" lineStyle="0" metaname="tHttpRequest_1" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_1" target="tLogRow_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Response"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tHttpRequest_1" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_1" target="tFTPConnection_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tExtractJSONFields_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="ResponseContent"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+  </connection>
+  <connection connectorName="FLOW" label="token" lineStyle="0" metaname="tExtractJSONFields_1" offsetLabelX="0" offsetLabelY="0" source="tExtractJSONFields_1" target="tSetGlobalVar_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="row10"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="token"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tREST_2" offsetLabelX="0" offsetLabelY="0" source="tREST_2" target="tFileDelete_1">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
+  </connection>
+  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFTPFileList_1" offsetLabelX="0" offsetLabelY="0" source="tFTPFileList_1" target="tFTPGet_2">
+    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
+    <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate1"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFTPGet_2" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tFTPGet_2" target="tFTPClose_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk8"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFTPGet_2" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tFTPGet_2" target="tFileList_2">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk4"/>
+  </connection>
+  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_2" offsetLabelX="0" offsetLabelY="0" source="tFileList_2" target="tJava_3">
+    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
+    <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate6"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_3" offsetLabelX="0" offsetLabelY="0" source="tJava_3" target="tREST_2">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
+  </connection>
+  <connection connectorName="FLOW" label="row14" lineStyle="0" metaname="tFileInputExcel_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row14"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tFlowToIterate_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="Type_de_connexion"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Serveur"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Port"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Mot_de_passe"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Lien_Sharepoint"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Locataire"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Identifiant"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Dossier_cible_Serveur_SFTP"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+  </connection>
+  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFlowToIterate_1" offsetLabelX="0" offsetLabelY="0" source="tFlowToIterate_1" target="tFixedFlowInput_1">
+    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
+    <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate3"/>
+  </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tSetGlobalVar_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSetGlobalVar_2" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_2" target="tFTPConnection_1">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk6"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFTPConnection_1" offsetLabelX="0" offsetLabelY="0" source="tFTPConnection_1" target="tFTPFileList_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
+  </connection>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Récupération du token"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Envoi du contenu sur le sharepoint"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPFileList_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Téléchargement des fichiers du serveur SFTP"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Récupération du contenu de chaque fichier"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Suppression fichiers téléchargés"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Itération sur les locataires"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPConnection_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Connexion serveur"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPClose_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ee06d5bf-8778-46d4-a0f4-2c4af8fc6505"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LD+58G8tGpOW4iQe03kwIuF1ZNjQun9fxqKuGkvLz80KYHawcCzLsXR3Y/J9C7Cg0G5LHrpyz4QK&#13;
+wT7WQdNjKw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ff116486-6ad9-4bef-a462-00daf37edc9b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ROH0TtqHk3ROvuiR79gXwaIfWozIYD+JonIUIqkpWbFLc2+X3xcN0D/5s3oayMj2erfIpsV3Vt4N&#13;
+S16WiYRUmA==</DigestValue></Reference></SignedInfo><SignatureValue>iIWnrE7DLF6TtkQs1EB+yT2r8wZYvQPJXcXQ8Qiq1rg3nbbEnAz2VsGRS2ORHb7ZWI927Yw0C24t&#13;
+aD0vTGTqTf0GkUeD4WPWF//txA32AzU61mBVNqwWFtS5sVH6BLDk5IJSGlZ3cHEz2oIwbmJ8kCa4&#13;
+rrRnq4UXKHsL/ipB3zwG7REE7QPjakC58lAyHS3UVedjVZ5f5dY7Zpl90k09an7Hr+LsEU3fITqS&#13;
+xfzazyIH4Ex5uAIzoCQyclPI3Q9AA76NQO09GxuUXF6BOYPoVDBFOWvQNzA0o4/gJ52jnPSFKNMw&#13;
+6+EcAtOIDNRsDzCaC29QReSz1Dh3Jgm3N1C5ig==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ff116486-6ad9-4bef-a462-00daf37edc9b" Target="#_ee06d5bf-8778-46d4-a0f4-2c4af8fc6505"><Timestamp>2025-04-23 13:44:23</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

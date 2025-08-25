@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+  <context confirmationNeeded="false" hide="false" name="Default">
+    <contextParameter comment="" internalId="_ZyvA8M8uEe6dQ-TyWsAjBw" name="extract_workspace_name" prompt="extract_workspace_name?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C:/Talend/uefa"/>
+    <contextParameter comment="" internalId="_ZyvA8c8uEe6dQ-TyWsAjBw" name="traitementId" prompt="traitementId?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkEM8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_driverClass" prompt="blacklight_sqlite_quality_connection_driverClass?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="org.sqlite.JDBC"/>
+    <contextParameter comment="" internalId="_aCKkEc8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_jdbcUrl" prompt="blacklight_sqlite_quality_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="jdbc:sqlite:C:/tools/TALEND/DEV/sqlite/quality.db"/>
+    <contextParameter comment="" internalId="_aCKkEs8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_userPassword_password" prompt="blacklight_sqlite_quality_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_aCKkE88uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_userPassword_userId" prompt="blacklight_sqlite_quality_connection_userPassword_userId?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkFM8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_drivers" prompt="blacklight_sqlite_quality_drivers?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="&quot;mvn:org.talend.libraries/sqlite-jdbc-3.32.3.2/6.0.0-SNAPSHOT/jar&quot;"/>
+    <contextParameter comment="" internalId="_aCKkFc8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_mappingFile" prompt="blacklight_sqlite_quality_mappingFile?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="sqlite_id"/>
+    <contextParameter comment="" internalId="_aCKkFs8uEe6dQ-TyWsAjBw" name="dataverse_endpoint_Oauth" prompt="dataverse_endpoint_Oauth?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://login.microsoftonline.com/bnd.onmicrosoft.com/oauth2/v2.0/authorize"/>
+    <contextParameter comment="" internalId="_aCKkF88uEe6dQ-TyWsAjBw" name="dataverse_id_app" prompt="dataverse_id_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="587dbace-9778-4f37-8cb2-69a8bb33538a"/>
+    <contextParameter comment="" internalId="_aCKkGM8uEe6dQ-TyWsAjBw" name="dataverse_mot_de_passe" prompt="dataverse_mot_de_passe?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:Dyoq50ggfZzUtoci9QW6wJUzZk1l2G27fLUTQ7ZsyjaP4s2OjfNqhIc6f1p+pjEzADG0"/>
+    <contextParameter comment="" internalId="_aCKkGc8uEe6dQ-TyWsAjBw" name="dataverse_secret_app" prompt="dataverse_secret_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:ScukdKsqXli5qamoGVEq6k44svS7XA/R6BUe7GPb7Je6oZgm2YsKereCtxLBqObXlkQliN3s1Yn5V3XIrS2l78SV/Xc="/>
+    <contextParameter comment="" internalId="_aCKkGs8uEe6dQ-TyWsAjBw" name="dataverse_url" prompt="dataverse_url?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://dev-bdup.crm4.dynamics.com/api/data/v8.1/"/>
+    <contextParameter comment="" internalId="_aCKkG88uEe6dQ-TyWsAjBw" name="dataverse_utilisateur" prompt="dataverse_utilisateur?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="talend_dev@businessdecision.com"/>
+    <contextParameter comment="" internalId="_aCKkHM8uEe6dQ-TyWsAjBw" name="status_attente" prompt="status_attente?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140000"/>
+    <contextParameter comment="" internalId="_aCKkHc8uEe6dQ-TyWsAjBw" name="status_erreur" prompt="status_erreur?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140002"/>
+    <contextParameter comment="" internalId="_aCKkHs8uEe6dQ-TyWsAjBw" name="status_termine" prompt="status_termine?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140001"/>
+    <contextParameter comment="" internalId="_aCKkH88uEe6dQ-TyWsAjBw" name="extract_db_input_components" prompt="extract_db_input_components?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="TAS400INPUT,TACCESSINPUT,TAMAZONAURORAINPUT,TAMAZONMYSQLINPUT,TAMAZONORACLEINPUT,TREDSHIFTINPUT,TSQLDWHINPUT,TDB2INPUT,TEXAINPUT,TFIREBIRDINPUT,TGREENPLUMINPUT,THSQLDBINPUT,TINFORMATIXINPUT,TNGRESINPUT,TINTERBASEINPUT,TJAVADBINPUT,TMSSQLINPUT,TMAXDBINPUT,TMYSQLINPUT,TNETEZZAINPUT,TORACLEINPUT,TPARACCELINPUT,TPOSTGRESQLINPUT,TPOSTGRESPLUSINPUT,TSQLITEINPUT,TSYBASEINPUT,TTERADATAINPT,TVECTORWISEINPUT,TVERTICAINPUT,TDBINPUT"/>
+    <contextParameter comment="" internalId="_aCKkIM8uEe6dQ-TyWsAjBw" name="extract_file_directory_filter" prompt="extract_file_directory_filter?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="process"/>
+    <contextParameter comment="" internalId="_aCKkIc8uEe6dQ-TyWsAjBw" name="extract_file_name" prompt="extract_file_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkIs8uEe6dQ-TyWsAjBw" name="extract_file_template" prompt="extract_file_template?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out/result_template.xlsx"/>
+    <contextParameter comment="" internalId="_aCKkI88uEe6dQ-TyWsAjBw" name="extract_folder" prompt="extract_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_aCKkJM8uEe6dQ-TyWsAjBw" name="extract_job_name" prompt="extract_job_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkJc8uEe6dQ-TyWsAjBw" name="extract_job_version" prompt="extract_job_version?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkJs8uEe6dQ-TyWsAjBw" name="extract_log" prompt="extract_log?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/log"/>
+    <contextParameter comment="" internalId="_aCKkJ88uEe6dQ-TyWsAjBw" name="extract_path" prompt="extract_path?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkKM8uEe6dQ-TyWsAjBw" name="extract_project_file_mask" prompt="extract_project_file_mask?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="item"/>
+    <contextParameter comment="" internalId="_aCKkKc8uEe6dQ-TyWsAjBw" name="extract_project_name" prompt="extract_project_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkKs8uEe6dQ-TyWsAjBw" name="extract_quality_directory_result" prompt="extract_quality_directory_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_aCKkK88uEe6dQ-TyWsAjBw" name="extract_quality_file_result" prompt="extract_quality_file_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="result"/>
+    <contextParameter comment="" internalId="_aCKkLM8uEe6dQ-TyWsAjBw" name="extract_sleep" prompt="extract_sleep?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_Integer" value="0"/>
+    <contextParameter comment="" internalId="_aCKkLc8uEe6dQ-TyWsAjBw" name="extract_tmp_folder" prompt="extract_tmp_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/tmp"/>
+    <contextParameter comment="" internalId="_aCKkLs8uEe6dQ-TyWsAjBw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/"/>
+    <contextParameter comment="" internalId="_aCKkL88uEe6dQ-TyWsAjBw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_aCKkMM8uEe6dQ-TyWsAjBw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_aCKkMc8uEe6dQ-TyWsAjBw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_aCKkMs8uEe6dQ-TyWsAjBw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_aCKkM88uEe6dQ-TyWsAjBw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_aCKkNM8uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files"/>
+    <contextParameter comment="" internalId="_aCKkNc8uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_aCKkNs8uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="DEV">
+    <contextParameter comment="" internalId="_ZyvA8s8uEe6dQ-TyWsAjBw" name="extract_workspace_name" prompt="extract_workspace_name?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C:/Talend/uefa"/>
+    <contextParameter comment="" internalId="_ZyvA888uEe6dQ-TyWsAjBw" name="traitementId" prompt="traitementId?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkN88uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_driverClass" prompt="blacklight_sqlite_quality_connection_driverClass?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="org.sqlite.JDBC"/>
+    <contextParameter comment="" internalId="_aCKkOM8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_jdbcUrl" prompt="blacklight_sqlite_quality_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="jdbc:sqlite:C:/tools/TALEND/DEV/sqlite/quality.db"/>
+    <contextParameter comment="" internalId="_aCKkOc8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_userPassword_password" prompt="blacklight_sqlite_quality_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_aCKkOs8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_userPassword_userId" prompt="blacklight_sqlite_quality_connection_userPassword_userId?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkO88uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_drivers" prompt="blacklight_sqlite_quality_drivers?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="&quot;mvn:org.talend.libraries/sqlite-jdbc-3.32.3.2/6.0.0-SNAPSHOT/jar&quot;"/>
+    <contextParameter comment="" internalId="_aCKkPM8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_mappingFile" prompt="blacklight_sqlite_quality_mappingFile?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="sqlite_id"/>
+    <contextParameter comment="" internalId="_aCKkPc8uEe6dQ-TyWsAjBw" name="dataverse_endpoint_Oauth" prompt="dataverse_endpoint_Oauth?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://login.microsoftonline.com/bnd.onmicrosoft.com/oauth2/v2.0/authorize"/>
+    <contextParameter comment="" internalId="_aCKkPs8uEe6dQ-TyWsAjBw" name="dataverse_id_app" prompt="dataverse_id_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="587dbace-9778-4f37-8cb2-69a8bb33538a"/>
+    <contextParameter comment="" internalId="_aCKkP88uEe6dQ-TyWsAjBw" name="dataverse_mot_de_passe" prompt="dataverse_mot_de_passe?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:FcSl+zi8AfxQ6Kl4CuHaVslobFaU2T/diuQmKouW7jmc4Q+leRng+/jlnniFP5seqkFt"/>
+    <contextParameter comment="" internalId="_aCKkQM8uEe6dQ-TyWsAjBw" name="dataverse_secret_app" prompt="dataverse_secret_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:bH6V1p+xJxoTUNKl1BRnT5R6e5feqAb0IhZSfu3GkbbRqYoZHAuvHqV1kGMDT5JD89a1xeiPWGghv8ftNzXO9hXVlNE="/>
+    <contextParameter comment="" internalId="_aCKkQc8uEe6dQ-TyWsAjBw" name="dataverse_url" prompt="dataverse_url?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://dev-bdup.crm4.dynamics.com/api/data/v8.1/"/>
+    <contextParameter comment="" internalId="_aCKkQs8uEe6dQ-TyWsAjBw" name="dataverse_utilisateur" prompt="dataverse_utilisateur?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="talend_dev@businessdecision.com"/>
+    <contextParameter comment="" internalId="_aCKkQ88uEe6dQ-TyWsAjBw" name="status_attente" prompt="status_attente?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140000"/>
+    <contextParameter comment="" internalId="_aCKkRM8uEe6dQ-TyWsAjBw" name="status_erreur" prompt="status_erreur?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140002"/>
+    <contextParameter comment="" internalId="_aCKkRc8uEe6dQ-TyWsAjBw" name="status_termine" prompt="status_termine?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140001"/>
+    <contextParameter comment="" internalId="_aCKkRs8uEe6dQ-TyWsAjBw" name="extract_db_input_components" prompt="extract_db_input_components?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="TAS400INPUT,TACCESSINPUT,TAMAZONAURORAINPUT,TAMAZONMYSQLINPUT,TAMAZONORACLEINPUT,TREDSHIFTINPUT,TSQLDWHINPUT,TDB2INPUT,TEXAINPUT,TFIREBIRDINPUT,TGREENPLUMINPUT,THSQLDBINPUT,TINFORMATIXINPUT,TNGRESINPUT,TINTERBASEINPUT,TJAVADBINPUT,TMSSQLINPUT,TMAXDBINPUT,TMYSQLINPUT,TNETEZZAINPUT,TORACLEINPUT,TPARACCELINPUT,TPOSTGRESQLINPUT,TPOSTGRESPLUSINPUT,TSQLITEINPUT,TSYBASEINPUT,TTERADATAINPT,TVECTORWISEINPUT,TVERTICAINPUT,TDBINPUT"/>
+    <contextParameter comment="" internalId="_aCKkR88uEe6dQ-TyWsAjBw" name="extract_file_directory_filter" prompt="extract_file_directory_filter?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="process"/>
+    <contextParameter comment="" internalId="_aCKkSM8uEe6dQ-TyWsAjBw" name="extract_file_name" prompt="extract_file_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkSc8uEe6dQ-TyWsAjBw" name="extract_file_template" prompt="extract_file_template?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out/result_template.xlsx"/>
+    <contextParameter comment="" internalId="_aCKkSs8uEe6dQ-TyWsAjBw" name="extract_folder" prompt="extract_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_aCKkS88uEe6dQ-TyWsAjBw" name="extract_job_name" prompt="extract_job_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkTM8uEe6dQ-TyWsAjBw" name="extract_job_version" prompt="extract_job_version?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkTc8uEe6dQ-TyWsAjBw" name="extract_log" prompt="extract_log?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/log"/>
+    <contextParameter comment="" internalId="_aCKkTs8uEe6dQ-TyWsAjBw" name="extract_path" prompt="extract_path?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkT88uEe6dQ-TyWsAjBw" name="extract_project_file_mask" prompt="extract_project_file_mask?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="item"/>
+    <contextParameter comment="" internalId="_aCKkUM8uEe6dQ-TyWsAjBw" name="extract_project_name" prompt="extract_project_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkUc8uEe6dQ-TyWsAjBw" name="extract_quality_directory_result" prompt="extract_quality_directory_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_aCKkUs8uEe6dQ-TyWsAjBw" name="extract_quality_file_result" prompt="extract_quality_file_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="result"/>
+    <contextParameter comment="" internalId="_aCKkU88uEe6dQ-TyWsAjBw" name="extract_sleep" prompt="extract_sleep?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_Integer" value="0"/>
+    <contextParameter comment="" internalId="_aCKkVM8uEe6dQ-TyWsAjBw" name="extract_tmp_folder" prompt="extract_tmp_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/tmp"/>
+    <contextParameter comment="" internalId="_aCKkVc8uEe6dQ-TyWsAjBw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/home/adnadm/data/Andine/09/"/>
+    <contextParameter comment="" internalId="_aCKkVs8uEe6dQ-TyWsAjBw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/home/adnadm/data/Andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_aCKkV88uEe6dQ-TyWsAjBw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_aCKkWM8uEe6dQ-TyWsAjBw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_aCKkWc8uEe6dQ-TyWsAjBw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_aCKkWs8uEe6dQ-TyWsAjBw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_aCKkW88uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files&quot;"/>
+    <contextParameter comment="" internalId="_aCKkXM8uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_aCKkXc8uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="PROD">
+    <contextParameter comment="" internalId="_ZyvA9M8uEe6dQ-TyWsAjBw" name="extract_workspace_name" prompt="extract_workspace_name?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C:/Talend/uefa"/>
+    <contextParameter comment="" internalId="_ZyvA9c8uEe6dQ-TyWsAjBw" name="traitementId" prompt="traitementId?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkXs8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_driverClass" prompt="blacklight_sqlite_quality_connection_driverClass?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="org.sqlite.JDBC"/>
+    <contextParameter comment="" internalId="_aCKkX88uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_jdbcUrl" prompt="blacklight_sqlite_quality_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="jdbc:sqlite:C:/tools/TALEND/PROD/sqlite/quality.db"/>
+    <contextParameter comment="" internalId="_aCKkYM8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_userPassword_password" prompt="blacklight_sqlite_quality_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_aCKkYc8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_connection_userPassword_userId" prompt="blacklight_sqlite_quality_connection_userPassword_userId?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkYs8uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_drivers" prompt="blacklight_sqlite_quality_drivers?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="&quot;mvn:org.talend.libraries/sqlite-jdbc-3.32.3.2/6.0.0-SNAPSHOT/jar&quot;"/>
+    <contextParameter comment="" internalId="_aCKkY88uEe6dQ-TyWsAjBw" name="blacklight_sqlite_quality_mappingFile" prompt="blacklight_sqlite_quality_mappingFile?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="sqlite_id"/>
+    <contextParameter comment="" internalId="_aCKkZM8uEe6dQ-TyWsAjBw" name="dataverse_endpoint_Oauth" prompt="dataverse_endpoint_Oauth?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://login.microsoftonline.com/bnd.onmicrosoft.com/oauth2/v2.0/authorize"/>
+    <contextParameter comment="" internalId="_aCKkZc8uEe6dQ-TyWsAjBw" name="dataverse_id_app" prompt="dataverse_id_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="587dbace-9778-4f37-8cb2-69a8bb33538a"/>
+    <contextParameter comment="" internalId="_aCKkZs8uEe6dQ-TyWsAjBw" name="dataverse_mot_de_passe" prompt="dataverse_mot_de_passe?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:Pnu9io+XtYM0d71aTDBe7lPWQpYaZ6bmtp6hCAvA87nTUC7vUo2gJPS4Jj6amEapMGrc"/>
+    <contextParameter comment="" internalId="_aCKkZ88uEe6dQ-TyWsAjBw" name="dataverse_secret_app" prompt="dataverse_secret_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:WPo0JOev3MOMM5/g/4nIKUObaZi58/P7Npa9ZmDQsY0pwS+9DHOsBBhYIDqn/EpZ3RAltF4LB8SFxarHiWfEbbpFDs8="/>
+    <contextParameter comment="" internalId="_aCKkaM8uEe6dQ-TyWsAjBw" name="dataverse_url" prompt="dataverse_url?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://dev-bdup.crm4.dynamics.com/api/data/v8.1/"/>
+    <contextParameter comment="" internalId="_aCKkac8uEe6dQ-TyWsAjBw" name="dataverse_utilisateur" prompt="dataverse_utilisateur?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="talend_dev@businessdecision.com"/>
+    <contextParameter comment="" internalId="_aCKkas8uEe6dQ-TyWsAjBw" name="status_attente" prompt="status_attente?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140000"/>
+    <contextParameter comment="" internalId="_aCKka88uEe6dQ-TyWsAjBw" name="status_erreur" prompt="status_erreur?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140002"/>
+    <contextParameter comment="" internalId="_aCKkbM8uEe6dQ-TyWsAjBw" name="status_termine" prompt="status_termine?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140001"/>
+    <contextParameter comment="" internalId="_aCKkbc8uEe6dQ-TyWsAjBw" name="extract_db_input_components" prompt="extract_db_input_components?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="TAS400INPUT,TACCESSINPUT,TAMAZONAURORAINPUT,TAMAZONMYSQLINPUT,TAMAZONORACLEINPUT,TREDSHIFTINPUT,TSQLDWHINPUT,TDB2INPUT,TEXAINPUT,TFIREBIRDINPUT,TGREENPLUMINPUT,THSQLDBINPUT,TINFORMATIXINPUT,TNGRESINPUT,TINTERBASEINPUT,TJAVADBINPUT,TMSSQLINPUT,TMAXDBINPUT,TMYSQLINPUT,TNETEZZAINPUT,TORACLEINPUT,TPARACCELINPUT,TPOSTGRESQLINPUT,TPOSTGRESPLUSINPUT,TSQLITEINPUT,TSYBASEINPUT,TTERADATAINPT,TVECTORWISEINPUT,TVERTICAINPUT,TDBINPUT"/>
+    <contextParameter comment="" internalId="_aCKkbs8uEe6dQ-TyWsAjBw" name="extract_file_directory_filter" prompt="extract_file_directory_filter?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="process"/>
+    <contextParameter comment="" internalId="_aCKkb88uEe6dQ-TyWsAjBw" name="extract_file_name" prompt="extract_file_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkcM8uEe6dQ-TyWsAjBw" name="extract_file_template" prompt="extract_file_template?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out/result_template.xlsx"/>
+    <contextParameter comment="" internalId="_aCKkcc8uEe6dQ-TyWsAjBw" name="extract_folder" prompt="extract_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_aCKkcs8uEe6dQ-TyWsAjBw" name="extract_job_name" prompt="extract_job_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkc88uEe6dQ-TyWsAjBw" name="extract_job_version" prompt="extract_job_version?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkdM8uEe6dQ-TyWsAjBw" name="extract_log" prompt="extract_log?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/log"/>
+    <contextParameter comment="" internalId="_aCKkdc8uEe6dQ-TyWsAjBw" name="extract_path" prompt="extract_path?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkds8uEe6dQ-TyWsAjBw" name="extract_project_file_mask" prompt="extract_project_file_mask?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="item"/>
+    <contextParameter comment="" internalId="_aCKkd88uEe6dQ-TyWsAjBw" name="extract_project_name" prompt="extract_project_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkeM8uEe6dQ-TyWsAjBw" name="extract_quality_directory_result" prompt="extract_quality_directory_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_aCKkec8uEe6dQ-TyWsAjBw" name="extract_quality_file_result" prompt="extract_quality_file_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="result"/>
+    <contextParameter comment="" internalId="_aCKkes8uEe6dQ-TyWsAjBw" name="extract_sleep" prompt="extract_sleep?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_Integer" value="0"/>
+    <contextParameter comment="" internalId="_aCKke88uEe6dQ-TyWsAjBw" name="extract_tmp_folder" prompt="extract_tmp_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/tmp"/>
+    <contextParameter comment="" internalId="_aCKkfM8uEe6dQ-TyWsAjBw" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_aCKkfc8uEe6dQ-TyWsAjBw" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_aCKkfs8uEe6dQ-TyWsAjBw" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_aCKkf88uEe6dQ-TyWsAjBw" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_aCKkgM8uEe6dQ-TyWsAjBw" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_aCKkgc8uEe6dQ-TyWsAjBw" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_aCKkgs8uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files&quot;"/>
+    <contextParameter comment="" internalId="_aCKkg88uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_aCKkhM8uEe6dQ-TyWsAjBw" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+  </context>
+  <context confirmationNeeded="false" hide="false" name="INT">
+    <contextParameter comment="" internalId="_ZyvA8M8uEe6dQ-TyWsAjBw" name="extract_workspace_name" prompt="extract_workspace_name?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C:/Talend/uefa"/>
+    <contextParameter comment="" internalId="_ZyvA8c8uEe6dQ-TyWsAjBw" name="traitementId" prompt="traitementId?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7rvZsNeoEe6UL9fe7qCfUg" name="blacklight_sqlite_quality_connection_driverClass" prompt="blacklight_sqlite_quality_connection_driverClass?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="org.sqlite.JDBC"/>
+    <contextParameter comment="" internalId="_7rvZsdeoEe6UL9fe7qCfUg" name="blacklight_sqlite_quality_connection_jdbcUrl" prompt="blacklight_sqlite_quality_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="jdbc:sqlite:C:/tools/TALEND/DEV/sqlite/quality.db"/>
+    <contextParameter comment="" internalId="_7rvZsteoEe6UL9fe7qCfUg" name="blacklight_sqlite_quality_connection_userPassword_password" prompt="blacklight_sqlite_quality_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_7rvZs9eoEe6UL9fe7qCfUg" name="blacklight_sqlite_quality_connection_userPassword_userId" prompt="blacklight_sqlite_quality_connection_userPassword_userId?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7rvZtNeoEe6UL9fe7qCfUg" name="blacklight_sqlite_quality_drivers" prompt="blacklight_sqlite_quality_drivers?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="&quot;mvn:org.talend.libraries/sqlite-jdbc-3.32.3.2/6.0.0-SNAPSHOT/jar&quot;"/>
+    <contextParameter comment="" internalId="_7rvZtdeoEe6UL9fe7qCfUg" name="blacklight_sqlite_quality_mappingFile" prompt="blacklight_sqlite_quality_mappingFile?" promptNeeded="false" repositoryContextId="_GlWzQFZxEeyo16aL4R9uRQ" type="id_String" value="sqlite_id"/>
+    <contextParameter comment="" internalId="_7rvZtteoEe6UL9fe7qCfUg" name="dataverse_endpoint_Oauth" prompt="dataverse_endpoint_Oauth?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://login.microsoftonline.com/bnd.onmicrosoft.com/oauth2/v2.0/authorize"/>
+    <contextParameter comment="" internalId="_7rvZt9eoEe6UL9fe7qCfUg" name="dataverse_id_app" prompt="dataverse_id_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="587dbace-9778-4f37-8cb2-69a8bb33538a"/>
+    <contextParameter comment="" internalId="_7rvZuNeoEe6UL9fe7qCfUg" name="dataverse_mot_de_passe" prompt="dataverse_mot_de_passe?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:Dyoq50ggfZzUtoci9QW6wJUzZk1l2G27fLUTQ7ZsyjaP4s2OjfNqhIc6f1p+pjEzADG0"/>
+    <contextParameter comment="" internalId="_7rvZudeoEe6UL9fe7qCfUg" name="dataverse_secret_app" prompt="dataverse_secret_app?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_Password" value="enc:system.encryption.key.v1:ScukdKsqXli5qamoGVEq6k44svS7XA/R6BUe7GPb7Je6oZgm2YsKereCtxLBqObXlkQliN3s1Yn5V3XIrS2l78SV/Xc="/>
+    <contextParameter comment="" internalId="_7rvZuteoEe6UL9fe7qCfUg" name="dataverse_url" prompt="dataverse_url?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="https://dev-bdup.crm4.dynamics.com/api/data/v8.1/"/>
+    <contextParameter comment="" internalId="_7rvZu9eoEe6UL9fe7qCfUg" name="dataverse_utilisateur" prompt="dataverse_utilisateur?" promptNeeded="false" repositoryContextId="_LaF-kCesEe2BkKcZ6a_7dQ" type="id_String" value="talend_dev@businessdecision.com"/>
+    <contextParameter comment="" internalId="_7rvZvNeoEe6UL9fe7qCfUg" name="status_attente" prompt="status_attente?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140000"/>
+    <contextParameter comment="" internalId="_7rvZvdeoEe6UL9fe7qCfUg" name="status_erreur" prompt="status_erreur?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140002"/>
+    <contextParameter comment="" internalId="_7rvZvteoEe6UL9fe7qCfUg" name="status_termine" prompt="status_termine?" promptNeeded="false" repositoryContextId="_HqKt0Fq9Ee289q6bs5Sraw" type="id_Integer" value="121140001"/>
+    <contextParameter comment="" internalId="_7rvZv9eoEe6UL9fe7qCfUg" name="extract_db_input_components" prompt="extract_db_input_components?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="TAS400INPUT,TACCESSINPUT,TAMAZONAURORAINPUT,TAMAZONMYSQLINPUT,TAMAZONORACLEINPUT,TREDSHIFTINPUT,TSQLDWHINPUT,TDB2INPUT,TEXAINPUT,TFIREBIRDINPUT,TGREENPLUMINPUT,THSQLDBINPUT,TINFORMATIXINPUT,TNGRESINPUT,TINTERBASEINPUT,TJAVADBINPUT,TMSSQLINPUT,TMAXDBINPUT,TMYSQLINPUT,TNETEZZAINPUT,TORACLEINPUT,TPARACCELINPUT,TPOSTGRESQLINPUT,TPOSTGRESPLUSINPUT,TSQLITEINPUT,TSYBASEINPUT,TTERADATAINPT,TVECTORWISEINPUT,TVERTICAINPUT,TDBINPUT"/>
+    <contextParameter comment="" internalId="_7rvZwNeoEe6UL9fe7qCfUg" name="extract_file_directory_filter" prompt="extract_file_directory_filter?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="process"/>
+    <contextParameter comment="" internalId="_7rvZwdeoEe6UL9fe7qCfUg" name="extract_file_name" prompt="extract_file_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7rvZwteoEe6UL9fe7qCfUg" name="extract_file_template" prompt="extract_file_template?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out/result_template.xlsx"/>
+    <contextParameter comment="" internalId="_7rvZw9eoEe6UL9fe7qCfUg" name="extract_folder" prompt="extract_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_7rvZxNeoEe6UL9fe7qCfUg" name="extract_job_name" prompt="extract_job_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7rvZxdeoEe6UL9fe7qCfUg" name="extract_job_version" prompt="extract_job_version?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7rvZxteoEe6UL9fe7qCfUg" name="extract_log" prompt="extract_log?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/log"/>
+    <contextParameter comment="" internalId="_7rvZx9eoEe6UL9fe7qCfUg" name="extract_path" prompt="extract_path?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7rvZyNeoEe6UL9fe7qCfUg" name="extract_project_file_mask" prompt="extract_project_file_mask?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="item"/>
+    <contextParameter comment="" internalId="_7rvZydeoEe6UL9fe7qCfUg" name="extract_project_name" prompt="extract_project_name?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_7rvZyteoEe6UL9fe7qCfUg" name="extract_quality_directory_result" prompt="extract_quality_directory_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="C:/Talend/data/andine/out"/>
+    <contextParameter comment="" internalId="_7rvZy9eoEe6UL9fe7qCfUg" name="extract_quality_file_result" prompt="extract_quality_file_result?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="result"/>
+    <contextParameter comment="" internalId="_7rvZzNeoEe6UL9fe7qCfUg" name="extract_sleep" prompt="extract_sleep?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_Integer" value="0"/>
+    <contextParameter comment="" internalId="_7rvZzdeoEe6UL9fe7qCfUg" name="extract_tmp_folder" prompt="extract_tmp_folder?" promptNeeded="false" repositoryContextId="_V3Kt0Ch5EeycE-Z3XiUwxA" type="id_String" value="/tmp"/>
+    <contextParameter comment="" internalId="_7rvZzteoEe6UL9fe7qCfUg" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;"/>
+    <contextParameter comment="" internalId="_7rvZz9eoEe6UL9fe7qCfUg" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;"/>
+    <contextParameter comment="" internalId="_7rvZ0NeoEe6UL9fe7qCfUg" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt"/>
+    <contextParameter comment="" internalId="_7rvZ0deoEe6UL9fe7qCfUg" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('"/>
+    <contextParameter comment="" internalId="_7rvZ0teoEe6UL9fe7qCfUg" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/"/>
+    <contextParameter comment="" internalId="_7rvZ09eoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('"/>
+    <contextParameter comment="" internalId="_7rvZ1NeoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;"/>
+    <contextParameter comment="" internalId="_7rvZ1deoEe6UL9fe7qCfUg" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files&quot;"/>
+    <contextParameter comment="" internalId="_7rvZ1teoEe6UL9fe7qCfUg" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value=""/>
+  </context>
+  <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="544"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value=""/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:fJxElLFtxFWsCK5Y9FmQ46Zu0xowvd39brR2kwng"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Users/ilaza/Downloads/Talend-Studio-20231027_1100-V8.0.1/workspace/.metadata&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="JDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:K89Syj8nzoK4j7HPdPiZ9ZTPdejz1ZVikD9Tk6CG"/>
+    <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
+    <routinesParameter id="_hWxBpCXcEeyypZ7Ya4Uk3w" name="DataOperation"/>
+    <routinesParameter id="_hXNtliXcEeyypZ7Ya4Uk3w" name="Mathematical"/>
+    <routinesParameter id="_hXNtoCXcEeyypZ7Ya4Uk3w" name="Numeric"/>
+    <routinesParameter id="_hXW3hiXcEeyypZ7Ya4Uk3w" name="Relational"/>
+    <routinesParameter id="_hXW3kCXcEeyypZ7Ya4Uk3w" name="StringHandling"/>
+    <routinesParameter id="_hXgogCXcEeyypZ7Ya4Uk3w" name="TalendDataGenerator"/>
+    <routinesParameter id="_hXkS4CXcEeyypZ7Ya4Uk3w" name="TalendDate"/>
+    <routinesParameter id="_hXuD4CXcEeyypZ7Ya4Uk3w" name="TalendStringUtil"/>
+    <routinesParameter id="_hXkS6iXcEeyypZ7Ya4Uk3w" name="TalendString"/>
+    <routinesParameter id="_65fjwMG3Ee64T6b5AyYjCA" name="SQLike"/>
+  </parameters>
+  <node componentName="tHttpRequest" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="-192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_1"/>
+    <elementParameter field="TEXT" name="URI" value="context.Sharepoint_url_access_token"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD_CHOSED" value="POST"/>
+    <elementParameter field="FILE" name="POST_PARAMS_FROM_FILE" value="context.Sharepoint_post_param_file_access_token"/>
+    <elementParameter field="CHECK" name="OUT_TO_FILE" value="false"/>
+    <elementParameter field="FILE" name="OUT_FILE_NAME" show="false" value=""/>
+    <elementParameter field="CHECK" name="CREATE_DIRS" show="false" value="false"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="HEADER_NAME" value="&quot;Content-Type&quot;"/>
+      <elementValue elementRef="HEADER_VALUE" value="&quot;application/x-www-form-urlencoded&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="NEED_AUTHENTICATION" value="false"/>
+    <elementParameter field="TEXT" name="USR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PWD" show="false" value="enc:system.encryption.key.v1:U+z8J/o03ajztqtyCLaG2ww8yKoIzr4qoMcVqTJ3"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="TIMEOUT_SETTING" value="false"/>
+    <elementParameter field="TEXT" name="CONNECT_TIMEOUT" show="false" value="30"/>
+    <elementParameter field="TEXT" name="READ_TIMEOUT" show="false" value="0"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHttpRequest_1">
+      <column key="false" length="0" name="ResponseContent" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tExtractJSONFields" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="-192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tExtractJSONFields_1"/>
+    <elementParameter field="CLOSED_LIST" name="READ_BY" value="JSONPATH"/>
+    <elementParameter field="CLOSED_LIST" name="JSON_PATH_VERSION" value="2_1_0"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="JSONFIELD" value="ResponseContent"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" show="false" value="&quot;/bills/bill/line&quot;"/>
+    <elementParameter field="TEXT" name="JSON_LOOP_QUERY" value="&quot;$&quot;"/>
+    <elementParameter field="TABLE" name="MAPPING" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="token"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="ISARRAY" value="false"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="MAPPING_4_JSONPATH">
+      <elementValue elementRef="SCHEMA_COLUMN" value="token"/>
+      <elementValue elementRef="QUERY" value="&quot;access_token&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="CLOSED_LIST" name="JDK_VERSION" show="false" value="JDK_8"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="UTF-8"/>
+    <elementParameter field="CHECK" name="USE_LOOP_AS_ROOT" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT_LIST" show="false" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tExtractJSONFields_1">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorJSONField" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="-192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_1"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;token&quot;"/>
+      <elementValue elementRef="VALUE" value="token.token"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSetGlobalVar_1">
+      <column comment="" key="false" length="-1" name="token" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.extract_quality_directory_result "/>
+    <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
+    <elementParameter field="CHECK" name="INCLUDSUBDIR" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
+    <elementParameter field="CHECK" name="ERROR" value="false"/>
+    <elementParameter field="CHECK" name="GLOBEXPRESSIONS" value="true"/>
+    <elementParameter field="TABLE" name="FILES">
+      <elementValue elementRef="FILEMASK" value="&quot;*&quot; + context.extract_job_name + &quot;*&quot;"/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="ORDER_BY_NOTHING" value="true"/>
+    <elementParameter field="RADIO" name="ORDER_BY_FILENAME" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_BY_FILESIZE" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_BY_MODIFIEDDATE" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_ACTION_ASC" value="true"/>
+    <elementParameter field="RADIO" name="ORDER_ACTION_DESC" value="false"/>
+    <elementParameter field="CHECK" name="IFEXCLUDE" value="false"/>
+    <elementParameter field="TEXT" name="EXCLUDEFILEMASK" show="false" value="&quot;*.txt&quot;"/>
+    <elementParameter field="CHECK" name="FORMAT_FILEPATH_TO_SLASH" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="/*&#10;System.out.println(&quot;file : &quot; + ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;)) );&#10;System.out.println(&quot;file2 : &quot; + ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)) );&#10;System.out.println(&quot;file3 : &quot; + ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)) );&#10;*/&#10;&#10;File f = new File(((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;)));&#10;byte[] content = Files.readAllBytes(f.toPath());&#10;globalMap.put(&quot;BINARY_FILE_CONTENT&quot;, content);&#10;globalMap.put(&quot;BINARY_FILE_LENGTH&quot;, content.length);&#10;globalMap.put(&quot;BINARY_FILE_RANGE&quot;, content.length-1);&#10;&#10;double db = 0.00;&#10;globalMap.put(&quot;total&quot;,db);&#10;globalMap.put(&quot;valide&quot;,db) ;&#10;globalMap.put(&quot;pourcent_valide&quot;,db) ;&#10;&#10;/*&#10;System.out.println(&quot;Sharepoint_file_path : &quot; + context.Sharepoint_file_path );&#10;&#10;System.out.println(&quot;Sharepoint_file_path2 : &quot; + (context.Sharepoint_file_path).replace(&quot; &quot;, &quot;%20&quot;));&#10;*/&#10;context.Sharepoint_file_path = context.Sharepoint_file_path.replace(&quot; &quot;, &quot;%20&quot;);"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="import java.io.File;&#10;import java.nio.file.Files;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_2"/>
+  </node>
+  <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_1"/>
+    <elementParameter field="TEXT" name="URL" value="context.Sharepoint_url_root +context.Sharepoint_url_upload_start + context.Sharepoint_file_path + context.Sharepoint_url_upload_mid + ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)) + context.Sharepoint_url_upload_end"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="NAME" value="&quot;Authorization&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;Bearer &quot; + (String) globalMap.get(&quot;token&quot;)"/>
+    </elementParameter>
+    <elementParameter field="MEMO" name="BODY" value="(byte[])globalMap.get(&quot;BINARY_FILE_CONTENT&quot;)"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tREST_1">
+      <column defaultValue="" key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_2"/>
+    <elementParameter field="TEXT" name="URL" value="context.Sharepoint_url_root +context.Sharepoint_url_download + context.Sharepoint_file_path + &quot;/&quot; + context.extract_file_name +&quot;')&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="NAME" value="&quot;Authorization&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;Bearer &quot; + (String) globalMap.get(&quot;token&quot;)"/>
+      <elementValue elementRef="NAME" value="&quot;X-HTTP-Method&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;DELETE&quot;"/>
+    </elementParameter>
+    <elementParameter field="MEMO" name="BODY" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tREST_2">
+      <column defaultValue="" key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
+    <elementParameter field="FILE" name="FILENAME" value="((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;))"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" show="false" value="&quot;C:/tools/apps/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/delete_folder&quot;"/>
+    <elementParameter field="TEXT" name="PATH" show="false" value="&quot;C:/tools/apps/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/delete_folder or delete_file&quot;"/>
+    <elementParameter field="CHECK" name="FAILON" value="false"/>
+    <elementParameter field="CHECK" name="FOLDER" value="false"/>
+    <elementParameter field="CHECK" name="FOLDER_FILE" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#10;&quot;File (or path) deleted.&quot;&#10;&quot;No file (or path) deleted.&quot;&#10;&quot;File (or path) does not exist or is invalid.&quot;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileDelete_1"/>
+  </node>
+  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="-480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_2"/>
+    <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_TDIE" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_TWARN" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_TACTIONFAILURE" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogCatcher_2">
+      <column key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="priority" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column key="false" length="255" name="type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1312" posY="-480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="moment"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="root_pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="father_pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="project"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="job"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="context"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="priority"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="type"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="message"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_2">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="priority" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1504" posY="-480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_3"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.extract_folder + context.extract_log + &quot;/log_&quot; + TalendDate.getDate(&quot;CCYY-MM-DD&quot;) + &quot;.log&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="true"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_3">
+      <column key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="priority" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column key="false" length="255" name="type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="-320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_4"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
+    <elementParameter field="TABLE" name="VALUES">
+      <elementValue elementRef="SCHEMA_COLUMN" value="bd_traitementid"/>
+      <elementValue elementRef="VALUE" value="context.traitementId"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="bd_statut"/>
+      <elementValue elementRef="VALUE" value="context.status_erreur"/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
+    <elementParameter field="TABLE" name="INTABLE" show="false"/>
+    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
+    <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFixedFlowInput_4">
+      <column comment="" key="true" length="-1" name="bd_traitementid" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="bd_statut" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMicrosoftCrmOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1312" posY="-320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMicrosoftCrmOutput_2"/>
+    <elementParameter field="CHECK" name="HIDDEN_OAUTH_PREMISE" show="false" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="ONLINE"/>
+    <elementParameter field="CLOSED_LIST" name="API_VERSION" value="API_2016_ODATA"/>
+    <elementParameter field="CLOSED_LIST" name="MS_CRM_VERSION" show="false" value="CRM_2011"/>
+    <elementParameter field="CLOSED_LIST" name="PREMISE_AUTH" show="false" value="NTLM"/>
+    <elementParameter field="CLOSED_LIST" name="PREMISE_AUTH_FLOW" show="false" value="AUTHORIZATION_CODE"/>
+    <elementParameter field="CLOSED_LIST" name="ONLINE_REGISTERED_APP" value="WEB_DELEGATED"/>
+    <elementParameter field="TEXT" name="ENDPOINTURL" show="false" value="&quot;http://192.168.0.22/MSCrmServices/2007/CrmService.asmx&quot;"/>
+    <elementParameter field="TEXT" name="ORGNAME" show="false" value="&quot;talend&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.dataverse_utilisateur"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:M0ChuuVFz0fRzxZS7AiKJsaJF40pzhxd46Gn4bcNOmjGfKAGgeUgAWzRQpZE4gpp1aLVX9b8v1ESHA=="/>
+    <elementParameter field="TEXT" name="DOMAIN" show="false" value="&quot;192.168.0.22&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;192.168.0.22&quot;"/>
+    <elementParameter field="TEXT" name="DISC_WSDL" show="false" value="&quot;https://disco.crm.dynamics.com/XRMServices/2011/Discovery.svc&quot;"/>
+    <elementParameter field="TEXT" name="SERVICE_ROOT_URL" value="context.dataverse_url"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="80"/>
+    <elementParameter field="TEXT" name="ORGANIZATION_WSDL" show="false" value="&quot;https://&lt;domain&gt;:&lt;port&gt;/&lt;organization_name&gt;/XRMServices/2011/Organization.svc?wsdl&quot;"/>
+    <elementParameter field="TEXT" name="SECURITY_SERVICE_URL" show="false" value="&quot;https://&lt;domain&gt;:&lt;port&gt;/adfs/services/trust/mex&quot;"/>
+    <elementParameter field="FILE" name="CERTIFICATE_PATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="APPLICATION_ID" value="context.dataverse_id_app"/>
+    <elementParameter field="PASSWORD" name="CLIENT_SECRET" value="enc:routine.encryption.key.v1:Oz5k6J3fHGKMy7Vxa5WGAa4IQVpGEerxam3cvwaUaD9zJVFRYwIiO9BhJyx5RHPKJRutsqD9Uf0="/>
+    <elementParameter field="TEXT" name="AUTHORITY" value="context.dataverse_endpoint_Oauth"/>
+    <elementParameter field="TEXT" name="OAUTH_TOKEN_ENDPOINT" show="false" value="&quot;https://mydomain.com/adfs/oauth2/token&quot;"/>
+    <elementParameter field="TEXT" name="REDIRECT_URL" show="false" value="&quot;https://localhost&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="ACTION" value="update"/>
+    <elementParameter field="TEXT" name="TIMEOUT" value="60"/>
+    <elementParameter field="CLOSED_LIST" name="ENTITYNAME" show="false" value="Contact"/>
+    <elementParameter field="CLOSED_LIST" name="ENTITYSET" value="CustomEntitySet"/>
+    <elementParameter field="CLOSED_LIST" name="ENTITYSETV2018" show="false" value="contacts"/>
+    <elementParameter field="TEXT" name="CUSTOM_ENTITY_NAME" value="&quot;bd_traitements&quot;"/>
+    <elementParameter field="TABLE" name="LOOKUP_MAPPING"/>
+    <elementParameter field="CHECK" name="REUSE_HTTP_CLIENT" value="false"/>
+    <elementParameter field="CHECK" name="EMPTY_LOOKUP_TO_NULL" value="false"/>
+    <elementParameter field="CHECK" name="IGNORE_NULL" value="false"/>
+    <elementParameter field="CHECK" name="DEBUG" show="false" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mscrm_odata_id"/>
+    <elementParameter field="TEXT" name="MAX_RECONN_ATTEMPS" value="5"/>
+    <elementParameter field="TEXT" name="ATTEMPS_INTERVAL_TIME" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="FORCE_OAUTH_RESOURCE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="OAUTH_RESOURCE" show="false" value="&quot;https://talend.api.crm.dynamics.com&quot;"/>
+    <elementParameter field="TABLE" name="HEADERS"/>
+    <elementParameter field="CHECK" name="RETURN_REPRESENTATION" value="false"/>
+    <elementParameter field="COLUMN_LIST" name="RETURN_REPRESENTATION_COLUMN" show="false" value="bd_traitementid"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMicrosoftCrmOutput_2">
+      <column comment="" key="true" length="-1" name="bd_traitementid" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="String" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="bd_statut" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="Int32" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="FLOW" label="Response" lineStyle="0" metaname="tHttpRequest_1" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_1" target="tExtractJSONFields_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Response"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tHttpRequest_1" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_1" target="tFileList_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
+  <connection connectorName="FLOW" label="token" lineStyle="0" metaname="tExtractJSONFields_1" offsetLabelX="0" offsetLabelY="0" source="tExtractJSONFields_1" target="tSetGlobalVar_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="token"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="token"/>
+  </connection>
+  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_1" offsetLabelX="0" offsetLabelY="0" source="tFileList_1" target="tJava_2">
+    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
+    <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate1"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tJava_2" offsetLabelX="0" offsetLabelY="0" source="tJava_2" target="tREST_1">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="!( ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)).contains(&quot;.csv&quot;))"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If2"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tREST_1" offsetLabelX="0" offsetLabelY="0" source="tREST_1" target="tREST_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tREST_2" offsetLabelX="0" offsetLabelY="0" source="tREST_2" target="tFileDelete_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
+  </connection>
+  <connection connectorName="FLOW" label="row31" lineStyle="0" metaname="tLogCatcher_2" offsetLabelX="0" offsetLabelY="0" source="tLogCatcher_2" target="tLogRow_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row31"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tLogCatcher_2" offsetLabelX="0" offsetLabelY="0" source="tLogCatcher_2" target="tFixedFlowInput_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
+  </connection>
+  <connection connectorName="FLOW" label="row32" lineStyle="0" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tFileOutputDelimited_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row32"/>
+  </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_4" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_4" target="tMicrosoftCrmOutput_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="bd_statut"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHttpRequest_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="récupération du jeton"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="fichiers résultats à uploader"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="upload des fichiers"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Suppression du .item"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Suppression des fichier uploadés"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="log erreur"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_4"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="maj statut traitement"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_79eaaec2-54dc-45f9-bf8a-a59ee76fed5b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5sxAw0B2yAcMjFZ5/oEzP+ExzfIqz+DEE6oIGUISuxlpwjs/8yXuPEQO1I0O7zvVa66dn9dnOcHr&#13;
+OeyQl9Sk6A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6145ee12-50cc-4320-9fed-3a4a00629360"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6IahSbJqtYJiqNCIlZXBNB3a75d42zk7sJpLuPWqr6vpBztvfWBAgjIV+fawZPmoBYEjcj73bUFQ&#13;
+lAsr7kgXkQ==</DigestValue></Reference></SignedInfo><SignatureValue>nislfS8l/JoblFOU065bT3OJOQl7xG/CUmYQhVGuukBrbrcWzjQFevYoa+9MvygVPSDJL4g7eY8j&#13;
+8iLxVwSEg9xGWnSU9OGC+ORZICsFVXn9YV4u0bHOPl0GeTfkSrWjJ0PYYWyQcbkcawbk/X+/W4A/&#13;
+wzAHrWTurM+fSxEmFieSVAz8/xVJ94zxgYGWUCMxB/q0mqx92RixujsLu+zD3tCpXG95Aa2FpGFY&#13;
+eNipjRLZF9eXramFkzv64LMoomNyeeFTTDczZelqzyZ0IBeJtOSj+aXF0ynAxnRwwI9233YPAZwI&#13;
+M2dVmsM0KmeeX/XTSjvq3jJwr67bfxmIemYhow==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6145ee12-50cc-4320-9fed-3a4a00629360" Target="#_79eaaec2-54dc-45f9-bf8a-a59ee76fed5b"><Timestamp>2024-03-27 09:36:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
