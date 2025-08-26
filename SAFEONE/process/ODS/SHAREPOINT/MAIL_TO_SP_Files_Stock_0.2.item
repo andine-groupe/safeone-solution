@@ -1,104 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Prod">
-    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_ni1ZEPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/" internalId="_ni1ZEfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_ni1ZEvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_ni1ZE_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_ni1ZFPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_ni1ZFfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_ni1ZFvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_ni1ZF_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_ni1ZGPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_ni1ZGfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_ni1ZGvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_ni1ZG_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)" internalId="_ni1ZHPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_fhOKsBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_fhOKsRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_fhOKshH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_fhOKsxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_fhOKtBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:WhMYwHmJvf74X2OvBc7uZu83Zew5QE/RNLVZ9kDU1Hqp2vliLoE/XPSE2oHJo8WUp8k8Z9BwRf56aFll5QIofv+LX5U=" internalId="_fhOKtRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_fhOKthH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_fhOKtxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/" internalId="_EGgoYBIGEe-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_subpath_stock" prompt="Sharepoint_url_upload_subpath_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20Réglementaires/5%20Etats%20des%20stocks/" internalId="_is7jYG1JEfCTB4bB21LpyQ"/>
+    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_T5VbYILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_T5VbYYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_T5VbYoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_T5VbY4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_T5VbZILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:8mhIISxT9FKTqNMQnBoKJIQqqebIsS69HEH7t5Kx6JUTpeT4Cn6XaNRr1leDBM8Vesk0srr3rDSr7LQB9VZYjNtzKIQ=" internalId="_T5VbZYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_T5VbZoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_T5VbZ4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_T5fzcILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/" internalId="_T5fzcYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_T5hBkILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_T5hBkYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_referentiel_site" prompt="Sharepoint_referentiel_site?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="ReferentielSiteDev.xlsx" internalId="_T5hBkoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_T5hBk4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_T5hBlILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_T5hBlYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_T5hBloLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_T5hBl4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_T5hBmILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_T5hBmYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_T5hBmoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_stock" prompt="Sharepoint_url_upload_stock?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/" internalId="_T5hBm4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="',overwrite=true)" internalId="_T5hBnILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/sites/SOS/09/" internalId="_T5hBnYLCEfCC549pqnII7g"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="Dev">
-    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_ni1ZHfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="/home/adnadm/data/Andine/param/" internalId="_ni1ZHvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_ni1ZH_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_ni1ZIPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_ni1ZIfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_ni1ZIvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_ni1ZI_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_ni1ZJPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_ni1ZJfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_ni1ZJvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_ni1ZJ_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_ni1ZKPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)" internalId="_ni2AIPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_fhOKuBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_fhOKuRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_fhOKuhH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_fhOKuxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_fhOKvBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:a1u8vEtRKNrlr8BNfeAzWzzZ3sSrL+3HIzIakwAaGh+70TJWy8opQgXZNjK7TG0Xi73A+dPHqs7lw2Do09/B+dFoOBw=" internalId="_fhOKvRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_fhOKvhH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_fhOKvxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/" internalId="_EGgoYRIGEe-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_subpath_stock" prompt="Sharepoint_url_upload_subpath_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/" internalId="_is7jYW1JEfCTB4bB21LpyQ"/>
+    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_T5hBnoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_T5hBn4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_T5hBoILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_T5hBoYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_T5hBooLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:yjebGzHqBTRVM64U4kLvBBW79Cro03bkj8/aYIa2jJ2vRJyys2VLvd3JaZE4egDZZKyCMXq+1XzmFgAupaQSPZD9Ceg=" internalId="_T5hooILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_T5hooYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_T5hoooLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_T5hoo4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="/home/adnadm/data/Andine/param/" internalId="_T5hopILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_T5hopYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_T5hopoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_referentiel_site" prompt="Sharepoint_referentiel_site?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="ReferentielSiteDev.xlsx" internalId="_T5hop4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_T5hoqILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_T5hoqYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_T5hoqoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_T5hoq4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_T5horILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_T5horYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_T5horoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_T5hor4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_stock" prompt="Sharepoint_url_upload_stock?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/" internalId="_T5hosILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="',overwrite=true)" internalId="_T5hosYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/sites/SOS/09/" internalId="_T5hosoLCEfCC549pqnII7g"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_ni2AIfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/" internalId="_ni2AIvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_ni2AI_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_ni2AJPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_ni2AJfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_ni2AJvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_ni2AJ_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_ni2AKPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_ni2AKfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_ni2AKvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_ni2AK_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_ni2ALPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)" internalId="_ni2ALfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_fhOKwBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_fhOKwRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_fhOKwhH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_fhOKwxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_fhOKxBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:CKm+Z6syh0rAueC3FsfZ8LVvh4em6ns+ZOL+N0SjLejTK7kKORwc1COTt1qxWUix9DiBAEMXiP099HKjBKWJ6r8Mab4=" internalId="_fhOKxRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_fhOKxhH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_fhOKxxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/" internalId="_EGgoYhIGEe-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_subpath_stock" prompt="Sharepoint_url_upload_subpath_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/" internalId="_is7jYm1JEfCTB4bB21LpyQ"/>
+    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_T5hos4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_T5hotILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_T5hotYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_T5hotoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_T5hot4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:H7hUlHncemGJMrSkcMS1Jbr4wHYH86ulDrV76sbv70sv1dFdueVcosOcYUJng7WeJK2jL5TCzhjwskuwYXZUpA5hfsk=" internalId="_T5houILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_T5houYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_T5houoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_T5hou4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/" internalId="_T5hovILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_T5hovYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_T5hovoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_referentiel_site" prompt="Sharepoint_referentiel_site?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="ReferentielSiteDev.xlsx" internalId="_T5hov4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_T5howILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_T5howYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_T5howoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_T5how4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_T5hoxILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_T5hoxYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_T5hoxoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_T5hox4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_stock" prompt="Sharepoint_url_upload_stock?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/" internalId="_T5hoyILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="',overwrite=true)" internalId="_T5hoyYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/sites/SOS/09/" internalId="_T5hoyoLCEfCC549pqnII7g"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="Int">
-    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_ni2ALvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/Int/" internalId="_ni2AL_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_ni2AMPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_ni2AMfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_ni2AMvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_ni2AM_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_ni2ANPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_ni2ANfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_ni2ANvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_ni2AN_v3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_ni2AOPv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_ni2AOfv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="',overwrite=true)" internalId="_ni2AOvv3Ee6il7qi0ZrgbQ"/>
-    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_fhOKyBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_fhOKyRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_fhOKyhH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_fhOKyxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_fhOKzBH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:hGRscGyuneU+VT8ik9Pz9ZV7tpW7g2r6CL/DEdxTPRM0+xh6Msxx8oHyBC8NHA4UKSdxwA3GUDTHzufwksWwmzcmbpk=" internalId="_fhOKzRH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_fhOKzhH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_fhOKzxH-Ee-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/sites/SOS/09/" internalId="_EGgoYxIGEe-K_auEaTqPwg"/>
-    <contextParameter comment="" name="Sharepoint_url_upload_subpath_stock" prompt="Sharepoint_url_upload_subpath_stock?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/" internalId="_is7jY21JEfCTB4bB21LpyQ"/>
+    <contextParameter comment="" name="Email_Attachments_Repository" prompt="Email_Attachments_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail/attachments" internalId="_T5hoy4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Client_Id" prompt="Email_Client_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="f0bc3ffa-6a57-4e38-a186-af754dde377e" internalId="_T5hozILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Host" prompt="Email_Host?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="outlook.office365.com" internalId="_T5hozYLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Port" prompt="Email_Port?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Integer" value="993" internalId="_T5hozoLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Repository" prompt="Email_Repository?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="C:/Talend/workspace/mail" internalId="_T5hoz4LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Secret_Value" prompt="Email_Secret_Value?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_Password" value="enc:system.encryption.key.v1:TSq84cF2xv9cY9ZH9j6ia+C9mMp4L5e1Y88ZzKwtmO9P07yyF3F+ggpIS1HYYi6ZKQ8qm09d8oSLcM4CkX6QOoqLwy4=" internalId="_T5ho0ILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_Tenant_Id" prompt="Email_Tenant_Id?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eb050007-cd7f-48f7-a813-59c15ec7310f" internalId="_T5ho0YLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Email_User" prompt="Email_User?" promptNeeded="false" repositoryContextId="_07BPQBH9Ee-K_auEaTqPwg" type="id_String" value="eds@andine-groupe.com" internalId="_T5ho0oLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_T5ho04LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/Int/" internalId="_T5ho1ILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_T5ho1YLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_T5ho1oLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_referentiel_site" prompt="Sharepoint_referentiel_site?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="ReferentielSiteDev.xlsx" internalId="_T5ho14LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_access_token" prompt="Sharepoint_url_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://accounts.accesscontrol.windows.net/eb050007-cd7f-48f7-a813-59c15ec7310f/tokens/OAuth/2&quot;" internalId="_T5ho2ILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_download" prompt="Sharepoint_url_download?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="getfilebyserverrelativeurl('" internalId="_T5ho2YLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_get_items_files" prompt="Sharepoint_url_get_items_files?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/_api/web/lists/getbytitle('09')/items?$expand=File&amp;$select=File&amp;$filter=File_x0020_Type%20eq%20%27svg%27&quot;" internalId="_T5ho2oLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root" prompt="Sharepoint_url_root?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com/sites/SOS/_api/web/" internalId="_T5ho24LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_root_short" prompt="Sharepoint_url_root_short?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="https://groupeandine.sharepoint.com" internalId="_T5ho3ILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_end" prompt="Sharepoint_url_upload_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="')/Files?$expand=Files" internalId="_T5ho3YLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_mid" prompt="Sharepoint_url_upload_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="&quot;')/Files/add(url='&quot;" internalId="_T5ho3oLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_start" prompt="Sharepoint_url_upload_start?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="GetFolderByServerRelativeUrl('" internalId="_T5ho34LCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_stock" prompt="Sharepoint_url_upload_stock?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/Ext/1%20Fiche%20Immeuble/3%20Docs%20R%C3%A9glementaires/5%20Etats%20des%20stocks/" internalId="_T5ho4ILCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_end" prompt="Sharepoint_url_upload_to_sp_end?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="',overwrite=true)" internalId="_T5ho4YLCEfCC549pqnII7g"/>
+    <contextParameter comment="" name="Sharepoint_url_upload_to_sp_mid" prompt="Sharepoint_url_upload_to_sp_mid?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="/sites/SOS/09/" internalId="_T5ho4oLCEfCC549pqnII7g"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -323,7 +327,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="560" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_2" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="context.Sharepoint_url_root + context.Sharepoint_url_upload_start + context.Sharepoint_url_upload_to_sp_mid + ((String) globalMap.get(&quot;Site&quot;)) + context.Sharepoint_url_upload_subpath_stock + ((String) globalMap.get(&quot;Locataire&quot;)).replace(&quot; &quot;, &quot;%20&quot;) + context.Sharepoint_url_upload_mid + ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)).replace(&quot; &quot;, &quot;%20&quot;) + context.Sharepoint_url_upload_to_sp_end"/>
+    <elementParameter field="TEXT" name="URL" value="context.Sharepoint_url_root + context.Sharepoint_url_upload_start + context.Sharepoint_url_upload_to_sp_mid + ((String) globalMap.get(&quot;Site&quot;)) + context.Sharepoint_url_upload_stock + ((String) globalMap.get(&quot;Locataire&quot;)).replace(&quot; &quot;, &quot;%20&quot;) + context.Sharepoint_url_upload_mid + ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)).replace(&quot; &quot;, &quot;%20&quot;) + context.Sharepoint_url_upload_to_sp_end"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Authorization&quot;" id="0"/>
@@ -333,34 +337,6 @@
     <elementParameter field="TEXT" name="LABEL" value="Upload_to_sp"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tREST_2">
-      <column defaultValue="" key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="720" posY="520">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_3" show="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Body" id="0"/>
-      <elementValue elementRef="LENGTH" value="10" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ERROR_CODE" id="2"/>
-      <elementValue elementRef="LENGTH" value="10" id="3"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="Log_SP_Upload_Path"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_3">
       <column defaultValue="" key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
@@ -616,7 +592,7 @@
       <column comment="" key="false" length="-1" name="Lien_sharepoint" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1" expressionFilter="Relational.NOT(Relational.ISNULL(row1.Site)) &amp;&amp; &quot;X&quot;.equals(row1.Actif)" activateExpressionFilter="true">
         <mapperTableEntries name="Site" expression="row1.Site " type="id_String" nullable="true"/>
@@ -726,21 +702,6 @@
     <elementParameter field="TEXT" name="LABEL" value="Get_Email"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileInputRaw" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="760" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputRaw_1" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="((String)globalMap.get(&quot;tFileList_2_CURRENT_FILEPATH&quot;))"/>
-    <elementParameter field="RADIO" name="AS_STRING" value="true"/>
-    <elementParameter field="RADIO" name="AS_BYTEARRAY" value="false"/>
-    <elementParameter field="RADIO" name="AS_INPUTSTREAM" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileInputRaw_1">
-      <column defaultValue="" key="false" length="0" name="content" nullable="true" precision="0" sourceType="" type="id_Object" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
   <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-120" posY="1000">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_5" show="false"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.Email_Attachments_Repository"/>
@@ -776,6 +737,35 @@
     <elementParameter field="TEXT" name="LABEL" value="Delete_files"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileDelete_2"/>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="760" posY="520">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_3" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Body" id="0"/>
+      <elementValue elementRef="LENGTH" value="10" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ERROR_CODE" id="2"/>
+      <elementValue elementRef="LENGTH" value="10" id="3"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="Log_SP_Upload_Path"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_3">
+      <column defaultValue="" key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+    </metadata>
   </node>
   <connection connectorName="FLOW" label="Response" lineStyle="0" metaname="tHttpRequest_1" offsetLabelX="0" offsetLabelY="0" source="tHttpRequest_1" target="tLogRow_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -815,6 +805,7 @@
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tREST_2" offsetLabelX="0" offsetLabelY="0" source="tREST_2" target="tLogRow_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileList_2" offsetLabelX="0" offsetLabelY="0" source="tFileList_2" target="tHttpRequest_1">
@@ -938,11 +929,6 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputRaw_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
-  </subjob>
-  <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_5" show="false"/>
     <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Suppression des fichiers attachement temporaires"/>
@@ -951,6 +937,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_3" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
