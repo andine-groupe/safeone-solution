@@ -759,7 +759,6 @@
       <column comment="" key="false" length="250" name="ALERTE_SITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="ALERTE_UNITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="RUBRIQUE_ICPE_NON_IDENTIFIEE" nullable="true" pattern="" precision="0" sourceType="" type="id_Integer" originalLength="250" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STOCK" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_BigDecimal" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ICPE_MANQUANT" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_POIDS" nullable="true" pattern="" precision="-1" sourceType="" type="id_BigDecimal" originalLength="250" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TOTAL_VOL" nullable="true" pattern="" precision="-1" sourceType="" type="id_BigDecimal" originalLength="250" usefulColumn="true"/>
@@ -829,10 +828,9 @@
         <mapperTableEntries name="ALERTE_SITE" expression="Relational.ISNULL(row1.SITE) || row1.SITE.trim().isEmpty() ? &quot;Alerte Site&quot; : &quot;Pas d'alerte Site&quot; " type="id_String" nullable="true"/>
         <mapperTableEntries name="ALERTE_UNITE" expression="Relational.ISNULL(row1.NB_UNITE) || String.valueOf(row1.NB_UNITE).trim().isEmpty() ? &quot;Alerte Unité&quot; : &quot;Pas d'alerte Unité&quot; " type="id_String" nullable="true"/>
         <mapperTableEntries name="RUBRIQUE_ICPE_NON_IDENTIFIEE" expression="Relational.NOT(Relational.ISNULL(row1.RUBRIQUE_ICPE)) &amp;&amp; Relational.ISNULL(row5.RUBRIQUE_ICPE) ? 1 : 0 " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="STOCK" expression="Relational.ISNULL(row1.VOLUME_TOTAL) ? BigDecimal.valueOf(0) : row1.VOLUME_TOTAL.compareTo(BigDecimal.valueOf(0)) >0 ? row1.VOLUME_TOTAL.divide(BigDecimal.valueOf(1000)) : BigDecimal.valueOf(0) " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="ICPE_MANQUANT" expression="Relational.ISNULL(row1.RUBRIQUE_ICPE) || row1.RUBRIQUE_ICPE.trim().isEmpty() ? 1 : 0" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="TOTAL_POIDS" expression="Relational.ISNULL(row1.NB_PALETTE) || Relational.ISNULL(row1.POIDS_UNITAIRE) ? BigDecimal.valueOf(0) : new BigDecimal(row1.NB_UNITE).multiply(row1.POIDS_UNITAIRE) " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="TOTAL_VOL" expression="Relational.ISNULL(row1.NB_PALETTE) || Relational.ISNULL(row1.VOLUME_UNITAIRE) ? BigDecimal.valueOf(0) : new BigDecimal(row1.NB_UNITE).multiply(row1.VOLUME_UNITAIRE) " type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="TOTAL_POIDS" expression="Relational.ISNULL(row1.NB_UNITE) || Relational.ISNULL(row1.POIDS_UNITAIRE) ? BigDecimal.valueOf(0) : new BigDecimal(row1.NB_UNITE).multiply(row1.POIDS_UNITAIRE) " type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="TOTAL_VOL" expression="Relational.ISNULL(row1.NB_UNITE) || Relational.ISNULL(row1.VOLUME_UNITAIRE) ? BigDecimal.valueOf(0) : new BigDecimal(row1.NB_UNITE).multiply(row1.VOLUME_UNITAIRE) " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="VOLUME_FINAL" expression="&quot;m3&quot;.equals(row5.UNITE) ? row1.VOLUME_TOTAL : BigDecimal.valueOf(0) " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="POIDS_FINAL" expression="&quot;t&quot;.equals(row5.UNITE) ? row1.POIDS_TOTAL : BigDecimal.valueOf(0) " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="LIEN_FDS" expression="row1.LIEN_FDS " type="id_String" nullable="true"/>
@@ -1329,7 +1327,7 @@
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out2">
         <mapperTableEntries name="IDCLIENTSITE" expression="IDCLIENTSITE.IDCLIENTSITE " type="id_Long" nullable="true"/>
@@ -1389,7 +1387,7 @@
         <mapperTableEntries name="ALERTE_SITE" expression="out1.ALERTE_SITE " type="id_String" nullable="true"/>
         <mapperTableEntries name="ALERTE_UNITE" expression="out1.ALERTE_UNITE " type="id_String" nullable="true"/>
         <mapperTableEntries name="RUBRIQUE_ICPE_NON_IDENTIFIEE" expression="out1.RUBRIQUE_ICPE_NON_IDENTIFIEE " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="STOCK" expression="out1.STOCK " type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="STOCK" expression="Relational.ISNULL(out1.VOLUME_FINAL) &amp;&amp; Relational.ISNULL(out1.POIDS_FINAL) ? BigDecimal.valueOf(0) : out1.VOLUME_FINAL.compareTo(BigDecimal.valueOf(0)) >0 ? out1.VOLUME_FINAL : out1.POIDS_FINAL " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="ICPE_MANQUANT" expression="out1.ICPE_MANQUANT " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="TOTAL_POIDS" expression="out1.TOTAL_POIDS " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="TOTAL_VOL" expression="out1.TOTAL_VOL " type="id_BigDecimal" nullable="true"/>
@@ -1457,7 +1455,7 @@
         <mapperTableEntries name="ALERTE_SITE" expression="out1.ALERTE_SITE  " type="id_String" nullable="true"/>
         <mapperTableEntries name="ALERTE_UNITE" expression="out1.ALERTE_UNITE  " type="id_String" nullable="true"/>
         <mapperTableEntries name="RUBRIQUE_ICPE_NON_IDENTIFIEE" expression="out1.RUBRIQUE_ICPE_NON_IDENTIFIEE  " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="STOCK" expression="out1.STOCK  " type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="STOCK" expression="Relational.ISNULL(out1.VOLUME_FINAL) &amp;&amp; Relational.ISNULL(out1.POIDS_FINAL) ? BigDecimal.valueOf(0) : out1.VOLUME_FINAL.compareTo(BigDecimal.valueOf(0)) >0 ? out1.VOLUME_FINAL : out1.POIDS_FINAL " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="ICPE_MANQUANT" expression="out1.ICPE_MANQUANT  " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="TOTAL_POIDS" expression="out1.TOTAL_POIDS  " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="TOTAL_VOL" expression="out1.TOTAL_VOL  " type="id_BigDecimal" nullable="true"/>
@@ -1524,7 +1522,6 @@
         <mapperTableEntries name="ALERTE_SITE" type="id_String" nullable="true"/>
         <mapperTableEntries name="ALERTE_UNITE" type="id_String" nullable="true"/>
         <mapperTableEntries name="RUBRIQUE_ICPE_NON_IDENTIFIEE" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="STOCK" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="ICPE_MANQUANT" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="TOTAL_POIDS" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="TOTAL_VOL" type="id_BigDecimal" nullable="true"/>
