@@ -425,35 +425,30 @@
     <elementParameter field="TABLE" name="TRIMSELECT">
       <elementValue elementRef="SCHEMA_COLUMN" value="EMAIL" id="0"/>
       <elementValue elementRef="TRIM" value="false" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CLIENT" id="2"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CLIENT_SITE" id="2"/>
       <elementValue elementRef="TRIM" value="false" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE" id="4"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LOCATAIRE" id="4"/>
       <elementValue elementRef="TRIM" value="false" id="5"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOCATAIRE" id="6"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE" id="6"/>
       <elementValue elementRef="TRIM" value="false" id="7"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE" id="8"/>
-      <elementValue elementRef="TRIM" value="false" id="9"/>
     </elementParameter>
     <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
     <elementParameter field="TABLE" name="DATESELECT" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="EMAIL" id="0"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="1"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="2"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CLIENT" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CLIENT_SITE" id="3"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="4"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="5"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE" id="6"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LOCATAIRE" id="6"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="7"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="8"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOCATAIRE" id="9"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE" id="9"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="10"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="11"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CELLULE" id="12"/>
-      <elementValue elementRef="CONVERTDATE" value="false" id="13"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="14"/>
     </elementParameter>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="CUSTOM"/>
     <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
     <elementParameter field="CHECK" name="FORMAT_DATE_CELLS" value="true" show="false"/>
     <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
@@ -466,15 +461,13 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileInputExcel_1">
       <column comment="" key="false" length="250" name="EMAIL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CLIENT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="250" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="250" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="LOCATAIRE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="250" name="EMAIL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="CLIENT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="250" usefulColumn="true"/>
-      <column comment="" key="false" length="250" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="250" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="LOCATAIRE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -503,18 +496,17 @@
       <column comment="" key="false" length="250" name="CELLULE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="client_site">
         <mapperTableEntries name="EMAIL" expression="rls.EMAIL" type="id_String" nullable="true"/>
-        <mapperTableEntries name="CLIENT_SITE" expression="rls.CLIENT + &quot; - &quot; + rls.SITE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CLIENT_SITE" expression="rls.CLIENT_SITE" type="id_String" nullable="true"/>
         <mapperTableEntries name="LOCATAIRE" expression="rls.LOCATAIRE" type="id_String" nullable="true"/>
         <mapperTableEntries name="CELLULE" expression="rls.CELLULE" type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="rls" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="EMAIL" type="id_String" nullable="true"/>
-        <mapperTableEntries name="CLIENT" type="id_String" nullable="true"/>
-        <mapperTableEntries name="SITE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CLIENT_SITE" type="id_String" nullable="true"/>
         <mapperTableEntries name="LOCATAIRE" type="id_String" nullable="true"/>
         <mapperTableEntries name="CELLULE" type="id_String" nullable="true"/>
       </inputTables>
@@ -598,7 +590,7 @@
       <column comment="" key="false" length="250" name="CLIENT_SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="250" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="supp_espace" expressionFilter="Normalize_locataire.CLIENT_SITE != null" activateExpressionFilter="true" columnNameFilter="">
         <mapperTableEntries name="EMAIL" expression="StringHandling.TRIM(Normalize_locataire.EMAIL)" type="id_String" nullable="true"/>
@@ -641,7 +633,7 @@
       <column comment="" defaultValue="" key="false" length="250" name="CROIS_IDCLIENTSITE" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="fussionne" activateCondensedTool="true">
         <mapperTableEntries name="EMAIL" expression="supp_espace.EMAIL " type="id_String" nullable="true"/>
@@ -744,7 +736,7 @@
       <column comment="" defaultValue="" key="false" length="250" name="IDCLIENTSITE" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="filtre" expressionFilter="(&#xA;(&quot;*&quot;.equals(fussionne.LOCATAIRE) || fussionne.LOCATAIRE.equals(fussionne.CROIS_NOM_LOCATAIRE))&#xA;&amp;&amp; (&quot;*&quot;.equals(fussionne.CELLULE) || fussionne.CELLULE.equals(fussionne.CROIS_CELLULE))&#xA;&amp;&amp; (&quot;*&quot;.equals(fussionne.CLIENT_SITE) || fussionne.CLIENT_SITE.equals(fussionne.CROIS_NOM_CLIENT_SITE))&#xA;)" activateExpressionFilter="true">
         <mapperTableEntries name="EMAIL" expression="fussionne.EMAIL " type="id_String" nullable="true"/>
@@ -862,14 +854,14 @@
       <column comment="" key="false" length="-1" name="token" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="2200" posY="320">
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="2320" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBCommit_2" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
     <elementParameter field="CHECK" name="CLOSE" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_2"/>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="2400" posY="320">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="2480" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_4" show="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement dwh_secu_rls&quot;"/>
@@ -937,7 +929,7 @@
       <elementValue elementRef="TRACE_COLUMN" value="REGION" id="33"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="34"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="35"/>
-      <elementValue elementRef="TRACE_COLUMN" value="CLIENT" id="36"/>
+      <elementValue elementRef="TRACE_COLUMN" value="CLIENT_SITE" id="36"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="37"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="38"/>
     </elementParameter>
