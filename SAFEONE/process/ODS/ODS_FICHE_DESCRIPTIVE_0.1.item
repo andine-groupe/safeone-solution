@@ -965,7 +965,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_sommaire"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_2">
       <column comment="" key="false" length="22" name="QUALITE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1352,7 +1352,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_historique"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_5">
       <column comment="" key="false" length="29" name="DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1705,7 +1705,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_icpe"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_6">
       <column comment="" key="false" length="6" name="RUBRIQUE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1768,14 +1768,16 @@
       <elementValue elementRef="TRIM" value="false" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Local" id="2"/>
       <elementValue elementRef="TRIM" value="false" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire" id="4"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Rubrique" id="4"/>
       <elementValue elementRef="TRIM" value="false" id="5"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Surface" id="6"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire" id="6"/>
       <elementValue elementRef="TRIM" value="false" id="7"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Activite" id="8"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Surface" id="8"/>
       <elementValue elementRef="TRIM" value="false" id="9"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Duree_incendie_cellule_unitaire" id="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Activite" id="10"/>
       <elementValue elementRef="TRIM" value="false" id="11"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Duree_incendie_cellule_unitaire" id="12"/>
+      <elementValue elementRef="TRIM" value="false" id="13"/>
     </elementParameter>
     <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
     <elementParameter field="TABLE" name="DATESELECT" show="false">
@@ -1785,18 +1787,21 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Local" id="3"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="4"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="5"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire" id="6"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Rubrique" id="6"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="7"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="8"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Surface" id="9"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Locataire" id="9"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="10"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="11"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Activite" id="12"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Surface" id="12"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="13"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="14"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Duree_incendie_cellule_unitaire" id="15"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Activite" id="15"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="16"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="17"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Duree_incendie_cellule_unitaire" id="18"/>
+      <elementValue elementRef="CONVERTDATE" value="false" id="19"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="20"/>
     </elementParameter>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
@@ -1814,6 +1819,7 @@
     <metadata connector="FLOW" label="metadata" name="tFileInputExcel_7">
       <column comment="" key="false" length="1" name="Column0" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Local" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="Rubrique" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Surface" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Activite" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
@@ -1822,6 +1828,7 @@
     <metadata connector="REJECT" label="metadata" name="REJECT">
       <column comment="" key="false" length="1" name="Column0" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Local" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="Rubrique" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Locataire" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Surface" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Activite" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" type="id_String" usefulColumn="true"/>
@@ -1846,6 +1853,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="out6">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RUBRIQUE" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
@@ -1855,6 +1863,7 @@
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out6" expressionFilter="!Relational.ISNULL(row10.Local)&#xD;&#xA;&amp;&amp;!&quot;&quot;.equals(row10.Local)&#xD;&#xA;&amp;&amp;!&quot;0&quot;.equals(row10.Local)" activateExpressionFilter="true">
         <mapperTableEntries name="LOCAL_BATIMENT" expression="row10.Local " type="id_String" nullable="true"/>
+        <mapperTableEntries name="RUBRIQUE" expression="row10.Rubrique " type="id_String" nullable="true"/>
         <mapperTableEntries name="LOCATAIRE" expression="row10.Locataire " type="id_String" nullable="true"/>
         <mapperTableEntries name="DUREE_INCENDIE" expression="row10.Duree_incendie_cellule_unitaire " type="id_String" nullable="true"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;) " type="id_String" nullable="true"/>
@@ -1862,6 +1871,7 @@
       <inputTables sizeState="INTERMEDIATE" name="row10" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="Column0" type="id_Character" nullable="true"/>
         <mapperTableEntries name="Local" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Rubrique" type="id_String" nullable="true"/>
         <mapperTableEntries name="Locataire" type="id_String" nullable="true"/>
         <mapperTableEntries name="Surface" type="id_String" nullable="true"/>
         <mapperTableEntries name="Activite" type="id_String" nullable="true"/>
@@ -1886,6 +1896,7 @@
     <metadata connector="FLOW" name="ajout_site7">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RUBRIQUE" nullable="true" pattern="" precision="-1" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
@@ -1897,6 +1908,7 @@
       <outputTables sizeState="INTERMEDIATE" name="ajout_site7">
         <mapperTableEntries name="LOCAL_BATIMENT" expression="out6.LOCAL_BATIMENT" type="id_String" nullable="true"/>
         <mapperTableEntries name="LOCATAIRE" expression="out6.LOCATAIRE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="RUBRIQUE" expression="out6.RUBRIQUE " type="id_String" nullable="true"/>
         <mapperTableEntries name="DUREE_INCENDIE" expression="out6.DUREE_INCENDIE" type="id_String" nullable="true"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" expression="out6.LIEN_SHAREPOINT" type="id_String" nullable="true"/>
         <mapperTableEntries name="SITE" expression="out6.LIEN_SHAREPOINT.substring(out6.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out6.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " type="id_String" nullable="true"/>
@@ -1904,6 +1916,7 @@
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="out6" matchingMode="ALL_ROWS" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="LOCAL_BATIMENT" type="id_String" nullable="true"/>
+        <mapperTableEntries name="RUBRIQUE" type="id_String" nullable="true"/>
         <mapperTableEntries name="LOCATAIRE" type="id_String" nullable="true"/>
         <mapperTableEntries name="DUREE_INCENDIE" type="id_String" nullable="true"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" type="id_String" nullable="true"/>
@@ -1951,26 +1964,31 @@
       <elementValue elementRef="DELETE_KEY" value="false" id="7"/>
       <elementValue elementRef="UPDATABLE" value="true" id="8"/>
       <elementValue elementRef="INSERTABLE" value="true" id="9"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DUREE_INCENDIE" id="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUE" id="10"/>
       <elementValue elementRef="UPDATE_KEY" value="false" id="11"/>
       <elementValue elementRef="DELETE_KEY" value="false" id="12"/>
       <elementValue elementRef="UPDATABLE" value="true" id="13"/>
       <elementValue elementRef="INSERTABLE" value="true" id="14"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_SHAREPOINT" id="15"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DUREE_INCENDIE" id="15"/>
       <elementValue elementRef="UPDATE_KEY" value="false" id="16"/>
       <elementValue elementRef="DELETE_KEY" value="false" id="17"/>
       <elementValue elementRef="UPDATABLE" value="true" id="18"/>
       <elementValue elementRef="INSERTABLE" value="true" id="19"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE" id="20"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LIEN_SHAREPOINT" id="20"/>
       <elementValue elementRef="UPDATE_KEY" value="false" id="21"/>
       <elementValue elementRef="DELETE_KEY" value="false" id="22"/>
       <elementValue elementRef="UPDATABLE" value="true" id="23"/>
       <elementValue elementRef="INSERTABLE" value="true" id="24"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE" id="25"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SITE" id="25"/>
       <elementValue elementRef="UPDATE_KEY" value="false" id="26"/>
       <elementValue elementRef="DELETE_KEY" value="false" id="27"/>
       <elementValue elementRef="UPDATABLE" value="true" id="28"/>
       <elementValue elementRef="INSERTABLE" value="true" id="29"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IDSITE" id="30"/>
+      <elementValue elementRef="UPDATE_KEY" value="false" id="31"/>
+      <elementValue elementRef="DELETE_KEY" value="false" id="32"/>
+      <elementValue elementRef="UPDATABLE" value="true" id="33"/>
+      <elementValue elementRef="INSERTABLE" value="true" id="34"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -1978,11 +1996,12 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_flux_thermiques"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_7">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RUBRIQUE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
@@ -1991,6 +2010,7 @@
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="17" name="LOCAL_BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LOCATAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RUBRIQUE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="DUREE_INCENDIE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
@@ -2114,7 +2134,7 @@
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out7">
         <mapperTableEntries name="BATIMENT" expression="row11.Batiment == null &#xD;&#xA;&#x9;&#x9;&#x9;    ? &quot;&quot; &#xD;&#xA;&#x9;&#x9;&#x9;    : row11.Batiment.replaceAll(&quot;\\s*\\(.*\\)&quot;, &quot;&quot;) " type="id_String" nullable="true"/>
@@ -2159,7 +2179,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="ajout_site8" expressionFilter="out7.BATIMENT != null" activateExpressionFilter="true">
         <mapperTableEntries name="BATIMENT" expression="out7.BATIMENT" type="id_String" nullable="true"/>
@@ -2259,7 +2279,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_limites_stock"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_8">
       <column comment="" key="false" length="25" name="BATIMENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -2888,7 +2908,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_couverture"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
       <column comment="" key="false" length="0" name="ADRESSE_SITE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -3377,7 +3397,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_locataires"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_9">
       <column comment="" key="false" length="-1" name="NUMERO_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -3750,7 +3770,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_localisation"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_3">
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
@@ -3884,7 +3904,7 @@
       <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out2">
-        <mapperTableEntries name="LOCAL" expression="row6.Local " type="id_String" nullable="true"/>
+        <mapperTableEntries name="LOCAL" expression="row6.Local.substring(0,1).toUpperCase() + row6.Local.substring(1).toLowerCase() " type="id_String" nullable="true"/>
         <mapperTableEntries name="LOCATAIRE" expression="row6.Locataire " type="id_String" nullable="true"/>
         <mapperTableEntries name="LATITUDE" expression="row6.Latitude " type="id_Float" nullable="true"/>
         <mapperTableEntries name="LONGITUDE" expression="row6.Longitude " type="id_Float" nullable="true"/>
@@ -4017,7 +4037,7 @@
     <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
     <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
+    <elementParameter field="TEXT" name="LABEL" value="ods_fiche_descriptive_description_site"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_4">
       <column comment="" key="false" length="17" name="LOCAL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -4303,6 +4323,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="LOCATAIRE" id="3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
+      <elementValue elementRef="TRACE_COLUMN" value="RUBRIQUE" id="6"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="out6" show="false"/>
@@ -4318,6 +4341,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="LOCATAIRE" id="6"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
+      <elementValue elementRef="TRACE_COLUMN" value="RUBRIQUE" id="9"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="ajout_site7" show="false"/>

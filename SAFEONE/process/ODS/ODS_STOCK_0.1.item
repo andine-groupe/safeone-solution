@@ -827,7 +827,7 @@
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1" expressionFilter="Relational.NOT(Relational.ISNULL(row1.Cellule))" activateExpressionFilter="true">
         <mapperTableEntries name="SITE" expression="row1.Site " type="id_String" nullable="true"/>
-        <mapperTableEntries name="CELLULE" expression="row1.Cellule " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CELLULE" expression="row1.Cellule .substring(0,1).toUpperCase() + row1.Cellule .substring(1).toLowerCase() " type="id_String" nullable="true"/>
         <mapperTableEntries name="DESIGNATION" expression="row1.Designation_commerciale " type="id_String" nullable="true"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" expression="row1.Rubrique_ICPE " type="id_String" nullable="true"/>
         <mapperTableEntries name="POIDS_UNITAIRE" expression="(row1.Poids_unitaire__unite_identique == null&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; || row1.Poids_unitaire__unite_identique.trim().equals(&quot;&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; || !row1.Poids_unitaire__unite_identique.trim().replace(&quot;,&quot;, &quot;.&quot;).matches(&quot;\\d+(\\.\\d+)?&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;    ? null&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;    : new BigDecimal(row1.Poids_unitaire__unite_identique.trim().replace(&quot;,&quot;, &quot;.&quot;)) " type="id_BigDecimal" nullable="true"/>
@@ -971,7 +971,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="ajout_site">
         <mapperTableEntries name="SITE" expression="Relational.ISNULL(out1.SITE) ? out1.LIEN_SHAREPOINT.substring(out1.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out1.LIEN_SHAREPOINT.indexOf(&quot;Ext&quot;) - 1) : out1.SITE " type="id_String" nullable="true"/>
@@ -1998,7 +1998,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="copyOfout2">
         <mapperTableEntries name="ALLEE" expression="row5.ALLEE " type="id_String" nullable="true"/>
@@ -2527,7 +2527,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var"/>
       <outputTables sizeState="INTERMEDIATE" name="ajout_site2">
         <mapperTableEntries name="ALLEE" expression="out2.ALLEE" type="id_String" nullable="true"/>
