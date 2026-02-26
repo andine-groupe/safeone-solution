@@ -3901,10 +3901,10 @@
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out2">
-        <mapperTableEntries name="LOCAL" expression="row6.Local.substring(0,1).toUpperCase() + row6.Local.substring(1).toLowerCase() " type="id_String" nullable="true"/>
+        <mapperTableEntries name="LOCAL" expression="row6.Local != null &amp;&amp; !row6.Local.isEmpty() &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;? row6.Local.substring(0,1).toUpperCase() + row6.Local.substring(1).toLowerCase()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;: null " type="id_String" nullable="true"/>
         <mapperTableEntries name="LOCATAIRE" expression="row6.Locataire " type="id_String" nullable="true"/>
         <mapperTableEntries name="LATITUDE" expression="row6.Latitude " type="id_Float" nullable="true"/>
         <mapperTableEntries name="LONGITUDE" expression="row6.Longitude " type="id_Float" nullable="true"/>

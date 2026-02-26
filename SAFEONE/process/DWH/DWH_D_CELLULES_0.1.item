@@ -90,7 +90,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="480" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="440" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -540,7 +540,7 @@
         <mapperTableEntries name="VOLUME_TOTAL" expression="Relational.ISNULL(stocks.VOLUME_TOTAL) ? BigDecimal.valueOf(0) : stocks.VOLUME_TOTAL " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="DECHETS_LIQUIDES_INFLAMMABLES_HP3" expression="Relational.ISNULL(stocks.DECHETS_LIQUIDES_INFLAMMABLES_HP3) ? BigDecimal.valueOf(0) : stocks.DECHETS_LIQUIDES_INFLAMMABLES_HP3 " type="id_BigDecimal" nullable="true"/>
       </outputTables>
-      <inputTables sizeState="INTERMEDIATE" name="description_site" expressionFilter="description_site.LOCAL != null" activateExpressionFilter="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="description_site" expressionFilter="description_site.LOCAL != null &amp;&amp; description_site.LOCATAIRE != null " activateExpressionFilter="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="LOCAL" expression="stocks.CELLULE" type="id_String" nullable="true" operator="="/>
         <mapperTableEntries name="LATITUDE" type="id_String" nullable="true"/>
         <mapperTableEntries name="LONGITUDE" type="id_String" nullable="true"/>
