@@ -510,7 +510,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="DATE" expression="(row1.DATE != null  &amp;&amp; !row1.DATE.equalsIgnoreCase(&quot;Date&quot;) &amp;&amp; row1.DATE.length() > 0) &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;? TalendDate.parseDateLocale(&quot;EEE MMM dd HH:mm:ss ZZZZ yyyy&quot;,row1.DATE, &quot;en&quot;) &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;: null " type="id_Date" nullable="true"/>
@@ -557,7 +557,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out">
         <mapperTableEntries name="IDCLIENTSITE" expression="IDCLIENTSITE.IDCLIENTSITE " type="id_Long" nullable="true"/>
@@ -573,7 +573,7 @@
         <mapperTableEntries name="TITRE" type="id_String" nullable="true"/>
         <mapperTableEntries name="IDSITE" type="id_String" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="IDCLIENTSITE" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="IDCLIENTSITE" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE" innerJoin="true">
         <mapperTableEntries name="IDSITE" expression="out1.IDSITE " type="id_String" nullable="true" operator="="/>
         <mapperTableEntries name="IDCLIENTSITE" expression="" type="id_Long" nullable="true"/>
       </inputTables>
