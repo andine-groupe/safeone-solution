@@ -90,7 +90,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="40" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="80" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -447,7 +447,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA; &#x9;SITE, &#xA; &#x9;CELLULE, &#xA;&#x9;DESIGNATION, &#xA;  &#x9;RUBRIQUE_ICPE, &#xA;  &#x9;POIDS_UNITAIRE, &#xA; &#x9;VOLUME_UNITAIRE, &#xA;  &#x9;NB_UNITE, &#xA;  &#x9;NB_PALETTE, &#xA; &#x9;POIDS_TOTAL, &#xA; &#x9;VOLUME_TOTAL, &#xA;  &#x9;DEGRE, &#xA;  &#x9;CONTENANCE_M3_UNITAIRE, &#xA;  &#x9;NB_UNITE_ALCOOL, &#xA;  &#x9;NB_PALETTE_ALCOOL, &#xA;  &#x9;CONTENANCE_M3_TOTALE, &#xA;  &#x9;ALLEE, &#xA;  &#x9;RACK, &#xA;  &#x9;EMPLACEMENT, &#xA;  &#x9;TYPE_CONDITIONNEMENT, &#xA;  &#x9;ETAT_MATIERE, &#xA;  &#x9;TYPOLOGIE_PRODUIT, &#xA;  &#x9;POINT_ECLAIR, &#xA;  &#x9;FUMEES_DECOMPOSITION, &#xA;  &#x9;NUMERO_ONU, &#xA;  &#x9;CLASSE, &#xA;  &#x9;GROUPE_EMBALLAGE, &#xA;  &#x9;CONSTITUANT_1, &#xA;  &#x9;CONSTITUANT_2, &#xA;  &#x9;DISPOSITIONS_SPECIALES_ADR, &#xA;  &#x9;QUANTITES_EXCEPTEES_ADR, &#xA;  &#x9;QUANTITES_LIMITEES_ADR, &#xA; &#x9; CODE_RESTRICTION_TUNNEL_ADR, &#xA; &#x9; POLLUANT_MARIN, &#xA; &#x9; DISPOSITIONS_SPECIALES_IMDG, &#xA;&#x9; QUANTITES_EXCEPTEES_IMDG, &#xA;&#x9; QUANTITES_LIMITEES_IMDG, &#xA;  &#x9; DISPOSITIONS_SPECIALES_IATA, &#xA;  &#x9; QUANTITES_EXCEPTEES_IATA, &#xA;  &#x9; QUANTITES_LIMITEES_IATA, &#xA;  &#x9; CODE_FDS, &#xD;&#xA;&#x9; DECHETS_LIQUIDES_INFLAMMABLES_HP3,&#xD;&#xA;&#x9; LIEN_FDS,&#xA;  &#x9; IDSITE,&#xA;  &#x9; NOM_LOCATAIRE,&#xD;&#xA;&#x9; NOM_FICHIER&#xA;FROM `ods_stocks`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA; &#x9;SITE, &#xA; &#x9;UPPER(CELLULE) AS CELLULE, &#xA;&#x9;DESIGNATION, &#xA;  &#x9;RUBRIQUE_ICPE, &#xA;  &#x9;POIDS_UNITAIRE, &#xA; &#x9;VOLUME_UNITAIRE, &#xA;  &#x9;NB_UNITE, &#xA;  &#x9;NB_PALETTE, &#xA; &#x9;POIDS_TOTAL, &#xA; &#x9;VOLUME_TOTAL, &#xA;  &#x9;DEGRE, &#xA;  &#x9;CONTENANCE_M3_UNITAIRE, &#xA;  &#x9;NB_UNITE_ALCOOL, &#xA;  &#x9;NB_PALETTE_ALCOOL, &#xA;  &#x9;CONTENANCE_M3_TOTALE, &#xA;  &#x9;ALLEE, &#xA;  &#x9;RACK, &#xA;  &#x9;EMPLACEMENT, &#xA;  &#x9;TYPE_CONDITIONNEMENT, &#xA;  &#x9;ETAT_MATIERE, &#xA;  &#x9;TYPOLOGIE_PRODUIT, &#xA;  &#x9;POINT_ECLAIR, &#xA;  &#x9;FUMEES_DECOMPOSITION, &#xA;  &#x9;NUMERO_ONU, &#xA;  &#x9;CLASSE, &#xA;  &#x9;GROUPE_EMBALLAGE, &#xA;  &#x9;CONSTITUANT_1, &#xA;  &#x9;CONSTITUANT_2, &#xA;  &#x9;DISPOSITIONS_SPECIALES_ADR, &#xA;  &#x9;QUANTITES_EXCEPTEES_ADR, &#xA;  &#x9;QUANTITES_LIMITEES_ADR, &#xA; &#x9; CODE_RESTRICTION_TUNNEL_ADR, &#xA; &#x9; POLLUANT_MARIN, &#xA; &#x9; DISPOSITIONS_SPECIALES_IMDG, &#xA;&#x9; QUANTITES_EXCEPTEES_IMDG, &#xA;&#x9; QUANTITES_LIMITEES_IMDG, &#xA;  &#x9; DISPOSITIONS_SPECIALES_IATA, &#xA;  &#x9; QUANTITES_EXCEPTEES_IATA, &#xA;  &#x9; QUANTITES_LIMITEES_IATA, &#xA;  &#x9; CODE_FDS, &#xD;&#xA;&#x9; DECHETS_LIQUIDES_INFLAMMABLES_HP3,&#xD;&#xA;&#x9; LIEN_FDS,&#xA;  &#x9; IDSITE,&#xA;  &#x9; NOM_LOCATAIRE,&#xD;&#xA;&#x9; NOM_FICHIER&#xA;FROM `ods_stocks`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -768,12 +768,12 @@
       <column comment="" key="false" length="-1" name="DATE_FICHIER" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="SITE" expression="row1.SITE " type="id_String" nullable="true"/>
         <mapperTableEntries name="CELLULE" expression="row1.CELLULE " type="id_String" nullable="true"/>
-        <mapperTableEntries name="DESIGNATION" expression="row1.DESIGNATION.toUpperCase()" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DESIGNATION" expression="Relational.ISNULL(row1.DESIGNATION) ? &quot;&quot; : row1.DESIGNATION.toUpperCase() " type="id_String" nullable="true"/>
         <mapperTableEntries name="RUBRIQUE_ICPE" expression="&quot;2663&quot;.equals(row1.RUBRIQUE_ICPE) ? &quot;2663-2&quot; : &quot;2714&quot;.equals(row1.RUBRIQUE_ICPE) ? &quot;2714.2&quot; : &quot;4718&quot;.equals(row1.RUBRIQUE_ICPE) ? &quot;4718.1&quot; : &quot;1185&quot;.equals(row1.RUBRIQUE_ICPE) ? &quot;1185-3&quot; : row1.RUBRIQUE_ICPE " type="id_String" nullable="true"/>
         <mapperTableEntries name="POIDS_UNITAIRE" expression="row1.POIDS_UNITAIRE " type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="VOLUME_UNITAIRE" expression="row1.VOLUME_UNITAIRE " type="id_BigDecimal" nullable="true"/>
@@ -1328,7 +1328,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out2">
         <mapperTableEntries name="IDCLIENTSITE" expression="IDCLIENTSITE.IDCLIENTSITE " type="id_Long" nullable="true"/>
@@ -1710,7 +1710,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out">
         <mapperTableEntries name="IDCLIENTSITE" expression="out2.IDCLIENTSITE " type="id_Long" nullable="true"/>
@@ -1875,7 +1875,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xD;&#xA;&#x9;IDCELLULE,&#xD;&#xA;&#x9;IDSITE,&#xD;&#xA;&#x9;CELLULE,&#xD;&#xA;&#x9;NOM_LOCATAIRE,&#xD;&#xA;&#x9;RUBRIQUE_ICPE&#xD;&#xA;FROM dwh_d_cellules&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xD;&#xA;&#x9;IDCELLULE,&#xD;&#xA;&#x9;IDSITE,&#xD;&#xA;&#x9;UPPER(CELLULE) AS CELLULE,&#xD;&#xA;&#x9;NOM_LOCATAIRE,&#xD;&#xA;&#x9;RUBRIQUE_ICPE&#xD;&#xA;FROM dwh_d_cellules&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -2116,7 +2116,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out3">
         <mapperTableEntries name="IDCLIENTSITE" expression="out.IDCLIENTSITE" type="id_Long" nullable="true"/>
@@ -2281,7 +2281,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;&#x9;IDARTICLE,&#xD;&#xA;&#x9;IDSITE,&#xD;&#xA;&#x9;NOM_LOCATAIRE,&#xD;&#xA;&#x9;DESIGNATION,&#xD;&#xA;&#x9;CELLULE&#xD;&#xA;FROM dwh_d_articles&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;&#x9;IDARTICLE,&#xD;&#xA;&#x9;IDSITE,&#xD;&#xA;&#x9;NOM_LOCATAIRE,&#xD;&#xA;&#x9;DESIGNATION,&#xD;&#xA;&#x9;UPPER(CELLULE) AS CELLULE&#xD;&#xA;FROM dwh_d_articles&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -2477,7 +2477,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out4">
         <mapperTableEntries name="IDCLIENTSITE" expression="out3.IDCLIENTSITE " type="id_Long" nullable="true"/>
@@ -2876,7 +2876,7 @@
       <column comment="" key="false" length="-1" name="CONCAT_CELLULE_ICPE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out5">
         <mapperTableEntries name="IDCLIENTSITE" expression="out4.IDCLIENTSITE " type="id_Long" nullable="true"/>
@@ -3726,7 +3726,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#xD;&#xA;BATIMENT,&#xD;&#xA;&#x9;RUBRIQUE_ICPE,&#xD;&#xA;&#x9;QUANTITE_LIMITE,&#xD;&#xA;&#x9;UNITE,&#xD;&#xA;&#x9;IDSITE&#xD;&#xA;from ods_fiche_descriptive_limites_stock&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#xD;&#xA;UPPER(BATIMENT) AS BATIMENT,&#xD;&#xA;&#x9;RUBRIQUE_ICPE,&#xD;&#xA;&#x9;QUANTITE_LIMITE,&#xD;&#xA;&#x9;UNITE,&#xD;&#xA;&#x9;IDSITE&#xD;&#xA;from ods_fiche_descriptive_limites_stock&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
