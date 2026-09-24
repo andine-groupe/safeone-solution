@@ -70,7 +70,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="280" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="440" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -274,7 +274,7 @@
       <column defaultValue="" key="false" length="8" name="duration" nullable="true" precision="0" sourceType="" type="id_Long" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-200" posY="200">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-400" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_1" show="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Début traitement ods_suivi_dechets&quot;"/>
@@ -296,68 +296,6 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPostjob_1" show="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-  </node>
-  <node componentName="tWebServiceInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-200" posY="360">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWebServiceInput_1" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_iCkS4LgAEfGqkaCynxLP-w" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_iCkS4LgAEfGqkaCynxLP-w - metadata" show="false"/>
-    <elementParameter field="TEXT" name="ENDPOINT" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/09/Forms/AllItems.aspx&quot;"/>
-    <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
-    <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;dev.power.bi@andine-groupe.com&quot;"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:v4/5ccxzXUoNYKIdJPGaOo7XTP34C+lj7M2lxo1/fGlxwtzdNZSXdnnb1mg="/>
-    <elementParameter field="CHECK" name="WIN_AUTH" value="false"/>
-    <elementParameter field="TEXT" name="DOMAIN" value="&quot;windows_domain&quot;" show="false"/>
-    <elementParameter field="CHECK" name="USE_PROXY" value="false"/>
-    <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;127.0.0.1&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PROXY_PORT" value="&quot;8080&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:oj+7DxGG0VWyEkfFjxfskXO6PB56cVDlksA+j3y9" show="false"/>
-    <elementParameter field="CHECK" name="NEED_SSL_TO_TRUSTSERVER" value="false"/>
-    <elementParameter field="TEXT" name="SSL_TRUSTSERVER_TRUSTSTORE" value="&quot;C:/clientTrustStore.trustStore&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" value="enc:system.encryption.key.v1:8nEQEaC6jTkqIdvns7Fp7dNk6ldXpM4Ox5vNi43C7+40FeAJKko=" show="false"/>
-    <elementParameter field="TEXT" name="SSL_TRUSTSERVER_KEYSTORE" value="&quot;C:/clientTrustStore.keyStore&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_KEYSTOREPASSWORD" value="enc:system.encryption.key.v1:PASdAZBQJ4K67eAK+YLvjla0dF/gNoW9pGhfrQIcZYU/0JOGGyg=" show="false"/>
-    <elementParameter field="TEXT" name="METHOD" value="&quot;AddInteger&quot;"/>
-    <elementParameter field="TEXT" name="TIMEOUT" value="20"/>
-    <elementParameter field="TABLE" name="PARAMS"/>
-    <elementParameter field="CLOSED_LIST" name="API" value="AXIS"/>
-    <elementParameter field="CHECK" name="ADVANCED_USE" value="false"/>
-    <elementParameter field="WSDL2JAVA" name="WSDL2Java" value="false" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="&#xA;//==============================================================================&#xA;//example code for : http://www.deeptraining.com/webservices/weather.asmx?WSDL&#xA;//==============================================================================&#xA;/*&#xA;routines.WeatherSoap_PortType weatherSoap = new routines.WeatherLocator().getWeatherSoap();&#xA;&#xA;routines.WeatherSoap_BindingStub stub = (routines.WeatherSoap_BindingStub)weatherSoap;&#xA;&#xA;//stub.setUsername(String username);&#xA;//stub.setPassword(String password);&#xA;&#xA;//stub.setTimeout(int timeout);&#xA;&#xA;//AxisProperties.setProperty(&quot;http.proxyHost&quot;, proxyHost);&#xA;//AxisProperties.setProperty(&quot;http.proxyPort&quot;, proxyPort);&#xA;//AxisProperties.setProperty(&quot;http.proxyUser&quot;, proxyUser);&#xA;//AxisProperties.setProperty(&quot;http.proxyPassword&quot;, proxyPassword);&#xA;&#xA;String city = &quot;Paris&quot;;&#xA;String result = weatherSoap.getWeather(city);&#xA;&#xA;output_row.weather = result;&#xA;*/&#xA;&#xA;//==============================================================================&#xA;//example code for : http://localhost:8080/talendJob_0.1/services/talendJob?wsdl&#xA;//==============================================================================&#xA;/*&#xA;routines.TalendJob_PortType talendJob = new routines.TalendJobServiceLocator().getTalendJob();&#xA;&#xA;routines.TalendJobSoapBindingStub stub = (routines.TalendJobSoapBindingStub)talendJob;&#xA;&#xA;//stub.setUsername(String username);&#xA;//stub.setPassword(String password);&#xA;&#xA;//stub.setTimeout(int timeout);&#xA;&#xA;//AxisProperties.setProperty(&quot;http.proxyHost&quot;, proxyHost);&#xA;//AxisProperties.setProperty(&quot;http.proxyPort&quot;, proxyPort);&#xA;//AxisProperties.setProperty(&quot;http.proxyUser&quot;, proxyUser);&#xA;//AxisProperties.setProperty(&quot;http.proxyPassword&quot;, proxyPassword);&#xA;&#xA;String[] args = new String[]{};&#xA;String[][] result = talendJob.runJob(args);&#xA;&#xA;for(int i = 0; i &lt; result.length; i++){&#xA;&#xA;&#x9;// output_row.name = result[i][0];&#xA;&#x9;// output_row.address = result[i][1];&#xA;&#x9;// output_row.phone = result[i][2];&#xA;*/&#xA;&#x9;&#x9;    " show="false"/>
-    <elementParameter field="CLOSED_LIST" name="MATCHBRACKETS" value="" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="Sharepoint"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="metadata" name="tWebServiceInput_1">
-      <column comment="" key="false" length="0" name="newColumn" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="360">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_2" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="newColumn" id="0"/>
-      <elementValue elementRef="LENGTH" value="10" id="1"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="metadata" name="tLogRow_2">
-      <column comment="" key="false" length="0" name="newColumn" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
-    </metadata>
   </node>
   <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1040" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogCatcher_1" show="false"/>
@@ -454,7 +392,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_2"/>
   </node>
-  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="0" posY="200">
+  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-200" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_1" show="false"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.Sharepoint_file_path"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
@@ -476,7 +414,7 @@
     <elementParameter field="CHECK" name="FORMAT_FILEPATH_TO_SLASH" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="200">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String clientSitePath = (String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;);&#xD;&#xA;&#xD;&#xA;System.out.println(&quot;Chemin complet : &quot; + clientSitePath);&#xA;&#xA;if (clientSitePath != null) {&#xA;// Utiliser le séparateur de fichiers du système d'exploitation&#xA;String separator = java.io.File.separator;&#xA;&#xA;// Trouver la position de &quot;09\\&quot; (en ajoutant 3 pour sa longueur)&#xA;int startIndex = clientSitePath.indexOf(&quot;09&quot; + separator) + (&quot;09&quot; + separator).length();&#xA;&#xA;// Trouver la position du prochain séparateur de dossier &quot;\\&quot;&#xA;int endIndex = clientSitePath.indexOf(separator, startIndex);&#xA;&#xA;// Extraire la portion souhaitée pour le champs Client - Site&#xA;String clientSite = clientSitePath.substring(startIndex, endIndex);&#xA;&#xA;// Trouver la position de la dernière barre oblique inverse &quot;\\&quot; avant le nom du fichier&#xA;    int lastBackslashIndex = clientSitePath.lastIndexOf(separator);&#xA;&#xA;// Extraire le nom du locataire (dossier juste avant le fichier)&#xA;String locataire = clientSitePath.substring(clientSitePath.lastIndexOf(separator, lastBackslashIndex - 1) + 1, lastBackslashIndex);&#xA;&#xA;System.out.println(&quot;Début itération &quot; + clientSite + &quot;/&quot; + locataire);&#xA;} else {&#xA;    System.out.println(&quot;Le chemin 'CLIENTSITE' est nul.&quot;);&#xA;}"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -494,44 +432,6 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tSQLTemplate" componentVersion="0.102" offsetLabelX="2" offsetLabelY="-7" posX="680" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLTemplate_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DBTYPE" value="MYSQL"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_AS400" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_DB2" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_FIREBIRD" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_GREENPLUM" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_HIVE" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_INGRES" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_INTERBASE" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_MSSQL" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_MYSQL" value="tDBConnection_1"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_DBORACLE" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_PARACCEL" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_POSTGRE" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_SQLITE" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_SYBASE" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_TERADATA" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_VERTICA" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_NETEZZA" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_SNOWFLAKE" value="" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION_DELTALAKE" value="" show="false"/>
-    <elementParameter field="TEXT" name="DATABASE_NAME" value="context.MySQL_ODS_Database"/>
-    <elementParameter field="TEXT" name="TABLE_NAME" value="&quot;ods_suivi_dechets&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Generic" show="false"/>
-    <elementParameter field="TABLE" name="SQLPATTERN_VALUE">
-      <elementValue elementRef="SQLPATTERNLIST" value="_WxBK8NF0Ee6CbJpMzOEP3w--DELETE" id="0"/>
-      <elementValue elementRef="SQLPATTERNLIST" value="_7BBvIMG3Ee64T6b5AyYjCA--Commit" id="1"/>
-    </elementParameter>
-    <metadata connector="TABLE" name="tSQLTemplate_1">
-      <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATE_MAJ_FICHIER" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="200" posY="360">
@@ -935,7 +835,7 @@
     <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
     <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:863Z6a8AyCi/mvVlruGwQkXZGzdbW7PUnczEH8gfYxDrqJMQrJRWCdFdYeOrG8WzNdVDkRGv"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_suivi_dechets&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
@@ -1082,9 +982,6 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="2" source="tPrejob_1" target="tDBConnection_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tSQLTemplate_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk5" show="false"/>
-  </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
@@ -1097,11 +994,6 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tWebServiceInput_1" offsetLabelX="0" offsetLabelY="0" source="tWebServiceInput_1" target="tLogRow_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tLogCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tLogCatcher_1" target="tLogRow_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -1183,7 +1075,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
   </connection>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
@@ -1209,14 +1101,9 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPostjob_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWebServiceInput_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
   <subjob>
@@ -1237,11 +1124,6 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLTemplate_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
