@@ -31,7 +31,7 @@
     <contextParameter comment="" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306" internalId="_muAOyfDGEe6LmuxCY0psvQ"/>
     <contextParameter comment="" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com" internalId="_muAOyvDGEe6LmuxCY0psvQ"/>
     <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_muAOy_DGEe6LmuxCY0psvQ"/>
-    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="/home/adnadm/data/Andine/param/" internalId="_muAOzPDGEe6LmuxCY0psvQ"/>
+    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/" internalId="_muAOzPDGEe6LmuxCY0psvQ"/>
     <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_muAOzfDGEe6LmuxCY0psvQ"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="Int">
@@ -301,9 +301,9 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWebServiceInput_1" show="false"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_cibb8NpVEfCi6flOKOwdGw" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_V9TP0-NmEfG-osdtMcwqOw" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_cibb8NpVEfCi6flOKOwdGw - metadata" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_V9TP0-NmEfG-osdtMcwqOw - metadata" show="false"/>
     <elementParameter field="TEXT" name="ENDPOINT" value="&quot;https://groupeandine.sharepoint.com/sites/SOS/09/Forms/AllItems.aspx&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;dev.power.bi@andine-groupe.com&quot;"/>
@@ -478,7 +478,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String clientSitePath = (String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;);&#xA;&#xA;if (clientSitePath != null) {&#xA;// Utiliser le séparateur de fichiers du système d'exploitation&#xA;String separator = java.io.File.separator;&#xA;&#xA;// Trouver la position de &quot;09\\&quot; (en ajoutant 3 pour sa longueur)&#xA;int startIndex = clientSitePath.indexOf(&quot;09&quot; + separator) + (&quot;09&quot; + separator).length();&#xA;&#xA;// Trouver la position du prochain séparateur de dossier &quot;\\&quot;&#xA;int endIndex = clientSitePath.indexOf(separator, startIndex);&#xA;&#xA;// Extraire la portion souhaitée pour le champs Client - Site&#xA;String clientSite = clientSitePath.substring(startIndex, endIndex);&#xA;&#xA;// Trouver la position de la dernière barre oblique inverse &quot;\\&quot; avant le nom du fichier&#xA;    int lastBackslashIndex = clientSitePath.lastIndexOf(separator);&#xA;&#xA;// Extraire le nom du locataire (dossier juste avant le fichier)&#xA;String locataire = clientSitePath.substring(clientSitePath.lastIndexOf(separator, lastBackslashIndex - 1) + 1, lastBackslashIndex);&#xA;&#xA;System.out.println(&quot;Début itération &quot; + clientSite + &quot;/&quot; + locataire);&#xA;} else {&#xA;    System.out.println(&quot;Le chemin 'CLIENTSITE' est nul.&quot;);&#xA;}"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String clientSitePath = (String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;);&#xD;&#xA;&#xD;&#xA;System.out.println(&quot;Chemin complet : &quot; + clientSitePath);&#xA;&#xA;if (clientSitePath != null) {&#xA;// Utiliser le séparateur de fichiers du système d'exploitation&#xA;String separator = java.io.File.separator;&#xA;&#xA;// Trouver la position de &quot;09\\&quot; (en ajoutant 3 pour sa longueur)&#xA;int startIndex = clientSitePath.indexOf(&quot;09&quot; + separator) + (&quot;09&quot; + separator).length();&#xA;&#xA;// Trouver la position du prochain séparateur de dossier &quot;\\&quot;&#xA;int endIndex = clientSitePath.indexOf(separator, startIndex);&#xA;&#xA;// Extraire la portion souhaitée pour le champs Client - Site&#xA;String clientSite = clientSitePath.substring(startIndex, endIndex);&#xA;&#xA;// Trouver la position de la dernière barre oblique inverse &quot;\\&quot; avant le nom du fichier&#xA;    int lastBackslashIndex = clientSitePath.lastIndexOf(separator);&#xA;&#xA;// Extraire le nom du locataire (dossier juste avant le fichier)&#xA;String locataire = clientSitePath.substring(clientSitePath.lastIndexOf(separator, lastBackslashIndex - 1) + 1, lastBackslashIndex);&#xA;&#xA;System.out.println(&quot;Début itération &quot; + clientSite + &quot;/&quot; + locataire);&#xA;} else {&#xA;    System.out.println(&quot;Le chemin 'CLIENTSITE' est nul.&quot;);&#xA;}"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out_test" name="tJava_1">
@@ -548,11 +548,9 @@
     <elementParameter field="TEXT" name="FOOTER" value="0"/>
     <elementParameter field="TEXT" name="LIMIT" value=""/>
     <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
-    <elementParameter field="TEXT" name="FIRST_COLUMN" value="2"/>
+    <elementParameter field="TEXT" name="FIRST_COLUMN" value="3"/>
     <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_p-RkcMAlEe67GN6DA98bkw - metadata" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_p-RkcMAlEe67GN6DA98bkw - metadata" show="false"/>
     <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
@@ -789,7 +787,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out_test" name="out_test">
-      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="DESIGNATION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_NOMENCLATURE_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="QTE_DECHET_SORTANT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -868,7 +866,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out_test" name="ajout_site">
       <column comment="" key="false" length="500" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="DESIGNATION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_NOMENCLATURE_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="QTE_DECHET_SORTANT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -879,7 +877,7 @@
       <column comment="" key="false" length="500" name="NOM_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -889,7 +887,7 @@
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="ajout_site">
         <mapperTableEntries name="NOM_LOCATAIRE" expression="StringHandling.UPCASE(out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;Dechets&quot;) + 8)) " type="id_String" nullable="true"/>
-        <mapperTableEntries name="DATE_EXPEDITION_DECHET" expression="out_test.DATE_EXPEDITION_DECHET " type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_EXPEDITION_DECHET" expression="out_test.DATE_EXPEDITION_DECHET != null&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; &amp;&amp; out_test.DATE_EXPEDITION_DECHET.trim().matches(&quot;\\d{2}/\\d{2}/\\d{4}&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;    ? TalendDate.parseDate(&quot;dd/MM/yyyy&quot;, out_test.DATE_EXPEDITION_DECHET.trim())&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;    : null " type="id_Date" nullable="true"/>
         <mapperTableEntries name="DESIGNATION_DECHET" expression="out_test.DESIGNATION_DECHET" type="id_String" nullable="true"/>
         <mapperTableEntries name="CODE_NOMENCLATURE_DECHET" expression="out_test.CODE_NOMENCLATURE_DECHET" type="id_String" nullable="true"/>
         <mapperTableEntries name="QTE_DECHET_SORTANT" expression="out_test.QTE_DECHET_SORTANT" type="id_String" nullable="true"/>
@@ -900,7 +898,7 @@
         <mapperTableEntries name="NOM_DESTINATAIRE" expression="out_test.NOM_DESTINATAIRE" type="id_String" nullable="true"/>
         <mapperTableEntries name="ADRESSE_DESTINATAIRE" expression="out_test.ADRESSE_DESTINATAIRE" type="id_String" nullable="true"/>
         <mapperTableEntries name="CODE_TRAITEMENT_DECHET" expression="out_test.CODE_TRAITEMENT_DECHET" type="id_String" nullable="true"/>
-        <mapperTableEntries name="DATE_RETOUR_BSDI" expression="out_test.DATE_RETOUR_BSDI" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_RETOUR_BSDI" expression="out_test.DATE_RETOUR_BSDI != null&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; &amp;&amp; out_test.DATE_RETOUR_BSDI.trim().matches(&quot;\\d{2}/\\d{2}/\\d{4}&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;    ? TalendDate.parseDate(&quot;dd/MM/yyyy&quot;, out_test.DATE_RETOUR_BSDI.trim())&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;    : null " type="id_Date" nullable="true"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" expression="out_test.LIEN_SHAREPOINT" type="id_String" nullable="true"/>
         <mapperTableEntries name="SITE" expression="out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out_test.LIEN_SHAREPOINT.indexOf(&quot;Ext&quot;)-1) " type="id_String" nullable="true"/>
         <mapperTableEntries name="IDSITE" expression="StringHandling.LEFT(out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out_test.LIEN_SHAREPOINT.indexOf(&quot;Ext&quot;)-1) " type="id_String" nullable="true"/>
@@ -1043,40 +1041,40 @@
     <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out_test" name="tDBOutput_1">
-      <column comment="" key="false" length="500" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DESIGNATION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_NOMENCLATURE_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="QTE_DECHET_SORTANT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NOM_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="ADRESSE_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NR_RECEPISSE_DECLARATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NOM_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DESIGNATION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_NOMENCLATURE_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="QTE_DECHET_SORTANT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="ADRESSE_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NR_RECEPISSE_DECLARATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="out_test" name="REJECT">
-      <column comment="" key="false" length="500" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DESIGNATION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_NOMENCLATURE_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="QTE_DECHET_SORTANT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NOM_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="ADRESSE_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NR_RECEPISSE_DECLARATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="NOM_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_LOCATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_EXPEDITION_DECHET" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DESIGNATION_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_NOMENCLATURE_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="QTE_DECHET_SORTANT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="BSDI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="ADRESSE_TRANSPORTEUR" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NR_RECEPISSE_DECLARATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="NOM_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="ADRESSE_DESTINATAIRE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_TRAITEMENT_DECHET" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="DATE_RETOUR_BSDI" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="SITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>

@@ -31,7 +31,7 @@
     <contextParameter comment="" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306" internalId="_rhImmfDGEe6LmuxCY0psvQ"/>
     <contextParameter comment="" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com" internalId="_rhImmvDGEe6LmuxCY0psvQ"/>
     <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_rhImm_DGEe6LmuxCY0psvQ"/>
-    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="/home/adnadm/data/Andine/param/" internalId="_rhImnPDGEe6LmuxCY0psvQ"/>
+    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/" internalId="_rhImnPDGEe6LmuxCY0psvQ"/>
     <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_rhImnfDGEe6LmuxCY0psvQ"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="Int">
@@ -369,7 +369,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="1" offsetLabelY="3" posX="1760" posY="360">
+  <node componentName="tMysqlCommit" componentVersion="0.102" offsetLabelX="1" offsetLabelY="3" posX="1760" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBCommit_1" show="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -377,7 +377,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_1"/>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1750" posY="500">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="2080" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_2" show="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Fin traitement ods_plan_action :&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
@@ -462,7 +462,7 @@
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="520" posY="360">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_1" show="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEDIRECTORY&quot;)+&quot;/&quot;+(String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;)"/>
@@ -477,7 +477,7 @@
     <elementParameter field="TEXT" name="LIMIT" value=""/>
     <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
     <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
-    <elementParameter field="TEXT" name="LAST_COLUMN" value="10"/>
+    <elementParameter field="TEXT" name="LAST_COLUMN" value="12"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
     <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
@@ -498,12 +498,16 @@
       <elementValue elementRef="TRIM" value="false" id="11"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="QUI" id="12"/>
       <elementValue elementRef="TRIM" value="false" id="13"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHIFFRAGE" id="14"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_ECHEANCE" id="14"/>
       <elementValue elementRef="TRIM" value="false" id="15"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PHOTOS" id="16"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ACTIONS_CONSERVATOIRES" id="16"/>
       <elementValue elementRef="TRIM" value="false" id="17"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_CONFORMITE" id="18"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CHIFFRAGE" id="18"/>
       <elementValue elementRef="TRIM" value="false" id="19"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PHOTOS" id="20"/>
+      <elementValue elementRef="TRIM" value="false" id="21"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_CONFORMITE" id="22"/>
+      <elementValue elementRef="TRIM" value="false" id="23"/>
     </elementParameter>
     <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
     <elementParameter field="TABLE" name="DATESELECT" show="false">
@@ -528,15 +532,21 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="QUI" id="18"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="19"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="20"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHIFFRAGE" id="21"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_ECHEANCE" id="21"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="22"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="23"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PHOTOS" id="24"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ACTIONS_CONSERVATOIRES" id="24"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="25"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="26"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_CONFORMITE" id="27"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CHIFFRAGE" id="27"/>
       <elementValue elementRef="CONVERTDATE" value="false" id="28"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="29"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PHOTOS" id="30"/>
+      <elementValue elementRef="CONVERTDATE" value="false" id="31"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="32"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_CONFORMITE" id="33"/>
+      <elementValue elementRef="CONVERTDATE" value="false" id="34"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;" id="35"/>
     </elementParameter>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
@@ -558,6 +568,8 @@
       <column comment="" key="false" length="10000" name="OBSERVATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="5000" name="RECOMMANDATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="5000" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="QUI" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CHIFFRAGE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="PHOTOS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
@@ -570,6 +582,8 @@
       <column comment="" key="false" length="10000" name="OBSERVATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="5000" name="RECOMMANDATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="5000" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="QUI" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CHIFFRAGE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="PHOTOS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
@@ -577,9 +591,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="720" posY="360">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="if (row1.CONTEXTE_DATE != null &amp;&amp; !row1.CONTEXTE_DATE.trim().isEmpty()) {&#xD;&#xA;    try {&#xD;&#xA;        gestion_date.CONTEXTE_DATE = Integer.parseInt(row1.CONTEXTE_DATE.trim());&#xD;&#xA;    } catch (NumberFormatException e) {&#xD;&#xA;        gestion_date.CONTEXTE_DATE = null;&#xD;&#xA;    }&#xD;&#xA;} else {&#xD;&#xA;    gestion_date.CONTEXTE_DATE = null;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Mapping des champs de sortie&#xD;&#xA;gestion_date.CONFORMITE = row1.CONFORMITE;&#xD;&#xA;gestion_date.ARTICLES = row1.ARTICLES;&#xD;&#xA;gestion_date.PRESCRIPTIONS = row1.PRESCRIPTIONS;&#xD;&#xA;gestion_date.OBSERVATIONS = row1.OBSERVATIONS;&#xD;&#xA;gestion_date.RECOMMANDATIONS = row1.RECOMMANDATIONS;&#xD;&#xA;gestion_date.QUI = row1.QUI;&#xD;&#xA;gestion_date.CHIFFRAGE = row1.CHIFFRAGE;&#xD;&#xA;gestion_date.PHOTOS = row1.PHOTOS;&#xD;&#xA;gestion_date.CODE_CONFORMITE = row1.CODE_CONFORMITE;&#xD;&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="//CONTEXTE_DATE : numéro de série Excel (String) -> Integer&#xD;&#xA;if (row1.CONTEXTE_DATE != null &amp;&amp; !row1.CONTEXTE_DATE.trim().isEmpty()) {&#xD;&#xA; try {&#xD;&#xA;     gestion_date.CONTEXTE_DATE = Integer.parseInt(row1.CONTEXTE_DATE.trim());&#xD;&#xA; } catch (NumberFormatException e) {&#xD;&#xA;     gestion_date.CONTEXTE_DATE = null;&#xD;&#xA; }&#xD;&#xA;} else {&#xD;&#xA; gestion_date.CONTEXTE_DATE = null;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;//DATE_ECHEANCE : déjà une Date en entrée -> affectation directe&#xD;&#xA;gestion_date.DATE_ECHEANCE = row1.DATE_ECHEANCE;&#xD;&#xA;&#xD;&#xA;//Mapping des champs de sortie&#xD;&#xA;gestion_date.CONFORMITE             = row1.CONFORMITE;&#xD;&#xA;gestion_date.ARTICLES               = row1.ARTICLES;&#xD;&#xA;gestion_date.PRESCRIPTIONS          = row1.PRESCRIPTIONS;&#xD;&#xA;gestion_date.OBSERVATIONS           = row1.OBSERVATIONS;&#xD;&#xA;gestion_date.RECOMMANDATIONS        = row1.RECOMMANDATIONS;&#xD;&#xA;gestion_date.QUI                    = row1.QUI;&#xD;&#xA;gestion_date.ACTIONS_CONSERVATOIRES = row1.ACTIONS_CONSERVATOIRES;&#xD;&#xA;gestion_date.CHIFFRAGE              = row1.CHIFFRAGE;&#xD;&#xA;gestion_date.PHOTOS                 = row1.PHOTOS;&#xD;&#xA;gestion_date.CODE_CONFORMITE        = row1.CODE_CONFORMITE;"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
@@ -590,18 +604,20 @@
       <column comment="" key="false" length="10000" name="OBSERVATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="5000" name="RECOMMANDATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="5000" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="QUI" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CHIFFRAGE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="PHOTOS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="960" posY="360">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="920" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_bXAHQMEQEe67GN6DA98bkw-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="__SLzcJrPEfGHwtG6fiSnTg-tMap_1-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
@@ -620,6 +636,8 @@
       <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="QUI" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
@@ -634,6 +652,8 @@
         <mapperTableEntries name="CODE_CONFORMITE" expression="gestion_date.CODE_CONFORMITE " type="id_String" nullable="true"/>
         <mapperTableEntries name="QUI" expression="gestion_date.QUI " type="id_String" nullable="true"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" expression="(String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_ECHEANCE" expression="gestion_date.DATE_ECHEANCE " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="ACTIONS_CONSERVATOIRES" expression="gestion_date.ACTIONS_CONSERVATOIRES " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="gestion_date" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="CONTEXTE_DATE" type="id_Integer" nullable="true"/>
@@ -643,18 +663,20 @@
         <mapperTableEntries name="OBSERVATIONS" type="id_String" nullable="true"/>
         <mapperTableEntries name="RECOMMANDATIONS" type="id_String" nullable="true"/>
         <mapperTableEntries name="QUI" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_ECHEANCE" type="id_Date" nullable="true"/>
+        <mapperTableEntries name="ACTIONS_CONSERVATOIRES" type="id_String" nullable="true"/>
         <mapperTableEntries name="CHIFFRAGE" type="id_String" nullable="true"/>
         <mapperTableEntries name="PHOTOS" type="id_String" nullable="true"/>
         <mapperTableEntries name="CODE_CONFORMITE" type="id_String" nullable="true"/>
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="360">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_2" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_bXAHQMEQEe67GN6DA98bkw-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="__SLzcJrPEfGHwtG6fiSnTg-tMap_2-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
@@ -676,6 +698,8 @@
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
@@ -693,6 +717,8 @@
         <mapperTableEntries name="LIEN_SHAREPOINT" expression="out_test.LIEN_SHAREPOINT" type="id_String" nullable="true"/>
         <mapperTableEntries name="SITE" expression="out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out_test.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " type="id_String" nullable="true"/>
         <mapperTableEntries name="IDSITE" expression="StringHandling.LEFT(out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;9&quot;)+2, out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;)),3) + out_test.LIEN_SHAREPOINT.substring(out_test.LIEN_SHAREPOINT.indexOf(&quot;-&quot;) + 2, out_test.LIEN_SHAREPOINT.indexOf(&quot;Dev&quot;)-1) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_ECHEANCE" expression="out_test.DATE_ECHEANCE " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="ACTIONS_CONSERVATOIRES" expression="out_test.ACTIONS_CONSERVATOIRES " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="out_test" matchingMode="ALL_ROWS" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="CONTEXTE_DATE" type="id_Date" nullable="true"/>
@@ -704,15 +730,17 @@
         <mapperTableEntries name="CODE_CONFORMITE" type="id_String" nullable="true"/>
         <mapperTableEntries name="QUI" type="id_String" nullable="true"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_ECHEANCE" type="id_Date" nullable="true"/>
+        <mapperTableEntries name="ACTIONS_CONSERVATOIRES" type="id_String" nullable="true"/>
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1440" posY="360">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1400" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_5" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_bXAHQMEQEe67GN6DA98bkw-tMap_5-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="__SLzcJrPEfGHwtG6fiSnTg-tMap_5-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
@@ -735,6 +763,8 @@
       <column comment="" key="false" length="-1" name="QUI" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
@@ -753,6 +783,8 @@
         <mapperTableEntries name="QUI" expression="ajout_site.QUI " type="id_String" nullable="true"/>
         <mapperTableEntries name="LIEN_SHAREPOINT" expression="ajout_site.LIEN_SHAREPOINT" type="id_String" nullable="true"/>
         <mapperTableEntries name="IDSITE" expression="ajout_site.IDSITE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_ECHEANCE" expression="ajout_site.DATE_ECHEANCE " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="ACTIONS_CONSERVATOIRES" expression="ajout_site.ACTIONS_CONSERVATOIRES " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="ajout_site" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="CONTEXTE_DATE" type="id_Date" nullable="true"/>
@@ -767,6 +799,8 @@
         <mapperTableEntries name="LIEN_SHAREPOINT" type="id_String" nullable="true"/>
         <mapperTableEntries name="SITE" type="id_String" nullable="true"/>
         <mapperTableEntries name="IDSITE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_ECHEANCE" type="id_Date" nullable="true"/>
+        <mapperTableEntries name="ACTIONS_CONSERVATOIRES" type="id_String" nullable="true"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="out" activateExpressionFilter="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="N_AFFAIRE" type="id_String" nullable="true"/>
@@ -774,12 +808,12 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1440" posY="520">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1400" posY="680">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_4" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_bXAHQMEQEe67GN6DA98bkw-tMap_4-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="__SLzcJrPEfGHwtG6fiSnTg-tMap_4-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
@@ -805,7 +839,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1680" posY="360">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1840" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_1" show="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
@@ -901,6 +935,16 @@
       <elementValue elementRef="DELETE_KEY" value="false" id="62"/>
       <elementValue elementRef="UPDATABLE" value="true" id="63"/>
       <elementValue elementRef="INSERTABLE" value="true" id="64"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_ECHEANCE" id="65"/>
+      <elementValue elementRef="UPDATE_KEY" value="false" id="66"/>
+      <elementValue elementRef="DELETE_KEY" value="false" id="67"/>
+      <elementValue elementRef="UPDATABLE" value="true" id="68"/>
+      <elementValue elementRef="INSERTABLE" value="true" id="69"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ACTIONS_CONSERVATOIRES" id="70"/>
+      <elementValue elementRef="UPDATE_KEY" value="false" id="71"/>
+      <elementValue elementRef="DELETE_KEY" value="false" id="72"/>
+      <elementValue elementRef="UPDATABLE" value="true" id="73"/>
+      <elementValue elementRef="INSERTABLE" value="true" id="74"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -911,39 +955,43 @@
     <elementParameter field="TEXT" name="LABEL" value="MySQL_ODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out_test" name="tDBOutput_1">
-      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CLIENT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="N_AFFAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CLIENT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="N_AFFAIRE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUI" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="out_test" name="REJECT">
-      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CLIENT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="N_AFFAIRE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="QUI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONTEXTE_DATE" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ARTICLES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RECOMMANDATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="OBSERVATIONS" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_AUDIT" nullable="true" pattern="&quot;dd/MM/yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CLIENT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="N_AFFAIRE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="CODE_CONFORMITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="QUI" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LIEN_SHAREPOINT" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IDSITE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATE_ECHEANCE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="ACTIONS_CONSERVATOIRES" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="520">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="680">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_8" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -982,7 +1030,7 @@
       <column comment="" key="false" length="250" name="IDSITE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="240">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="80">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String clientSitePath = (String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;);&#xA;&#xA;if (clientSitePath != null) {&#xA;// Utiliser le séparateur de fichiers du système d'exploitation&#xA;String separator = java.io.File.separator;&#xA;&#xA;// Trouver la position de &quot;09\\&quot; (en ajoutant 3 pour sa longueur)&#xA;int startIndex = clientSitePath.indexOf(&quot;09&quot; + separator) + (&quot;09&quot; + separator).length();&#xA;&#xA;// Trouver la position du prochain séparateur de dossier &quot;\\&quot;&#xA;int endIndex = clientSitePath.indexOf(separator, startIndex);&#xA;&#xA;// Extraire la portion souhaitée&#xA;String clientSite = clientSitePath.substring(startIndex, endIndex);&#xA;&#xA;System.out.println(&quot;Début itération &quot; + clientSite);&#xA;} else {&#xA;    System.out.println(&quot;Le chemin 'CLIENTSITE' est nul.&quot;);&#xA;}"/>
@@ -1058,6 +1106,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="CODE_CONFORMITE" id="18"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="19"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="20"/>
+      <elementValue elementRef="TRACE_COLUMN" value="ACTIONS_CONSERVATOIRES" id="21"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="22"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="23"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DATE_ECHEANCE" id="24"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="25"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="26"/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
@@ -1146,6 +1200,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="QUI" id="75"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="76"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="77"/>
+      <elementValue elementRef="TRACE_COLUMN" value="ACTIONS_CONSERVATOIRES" id="78"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="79"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="80"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DATE_ECHEANCE" id="81"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="82"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="83"/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="out_test" show="false"/>
@@ -1164,6 +1224,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="QUI" id="9"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
+      <elementValue elementRef="TRACE_COLUMN" value="ACTIONS_CONSERVATOIRES" id="12"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="13"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="14"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DATE_ECHEANCE" id="15"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="16"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="17"/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="ajout_site" show="false"/>
@@ -1176,6 +1242,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="QUI" id="3"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
+      <elementValue elementRef="TRACE_COLUMN" value="ACTIONS_CONSERVATOIRES" id="6"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DATE_ECHEANCE" id="9"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="jointure" show="false"/>
