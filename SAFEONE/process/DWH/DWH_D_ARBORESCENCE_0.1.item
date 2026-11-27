@@ -90,7 +90,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="80" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="40" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -197,7 +197,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="context.MySQL_ODS_AdditionalParams"/>
     <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ISDw+AO1cJbfpYz6cIfT2Qbuluy0tpBDeZhzkHPFrFi7obSmqWRSQHmh1GcsCDbHHShGguqX"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.MySQL_ODS_Password"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
@@ -220,7 +220,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_DWH_Database"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="context.MySQL_DWH_AdditionalParams"/>
     <elementParameter field="TEXT" name="USER" value="context.MySQL_DWH_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:vqKp4r+/DEploZH+lOfMfmVZZh1bbLohXk6yI1FCWwLBjr+Mjqt2Ra9uEM2f7yEon2DMapeV"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.MySQL_DWH_Password"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
@@ -505,7 +505,7 @@
       <additionalProperties key="Comment" value="ODS_FICHE_DESCRIPTIVE_ICPE"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var"/>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="LIBELLE" expression="row1.LIBELLE " type="id_String" nullable="true"/>

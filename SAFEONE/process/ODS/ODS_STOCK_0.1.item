@@ -41,7 +41,7 @@
     <contextParameter comment="" name="MySQL_talend_log_Port" prompt="MySQL_talend_log_Port?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="3306" internalId="_8D_LMVC1Ee-VB-2QSc9RZg"/>
     <contextParameter comment="" name="MySQL_talend_log_Server" prompt="MySQL_talend_log_Server?" promptNeeded="false" repositoryContextId="_S68IgMAhEe67GN6DA98bkw" type="id_String" value="mysql-sos-dev.mysql.database.azure.com" internalId="_8D_LMlC1Ee-VB-2QSc9RZg"/>
     <contextParameter comment="" name="G_File_Properties" prompt="G_File_Properties?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="andine.properties" internalId="_8D_LM1C1Ee-VB-2QSc9RZg"/>
-    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="/home/adnadm/data/Andine/param/" internalId="_8D_LNFC1Ee-VB-2QSc9RZg"/>
+    <contextParameter comment="" name="G_Rep_Param" prompt="G_Rep_Param?" promptNeeded="false" repositoryContextId="_px8gAMAiEe67GN6DA98bkw" type="id_String" value="C:/Talend/data/andine/param/" internalId="_8D_LNFC1Ee-VB-2QSc9RZg"/>
     <contextParameter comment="" name="Sharepoint_file_path" prompt="Sharepoint_file_path?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/ANDINE/09/" internalId="_8D_LNVC1Ee-VB-2QSc9RZg"/>
     <contextParameter comment="" name="Sharepoint_post_param_file_access_token" prompt="Sharepoint_post_param_file_access_token?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="C:/TALEND/data/andine/param/param.txt" internalId="_8D_LNlC1Ee-VB-2QSc9RZg"/>
     <contextParameter comment="" name="Sharepoint_referentiel_site" prompt="Sharepoint_referentiel_site?" promptNeeded="false" repositoryContextId="_epM_ICepEe2BkKcZ6a_7dQ" type="id_String" value="ReferentielSiteDev.xlsx" internalId="_8D_LN1C1Ee-VB-2QSc9RZg"/>
@@ -219,7 +219,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="context.MySQL_ODS_AdditionalParams"/>
     <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xcsHv2OaLunfu5hLZgZE0YbGIolEac5ajZEpjk+fp/LM41bEd4V4t5t1sdTPzQH9IBPXMC8p"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.MySQL_ODS_Password"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
@@ -823,7 +823,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1" expressionFilter="Relational.NOT(Relational.ISNULL(row1.Cellule))" activateExpressionFilter="true">
         <mapperTableEntries name="SITE" expression="row1.Site " type="id_String" nullable="true"/>
@@ -1076,7 +1076,7 @@
     <elementParameter field="TEXT" name="PORT" value="context.MySQL_ODS_Port"/>
     <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GcvbCtmLHtNbgjN11Qq0yMKOEZcRYh8x0edSQXHeKC5MyxvRMqfYIXrtUwAuqZFt/8IbAjzq"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.MySQL_ODS_Password"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_stocks&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -1562,7 +1562,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:dMHGlUdNuvACNHPkh4v5ITI6lZBNYEFCIC++Jb9POe/dpvd+697DQaA+rYzRSeYqynUjJBwe"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.MySQL_ODS_Password"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_fiche_descriptive_locataires&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1815,7 +1815,7 @@
   </node>
   <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-40" posY="1370">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_3" show="false"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.Sharepoint_file_path + (String) globalMap.get(&quot;CLIENTSITE&quot;) + &quot;/Ext/Stocks/PSA&quot;"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.Sharepoint_file_path + (String) globalMap.get(&quot;CLIENTSITE&quot;) + &quot;/Ext/Stocks/STELLANTIS&quot;"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
     <elementParameter field="CHECK" name="INCLUDSUBDIR" value="true"/>
     <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
@@ -1998,7 +1998,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="copyOfout2">
         <mapperTableEntries name="ALLEE" expression="row5.ALLEE " type="id_String" nullable="true"/>
@@ -2110,7 +2110,7 @@
     <elementParameter field="TEXT" name="PORT" value="context.MySQL_ODS_Port"/>
     <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hl0GQsAFubJVy/4QA1Av427idSviXVd9Ce5fr5GN4LB6tRrZBcmaPFhKhetU/yt5u3iII3tc"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.MySQL_ODS_Password"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_stocks&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -2453,7 +2453,7 @@
       <column comment="" key="false" length="-1" name="NOM_FICHIER" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out2">
         <mapperTableEntries name="ALLEE" expression="row4.ALLEE " type="id_String" nullable="true"/>
@@ -2579,7 +2579,7 @@
     <elementParameter field="TEXT" name="PORT" value="context.MySQL_ODS_Port"/>
     <elementParameter field="TEXT" name="DBNAME" value="context.MySQL_ODS_Database"/>
     <elementParameter field="TEXT" name="USER" value="context.MySQL_ODS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:viRYU4fzTizv/o04NFj+MYu5N9f9f1aG/TfTfre61oAuMW2wcfWY9fEPTcYUnxrRsD4f+4X8"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.MySQL_ODS_Password"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_stocks&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -3166,7 +3166,7 @@
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_3" show="false"/>
-    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Alim secondaire : Fichier Marignane (PSA)"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Alim secondaire : Fichier Marignane (STELLANTIS)"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
